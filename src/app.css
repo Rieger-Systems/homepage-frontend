@@ -1,4 +1,117 @@
+/* ---------------------
+   Tailwind & Plugins
+---------------------- */
 @import 'tailwindcss';
 @plugin '@tailwindcss/forms';
 @plugin '@tailwindcss/typography';
-@plugin "daisyui";
+@plugin 'daisyui' {
+	themes: [ 'riegersystems-dark']; /* Nur dieses Theme aktiv */
+}
+@plugin "daisyui/theme" {
+	name: 'riegersystems-dark';
+	default: true;
+	prefersdark: true;
+	color-scheme: 'dracula';
+
+	/* Dracula-Basis beibehalten */
+	--color-base-100: oklch(28.822% 0.022 277.508);
+	--color-base-200: oklch(26.805% 0.02 277.508);
+	--color-base-300: oklch(24.787% 0.019 277.508);
+	--color-base-content: oklch(97.747% 0.007 106.545); /* heller Text */
+
+	/* 🟨 Primär: Mitternachtsblau (Rieger-Blau) */
+	--color-primary: oklch(82% 0.14 90); /* Edles Gold */
+	--color-primary-content: oklch(15% 0.05 90); /* Text auf Gold */
+
+	/* 🟫  Sekundär: Gold-Akzent */
+	--color-secondary: oklch(35% 0.06 310);
+	--color-secondary-content: oklch(95% 0.01 310);
+
+	/* 🟩 Akzent: Salbeigrün für zarte Highlights */
+	--color-accent: oklch(70% 0.18 140);
+	--color-accent-content: oklch(15% 0.05 140);
+
+	/* 🔘 Neutral: ruhiges Graublau (für borders, Inputs etc.) */
+	--color-neutral: oklch(35% 0.02 260);
+	--color-neutral-content: oklch(92% 0.01 260);
+
+	/* ℹ️ Info / Erfolg / Warnung / Fehler: dezent, nicht schrill */
+	--color-info: oklch(75% 0.08 220); /* Blau, sachlich */
+	--color-info-content: oklch(18% 0.02 220);
+
+	--color-success: oklch(65% 0.12 140); /* naturgrün */
+	--color-success-content: oklch(98% 0.01 140);
+
+	--color-warning: oklch(80% 0.11 100); /* gedecktes Gelb */
+	--color-warning-content: oklch(25% 0.04 100);
+
+	--color-error: oklch(60% 0.14 30); /* warmes Rot */
+	--color-error-content: oklch(98% 0.01 30);
+
+	/* UI */
+	--radius-selector: 1rem;
+	--radius-field: 0.5rem;
+	--radius-box: 1rem;
+	--border: 1px;
+	--depth: 0;
+	--noise: 0;
+}
+
+/* ---------------------
+   Lokale Schriftarten
+---------------------- */
+@font-face {
+	font-family: 'Inter';
+	src: url('/src/lib/assets/fonts/inter/inter-v18-latin-regular.woff2') format('woff2');
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
+}
+@font-face {
+	font-family: 'Inter';
+	src: url('/src/lib/assets/fonts/inter/inter-v18-latin-500.woff2') format('woff2');
+	font-weight: 500;
+	font-style: normal;
+	font-display: swap;
+}
+@font-face {
+	font-family: 'Inter';
+	src: url('/src/lib/assets/fonts/inter/inter-v18-latin-700.woff2') format('woff2');
+	font-weight: 700;
+	font-style: normal;
+	font-display: swap;
+}
+@font-face {
+	font-family: 'Lora';
+	src: url('/src/lib/assets/fonts/lora/lora-v35-latin-regular.woff2') format('woff2');
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
+}
+@font-face {
+	font-family: 'Lora';
+	src: url('/src/lib/assets/fonts/lora/lora-v35-latin-italic.woff2') format('woff2');
+	font-weight: 400;
+	font-style: italic;
+	font-display: swap;
+}
+@font-face {
+	font-family: 'Lora';
+	src: url('/src/lib/assets/fonts/lora/lora-v35-latin-700.woff2') format('woff2');
+	font-weight: 700;
+	font-style: normal;
+	font-display: swap;
+}
+
+/* ---------------------
+   Grundtypografie
+---------------------- */
+html {
+	font-family: var(--font-sans);
+}
+.serif,
+em,
+blockquote,
+q {
+	font-family: var(--font-serif);
+}
