@@ -4,8 +4,8 @@
 	import Mission from '$lib/components/sections/Mission.svelte';
 	import Now from '$lib/components/sections/Now.svelte';
 	import Offer from '$lib/components/sections/Offer.svelte';
+	import PoweredByAmara from '$lib/components/sections/PoweredByAMARA.svelte';
 	import Trust from '$lib/components/sections/Trust.svelte';
-	import AiVisualization from '$lib/components/threejs/AiVisualization.svelte';
 </script>
 
 <Hero />
@@ -13,5 +13,5 @@
 <Now />
 <Offer />
 <Trust />
+<PoweredByAmara />
 <Contact />
-<AiVisualization />

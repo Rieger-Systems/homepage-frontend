@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { onMount, onDestroy } from 'svelte';
+	import { browser } from '$app/environment';
 	import * as THREE from 'three';
 
 	let canvasContainer: HTMLDivElement;
@@ -58,7 +59,6 @@
 		for (let i = 0; i < particleCount; i++) {
 			for (let j = i + 1; j < particleCount; j++) {
 				if (Math.random() < 0.03) {
-					// Low chance for random connection
 					linePositions.push(
 						positions[i * 3],
 						positions[i * 3 + 1],
@@ -101,12 +101,18 @@
 		renderer.setSize(width, height);
 	}
 
-	onMount(init);
+	onMount(() => {
+		if (browser) {
+			init();
+		}
+	});
 
 	onDestroy(() => {
-		cancelAnimationFrame(animationFrameId);
-		window.removeEventListener('resize', onWindowResize);
-		renderer.dispose();
+		if (browser) {
+			cancelAnimationFrame(animationFrameId);
+			window.removeEventListener('resize', onWindowResize);
+			renderer.dispose();
+		}
 	});
 </script>
 

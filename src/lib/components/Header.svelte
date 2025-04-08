@@ -6,7 +6,9 @@
 	let open = false;
 </script>
 
-<header class="bg-base-100 border-base-200 sticky top-0 z-50 border-b shadow-sm">
+<header
+	class="bg-base-100/90 border-base-200 fixed top-0 left-0 z-[9999] w-full border-b shadow-sm"
+>
 	<div class="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
 		<!-- Branding -->
 		<a href="/" class="flex items-center gap-3">
