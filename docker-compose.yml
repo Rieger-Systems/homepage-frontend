@@ -1,7 +1,7 @@
 services:
   web:
     build: .
-    container_name: rieger-core
+    container_name: rieger-web
     restart: always
     ports:
       - '3000:3000'
