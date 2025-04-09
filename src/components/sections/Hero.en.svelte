@@ -1,35 +1,35 @@
-<script lang="ts"></script>
+<script lang="ts">
+	import { en } from '$lib/i18n/en';
+</script>
 
 <section
 	id="hero"
 	class="bg-base-100 text-base-content relative flex min-h-screen snap-start flex-col items-center justify-center px-6"
 >
-	<!-- Hauptinhalt -->
 	<div class="z-10 max-w-4xl text-center">
 		<h1
 			class="animate-fade-up animate-once animate-duration-1000 mb-6 text-5xl leading-tight font-bold md:text-6xl"
 		>
-			Die Zukunft intelligenter gestalten
+			{en.hero.title}
 		</h1>
 		<p
 			class="animate-fade-up animate-delay-300 animate-duration-1000 text-base-content/80 mb-10 text-lg md:text-xl"
 		>
-			Bei Rieger Systems verbinden wir Innovation und Menschlichkeit, um KI- und Software-Lösungen
-			zu entwickeln, denen du wirklich vertrauen kannst.
+			{en.hero.sub}
 		</p>
 		<div
 			class="animate-fade-up animate-delay-500 animate-duration-1000 flex flex-wrap justify-center gap-4"
 		>
-			<a href="#webuild" class="btn btn-primary btn-lg transition-all duration-200">
-				Mehr erfahren
-			</a>
-			<a href="#kontakt" class="btn btn-outline btn-lg transition-all duration-200">
-				Kontakt aufnehmen
-			</a>
+			<a href="#webuild" class="btn btn-primary btn-lg transition-all duration-200"
+				>{en.hero.buttonPrimary}</a
+			>
+			<a href="#contact" class="btn btn-outline btn-lg transition-all duration-200"
+				>{en.hero.buttonSecondary}</a
+			>
 		</div>
 	</div>
 
-	<!-- Scroll-Hinweis -->
+	<!-- Scroll hint -->
 	<div class="absolute right-0 bottom-6 left-0 flex justify-center">
 		<div class="text-base-content/40 animate-bounce">
 			<svg

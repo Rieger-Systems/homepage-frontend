@@ -1,13 +1,13 @@
 <script lang="ts">
-	import Contact from '$lib/components/sections/Contact.svelte';
-	import Hero from '$lib/components/sections/Hero.svelte';
-	import Values from '$lib/components/sections/Values.svelte';
-	import Now from '$lib/components/sections/Now.svelte';
-	import WeBuild from '$lib/components/sections/WeBuild.svelte';
+	import { Sections } from '$components/sections';
+	import { locale } from '$lib/stores/locale';
+	import { derived } from 'svelte/store';
+
+	const current = derived(locale, ($locale) => Sections[$locale] ?? Sections['de']);
 </script>
 
-<Hero />
-<Now />
-<Values />
-<WeBuild />
-<Contact />
+<svelte:component this={$current.Hero} />
+<svelte:component this={$current.Now} />
+<svelte:component this={$current.Values} />
+<svelte:component this={$current.WeBuild} />
+<svelte:component this={$current.Contact} />
