@@ -40,11 +40,8 @@
 			</p>
 
 			<!-- Visualisierung -->
-			<div
-				class="bg-base-100 ring-base-300 relative mx-auto aspect-video w-full max-w-xl overflow-hidden rounded-2xl shadow-2xl ring-1"
-			>
+			<div class="bg-base-100 aspect-video overflow-hidden rounded-xl shadow-xl">
 				<AiVisualization />
-				<div class="ring-primary/10 pointer-events-none absolute inset-0 rounded-2xl ring-2"></div>
 			</div>
 		</div>
 	</div>

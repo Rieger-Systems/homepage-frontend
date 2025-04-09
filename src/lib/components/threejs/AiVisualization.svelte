@@ -2,6 +2,7 @@
 	import { onMount, onDestroy } from 'svelte';
 	import { browser } from '$app/environment';
 	import * as THREE from 'three';
+	import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 
 	let canvasContainer: HTMLDivElement;
 
@@ -10,6 +11,7 @@
 	let renderer: THREE.WebGLRenderer;
 	let points: THREE.Points;
 	let lines: THREE.LineSegments;
+	let controls: OrbitControls;
 	let animationFrameId: number;
 
 	function init() {
@@ -25,10 +27,18 @@
 		renderer.setSize(width, height);
 		canvasContainer.appendChild(renderer.domElement);
 
+		// OrbitControls
+		controls = new OrbitControls(camera, renderer.domElement);
+		controls.enableZoom = true;
+		controls.enablePan = false;
+		controls.enableDamping = true;
+		controls.dampingFactor = 0.05;
+		controls.autoRotate = true;
+		controls.autoRotateSpeed = 1.5;
+
 		window.addEventListener('resize', onWindowResize);
 
-		// Generate points
-		const particleCount = 100;
+		const particleCount = 120;
 		const positions = new Float32Array(particleCount * 3);
 		for (let i = 0; i < particleCount; i++) {
 			const theta = Math.random() * Math.PI * 2;
@@ -43,22 +53,24 @@
 		geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
 
 		const material = new THREE.PointsMaterial({
-			color: 0xffd700,
-			size: 0.5,
+			color: new THREE.Color(0xffd700),
+			size: 0.6,
 			transparent: true,
-			opacity: 0.9
+			opacity: 0.9,
+			sizeAttenuation: true,
+			depthWrite: false,
+			blending: THREE.AdditiveBlending
 		});
 
 		points = new THREE.Points(geometry, material);
 		scene.add(points);
 
-		// Add random connections
 		const lineGeometry = new THREE.BufferGeometry();
 		const linePositions = [];
 
 		for (let i = 0; i < particleCount; i++) {
 			for (let j = i + 1; j < particleCount; j++) {
-				if (Math.random() < 0.03) {
+				if (Math.random() < 0.035) {
 					linePositions.push(
 						positions[i * 3],
 						positions[i * 3 + 1],
@@ -74,7 +86,7 @@
 		lineGeometry.setAttribute('position', new THREE.Float32BufferAttribute(linePositions, 3));
 		const lineMaterial = new THREE.LineBasicMaterial({
 			color: 0xffd700,
-			opacity: 0.3,
+			opacity: 0.15,
 			transparent: true
 		});
 
@@ -86,10 +98,7 @@
 
 	function animate() {
 		animationFrameId = requestAnimationFrame(animate);
-		points.rotation.y += 0.002;
-		points.rotation.x += 0.001;
-		lines.rotation.y += 0.002;
-		lines.rotation.x += 0.001;
+		controls.update();
 		renderer.render(scene, camera);
 	}
 
@@ -112,8 +121,16 @@
 			cancelAnimationFrame(animationFrameId);
 			window.removeEventListener('resize', onWindowResize);
 			renderer.dispose();
+			controls.dispose();
 		}
 	});
 </script>
 
-<div bind:this={canvasContainer} class="h-12/12 w-full"></div>
+<div bind:this={canvasContainer} class="h-full w-full"></div>
+
+<style>
+	:global(canvas) {
+		display: block;
+		cursor: grab;
+	}
+</style>
