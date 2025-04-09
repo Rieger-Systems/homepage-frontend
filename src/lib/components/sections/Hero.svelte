@@ -14,8 +14,8 @@
 		<p
 			class="animate-fade-up animate-delay-300 animate-duration-1000 text-base-content/80 mb-10 text-lg md:text-xl"
 		>
-			Bei Rieger Systems verbinden wir Innovation und Menschlichkeit, um KI-Lösungen zu entwickeln,
-			denen du wirklich vertrauen kannst.
+			Bei Rieger Systems verbinden wir Innovation und Menschlichkeit, um KI- und Software-Lösungen
+			zu entwickeln, denen du wirklich vertrauen kannst.
 		</p>
 		<div
 			class="animate-fade-up animate-delay-500 animate-duration-1000 flex flex-wrap justify-center gap-4"
