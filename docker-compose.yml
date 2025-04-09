@@ -1,0 +1,18 @@
+services:
+  web:
+    build: .
+    container_name: rieger-core
+    restart: always
+    ports:
+      - '3000:3000'
+    labels:
+      - 'traefik.enable=true'
+      - 'traefik.http.routers.rieger.rule=Host(`rieger-systems.eu`)'
+      - 'traefik.http.routers.rieger.entrypoints=websecure'
+      - 'traefik.http.routers.rieger.tls.certresolver=letsencrypt'
+    networks:
+      - web
+
+networks:
+  web:
+    external: true
