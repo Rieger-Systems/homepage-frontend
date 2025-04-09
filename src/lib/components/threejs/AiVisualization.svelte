@@ -116,4 +116,4 @@
 	});
 </script>
 
-<div bind:this={canvasContainer} class="h-[400px] w-full"></div>
+<div bind:this={canvasContainer} class="h-12/12 w-full"></div>

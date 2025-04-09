@@ -17,8 +17,10 @@
 			<div
 				class="animate-fade-up animate-delay-500 animate-duration-1000 flex justify-center gap-4"
 			>
-				<button class="btn btn-primary btn-lg"> Mehr erfahren </button>
-				<button class="btn btn-outline btn-lg"> Kontakt aufnehmen </button>
+				<button class="btn btn-primary btn-lg transition-all duration-200"> Mehr erfahren </button>
+				<button class="btn btn-outline btn-lg transition-all duration-200">
+					Kontakt aufnehmen
+				</button>
 			</div>
 		</div>
 	</div>

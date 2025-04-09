@@ -13,9 +13,9 @@
 				<p class="text-base-content/80 mb-4">
 					Eine KI, die ans Telefon geht, wenn du gerade nicht kannst: AmaraCall nimmt Anrufe
 					entgegen, erfasst die Anliegen deiner Anrufer:innen und erstellt strukturierte
-					Zusammenfassungen – lokal betrieben, datenschutzkonform und vielseitig einsetzbar.
+					Zusammenfassungen - lokal betrieben, datenschutzkonform und vielseitig einsetzbar.
 				</p>
-				<a href="/" class="btn btn-sm btn-primary">Mehr erfahren</a>
+				<a href="/" class="btn btn-primary transition-all duration-200">Mehr erfahren</a>
 			</div>
 
 			<!-- A.M.A.R.A. -->
@@ -27,7 +27,7 @@
 
 				<p class="text-base-content/80">
 					Unsere zentrale KI-Architektur: A Machine Always Ready to Assist. Wir entwickeln die
-					Grundlagen für ein menschenzentriertes, sicheres und erklärbares KI-Ökosystem – als
+					Grundlagen für ein menschenzentriertes, sicheres und erklärbares KI-Ökosystem - als
 					Herzstück all unserer Produkte.
 				</p>
 			</div>
@@ -40,7 +40,7 @@
 				<h3 class="mb-3 text-xl font-bold">Interne Infrastruktur</h3>
 
 				<p class="text-base-content/80">
-					Wir bauen unsere eigene Infrastruktur auf – lokal, datensouverän und skalierbar. Mit
+					Wir bauen unsere eigene Infrastruktur auf - lokal, datensouverän und skalierbar. Mit
 					verschlüsselter Kommunikation, lokalen KI-Modellen, Auditing und Monitoring bereiten wir
 					alles für ein vertrauenswürdiges Ökosystem vor.
 				</p>
@@ -54,8 +54,8 @@
 				<h3 class="mb-3 text-xl font-bold">AmaraWell (in Vorbereitung)</h3>
 
 				<p class="text-base-content/80">
-					Ein KI-gestütztes System zur Begleitung psychischer Gesundheit – empathisch,
-					datenschutzkonform und medizinisch fundiert. Derzeit in Konzeption – mit Fokus auf ICD-11,
+					Ein KI-gestütztes System zur Begleitung psychischer Gesundheit - empathisch,
+					datenschutzkonform und medizinisch fundiert. Derzeit in Konzeption - mit Fokus auf ICD-11,
 					personalisierter KI und ethischer Verantwortung.
 				</p>
 			</div>
