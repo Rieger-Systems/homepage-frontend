@@ -1,25 +1,24 @@
-# --- Build Stage ---
-    FROM node:20-alpine AS build
+# --- Basis-Image ---
+    FROM node:20-alpine
+
+    # Arbeitsverzeichnis setzen
     WORKDIR /app
     
+    # Nur die wichtigsten Dateien zuerst kopieren (für bessere Caching-Stufen)
     COPY package*.json ./
+    
+    # Alle Abhängigkeiten inkl. devDependencies installieren
     RUN npm install
     
+    # Restliche Projektdateien kopieren
     COPY . .
+    
+    # SvelteKit-Projekt bauen
     RUN npm run build
     
-    # --- Production Stage ---
-    FROM node:20-alpine
-    WORKDIR /app
-    
-    ENV NODE_ENV=production
-    
-    # Nur das Notwendige übernehmen
-    COPY --from=build /app/build ./build
-    COPY --from=build /app/package.json ./
-    COPY --from=build /app/node_modules ./node_modules
-    
+    # App-Port freigeben (3000 ist Standard bei adapter-node)
     EXPOSE 3000
     
+    # Startbefehl für den gebauten Node-Server
     CMD ["node", "build/index.js"]
     
