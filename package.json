@@ -46,6 +46,7 @@
 		"vitest": "^3.0.0"
 	},
 	"dependencies": {
+		"@sveltejs/adapter-node": "^5.2.12",
 		"@threlte/core": "^8.0.1",
 		"@threlte/extras": "^9.1.0",
 		"lucide-svelte": "^0.487.0",
