@@ -2,11 +2,11 @@
     FROM node:20-alpine AS build
     WORKDIR /app
     
-    # Installiere Abhängigkeiten
+    # Install dependencies
     COPY package*.json ./
     RUN npm install
     
-    # Kopiere den Rest des Codes
+    # Copy all source files
     COPY . .
     RUN npm run build
     
@@ -16,14 +16,14 @@
     
     ENV NODE_ENV=production
     
-    # Kopiere alles vom Build-Stage
+    # Copy built app and package files
     COPY --from=build /app ./
     
-    # Installiere nur Produktions-Abhängigkeiten
+    # Install only production dependencies
     RUN npm install --omit=dev
     
     EXPOSE 3000
     
-    # Starte die Anwendung
-    CMD ["node", "build"]
+    # Start the app
+    CMD ["node", "build/index.js"]
     
