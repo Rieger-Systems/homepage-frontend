@@ -3,13 +3,14 @@ services:
     build: .
     container_name: rieger-web
     restart: always
-    ports:
-      - '3000:3000'
+    expose:
+      - '3000'
     labels:
       - 'traefik.enable=true'
       - 'traefik.http.routers.rieger.rule=Host(`rieger-systems.eu`)'
       - 'traefik.http.routers.rieger.entrypoints=websecure'
       - 'traefik.http.routers.rieger.tls.certresolver=letsencrypt'
+      - 'traefik.http.services.rieger.loadbalancer.server.port=3000'
     networks:
       - web
 
