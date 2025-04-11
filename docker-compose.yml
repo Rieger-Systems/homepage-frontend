@@ -6,6 +6,7 @@ services:
     expose:
       - '3000'
     labels:
+      - 'traefik.enable=true'
       - 'traefik.http.routers.rieger.rule=Host(`rieger-systems.eu`)'
       - 'traefik.http.routers.rieger.entrypoints=websecure'
       - 'traefik.http.routers.rieger.tls.certresolver=letsencrypt'
