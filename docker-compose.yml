@@ -10,10 +10,8 @@ services:
       - 'traefik.http.routers.rieger.rule=Host(`rieger-systems.eu`)'
       - 'traefik.http.routers.rieger.entrypoints=websecure'
       - 'traefik.http.routers.rieger.tls.certresolver=letsencrypt'
-      - 'traefik.http.routers.rieger-http.rule=Host(`rieger-systems.eu`)'
-      - 'traefik.http.routers.rieger-http.entrypoints=web'
-      - 'traefik.http.routers.rieger-http.middlewares=redirect-to-https'
       - 'traefik.http.middlewares.redirect-to-https.redirectscheme.scheme=https'
+      - 'traefik.http.services.rieger.loadbalancer.server.port=3000'
 
     networks:
       - traefik_web
