@@ -12,10 +12,8 @@ services:
       - 'traefik.http.routers.rieger.tls.certresolver=letsencrypt'
       - 'traefik.http.middlewares.redirect-to-https.redirectscheme.scheme=https'
       - 'traefik.http.services.rieger.loadbalancer.server.port=3000'
-      - 'traefik.http.services.rieger.loadbalancer.server.address=172.18.0.2:3000' # Verwende die IP-Adresse des Containers
-
     networks:
-      - traefik_web
+      - network
 
 networks:
   traefik_web:
