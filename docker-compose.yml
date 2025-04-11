@@ -13,8 +13,8 @@ services:
       - 'traefik.http.middlewares.redirect-to-https.redirectscheme.scheme=https'
       - 'traefik.http.services.rieger.loadbalancer.server.port=3000'
     networks:
-      - network
+      - traefik_custom_network
 
 networks:
-  traefik_web:
+  traefik_custom_network:
     external: true
