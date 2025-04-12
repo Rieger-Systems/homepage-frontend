@@ -97,6 +97,85 @@ export const en = {
 			imprint: 'Imprint',
 			privacy: 'Privacy Policy'
 		},
-		copyright: 'All rights reserved.'
+		copyright: 'All rights reserved.',
+		cookies: 'This website uses no cookies. No tracking. No tricks.'
+	},
+	legalPages: {
+		imprint: {
+			title: 'Legal Disclosure',
+			content: `
+	<p><strong>Rieger Systems e.U.</strong><br />
+	Owner: Tobias Rieger<br />
+	Software &amp; AI Development</p>
+	
+	<p>Musterstraße 1<br />
+	6020 Innsbruck<br />
+	Austria</p>
+	
+	<p>Phone: <a href="tel:+431231234567">+43 123 1234567</a><br />
+	Email: <a href="mailto:kontakt@rieger-systems.eu">kontakt@rieger-systems.eu</a><br />
+	Website: <a href="https://www.rieger-systems.eu" target="_blank">www.rieger-systems.eu</a></p>
+	
+	<p>Company Registration No.: FN 123456x<br />
+	Commercial Court: Innsbruck<br />
+	VAT ID: ATU12345678<br />
+	Registered Office: Innsbruck, Austria</p>
+	
+	<p>Member of the Innsbruck Chamber of Commerce<br />
+	Industry group: Business Consulting, IT Services</p>
+	
+	<p>Responsible for content under §24 MedienG (Austrian Media Law): Tobias Rieger</p>
+			`
+		},
+		privacy: {
+			title: 'Privacy Policy',
+			content: `
+		<p><strong>We take privacy seriously at Rieger Systems.</strong> This privacy policy explains how we collect and process personal data on this website in accordance with the General Data Protection Regulation (GDPR).</p>
+		
+		<h2>1. Data Controller</h2>
+		<p>Rieger Systems e.U.<br />
+		Owner: Tobias Rieger<br />
+		Musterstraße 1<br />
+		1230 Vienna, Austria<br />
+		Email: <a href="mailto:kontakt@rieger-systems.eu">kontakt@rieger-systems.eu</a></p>
+		
+		<h2>2. Access Data & Hosting</h2>
+		<p>When visiting our website, the following data is automatically collected:</p>
+		<ul>
+			<li>IP address</li>
+			<li>Date and time of request</li>
+			<li>Browser type and version</li>
+			<li>Operating system</li>
+			<li>Referrer URL (if applicable)</li>
+		</ul>
+		<p>This data is processed to ensure the secure and stable operation of the website. Hosting is provided by Hetzner Online GmbH (Germany).</p>
+		
+		<h2>3. Contact</h2>
+		<p>If you contact us via email or form, your data will be processed to handle your request. Legal basis: Art. 6 para. 1 lit. b and f GDPR.</p>
+		
+		<h2>4. Analytics</h2>
+		<p>We do not use cookies or third-party tracking. Optionally, <strong>Plausible Analytics (self-hosted)</strong> may be used to anonymously evaluate website traffic - no cookies, no personal data.</p>
+		
+		<h2>5. Your Rights</h2>
+		<p>You have the right to:</p>
+		<ul>
+			<li>Access (Art. 15 GDPR)</li>
+			<li>Rectification (Art. 16 GDPR)</li>
+			<li>Erasure (Art. 17 GDPR)</li>
+			<li>Restriction of processing (Art. 18 GDPR)</li>
+			<li>Objection (Art. 21 GDPR)</li>
+			<li>Data portability (Art. 20 GDPR)</li>
+		</ul>
+		<p>You can lodge a complaint with the <a href="https://www.dsb.gv.at" target="_blank">Austrian Data Protection Authority</a>.</p>
+		
+		<h2>6. Data Retention</h2>
+		<p>Personal data is stored only as long as necessary for the purposes specified or as required by law.</p>
+		
+		<h2>7. Security</h2>
+		<p>Our website is secured with SSL encryption. All systems are protected with modern security measures such as firewalls and access control.</p>
+		
+		<p><em>Last updated: April 2025</em></p>
+				`
+		}
 	}
 };

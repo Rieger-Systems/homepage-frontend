@@ -54,7 +54,10 @@
 		</nav>
 	</footer>
 
-	<div class="text-base-content/50 mt-4 mb-6 text-center text-xs">
-		© {new Date().getFullYear()} Rieger Systems GmbH · {t.footer.copyright}
+	<div
+		class="text-base-content/50 mt-4 mb-6 flex flex-col items-center justify-center gap-1 text-center text-xs sm:flex-row"
+	>
+		<span>© {new Date().getFullYear()} Rieger Systems e.U. · {t.footer.copyright}</span>
+		<span class="sm:ml-2">🍪 {t.footer.cookies}</span>
 	</div>
 </div>
