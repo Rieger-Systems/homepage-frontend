@@ -6,30 +6,7 @@ export const en = {
 		buttonSecondary: 'Get in touch'
 	},
 	now: {
-		title: "What we're working on",
-		projects: {
-			amaracall: {
-				badge: 'Coming soon',
-				title: 'AmaraCall',
-				desc: "An AI that answers the phone when you can't: AmaraCall takes calls, captures your callers' requests, and creates structured summaries - locally operated, privacy-friendly, and highly adaptable.",
-				button: 'Learn more'
-			},
-			amara: {
-				badge: 'In concept',
-				title: 'A.M.A.R.A.',
-				desc: "Our central AI architecture: A Machine Always Ready to Assist. We're developing the foundation for a human-centered, secure, and explainable AI ecosystem - the heart of all our products."
-			},
-			infrastructure: {
-				badge: 'In progress',
-				title: 'Internal Infrastructure',
-				desc: "We're building our own infrastructure - local, data-sovereign, and scalable. With encrypted communication, local AI models, auditing and monitoring, we create a trustworthy foundation."
-			},
-			amarawell: {
-				badge: 'In concept',
-				title: 'AmaraWell',
-				desc: 'An AI-based system to support mental health - empathetic, privacy-compliant, and medically grounded. Currently in concept phase - focused on ICD-11, personalized AI, and ethical responsibility.'
-			}
-		}
+		title: "What we're working on"
 	},
 	values: {
 		title: 'Our Values & Principles',
@@ -176,6 +153,56 @@ export const en = {
 		
 		<p><em>Last updated: April 2025</em></p>
 				`
+		}
+	},
+	projects: {
+		amaracall: {
+			title: 'AmaraCall',
+			lead: "The AI that answers the phone when you can't.",
+			badge: 'Partner wanted',
+			desc: 'AmaraCall is a privacy-friendly AI call assistant, available as SaaS or on-premise, that handles incoming calls, understands requests, and structures information for your workflow - no matter the industry.',
+			button: 'Learn more',
+			description: `
+		<p><strong>AmaraCall</strong> is an AI-powered call assistant that automatically answers incoming calls, identifies the caller's intent, and structures the captured information - whether it's a callback request, appointment inquiry, or general message.</p>
+		
+		<p>The system is designed to run <strong>locally or as a SaaS solution</strong> - secure, privacy-friendly, and adaptable to any professional context: from clinics and IT providers to studios, offices, or workshops.</p>
+		
+		<p>All data can be processed fully under your control or via secure European infrastructure. AmaraCall fits seamlessly into existing workflows and doesn't aim to replace humans - it supports when no one is available.</p>
+			`,
+			status: {
+				title: 'Current Status',
+				text: `
+		<p>AmaraCall was originally conceptualized in collaboration with an IT telephony company. However, the partner unexpectedly withdrew before the first prototype could be developed.</p>
+		
+		<p>The system design is complete. The architecture is modular and built for <strong>SaaS delivery</strong>, with optional local deployment. The project is currently on hold.</p>
+		
+		<p>We’re now looking for new partners or pilot clients - from any industry - who are ready to bring AmaraCall to life.</p>
+				`
+			},
+			ctaTitle: 'Interested in collaborating?',
+			ctaText:
+				"AmaraCall is built to become a trustworthy, flexible SaaS service. If you'd like to help shape or pilot the system, we'd love to hear from you.",
+			ctaButton: 'Get in touch'
+		},
+		amara: {
+			title: 'A.M.A.R.A.',
+			lead: 'Our central AI platform: A Machine Always Ready to Assist.',
+			badge: 'Concept phase',
+			desc: 'We are building the foundation for a human-centered, secure, and explainable AI ecosystem - the core of all our products.'
+		},
+
+		infrastructure: {
+			title: 'Internal Infrastructure',
+			lead: 'The technical backbone of our AI products.',
+			badge: 'In progress',
+			desc: "We are building our own infrastructure - local, data-sovereign, and scalable. With encrypted communication, local AI models, auditing, and monitoring, we're laying a trustworthy foundation."
+		},
+
+		amarawell: {
+			title: 'AmaraWell',
+			lead: 'An AI-supported system for mental health care.',
+			badge: 'Concept phase',
+			desc: 'Empathetic, privacy-first, and medically grounded. Currently in concept phase - focused on ICD-11, personalized AI, and ethical responsibility.'
 		}
 	}
 };

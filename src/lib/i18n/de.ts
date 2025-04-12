@@ -6,30 +6,7 @@ export const de = {
 		buttonSecondary: 'Kontakt aufnehmen'
 	},
 	now: {
-		title: 'Woran wir gerade arbeiten',
-		projects: {
-			amaracall: {
-				badge: 'Demnächst',
-				title: 'AmaraCall',
-				desc: 'Eine KI, die ans Telefon geht, wenn du gerade nicht kannst: AmaraCall nimmt Anrufe entgegen, erfasst die Anliegen deiner Anrufer:innen und erstellt strukturierte Zusammenfassungen - lokal betrieben, datenschutzkonform und vielseitig einsetzbar.',
-				button: 'Mehr erfahren'
-			},
-			amara: {
-				badge: 'Konzeptphase',
-				title: 'A.M.A.R.A.',
-				desc: 'Unsere zentrale KI-Architektur: A Machine Always Ready to Assist. Wir entwickeln die Grundlagen für ein menschenzentriertes, sicheres und erklärbares KI-Ökosystem - als Herzstück all unserer Produkte.'
-			},
-			infrastructure: {
-				badge: 'In Arbeit',
-				title: 'Interne Infrastruktur',
-				desc: 'Wir bauen unsere eigene Infrastruktur auf - lokal, datensouverän und skalierbar. Mit verschlüsselter Kommunikation, lokalen KI-Modellen, Auditing und Monitoring schaffen wir ein vertrauenswürdiges Fundament.'
-			},
-			amarawell: {
-				badge: 'Konzeptphase',
-				title: 'AmaraWell',
-				desc: 'Ein KI-gestütztes System zur Begleitung psychischer Gesundheit - empathisch, datenschutzkonform und medizinisch fundiert. Derzeit in Konzeption - mit Fokus auf ICD-11, personalisierter KI und ethischer Verantwortung.'
-			}
-		}
+		title: 'Woran wir gerade arbeiten'
 	},
 	values: {
 		title: 'Unsere Werte & Haltung',
@@ -176,6 +153,56 @@ Fachgruppe: Unternehmensberatung, IT-Dienstleistungen</p>
 	
 	<p><em>Letzte Aktualisierung: April 2025</em></p>
 			`
+		}
+	},
+	projects: {
+		amaracall: {
+			title: 'AmaraCall',
+			lead: 'Die KI, die ans Telefon geht, wenn du nicht kannst.',
+			badge: 'Partner gesucht',
+			desc: 'AmaraCall ist ein universeller, lokal oder als SaaS betreibbarer KI-Anrufassistent, der eingehende Gespräche entgegennimmt, Anliegen intelligent verarbeitet und strukturiert weiterleitet - für jede Branche, datenschutzkonform und flexibel.',
+			button: 'Mehr erfahren',
+			description: `
+		<p><strong>AmaraCall</strong> ist ein KI-gestützter Anrufassistent, der automatisch Gespräche entgegennimmt, Anliegen erkennt und strukturiert aufbereitet - ganz gleich ob es sich um Terminwünsche, Rückrufe oder einfache Informationen handelt.</p>
+		
+		<p>Das System lässt sich lokal betreiben oder als <strong>SaaS-Lösung</strong> nutzen - flexibel, datenschutzfreundlich und anpassbar an verschiedenste Branchen: von Arztpraxis über IT-Dienstleister bis hin zur Werkstatt oder Agentur.</p>
+		
+		<p>Alle Datenverarbeitung erfolgt wahlweise vollständig unter eigener Kontrolle oder über eine sichere, europäische Infrastruktur. AmaraCall passt sich nahtlos an bestehende Abläufe an und ersetzt keine Menschen - es hilft, wo niemand da ist.</p>
+			`,
+			status: {
+				title: 'Aktueller Stand',
+				text: `
+		<p>AmaraCall entstand ursprünglich in Zusammenarbeit mit einem IT-Telefonie-Unternehmen. Diese Kooperation wurde jedoch unerwartet beendet, noch bevor ein erster Prototyp realisiert werden konnte.</p>
+		
+		<p>Die Planung des Systems ist abgeschlossen. Die Architektur ist auf eine modulare, skalierbare <strong>SaaS-Struktur</strong> ausgelegt, die auch einen lokalen Betrieb erlaubt. Das Projekt befindet sich derzeit in Wartestellung.</p>
+		
+		<p>Wir suchen neue Partner:innen oder Pilotkunden - aus jeder Branche - um AmaraCall gemeinsam produktionsreif zu machen.</p>
+				`
+			},
+			ctaTitle: 'Interesse an einer Zusammenarbeit?',
+			ctaText:
+				'AmaraCall soll ein flexibler, vertrauenswürdiger SaaS-Service werden. Wenn Sie sich als Pilotpartner oder Entwicklungspartner engagieren möchten, freuen wir uns auf Ihre Nachricht.',
+			ctaButton: 'Jetzt Kontakt aufnehmen'
+		},
+		amara: {
+			title: 'A.M.A.R.A.',
+			lead: 'Unsere zentrale KI-Plattform: A Machine Always Ready to Assist.',
+			badge: 'Konzeptphase',
+			desc: 'Wir entwickeln die Grundlagen für ein menschenzentriertes, sicheres und erklärbares KI-Ökosystem - als Herzstück all unserer Produkte.'
+		},
+
+		infrastructure: {
+			title: 'Interne Infrastruktur',
+			lead: 'Das technische Fundament für unsere KI-Produkte.',
+			badge: 'In Arbeit',
+			desc: 'Wir bauen unsere eigene Infrastruktur - lokal, datensouverän und skalierbar. Mit verschlüsselter Kommunikation, lokalen KI-Modellen, Auditing und Monitoring schaffen wir ein vertrauenswürdiges Fundament.'
+		},
+
+		amarawell: {
+			title: 'AmaraWell',
+			lead: 'Ein KI-gestütztes System zur Begleitung psychischer Gesundheit.',
+			badge: 'Konzeptphase',
+			desc: 'Empathisch, datenschutzkonform und medizinisch fundiert. Derzeit in Konzeption - mit Fokus auf ICD-11, personalisierter KI und ethischer Verantwortung.'
 		}
 	}
 };
