@@ -3,7 +3,7 @@
 </script>
 
 <Header />
-<!-- Sauberer Layout Wrapper -->
-<main class="h-screen snap-y snap-mandatory overflow-y-scroll scroll-smooth">
+
+<main class="h-screen overflow-y-scroll scroll-smooth md:snap-y md:snap-mandatory">
 	<slot />
 </main>
