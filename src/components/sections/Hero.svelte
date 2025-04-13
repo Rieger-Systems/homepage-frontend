@@ -16,7 +16,7 @@
 			<h1 class="mb-6 text-5xl leading-tight font-bold md:text-6xl">{t.hero.title}</h1>
 			<p class="text-base-content/80 mb-10 text-lg md:text-xl">{t.hero.sub}</p>
 			<div class="flex flex-wrap justify-center gap-4">
-				<a href="#webuild" class="btn btn-primary btn-lg transition-all duration-200"
+				<a href="#webuild" class="btn btn-secondary btn-lg transition-all duration-200"
 					>{t.hero.buttonPrimary}</a
 				>
 				<a href="#contact" class="btn btn-outline btn-lg transition-all duration-200"
