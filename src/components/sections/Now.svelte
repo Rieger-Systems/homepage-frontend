@@ -32,7 +32,7 @@
 						<h3 class="mb-2 text-xl font-semibold">{project.title}</h3>
 						<p class="text-base-content/80 mb-4">{project.desc}</p>
 						{#if 'button' in project && project.button}
-							<a href="/{project.slug}" class="btn btn-sm btn-primary">{project.button}</a>
+							<a href="/projects/{project.slug}" class="btn btn-sm btn-primary">{project.button}</a>
 						{/if}
 					</div>
 				{/each}
