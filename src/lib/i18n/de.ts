@@ -1,57 +1,57 @@
 export const de = {
 	hero: {
-		title: 'Die Zukunft intelligenter gestalten',
-		sub: 'Bei Rieger Systems verbinden wir Innovation und Menschlichkeit, um KI- und Software-Lösungen zu entwickeln, denen du wirklich vertrauen kannst.',
+		title: 'Die Zukunft intelligent gestalten',
+		sub: 'Bei Rieger Systems vereinen wir Innovation und Menschlichkeit, um KI- und Softwarelösungen zu entwickeln, denen du wirklich vertrauen kannst.',
 		buttonPrimary: 'Mehr erfahren',
 		buttonSecondary: 'Kontakt aufnehmen'
 	},
 	now: {
-		title: 'Woran wir gerade arbeiten'
+		title: 'Unsere aktuellen Projekte'
 	},
 	values: {
 		title: 'Unsere Werte & Haltung',
-		lead: 'Rieger Systems steht für technologische Verantwortung. Unsere Mission ist es, KI und Software zu entwickeln, die Menschen stärkt, Entscheidungen erleichtert und Systeme stabiler macht - ohne Aufmerksamkeit zu fordern, ohne zu manipulieren.',
+		lead: 'Bei Rieger Systems steht technologische Verantwortung im Mittelpunkt. Unser Ziel ist es, KI- und Softwarelösungen zu schaffen, die Menschen stärken, Entscheidungen vereinfachen und Systeme nachhaltiger machen – ohne unnötig in den Vordergrund zu treten oder zu manipulieren.',
 		closing:
-			'Wir glauben an Klarheit, Würde und Kontrolle. Wir bauen Systeme, denen man vertrauen kann - und die Vertrauen verdienen.',
+			'Wir stehen für Transparenz, Respekt und Selbstbestimmung. Wir entwickeln Systeme, denen man vertrauen kann – und die dieses Vertrauen auch verdienen.',
 		items: [
 			{
 				icon: 'shield',
 				title: 'Datenschutz by Design',
-				text: 'Unsere Systeme verarbeiten personenbezogene Daten nur, wenn es absolut nötig ist - verschlüsselt, lokal und nachvollziehbar.'
+				text: 'Unsere Systeme verarbeiten personenbezogene Daten ausschließlich dann, wenn es zwingend erforderlich ist – dabei gewährleisten wir Verschlüsselung, lokale Speicherung und vollständige Nachvollziehbarkeit.'
 			},
 			{
 				icon: 'server',
 				title: 'Kontrollierbare Architektur',
-				text: 'Klare Strukturen, modulare Systeme, revisionsfähig - vollständig unter Ihrer Kontrolle, auch On-Premise möglich.'
+				text: 'Klare Strukturen, modulare Systeme und revisionssichere Lösungen – stets in vollständiger Kontrolle, auch als On-Premise-Lösung erhältlich.'
 			},
 			{
 				icon: 'scale',
 				title: 'Europäische Ethik',
-				text: 'Menschlich, gesetzeskonform und zukunftsfähig - wir handeln nach Prinzipien, nicht nach Opportunitäten.'
+				text: 'Menschlich, rechtskonform und zukunftsorientiert – wir handeln nach festen Prinzipien und nicht nach kurzfristigen Opportunitäten.'
 			}
 		]
 	},
 	webuild: {
-		title: 'Was wir bauen',
+		title: 'Was wir entwickeln',
 		intro:
-			'Wir entwickeln Systeme, die mitdenken - und mitfühlen. Ob ethische KI, erklärbare Automatisierung oder digitale Werkzeuge mit klarer Verantwortung: Wir denken mit - und darüber hinaus.',
-		desc: 'Rieger Systems entwickelt maßgeschneiderte Software und KI-Lösungen - ganzheitlich, menschenzentriert und verantwortungsvoll. Ob Proof-of-Concept, internes Werkzeug oder öffentliches System: Unsere Entwicklungen passen sich Ihren Werten an. Gerne auch als White-Label oder On-Premise.',
+			'Wir schaffen Systeme, die nicht nur mitdenken, sondern auch Empathie zeigen. Ob ethische KI, transparente Automatisierung oder digitale Werkzeuge mit klarer Verantwortung – wir gestalten Lösungen, die über den Tellerrand hinausgehen.',
+		desc: 'Rieger Systems kreiert maßgeschneiderte Software- und KI-Lösungen – ganzheitlich, menschenzentriert und verantwortungsvoll. Ob als Proof-of-Concept, internes Tool oder öffentlich zugängliches System: Unsere Entwicklungen richten sich nach Ihren Werten und Bedürfnissen, gern auch als White-Label- oder On-Premise-Lösung.',
 		button: 'Projekt anfragen',
 		ai: {
 			subline: 'Unsere KI-Plattform',
 			title: 'A.M.A.R.A',
-			text: 'A Machine Always Ready to Assist - unsere menschenzentrierte KI-Architektur. Lokal betreibbar, tief integriert, verantwortungsvoll und bereit, Gutes zu bewirken.'
+			text: 'A Machine Always Ready to Assist – unsere menschenzentrierte KI-Architektur. Lokal betreibbar, tief integriert, verantwortungsvoll und bereit, positive Impulse zu setzen.'
 		}
 	},
 	contact: {
 		title: 'Kontakt aufnehmen',
-		text: 'Sie möchten mit uns sprechen oder ein Projekt anfragen? Schreiben Sie uns einfach per E-Mail - gerne direkt an',
+		text: 'Möchten Sie mit uns sprechen oder ein Projekt besprechen? Schreiben Sie uns einfach eine E-Mail – direkt an',
 		button: 'E-Mail schreiben'
 	},
 	footer: {
 		company: {
 			title: 'Rieger Systems GmbH',
-			desc: 'Technologie, die Verantwortung trägt.',
+			desc: 'Technologie mit Verantwortung.',
 			tagline: 'Made in Europe.'
 		},
 		values: {
@@ -75,7 +75,8 @@ export const de = {
 			privacy: 'Datenschutzerklärung'
 		},
 		copyright: 'Alle Rechte vorbehalten.',
-		cookies: 'Diese Website verwendet keine Cookies. Kein Tracking. Keine Tricks.'
+		cookies:
+			'Diese Website verwendet keine Cookies – kein Tracking, keine unerwünschte Datensammlung.'
 	},
 	legalPages: {
 		imprint: {

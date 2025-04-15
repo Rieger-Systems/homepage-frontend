@@ -14,20 +14,26 @@
 	let controls: OrbitControls;
 	let animationFrameId: number;
 
+	/**
+	 * Initialisiert die Szene, Kamera, Renderer, Controls sowie Partikel und Linien.
+	 */
 	function init() {
+		// Erzeuge Szene und lege Hintergrund fest
 		scene = new THREE.Scene();
 
 		const width = canvasContainer.offsetWidth;
 		const height = canvasContainer.offsetHeight;
 
+		// Kamera einrichten
 		camera = new THREE.PerspectiveCamera(75, width / height, 0.1, 1000);
 		camera.position.z = 30;
 
+		// Renderer konfigurieren
 		renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
 		renderer.setSize(width, height);
 		canvasContainer.appendChild(renderer.domElement);
 
-		// OrbitControls
+		// OrbitControls konfigurieren
 		controls = new OrbitControls(camera, renderer.domElement);
 		controls.enableZoom = true;
 		controls.enablePan = false;
@@ -36,8 +42,10 @@
 		controls.autoRotate = true;
 		controls.autoRotateSpeed = 1.5;
 
+		// Event-Listener für Fenstergröße
 		window.addEventListener('resize', onWindowResize);
 
+		// Partikelerzeugung
 		const particleCount = 120;
 		const positions = new Float32Array(particleCount * 3);
 		for (let i = 0; i < particleCount; i++) {
@@ -49,10 +57,10 @@
 			positions[i * 3 + 2] = radius * Math.cos(phi);
 		}
 
-		const geometry = new THREE.BufferGeometry();
-		geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+		const particleGeometry = new THREE.BufferGeometry();
+		particleGeometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
 
-		const material = new THREE.PointsMaterial({
+		const particleMaterial = new THREE.PointsMaterial({
 			color: new THREE.Color(0xffd700),
 			size: 0.6,
 			transparent: true,
@@ -62,14 +70,14 @@
 			blending: THREE.AdditiveBlending
 		});
 
-		points = new THREE.Points(geometry, material);
+		points = new THREE.Points(particleGeometry, particleMaterial);
 		scene.add(points);
 
-		const lineGeometry = new THREE.BufferGeometry();
-		const linePositions = [];
-
+		// Linien zwischen Partikeln erzeugen
+		const linePositions: number[] = [];
 		for (let i = 0; i < particleCount; i++) {
 			for (let j = i + 1; j < particleCount; j++) {
+				// Zufällige Verbindung: ca. 3,5 % der möglichen Kombinationen
 				if (Math.random() < 0.035) {
 					linePositions.push(
 						positions[i * 3],
@@ -83,7 +91,9 @@
 			}
 		}
 
+		const lineGeometry = new THREE.BufferGeometry();
 		lineGeometry.setAttribute('position', new THREE.Float32BufferAttribute(linePositions, 3));
+
 		const lineMaterial = new THREE.LineBasicMaterial({
 			color: 0xffd700,
 			opacity: 0.15,
@@ -93,15 +103,22 @@
 		lines = new THREE.LineSegments(lineGeometry, lineMaterial);
 		scene.add(lines);
 
+		// Starten der Animationsschleife
 		animate();
 	}
 
+	/**
+	 * Animationsschleife
+	 */
 	function animate() {
 		animationFrameId = requestAnimationFrame(animate);
-		controls.update();
+		controls.update(); // sorgt für dämpfende Steuerung und Auto-Rotation
 		renderer.render(scene, camera);
 	}
 
+	/**
+	 * Passt die Kamera- und Renderer-Größe beim Ändern der Fenstergröße an.
+	 */
 	function onWindowResize() {
 		const width = canvasContainer.offsetWidth;
 		const height = canvasContainer.offsetHeight;
@@ -120,12 +137,14 @@
 		if (browser) {
 			cancelAnimationFrame(animationFrameId);
 			window.removeEventListener('resize', onWindowResize);
+			// Renderer, Controls und eventuell benutzte Geometrien/Materialien freigeben
 			renderer.dispose();
 			controls.dispose();
 		}
 	});
 </script>
 
+<!-- Container für die 3D-Visualisierung -->
 <div bind:this={canvasContainer} class="h-full w-full"></div>
 
 <style>

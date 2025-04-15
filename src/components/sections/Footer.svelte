@@ -13,7 +13,10 @@
 	>
 		<!-- Logo & Statement -->
 		<aside>
-			<img src="/short-logo.jpg" alt="Rieger Logo" class="mb-2 w-36 rounded-2xl" />
+			<a href="/" aria-label="Startseite">
+				<img src="/short-logo.jpg" alt="Rieger Logo" class="mb-2 w-36 rounded-2xl" />
+			</a>
+
 			<p>
 				<strong class="text-lg">{t.footer.company.title}</strong><br />
 				{t.footer.company.desc}<br />

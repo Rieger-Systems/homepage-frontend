@@ -4,6 +4,7 @@
 	import { en } from '$lib/i18n/en';
 	import FadeInOnScroll from '$lib/components/FadeInOnScroll.svelte';
 
+	// Reaktives Übersetzungsobjekt basierend auf der aktuellen Locale
 	$: t = $locale === 'en' ? en : de;
 </script>
 
@@ -11,23 +12,36 @@
 	id="hero"
 	class="bg-base-100 text-base-content relative flex min-h-screen snap-start flex-col items-center justify-center px-6"
 >
-	<FadeInOnScroll>
+	<!-- Hero-Inhalt mit einmaliger Animation -->
+	<FadeInOnScroll once>
 		<div class="z-10 max-w-4xl text-center">
-			<h1 class="mb-6 text-5xl leading-tight font-bold md:text-6xl">{t.hero.title}</h1>
-			<p class="text-base-content/80 mb-10 text-lg md:text-xl">{t.hero.sub}</p>
+			<h1 class="mb-6 text-5xl leading-tight font-bold md:text-6xl">
+				{t.hero.title}
+			</h1>
+			<p class="text-base-content/80 mb-10 text-lg md:text-xl">
+				{t.hero.sub}
+			</p>
 			<div class="flex flex-wrap justify-center gap-4">
-				<a href="#webuild" class="btn btn-primary btn-lg transition-all duration-200"
-					>{t.hero.buttonPrimary}</a
+				<a
+					href="#webuild"
+					class="btn btn-primary btn-lg transition-all duration-200"
+					aria-label={t.hero.buttonPrimary}
 				>
-				<a href="#contact" class="btn btn-outline btn-lg transition-all duration-200"
-					>{t.hero.buttonSecondary}</a
+					{t.hero.buttonPrimary}
+				</a>
+				<a
+					href="#contact"
+					class="btn btn-outline btn-lg transition-all duration-200"
+					aria-label={t.hero.buttonSecondary}
 				>
+					{t.hero.buttonSecondary}
+				</a>
 			</div>
 		</div>
 	</FadeInOnScroll>
 
-	<!-- Scroll Hinweis -->
-	<div class="absolute right-0 bottom-6 left-0 flex justify-center">
+	<!-- Scroll-Hinweis: Visuelles Element, daher aria-hidden -->
+	<div class="absolute right-0 bottom-6 left-0 flex justify-center" aria-hidden="true">
 		<div class="text-base-content/40 animate-bounce">
 			<svg
 				xmlns="http://www.w3.org/2000/svg"

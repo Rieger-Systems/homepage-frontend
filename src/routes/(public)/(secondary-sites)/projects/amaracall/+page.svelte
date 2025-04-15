@@ -4,6 +4,7 @@
 	import { en } from '$lib/i18n/en';
 	import { Mail } from 'lucide-svelte';
 
+	// Reaktive Übersetzung
 	$: t = $locale === 'en' ? en : de;
 	$: project = t.projects.amaracall;
 </script>
@@ -15,15 +16,16 @@
 
 <section class="prose prose-lg prose-neutral mx-auto max-w-3xl px-6 py-16">
 	<!-- Titel & Badge -->
-	<h1 class="mb-2 text-4xl font-bold text-balance">{project.title}</h1>
-
-	{#if project.badge}
-		<span
-			class="badge badge-outline badge-primary mb-4 inline-block text-xs tracking-wide uppercase"
-		>
-			{project.badge}
-		</span>
-	{/if}
+	<header>
+		<h1 class="mb-2 text-4xl font-bold text-balance">{project.title}</h1>
+		{#if project.badge}
+			<span
+				class="badge badge-outline badge-primary mb-4 inline-block text-xs tracking-wide uppercase"
+			>
+				{project.badge}
+			</span>
+		{/if}
+	</header>
 
 	<!-- Lead -->
 	{#if project.lead}
@@ -35,34 +37,38 @@
 	{/if}
 
 	<!-- Hauptbeschreibung -->
-	<div class="mt-8 space-y-5">
+	<article class="mt-8 space-y-5">
 		{@html project.description}
-	</div>
+	</article>
 
 	<!-- Status -->
 	{#if project.status}
-		<div class="border-primary mt-14 border-l-4 pl-4">
+		<aside class="border-primary mt-14 border-l-4 pl-4">
 			<h2 class="text-xl font-semibold">{project.status.title}</h2>
 			<div class="text-base-content/80 mt-2 space-y-4">
 				{@html project.status.text}
 			</div>
-		</div>
+		</aside>
 	{/if}
 
-	<!-- CTA -->
+	<!-- Call-to-Action -->
 	<div class="bg-primary/5 border-primary mt-16 rounded-xl border p-6">
 		<h3 class="text-primary text-lg font-semibold">{project.ctaTitle}</h3>
 		<p class="text-base-content/80 mb-4">{project.ctaText}</p>
 		<a
 			href="mailto:kontakt@rieger-systems.eu?subject=Kooperationsanfrage%20AmaraCall"
 			class="btn btn-primary"
+			aria-label="Send email regarding AmaraCall cooperation inquiry"
 		>
 			<Mail class="mr-2 h-4 w-4" />
 			{project.ctaButton}
 		</a>
 	</div>
 
-	<a href="/#now" class="btn btn-outline mt-10">
-		{$locale === 'en' ? '← Back to overview' : '← Zurück zur Übersicht'}
-	</a>
+	<!-- Rücksprung zur Übersicht -->
+	<div class="mt-10">
+		<a href="/" class="btn btn-outline">
+			{$locale === 'en' ? '← Back to Homepage' : '← Zurück zur Startseite'}
+		</a>
+	</div>
 </section>

@@ -1,73 +1,73 @@
 export const en = {
 	hero: {
-		title: 'Shaping the Future of Intelligence',
-		sub: 'At Rieger Systems, we unite innovation and humanity to create AI and Software solutions you can truly trust.',
-		buttonPrimary: 'Learn more',
-		buttonSecondary: 'Get in touch'
+		title: 'Shaping the Future Intelligently',
+		sub: 'At Rieger Systems, we combine innovation and humanity to develop AI and software solutions you can truly trust.',
+		buttonPrimary: 'Learn More',
+		buttonSecondary: 'Get in Touch'
 	},
 	now: {
-		title: "What we're working on"
+		title: 'Our Current Projects'
 	},
 	values: {
-		title: 'Our Values & Principles',
-		lead: 'Rieger Systems stands for technological responsibility. Our mission is to develop AI and software that empowers people, facilitates decisions, and strengthens systems - without demanding attention or manipulating users.',
+		title: 'Our Values & Philosophy',
+		lead: 'At Rieger Systems, technological responsibility is at the heart of everything we do. Our goal is to create AI and software solutions that empower people, simplify decision-making, and build more sustainable systems – without seeking undue attention or manipulation.',
 		closing:
-			'We believe in clarity, dignity, and control. We build systems that can be trusted - and that earn that trust.',
+			'We stand for transparency, respect, and autonomy. We develop systems you can trust – and that earn that trust.',
 		items: [
 			{
 				icon: 'shield',
-				title: 'Privacy by Design',
-				text: 'Our systems process personal data only when absolutely necessary - encrypted, local, and fully transparent.'
+				title: 'Data Protection by Design',
+				text: 'Our systems process personal data only when absolutely necessary – ensuring encryption, local storage, and full traceability.'
 			},
 			{
 				icon: 'server',
 				title: 'Controllable Architecture',
-				text: 'Clear structures, modular systems, fully revisionable - always under your control, including on-premise deployments.'
+				text: 'Clear structures, modular systems, and auditable solutions – always under your complete control, with on-premise options available.'
 			},
 			{
 				icon: 'scale',
 				title: 'European Ethics',
-				text: 'Human-centered, legally compliant, and future-proof - we act on principle, not on convenience.'
+				text: 'Human-centered, legally compliant, and future-oriented – we act according to steadfast principles rather than short-term opportunities.'
 			}
 		]
 	},
 	webuild: {
-		title: 'What we build',
+		title: 'What We Develop',
 		intro:
-			'We develop systems that think - and feel. Whether ethical AI, explainable automation, or digital tools built with responsibility: We think forward - and further.',
-		desc: 'Rieger Systems develops custom software and AI solutions - holistic, human-centered, and responsible. From proof-of-concept to public systems: tailored to your values. Also available as white-label or on-premise.',
-		button: 'Request a project',
+			'We create systems that not only think along but also show empathy. Whether it’s ethical AI, transparent automation, or digital tools with clear accountability – we design solutions that go beyond the status quo.',
+		desc: 'Rieger Systems creates tailor-made software and AI solutions that are holistic, human-centric, and responsible. Whether as a proof-of-concept, an internal tool, or a publicly accessible system, our developments align with your values and needs – also available as a white-label or on-premise solution.',
+		button: 'Request a Project',
 		ai: {
-			subline: 'Our AI platform',
+			subline: 'Our AI Platform',
 			title: 'A.M.A.R.A',
-			text: 'A Machine Always Ready to Assist - our human-centered AI architecture. Locally deployable, deeply integrated, responsible, and ready to do good.'
+			text: 'A Machine Always Ready to Assist – our human-centric AI architecture. Locally deployable, deeply integrated, responsible, and ready to create positive impact.'
 		}
 	},
 	contact: {
-		title: 'Get in touch',
-		text: 'Would you like to talk to us or request a project? Just write us an email - preferably directly to',
-		button: 'Send email'
+		title: 'Get in Touch',
+		text: 'Would you like to speak with us or discuss a project? Simply send us an email – directly to',
+		button: 'Send Email'
 	},
 	footer: {
 		company: {
 			title: 'Rieger Systems GmbH',
-			desc: 'Technology with responsibility.',
+			desc: 'Technology with Responsibility.',
 			tagline: 'Made in Europe.'
 		},
 		values: {
-			title: 'What we stand for',
+			title: 'What We Stand For',
 			items: [
-				'Privacy & Transparency',
-				'Human-centered systems',
-				'European responsibility',
-				'Technological excellence'
+				'Data Protection & Transparency',
+				'Human-Centric Systems',
+				'European Accountability',
+				'Technological Excellence'
 			]
 		},
 		contact: {
 			title: 'Contact',
 			email: 'kontakt@rieger-systems.eu',
 			location: 'Based in Europe',
-			dsgvo: 'GDPR compliant'
+			dsgvo: 'GDPR Compliant'
 		},
 		legal: {
 			title: 'Legal',
@@ -75,7 +75,7 @@ export const en = {
 			privacy: 'Privacy Policy'
 		},
 		copyright: 'All rights reserved.',
-		cookies: 'This website uses no cookies. No tracking. No tricks.'
+		cookies: 'This website uses no cookies – no tracking, no unwanted data collection.'
 	},
 	legalPages: {
 		imprint: {
@@ -176,7 +176,7 @@ export const en = {
 		
 		<p>The system design is complete. The architecture is modular and built for <strong>SaaS delivery</strong>, with optional local deployment. The project is currently on hold.</p>
 		
-		<p>We’re now looking for new partners or pilot clients - from any industry - who are ready to bring AmaraCall to life.</p>
+		<p>We're now looking for new partners or pilot clients - from any industry - who are ready to bring AmaraCall to life.</p>
 				`
 			},
 			ctaTitle: 'Interested in collaborating?',
