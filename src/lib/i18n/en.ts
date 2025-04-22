@@ -160,6 +160,7 @@ export const en = {
 			title: 'AmaraCall',
 			lead: "The AI that answers the phone when you can't.",
 			badge: 'Partner wanted',
+			badgeSlug: 'partner-wanted',
 			desc: 'AmaraCall is a privacy-friendly AI call assistant, available as SaaS or on-premise, that handles incoming calls, understands requests, and structures information for your workflow - no matter the industry.',
 			button: 'Learn more',
 			description: `
@@ -188,6 +189,7 @@ export const en = {
 			title: 'A.M.A.R.A.',
 			lead: 'Our central AI platform: A Machine Always Ready to Assist.',
 			badge: 'Concept phase',
+			badgeSlug: 'concept',
 			desc: 'We are building the foundation for a human-centered, secure, and explainable AI ecosystem - the core of all our products.'
 		},
 
@@ -195,6 +197,7 @@ export const en = {
 			title: 'Internal Infrastructure',
 			lead: 'The technical backbone of our AI products.',
 			badge: 'In progress',
+			badgeSlug: 'in-progress',
 			desc: "We are building our own infrastructure - local, data-sovereign, and scalable. With encrypted communication, local AI models, auditing, and monitoring, we're laying a trustworthy foundation."
 		},
 
@@ -202,6 +205,7 @@ export const en = {
 			title: 'AmaraWell',
 			lead: 'An AI-supported system for mental health care.',
 			badge: 'Concept phase',
+			badgeSlug: 'concept',
 			desc: 'Empathetic, privacy-first, and medically grounded. Currently in concept phase - focused on ICD-11, personalized AI, and ethical responsibility.'
 		}
 	}

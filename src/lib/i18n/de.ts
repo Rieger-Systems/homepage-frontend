@@ -161,6 +161,7 @@ Fachgruppe: Unternehmensberatung, IT-Dienstleistungen</p>
 			title: 'AmaraCall',
 			lead: 'Die KI, die ans Telefon geht, wenn du nicht kannst.',
 			badge: 'Partner gesucht',
+			badgeSlug: 'partner-wanted',
 			desc: 'AmaraCall ist ein universeller, lokal oder als SaaS betreibbarer KI-Anrufassistent, der eingehende Gespräche entgegennimmt, Anliegen intelligent verarbeitet und strukturiert weiterleitet - für jede Branche, datenschutzkonform und flexibel.',
 			button: 'Mehr erfahren',
 			description: `
@@ -189,6 +190,7 @@ Fachgruppe: Unternehmensberatung, IT-Dienstleistungen</p>
 			title: 'A.M.A.R.A.',
 			lead: 'Unsere zentrale KI-Plattform: A Machine Always Ready to Assist.',
 			badge: 'Konzeptphase',
+			badgeSlug: 'concept',
 			desc: 'Wir entwickeln die Grundlagen für ein menschenzentriertes, sicheres und erklärbares KI-Ökosystem - als Herzstück all unserer Produkte.'
 		},
 
@@ -196,6 +198,7 @@ Fachgruppe: Unternehmensberatung, IT-Dienstleistungen</p>
 			title: 'Interne Infrastruktur',
 			lead: 'Das technische Fundament für unsere KI-Produkte.',
 			badge: 'In Arbeit',
+			badgeSlug: 'in-progress',
 			desc: 'Wir bauen unsere eigene Infrastruktur - lokal, datensouverän und skalierbar. Mit verschlüsselter Kommunikation, lokalen KI-Modellen, Auditing und Monitoring schaffen wir ein vertrauenswürdiges Fundament.'
 		},
 
@@ -203,6 +206,7 @@ Fachgruppe: Unternehmensberatung, IT-Dienstleistungen</p>
 			title: 'AmaraWell',
 			lead: 'Ein KI-gestütztes System zur Begleitung psychischer Gesundheit.',
 			badge: 'Konzeptphase',
+			badgeSlug: 'concept',
 			desc: 'Empathisch, datenschutzkonform und medizinisch fundiert. Derzeit in Konzeption - mit Fokus auf ICD-11, personalisierter KI und ethischer Verantwortung.'
 		}
 	}

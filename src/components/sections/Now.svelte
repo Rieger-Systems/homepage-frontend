@@ -10,6 +10,7 @@
 		badge?: string;
 		button?: string;
 		slug: string;
+		badgeSlug: string;
 	}
 
 	$: t = $locale === 'en' ? en : de;
@@ -20,6 +21,26 @@
 			slug
 		})
 	);
+	export function getBadgeStyle(slug: string): string {
+		const normalized = slug.toLowerCase().trim();
+
+		const map: Record<string, string> = {
+			// Deine aktuellen Projekte
+			'partner-wanted': 'badge-info',
+			concept: 'badge-accent',
+			'in-progress': 'badge-warning',
+
+			// Zusätzlich nützliche Slugs für spätere Projekte
+			alpha: 'badge-secondary',
+			beta: 'badge-primary',
+			released: 'badge-success',
+			legacy: 'badge-error',
+			'on-hold': 'badge-ghost',
+			experimental: 'badge-outline'
+		};
+
+		return map[normalized] ?? 'badge-outline';
+	}
 </script>
 
 <section
@@ -28,41 +49,44 @@
 >
 	<div class="mx-auto w-full max-w-7xl">
 		<FadeInOnScroll once>
-			<h2 class="mb-16 text-center text-4xl font-bold tracking-tight sm:text-5xl">
+			<h2 class="mb-20 text-center text-4xl font-bold tracking-tight sm:text-5xl">
 				{t.now.title}
 			</h2>
 
-			<div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+			<div class="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
 				{#each projects as project (project.slug)}
-					<div
-						class="group bg-base-200 hover:bg-primary/5 relative rounded-2xl shadow-md transition-all duration-300 hover:shadow-lg"
+					<article
+						class="group bg-base-200 ring-base-300/30 hover:bg-base-300 relative flex flex-col justify-between rounded-2xl p-6 shadow-md ring-1 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
 					>
-						<div class="p-6">
-							{#if project.badge}
-								<span
-									class="badge badge-sm badge-outline mb-3 text-xs font-semibold tracking-wider"
-									aria-label="Badge"
-								>
-									{project.badge}
-								</span>
-							{/if}
+						<!-- Badge oben rechts -->
+						{#if project.badge}
+							<span
+								class={`badge badge-sm absolute top-4 right-4 font-medium tracking-wide ${getBadgeStyle(project.badgeSlug)}`}
+								aria-label="Status-Badge"
+							>
+								{project.badge}
+							</span>
+						{/if}
 
-							<h3 class="mb-2 text-lg leading-tight font-semibold">{project.title}</h3>
+						<div class="flex-1">
+							<h3
+								class="group-hover:text-primary mb-2 text-lg leading-snug font-semibold transition-colors duration-200 group-hover:underline"
+							>
+								{project.title}
+							</h3>
 							<p class="text-base-content/70 text-sm leading-relaxed">{project.desc}</p>
 						</div>
 
 						{#if project.button}
-							<div class="p-6 pt-0">
-								<a
-									href={`/projects/${project.slug}`}
-									class="btn btn-sm btn-primary self-start opacity-80 transition-opacity duration-200 group-hover:scale-105 group-hover:opacity-100"
-									aria-label={`Zum Projekt ${project.title}`}
-								>
-									{project.button}
-								</a>
-							</div>
+							<a
+								href={`/projects/${project.slug}`}
+								class="btn btn-sm btn-primary mt-6 w-fit opacity-90 transition-all duration-200 group-hover:scale-105 group-hover:opacity-100"
+								aria-label={`Zum Projekt ${project.title}`}
+							>
+								{project.button}
+							</a>
 						{/if}
-					</div>
+					</article>
 				{/each}
 			</div>
 		</FadeInOnScroll>
