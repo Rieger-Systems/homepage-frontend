@@ -3,7 +3,7 @@
 	import { de } from '$lib/i18n/de';
 	import { en } from '$lib/i18n/en';
 	import FadeInOnScroll from '$lib/components/FadeInOnScroll.svelte';
-	import AiVisualization from '../threejs/AiVisualization.svelte';
+	import AiVisualization from '../../lib/components/threejs/AiVisualization.svelte';
 
 	// Reaktives Übersetzungsobjekt basierend auf der aktuellen Locale
 	$: t = $locale === 'en' ? en : de;
@@ -15,8 +15,7 @@
 >
 	<FadeInOnScroll once>
 		<div class="mx-auto grid max-w-6xl grid-cols-1 items-center gap-16 md:grid-cols-2">
-			<!-- Textblock -->
-			<div class="bg-base-100 rounded-2xl p-10 shadow-xl">
+			<div class="bg-base-100 rounded-2xl p-12 shadow-lg">
 				<h2 class="text-base-content mb-6 text-4xl font-bold tracking-tight">
 					{t.webuild.title}
 				</h2>
@@ -29,7 +28,7 @@
 				<div class="mt-10">
 					<a
 						href="#kontakt"
-						class="btn btn-primary btn-md transition-all duration-200"
+						class="btn btn-primary btn-lg transition-all duration-200"
 						aria-label={t.webuild.button}
 					>
 						{t.webuild.button}
@@ -37,12 +36,11 @@
 				</div>
 			</div>
 
-			<!-- Visualisierung -->
 			<div class="text-center">
-				<p class="text-base-content/60 mb-2 text-sm tracking-widest uppercase">
+				<p class="text-primary mb-2 text-sm font-semibold tracking-widest uppercase">
 					{t.webuild.ai.subline}
 				</p>
-				<h2 class="text-primary mb-4 text-4xl font-bold tracking-tight">
+				<h2 class="text-base-content mb-4 text-4xl font-bold tracking-tight">
 					{t.webuild.ai.title}
 				</h2>
 				<p class="text-base-content/70 mx-auto mb-10 max-w-md text-base leading-relaxed">
@@ -50,11 +48,11 @@
 				</p>
 
 				<div
-					class="bg-base-100 ring-base-300 relative mx-auto aspect-video w-full max-w-xl overflow-hidden rounded-2xl shadow-2xl ring-1"
+					class="ring-base-300 relative mx-auto aspect-video w-full max-w-xl overflow-hidden rounded-2xl shadow-2xl ring-1"
 				>
 					<AiVisualization />
 					<div
-						class="ring-primary/10 pointer-events-none absolute inset-0 rounded-2xl ring-2"
+						class="ring-primary/20 pointer-events-none absolute inset-0 rounded-2xl ring-2"
 					></div>
 				</div>
 			</div>

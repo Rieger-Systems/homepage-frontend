@@ -3,44 +3,50 @@
 	import { de } from '$lib/i18n/de';
 	import { en } from '$lib/i18n/en';
 	import FadeInOnScroll from '$lib/components/FadeInOnScroll.svelte';
+	import HeroGlobe from '$lib/components/threejs/HeroGlobe.svelte';
 
-	// Reaktives Übersetzungsobjekt basierend auf der aktuellen Locale
 	$: t = $locale === 'en' ? en : de;
 </script>
 
 <section
 	id="hero"
-	class="bg-base-100 text-base-content relative flex min-h-screen snap-start flex-col items-center justify-center px-6"
+	class="bg-base-100 text-base-content relative flex min-h-screen snap-start flex-col items-center justify-center overflow-hidden px-6"
 >
-	<!-- Hero-Inhalt mit einmaliger Animation -->
+	<div class="pointer-events-none absolute inset-0 z-0 opacity-20">
+		<HeroGlobe />
+	</div>
+
+	<!-- Hero-Inhalt -->
 	<FadeInOnScroll once>
 		<div class="z-10 max-w-4xl text-center">
-			<h1 class="mb-6 text-5xl leading-tight font-bold md:text-6xl">
+			<h1 class="mb-4 text-5xl leading-tight font-bold md:text-6xl">
 				{t.hero.title}
 			</h1>
-			<p class="text-base-content/80 mb-10 text-lg md:text-xl">
+			<p class="text-base-content/80 mb-6 text-lg md:text-xl">
 				{t.hero.sub}
 			</p>
+
+			<!-- Claim-Integration -->
+			<p class="text-base-content/70 mb-10 text-base italic">
+				{#if $locale === 'de'}
+					Technologie, die trägt. Für Menschen. Mit Verantwortung.
+				{:else}
+					Technology that carries. For people. With responsibility.
+				{/if}
+			</p>
+
 			<div class="flex flex-wrap justify-center gap-4">
-				<a
-					href="#webuild"
-					class="btn btn-primary btn-lg transition-all duration-200"
-					aria-label={t.hero.buttonPrimary}
-				>
+				<a href="#webuild" class="btn btn-primary btn-lg" aria-label={t.hero.buttonPrimary}>
 					{t.hero.buttonPrimary}
 				</a>
-				<a
-					href="#contact"
-					class="btn btn-outline btn-lg transition-all duration-200"
-					aria-label={t.hero.buttonSecondary}
-				>
+				<a href="#contact" class="btn btn-outline btn-lg" aria-label={t.hero.buttonSecondary}>
 					{t.hero.buttonSecondary}
 				</a>
 			</div>
 		</div>
 	</FadeInOnScroll>
 
-	<!-- Scroll-Hinweis: Visuelles Element, daher aria-hidden -->
+	<!-- Scroll-Hinweis -->
 	<div class="absolute right-0 bottom-6 left-0 flex justify-center" aria-hidden="true">
 		<div class="text-base-content/40 animate-bounce">
 			<svg

@@ -5,7 +5,6 @@
 	import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 
 	let canvasContainer: HTMLDivElement;
-
 	let scene: THREE.Scene;
 	let camera: THREE.PerspectiveCamera;
 	let renderer: THREE.WebGLRenderer;
@@ -14,38 +13,30 @@
 	let controls: OrbitControls;
 	let animationFrameId: number;
 
-	/**
-	 * Initialisiert die Szene, Kamera, Renderer, Controls sowie Partikel und Linien.
-	 */
 	function init() {
-		// Erzeuge Szene und lege Hintergrund fest
 		scene = new THREE.Scene();
 
 		const width = canvasContainer.offsetWidth;
 		const height = canvasContainer.offsetHeight;
 
-		// Kamera einrichten
 		camera = new THREE.PerspectiveCamera(75, width / height, 0.1, 1000);
 		camera.position.z = 30;
 
-		// Renderer konfigurieren
 		renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
 		renderer.setSize(width, height);
 		canvasContainer.appendChild(renderer.domElement);
 
-		// OrbitControls konfigurieren
 		controls = new OrbitControls(camera, renderer.domElement);
 		controls.enableZoom = true;
-		controls.enablePan = false;
+		controls.enablePan = true;
+		controls.enableRotate = true;
+		controls.autoRotate = true;
+		controls.autoRotateSpeed = 0.5;
 		controls.enableDamping = true;
 		controls.dampingFactor = 0.05;
-		controls.autoRotate = true;
-		controls.autoRotateSpeed = 1.5;
 
-		// Event-Listener für Fenstergröße
 		window.addEventListener('resize', onWindowResize);
 
-		// Partikelerzeugung
 		const particleCount = 120;
 		const positions = new Float32Array(particleCount * 3);
 		for (let i = 0; i < particleCount; i++) {
@@ -64,7 +55,7 @@
 			color: new THREE.Color(0xffd700),
 			size: 0.6,
 			transparent: true,
-			opacity: 0.9,
+			opacity: 0.6,
 			sizeAttenuation: true,
 			depthWrite: false,
 			blending: THREE.AdditiveBlending
@@ -73,11 +64,9 @@
 		points = new THREE.Points(particleGeometry, particleMaterial);
 		scene.add(points);
 
-		// Linien zwischen Partikeln erzeugen
 		const linePositions: number[] = [];
 		for (let i = 0; i < particleCount; i++) {
 			for (let j = i + 1; j < particleCount; j++) {
-				// Zufällige Verbindung: ca. 3,5 % der möglichen Kombinationen
 				if (Math.random() < 0.035) {
 					linePositions.push(
 						positions[i * 3],
@@ -103,22 +92,15 @@
 		lines = new THREE.LineSegments(lineGeometry, lineMaterial);
 		scene.add(lines);
 
-		// Starten der Animationsschleife
 		animate();
 	}
 
-	/**
-	 * Animationsschleife
-	 */
 	function animate() {
 		animationFrameId = requestAnimationFrame(animate);
-		controls.update(); // sorgt für dämpfende Steuerung und Auto-Rotation
+		controls.update();
 		renderer.render(scene, camera);
 	}
 
-	/**
-	 * Passt die Kamera- und Renderer-Größe beim Ändern der Fenstergröße an.
-	 */
 	function onWindowResize() {
 		const width = canvasContainer.offsetWidth;
 		const height = canvasContainer.offsetHeight;
@@ -128,28 +110,17 @@
 	}
 
 	onMount(() => {
-		if (browser) {
-			init();
-		}
+		if (browser) init();
 	});
 
 	onDestroy(() => {
 		if (browser) {
 			cancelAnimationFrame(animationFrameId);
 			window.removeEventListener('resize', onWindowResize);
-			// Renderer, Controls und eventuell benutzte Geometrien/Materialien freigeben
 			renderer.dispose();
 			controls.dispose();
 		}
 	});
 </script>
 
-<!-- Container für die 3D-Visualisierung -->
-<div bind:this={canvasContainer} class="h-full w-full"></div>
-
-<style>
-	:global(canvas) {
-		display: block;
-		cursor: grab;
-	}
-</style>
+<div bind:this={canvasContainer} class="h-full w-full" />
