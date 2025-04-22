@@ -12,6 +12,11 @@
 <svelte:head>
 	<title>{project.title} | Rieger Systems</title>
 	<meta name="description" content={project.lead || project.desc} />
+	<meta
+		name="keywords"
+		content="AmaraCall, KI Anrufbeantworter, KI für Arztpraxen, Sprach-KI, Rieger Systems, medizinischer Sprachassistent"
+	/>
+	<link rel="canonical" href="https://rieger-systems.eu/projects/amaracall" />
 </svelte:head>
 
 <section class="prose prose-lg prose-neutral mx-auto max-w-3xl px-6 py-16">

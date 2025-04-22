@@ -1,5 +1,12 @@
 <script lang="ts">
 	import '../app.css';
+	import { afterNavigate } from '$app/navigation';
+
+	afterNavigate(() => {
+		if (window.umami?.track) {
+			window.umami.track();
+		}
+	});
 
 	let { children } = $props();
 </script>
