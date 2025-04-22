@@ -5,49 +5,50 @@
 	import FadeInOnScroll from '$lib/components/FadeInOnScroll.svelte';
 	import { ShieldCheck, ServerCog, Scale } from 'lucide-svelte';
 
-	// Interface für ein einzelnes Value-Item
 	interface ValueItem {
 		title: string;
 		text: string;
-		icon: string;
+		icon: keyof typeof icons; // Ensure the icon string is a valid key
 	}
 
-	// Mapping der Icon-Schlüssel zu den entsprechenden Icon-Komponenten
-	const icons: Record<string, typeof ShieldCheck> = {
+	const icons = {
 		shield: ShieldCheck,
 		server: ServerCog,
 		scale: Scale
 	};
 
-	// Reaktive Übersetzungsvariable basierend auf der aktuellen Locale
 	$: t = $locale === 'en' ? en : de;
 </script>
 
 <section
 	id="values"
-	class="bg-base-100 text-base-content flex min-h-screen snap-start flex-col items-center justify-center px-6 py-24"
+	class="bg-base-100 text-base-content flex min-h-screen snap-start flex-col items-center justify-center px-6 py-24 sm:px-8 lg:px-16"
 >
 	<FadeInOnScroll once>
-		<div class="mx-auto max-w-5xl text-center">
-			<h2 class="mb-6 text-4xl font-bold tracking-tight">{t.values.title}</h2>
-			<p class="text-base-content/80 mx-auto max-w-3xl text-lg leading-relaxed">
+		<div class="mx-auto mb-16 max-w-5xl text-center">
+			<h2 class="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
+				{t.values.title}
+			</h2>
+			<p class="text-base-content/80 mx-auto mt-4 max-w-3xl text-lg leading-relaxed">
 				{t.values.lead}
 			</p>
 		</div>
 
-		<div class="mt-20 grid w-full max-w-6xl gap-10 md:grid-cols-3">
+		<div class="grid w-full max-w-6xl gap-8 md:grid-cols-3">
 			{#each t.values.items as item (item.title)}
 				<div
-					class="bg-base-200 rounded-xl p-6 text-left shadow-md transition-all duration-300 hover:shadow-lg"
+					class="bg-base-200 rounded-xl p-8 shadow-md transition-transform duration-300 hover:scale-105 hover:shadow-lg"
 				>
-					{#if icons[item.icon]}
-						<svelte:component
-							this={icons[item.icon]}
-							class="text-primary mb-4 h-8 w-8"
-							aria-hidden="true"
-						/>
+					{#if icons[item.icon as keyof typeof icons]}
+						<div class="bg-primary/10 mb-6 flex h-12 w-12 items-center justify-center rounded-full">
+							<svelte:component
+								this={icons[item.icon as keyof typeof icons]}
+								class="text-primary h-6 w-6"
+								aria-hidden="true"
+							/>
+						</div>
 					{/if}
-					<h3 class="mb-2 text-lg font-semibold">{item.title}</h3>
+					<h3 class="mb-3 text-lg leading-tight font-semibold">{item.title}</h3>
 					<p class="text-base-content/70 text-sm leading-relaxed">{item.text}</p>
 				</div>
 			{/each}

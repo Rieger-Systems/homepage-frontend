@@ -159,7 +159,7 @@
 	});
 </script>
 
-<div bind:this={canvasContainer} class="h-full w-full" />
+<div bind:this={canvasContainer} class="h-full w-full"></div>
 
 <style>
 	:global(canvas) {
