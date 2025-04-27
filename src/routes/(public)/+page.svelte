@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { Sections } from '$components/sections';
-	import LazySection from '$components/LazySection.svelte';
+	import LazySection from '$lib/components/LazySection.svelte';
 </script>
 
 <svelte:component this={Sections.Hero} />
