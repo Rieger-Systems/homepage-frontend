@@ -6,6 +6,10 @@
     COPY package*.json ./
     RUN npm install
     COPY . .
+    
+    # Setze Umgebung auf Production vor dem Build
+    ENV NODE_ENV=production
+    
     RUN npm run build
     
     # --- Production Stage ---
