@@ -1,16 +1,75 @@
-# Rieger Systems - Core Website
+# Nuxt Minimal Starter
 
-Dies ist das zentrale Repository für die offizielle Unternehmensseite **[rieger-systems.eu](https://rieger-systems.eu)**.  
-Die Seite wird automatisch auf unseren Produktionsserver deployed - via GitHub Actions und Docker.
+Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
 
----
+## Setup
 
-## 🚀 Deployment (Automatisiert)
+Make sure to install dependencies:
 
-### ✅ Live-Umgebung:
+```bash
+# npm
+npm install
 
-**Domain:** [https://rieger-systems.eu](https://rieger-systems.eu)  
-**Server:** Hetzner CAX11 (Ubuntu 22.04)  
-**Deploy-Methode:** GitHub Actions via SSH
+# pnpm
+pnpm install
 
----
+# yarn
+yarn install
+
+# bun
+bun install
+```
+
+## Development Server
+
+Start the development server on `http://localhost:3000`:
+
+```bash
+# npm
+npm run dev
+
+# pnpm
+pnpm dev
+
+# yarn
+yarn dev
+
+# bun
+bun run dev
+```
+
+## Production
+
+Build the application for production:
+
+```bash
+# npm
+npm run build
+
+# pnpm
+pnpm build
+
+# yarn
+yarn build
+
+# bun
+bun run build
+```
+
+Locally preview production build:
+
+```bash
+# npm
+npm run preview
+
+# pnpm
+pnpm preview
+
+# yarn
+yarn preview
+
+# bun
+bun run preview
+```
+
+Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.

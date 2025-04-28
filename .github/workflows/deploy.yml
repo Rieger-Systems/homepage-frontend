@@ -1,31 +1,31 @@
-name: Deploy to Core Server
+# name: Deploy to Core Server
+#
+# on:
+#   push:
+#     branches:
+#       - main
+#
+# jobs:
+#   deploy:
+#     runs-on: ubuntu-latest
 
-on:
-  push:
-    branches:
-      - main
+#     steps:
+#       - name: Checkout repo
+#         uses: actions/checkout@v4
 
-jobs:
-  deploy:
-    runs-on: ubuntu-latest
+#       - name: Setup SSH
+#         uses: webfactory/ssh-agent@v0.7.0
+#         with:
+#           ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
 
-    steps:
-      - name: Checkout repo
-        uses: actions/checkout@v4
-
-      - name: Setup SSH
-        uses: webfactory/ssh-agent@v0.7.0
-        with:
-          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
-
-      - name: 🚀 Deploy via SSH
-        run: |
-          ssh -o StrictHostKeyChecking=no ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} <<'EOF'
-            cd /opt/web
-            docker compose down
-            docker system prune -af
-            docker volume prune -f
-            git pull
-            docker compose build --no-cache
-            docker compose up -d
-          EOF
+#       - name: 🚀 Deploy via SSH
+#         run: |
+#           ssh -o StrictHostKeyChecking=no ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} <<'EOF'
+#             cd /opt/web
+#             docker compose down
+#             docker system prune -af
+#             docker volume prune -f
+#             git pull
+#             docker compose build --no-cache
+#             docker compose up -d
+#           EOF

@@ -1,28 +1,4 @@
 {
-	"compilerOptions": {
-		"baseUrl": ".",
-		"paths": {
-			"$components/*": ["src/components/*"],
-			"$lib/*": ["src/lib/*"]
-		},
-		"allowJs": true,
-		"checkJs": true,
-		"esModuleInterop": true,
-		"forceConsistentCasingInFileNames": true,
-		"resolveJsonModule": true,
-		"skipLibCheck": true,
-		"sourceMap": true,
-		"strict": true,
-		"module": "es2015",
-		"moduleResolution": "bundler",
-		"typeRoots": ["./node_modules/@types", "./src/types"]
-	},
-	"exclude": [
-		"build",
-		".svelte-kit",
-		"node_modules",
-		"eslint.config.js",
-		"svelte.config.js",
-		"vite.config.ts"
-	]
+  // https://nuxt.com/docs/guide/concepts/typescript
+  "extends": "./.nuxt/tsconfig.json"
 }
