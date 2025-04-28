@@ -1,21 +1,16 @@
-<script setup lang="ts">
-import { useLocaleStore } from "~/stores/locale";
-
-const localeStore = useLocaleStore();
-
-function switchToEnglish() {
-  localeStore.setLocale("en");
-}
-</script>
-
 <template>
-  <div>
-    <p>Aktuelle Sprache: {{ localeStore.locale }}</p>
-    <button
-      @click="switchToEnglish"
-      class="mt-4 p-2 bg-primary-500 text-white rounded"
-    >
-      Switch to English
-    </button>
+  <div
+    class="min-h-screen flex flex-col bg-surface-0 text-p-text-color font-sans"
+  >
+    <Header />
+    <main class="flex-grow">
+      <NuxtPage />
+    </main>
+    <Footer />
   </div>
 </template>
+
+<script setup lang="ts">
+import Header from "~/components/layout/Header.vue";
+import Footer from "~/components/layout/Footer.vue";
+</script>
