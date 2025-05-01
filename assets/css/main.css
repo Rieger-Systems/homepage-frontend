@@ -119,6 +119,3 @@ blockquote,
 q {
   font-family: var(--font-serif);
 }
-body {
-  overflow: hidden;
-}
