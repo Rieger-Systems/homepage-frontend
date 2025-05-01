@@ -1,24 +1,27 @@
 <template>
-  <section class="relative w-full min-h-screen bg-base-100 overflow-hidden">
-    <!-- 🌐 Three.js Hintergrund -->
+  <section
+    class="relative w-full min-h-screen bg-base-100 overflow-hidden pt-20"
+  >
+    <!-- 🌐 Background -->
     <div class="absolute inset-0 z-0">
       <HeroCanvas />
     </div>
 
-    <!-- ✨ Sanfter Glow unterhalb -->
+    <!-- ✨ Glow Layer -->
     <div
-      class="absolute inset-0 bg-gradient-radial from-yellow-400/5 via-transparent to-transparent blur-3xl z-0"
+      class="absolute inset-0 bg-gradient-radial from-yellow-400/10 via-transparent to-transparent blur-[120px] z-0 pointer-events-none"
     />
 
-    <!-- 🧊 Textbox -->
+    <!-- 🧊 Glass Text Box -->
     <div
-      class="relative z-10 flex items-center justify-center min-h-screen px-6 py-12"
+      class="relative z-10 flex items-center justify-center min-h-[calc(100vh-80px)] px-6"
     >
       <div
-        class="max-w-2xl w-full bg-base-100/60 backdrop-blur-lg rounded-xl shadow-2xl p-6 sm:p-8 lg:p-10 border border-base-300/40 animate-fade-in"
+        class="max-w-2xl w-full bg-base-100/40 backdrop-blur-[8px] rounded-2xl shadow-xl border border-white/10 border-t border-t-white/10 p-6 sm:p-8 lg:p-10 animate-fade-in transition"
+        style="box-shadow: 0 8px 40px rgba(0, 0, 0, 0.3)"
       >
         <h1
-          class="text-4xl sm:text-5xl font-extrabold leading-tight mb-6 text-center"
+          class="text-4xl sm:text-5xl font-extrabold leading-tight mb-6 text-center text-base-content"
         >
           Technologie mit Haltung.
         </h1>
@@ -40,8 +43,10 @@
     </div>
 
     <!-- ⬇️ Scroll Indicator -->
-    <div
-      class="absolute bottom-6 left-1/2 transform -translate-x-1/2 z-10 text-base-content/50 animate-bounce"
+    <button
+      @click="scrollToNext"
+      aria-label="Scrollen"
+      class="absolute bottom-4 left-1/2 transform -translate-x-1/2 z-10 text-base-content/50 animate-bounce hover:text-primary transition"
     >
       <svg
         class="w-6 h-6"
@@ -56,12 +61,19 @@
           d="M19 9l-7 7-7-7"
         />
       </svg>
-    </div>
+    </button>
   </section>
 </template>
 
 <script setup lang="ts">
 import HeroCanvas from "~/components/sections/homepage/HeroCanvas.vue";
+
+const scrollToNext = () => {
+  const nextSection = document.querySelector("#after-hero");
+  if (nextSection) {
+    nextSection.scrollIntoView({ behavior: "smooth" });
+  }
+};
 </script>
 
 <style scoped>
