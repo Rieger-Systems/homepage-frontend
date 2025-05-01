@@ -1,6 +1,6 @@
 <template>
   <footer
-    class="bg-base-100 border-t border-base-300 text-sm text-base-content/80"
+    class="bg-base-200 border-t border-base-300 text-sm text-base-content/80"
   >
     <!-- Hauptfooter -->
     <div
@@ -86,7 +86,7 @@
 
     <!-- Footer-Final -->
     <div
-      class="border-t border-base-300 mt-8 pt-6 pb-8 text-center text-xs text-base-content/50 space-y-3 px-6"
+      class="border-t border-base-400 mt-8 pt-6 pb-8 text-center text-xs text-base-content/50 space-y-3 px-6"
     >
       <p>
         © {{ new Date().getFullYear() }} Rieger Systems · Alle Rechte
