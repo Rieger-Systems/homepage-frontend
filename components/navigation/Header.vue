@@ -1,5 +1,7 @@
 <template>
-  <header class="bg-base-100 border-b border-base-300">
+  <header
+    class="fixed top-0 w-full z-50 bg-base-100 border-b border-base-300 shadow-sm"
+  >
     <div class="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between">
       <!-- Logo -->
       <NuxtLink
