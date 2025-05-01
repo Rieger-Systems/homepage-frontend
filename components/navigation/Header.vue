@@ -1,33 +1,32 @@
 <template>
   <header
-    class="fixed top-0 w-full z-50 bg-base-100 border-b border-base-300 shadow-sm"
+    class="fixed top-0 left-0 w-full z-50 bg-base-100 border-b border-base-300 shadow-sm backdrop-blur-md"
   >
     <div class="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between">
       <!-- Logo -->
       <NuxtLink
         to="/"
         class="text-xl font-bold text-primary tracking-tight leading-none"
+        aria-label="Zur Startseite"
       >
         Rieger Systems
       </NuxtLink>
 
       <!-- Desktop Navigation -->
-      <div class="hidden md:flex items-center gap-8">
+      <nav class="hidden md:flex items-center gap-8">
         <NavMenu />
-      </div>
+      </nav>
 
-      <!-- Desktop-Sprache & Burger -->
+      <!-- Sprache & Burger -->
       <div class="flex items-center gap-3">
-        <!-- Desktop Sprache -->
         <div class="hidden md:block">
           <LocaleSwitcher />
         </div>
-
-        <!-- Mobile Burger -->
         <button
           @click="toggleMobile"
+          :aria-expanded="mobileOpen"
           aria-label="Menü öffnen"
-          class="btn btn-ghost btn-square md:hidden focus:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+          class="btn btn-ghost btn-square md:hidden"
         >
           <Bars3Icon class="w-6 h-6" />
         </button>

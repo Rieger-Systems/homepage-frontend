@@ -1,12 +1,14 @@
 <template>
-  <div class="flex flex-col md:flex-row gap-4 md:gap-10 text-sm tracking-wide">
+  <div
+    class="flex flex-col md:flex-row gap-4 md:gap-8 text-sm font-medium tracking-wide"
+  >
     <NavLink
       v-for="item in navItems"
       :key="item.to"
       :to="item.to"
       @click="$emit('select')"
     >
-      <span class="whitespace-nowrap">{{ item.label }}</span>
+      {{ item.label }}
     </NavLink>
   </div>
 </template>
