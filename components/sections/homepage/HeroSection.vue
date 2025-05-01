@@ -39,6 +39,13 @@
             Kontakt aufnehmen
           </NuxtLink>
         </div>
+
+        <!-- 🧠 Haltung (Mini-Section) -->
+        <p
+          class="mt-10 text-xs text-center text-base-content/50 opacity-0 animate-fade-delayed"
+        >
+          Wir glauben an eine Technologie, die stärkt – nicht ersetzt.
+        </p>
       </div>
     </div>
 
@@ -89,5 +96,23 @@ const scrollToNext = () => {
 }
 .animate-fade-in {
   animation: fade-in 1.2s ease-out both;
+}
+
+@keyframes fade-delayed {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  80% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.animate-fade-delayed {
+  animation: fade-delayed 2.5s ease-out forwards;
+  animation-delay: 0.5s;
 }
 </style>
