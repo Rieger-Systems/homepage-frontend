@@ -12,6 +12,8 @@
 </template>
 
 <script setup lang="ts">
+import NavLink from "~/components/navigation/NavLink.vue";
+
 defineEmits(["select"]);
 
 const navItems = [
