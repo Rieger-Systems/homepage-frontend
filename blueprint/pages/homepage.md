@@ -16,15 +16,6 @@
 
 ---
 
-## 🔹 2. Unsere Mission – auf einen Blick
-
-> Wir entwickeln KI-Systeme, die Menschen stärken – nicht ersetzen.  
-> Mit Verantwortung, Transparenz und europäischer Ethik.
->
-> 👉 [Mehr über unsere Haltung](/ethics)
-
----
-
 ## 🔹 3. Leistungen im Überblick
 
 | Bereich                 | Kurzbeschreibung                                        |
