@@ -55,6 +55,9 @@
           <li>
             <NuxtLink to="/about" class="hover:text-primary">Über uns</NuxtLink>
           </li>
+          <li>
+            <NuxtLink to="/jobs" class="hover:text-primary">Karriere</NuxtLink>
+          </li>
         </ul>
       </div>
 
