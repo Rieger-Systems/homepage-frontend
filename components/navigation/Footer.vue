@@ -55,11 +55,6 @@
           <li>
             <NuxtLink to="/about" class="hover:text-primary">Über uns</NuxtLink>
           </li>
-          <li>
-            <NuxtLink to="/ethics" class="hover:text-primary"
-              >Ethik & Werte</NuxtLink
-            >
-          </li>
         </ul>
       </div>
 
