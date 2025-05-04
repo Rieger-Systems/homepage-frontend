@@ -92,7 +92,14 @@
       </p>
 
       <!-- Cookie-Statement -->
-      <p>🍪 Keine Cookies. Keine Tricks. Nur Klarheit - wie versprochen.</p>
+      <p class="text-xs text-center text-base-content/50 leading-relaxed">
+        🍪 Diese Website verwendet <strong>keine Cookies</strong> und kein
+        externes Tracking.<br />
+        Weitere Informationen finden Sie in unserer
+        <NuxtLink to="/privacy" class="underline hover:text-primary"
+          >Datenschutzerklärung</NuxtLink
+        >.
+      </p>
 
       <!-- Socials -->
       <div
