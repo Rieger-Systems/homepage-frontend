@@ -13,12 +13,12 @@
 </template>
 
 <script setup lang="ts">
-import SideNavigation from "~/components/sections/philosophy/SideNavigation.vue";
-import ClaimSection from "~/components/sections/philosophy/ClaimSection.vue";
-import VisionMissionSection from "~/components/sections/philosophy/VisionMissionSection.vue";
-import IdentitySection from "~/components/sections/philosophy/IdentitySection.vue";
-import ValuesSection from "~/components/sections/philosophy/ValuesSection.vue";
-import EthicsSection from "~/components/sections/philosophy/EthicsSection.vue";
+import SideNavigation from "~/components/sections/about/SideNavigation.vue";
+import ClaimSection from "~/components/sections/about/ClaimSection.vue";
+import VisionMissionSection from "~/components/sections/about/VisionMissionSection.vue";
+import IdentitySection from "~/components/sections/about/IdentitySection.vue";
+import ValuesSection from "~/components/sections/about/ValuesSection.vue";
+import EthicsSection from "~/components/sections/about/EthicsSection.vue";
 
 import { useScrollSpy } from "~/composables/useScrollSpy";
 
