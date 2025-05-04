@@ -31,13 +31,6 @@
         <p class="font-medium text-base-content">{{ item.title }}</p>
       </div>
     </div>
-
-    <!-- 🔗 CTA-Link -->
-    <div class="text-center mt-14 animate-fade-up delay-300">
-      <NuxtLink to="/technology" class="btn btn-link text-sm text-primary"
-        >Unsere Technologieprinzipien</NuxtLink
-      >
-    </div>
   </section>
 </template>
 

@@ -10,7 +10,7 @@
       <div class="col-span-2 md:col-span-1 flex flex-col gap-4">
         <NuxtLink to="/" class="inline-flex items-center gap-4 group">
           <img
-            src="/short-logo.jpg"
+            :src="logoShort"
             alt="Rieger Systems Logo"
             class="w-12 h-12 md:w-14 md:h-14 rounded shadow"
           />
@@ -161,3 +161,7 @@
     </div>
   </footer>
 </template>
+
+<script setup lang="ts">
+const { logoShort } = useAssets();
+</script>
