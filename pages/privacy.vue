@@ -113,6 +113,32 @@
         (TOMs) abgesichert.
       </p>
 
+      <h2>8a. IP-Anonymisierung im Captcha-System</h2>
+      <p>
+        Um unser Kontaktformular vor automatisierten Angriffen (z. B. Spam oder
+        Bots) zu schützen, verwenden wir ein eigens entwickeltes Captcha-System.
+        Dabei wird die IP-Adresse des anfragenden Geräts
+        <strong>nicht im Klartext gespeichert</strong>, sondern vor der
+        Verarbeitung technisch anonymisiert.
+      </p>
+      <p>
+        Hierfür wird die IP-Adresse mit einem Einweg-Hashverfahren (SHA-256)
+        anonymisiert und nur in dieser nicht rückführbaren Form temporär in
+        unserem Sicherheitssystem verarbeitet. Die Speicherung erfolgt
+        ausschließlich für die technische Erkennung von missbräuchlichen
+        Mehrfachzugriffen und wird nach spätestens 10 Minuten automatisch
+        gelöscht.
+      </p>
+      <p>
+        Es erfolgt <strong>keine Profilbildung</strong>,
+        <strong>keine Zusammenführung mit anderen Daten</strong> und
+        <strong>keine Weitergabe an Dritte</strong>.
+      </p>
+      <p>
+        <strong>Rechtsgrundlage:</strong> Art. 6 Abs. 1 lit. f DSGVO
+        (berechtigtes Interesse an der Sicherheit unserer Systeme)
+      </p>
+
       <h2>9. Ihre Rechte</h2>
       <p>Sie haben das Recht auf:</p>
       <ul>
