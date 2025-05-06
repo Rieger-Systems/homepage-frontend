@@ -1,116 +1,95 @@
 <template>
-  <!-- Kontaktformular -->
-  <form class="space-y-6" @submit.prevent="handleSubmit">
+  <form class="space-y-6" @submit.prevent="handleSubmit" novalidate>
     <!-- Name -->
     <div class="form-control">
-      <label class="label font-medium">Name</label>
+      <label for="name" class="label font-medium">Name</label>
       <input
+        id="name"
         type="text"
         v-model="form.name"
-        class="input w-full border border-primary/30 focus:border-primary focus:outline-none"
+        class="input input-bordered w-full"
         placeholder="Max Mustermann"
         required
+        autocomplete="name"
       />
     </div>
 
     <!-- E-Mail -->
     <div class="form-control">
-      <label class="label font-medium">E-Mail</label>
+      <label for="email" class="label font-medium">E-Mail</label>
       <input
+        id="email"
         type="email"
         v-model="form.email"
-        class="input w-full border border-primary/30 focus:border-primary focus:outline-none"
+        class="input input-bordered w-full"
         placeholder="max@beispiel.at"
         required
+        autocomplete="email"
       />
     </div>
 
     <!-- Nachricht -->
     <div class="form-control">
-      <label class="label font-medium">Nachricht</label>
+      <label for="message" class="label font-medium">Nachricht</label>
       <textarea
+        id="message"
         v-model="form.message"
-        class="textarea w-full border border-primary/30 focus:border-primary focus:outline-none min-h-[140px]"
-        placeholder="Worum geht’s?"
+        class="textarea textarea-bordered w-full min-h-[140px]"
+        placeholder="Worum geht's?"
         required
+        autocomplete="off"
       />
     </div>
 
-    <!-- Datenschutz -->
-    <div class="form-control">
-      <label class="cursor-pointer flex items-start gap-3 text-sm">
+    <!-- Datenschutz + Hinweis -->
+    <div class="space-y-3 text-sm text-gray-500 mt-4">
+      <label class="cursor-pointer flex items-start gap-3">
         <input
           type="checkbox"
           class="checkbox checkbox-primary mt-1"
           v-model="form.consent"
-          required
         />
         <span>
           Ich habe die
           <NuxtLink to="/privacy" class="underline text-primary">
             Datenschutzerklärung
           </NuxtLink>
-          gelesen und stimme der Verarbeitung meiner Daten zu.
+          gelesen und stimme der Verarbeitung meiner Angaben zu.
         </span>
       </label>
+
+      <!-- Hinweis auf aktuellen Zustand -->
+      <p class="leading-snug">
+        Aktuell öffnet das Formular dein E-Mail-Programm. Eine direkte
+        Übermittlung wird bald ergänzt.
+      </p>
+
+      <!-- Fallback-Kontakt -->
+      <p>
+        Alternativ:
+        <a
+          href="mailto:kontakt@rieger-systems.eu"
+          class="underline text-primary"
+        >
+          kontakt@rieger-systems.eu
+        </a>
+      </p>
+
+      <!-- Fehleranzeige -->
+      <p v-if="errorMessage" class="text-error text-sm text-center">
+        {{ errorMessage }}
+      </p>
     </div>
 
-    <!-- Button + Feedback -->
-    <div class="space-y-3 pt-2">
+    <!-- Submit -->
+    <div class="pt-4">
       <button class="btn btn-primary btn-block font-semibold" type="submit">
-        Nachricht absenden
+        Nachricht senden
       </button>
-
-      <transition name="fade">
-        <div
-          v-if="success"
-          class="flex items-center gap-3 text-sm bg-success/10 border border-success/40 text-success px-4 py-3 rounded-lg shadow-sm"
-        >
-          <svg
-            class="w-5 h-5 text-success shrink-0"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            viewBox="0 0 24 24"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="M5 13l4 4L19 7"
-            />
-          </svg>
-          <span
-            >Vielen Dank! Deine Nachricht wurde erfolgreich übermittelt.</span
-          >
-        </div>
-      </transition>
-
-      <transition name="fade">
-        <div
-          v-if="error"
-          class="flex items-center gap-3 text-sm bg-error/10 border border-error/40 text-error px-4 py-3 rounded-lg shadow-sm"
-        >
-          <svg
-            class="w-5 h-5 text-error shrink-0"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            viewBox="0 0 24 24"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="M6 18L18 6M6 6l12 12"
-            />
-          </svg>
-          <span
-            >Leider ist ein Fehler aufgetreten. Bitte versuche es erneut.</span
-          >
-        </div>
-      </transition>
     </div>
   </form>
 </template>
+
 <script setup lang="ts">
 const form = reactive({
   name: "",
@@ -119,28 +98,31 @@ const form = reactive({
   consent: false,
 });
 
-const success = ref(false);
-const error = ref(false);
+const errorMessage = ref("");
 
 function handleSubmit() {
-  try {
-    console.log("Formulardaten:", { ...form });
-    success.value = true;
-    error.value = false;
-
-    // Reset nach 5 Sekunden
-    setTimeout(() => (success.value = false), 5000);
-
-    // Felder zurücksetzen
-    Object.assign(form, {
-      name: "",
-      email: "",
-      message: "",
-      consent: false,
-    });
-  } catch (e) {
-    success.value = false;
-    error.value = true;
+  if (!form.consent) {
+    errorMessage.value = "Bitte bestätige die Datenschutzerklärung.";
+    return;
   }
+
+  errorMessage.value = "";
+
+  const subject = encodeURIComponent(`Kontaktanfrage von ${form.name}`);
+  const body = encodeURIComponent(
+    `Name: ${form.name}\nE-Mail: ${form.email}\n\nNachricht:\n${form.message}\n\n[✓] Absender hat der Datenschutzerklärung zugestimmt.`
+  );
+  const mailtoLink = `mailto:kontakt@rieger-systems.eu?subject=${subject}&body=${body}`;
+
+  const link = document.createElement("a");
+  link.href = mailtoLink;
+  link.target = "_blank";
+  link.click();
+
+  // Felder zurücksetzen
+  form.name = "";
+  form.email = "";
+  form.message = "";
+  form.consent = false;
 }
 </script>
