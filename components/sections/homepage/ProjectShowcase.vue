@@ -1,94 +1,61 @@
 <template>
-  <section class="py-32 bg-base-100 border-t border-base-300/20 relative z-10">
-    <!-- 🧭 Heading -->
-    <div class="text-center mb-20 px-6">
-      <h2 class="text-4xl font-bold text-base-content mb-4 animate-fade-up">
-        Projekte im Fokus
+  <section class="py-24 bg-base-300 relative z-10">
+    <div class="text-center mb-16 px-6">
+      <h2 class="text-4xl font-bold text-base-content mb-4">
+        Projekt im Fokus
       </h2>
-      <p
-        class="text-base text-base-content/70 max-w-2xl mx-auto animate-fade-up delay-100"
-      >
-        Unsere aktuell entwickelten Lösungen – technologiegetrieben,
-        menschenzentriert und mit klarem Fokus auf ethische Standards und
-        europäische Souveränität.
+      <p class="text-lg text-base-content/70 max-w-xl mx-auto">
+        Unsere zentrale Lösung – technologiegetrieben, menschenzentriert und mit
+        klarem Fokus auf ethische Standards und europäische Souveränität.
       </p>
     </div>
 
-    <!-- 🔲 Project Cards -->
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto px-6">
+    <div class="max-w-xl mx-auto px-6">
       <NuxtLink
-        v-for="(project, i) in projects"
-        :key="project.title"
-        :to="project.link"
-        class="group bg-base-200/60 backdrop-blur-md rounded-2xl border border-base-300/30 shadow-xl hover:shadow-2xl hover:border-primary/30 transition-all transform hover:-translate-y-1 hover:bg-base-200/80 p-6 sm:p-8 animate-fade-up"
-        :style="{ animationDelay: `${i * 100}ms` }"
+        v-if="highlightedProject"
+        :to="`/projects/${highlightedProject.slug}`"
+        class="card bg-base-200 shadow-md rounded-lg overflow-hidden"
       >
-        <div class="space-y-4">
-          <div
-            class="w-12 h-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center group-hover:scale-110 transition"
-          >
-            <component :is="project.icon" class="w-6 h-6" />
-          </div>
-          <h3 class="text-lg font-semibold text-base-content">
-            {{ project.title }}
+        <div class="card-body p-6">
+          <h3 class="card-title text-xl font-semibold text-primary">
+            {{ highlightedProject.title }}
           </h3>
-          <p class="text-sm text-base-content/70 leading-relaxed">
-            {{ project.desc }}
+          <p class="text-base-content/80 leading-relaxed text-sm mb-4">
+            {{ highlightedProject.description }}
           </p>
-          <div
-            class="text-sm font-medium text-primary mt-2 inline-flex items-center group-hover:underline"
-          >
-            Mehr erfahren
-            <ArrowRightIcon class="w-4 h-4 ml-1" />
+          <div class="card-actions justify-end">
+            <button class="btn btn-primary btn-sm">
+              Mehr erfahren
+              <ArrowRightIcon class="w-4 h-4 ml-2" />
+            </button>
           </div>
         </div>
+      </NuxtLink>
+      <div v-else class="text-center text-warning mt-4">
+        Das zentrale Projekt konnte nicht geladen werden.
+      </div>
+    </div>
+
+    <div class="text-center mt-12">
+      <NuxtLink
+        to="/projects"
+        class="btn btn-outline btn-primary rounded-full hover:scale-105 transition-transform"
+      >
+        Zu den anderen Projekten
+        <ArrowRightIcon class="w-5 h-5 ml-2" />
       </NuxtLink>
     </div>
   </section>
 </template>
 
 <script setup lang="ts">
-import {
-  ArrowRightIcon,
-  CpuChipIcon,
-  PhoneIcon,
-  HeartIcon,
-} from "@heroicons/vue/24/outline";
+import { ArrowRightIcon } from "@heroicons/vue/24/outline";
+import { projects } from "@/data/projects";
+import type { Project } from "@/data/types/project";
 
-const projects = [
-  {
-    title: "A.M.A.R.A",
-    desc: "Zentrale modulare KI-Plattform – für Analyse, Verständnis & Kontrolle. Offline-fähig, erklärbar, ethisch.",
-    link: "/projects/amara",
-    icon: CpuChipIcon,
-  },
-  {
-    title: "AmaraCall",
-    desc: "KI-Telefonassistentin für Arztpraxen – nimmt Anrufe entgegen, notiert Wünsche und entlastet das Team.",
-    link: "/projects/amaracall",
-    icon: PhoneIcon,
-  },
-  {
-    title: "AmaraWell",
-    desc: "KI-gestützte Begleiterin für mentale Gesundheit – vertrauenswürdig, empathisch & therapeutisch sicher.",
-    link: "/projects/amarawell",
-    icon: HeartIcon,
-  },
-];
+const highlightedProject: Project | undefined = projects["amara"];
 </script>
 
 <style scoped>
-@keyframes fade-up {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-.animate-fade-up {
-  animation: fade-up 0.8s ease-out both;
-}
+/* Keine spezifischen Styles mehr */
 </style>
