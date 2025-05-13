@@ -1,11 +1,14 @@
 <template>
-  <Menu as="div" class="relative inline-block">
+  <Menu as="div" class="relative inline-block" v-slot="{ open }">
     <MenuButton
       class="inline-flex items-center gap-2 text-sm font-medium px-3 py-1 rounded hover:text-primary text-base-content transition focus:outline-none focus-visible:ring-2 focus-visible:ring-primary"
       aria-label="Sprache wählen"
     >
       <span>{{ localeLabel }}</span>
-      <ChevronDownIcon class="w-4 h-4 opacity-70" />
+      <ChevronDownIcon
+        class="w-4 h-4 opacity-70 transition-transform duration-200"
+        :class="{ 'rotate-180': open }"
+      />
     </MenuButton>
 
     <Transition
@@ -58,7 +61,6 @@
 
 <script setup lang="ts">
 import { Menu, MenuButton, MenuItems, MenuItem } from "@headlessui/vue";
-import { Transition } from "vue";
 import { useLocaleStore } from "~/stores/locale";
 import { ChevronDownIcon, CheckIcon } from "@heroicons/vue/20/solid";
 

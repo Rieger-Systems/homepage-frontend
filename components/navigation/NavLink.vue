@@ -1,7 +1,7 @@
 <template>
   <NuxtLink
     :to="to"
-    class="transition duration-150 text-base-content/70 hover:text-primary hover:font-semibold"
+    class="transition duration-150 text-base-content/70 hover:text-primary inline-flex items-center gap-2 text-sm font-medium px-3 py-1 rounded focus:outline-none focus-visible:ring-2 focus-visible:ring-primary cursor-pointer"
     :class="{ 'text-primary font-semibold': isActive }"
   >
     <slot />
