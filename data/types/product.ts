@@ -51,14 +51,21 @@ export interface SoftwareProduct extends BaseProduct {
   }[];
 }
 
+// data/types/product.ts
 export interface WebsiteProduct extends BaseProduct {
+  notice: {
+    title: string;
+    description: string;
+    details: string;
+  };
   packages: {
     name: string;
     type: string;
     target: string;
-    description: string[];
+    features: number[]; // Verweis auf Modul-IDs
     startPrice: string;
     benefit?: string;
+    useCases?: string[];
   }[];
   modules: {
     id: number;
@@ -66,6 +73,10 @@ export interface WebsiteProduct extends BaseProduct {
     description: string;
     price: string;
   }[];
+  financing: {
+    description: string;
+    advantages: string[];
+  };
 }
 
 export interface AISystemsProduct extends BaseProduct {}
