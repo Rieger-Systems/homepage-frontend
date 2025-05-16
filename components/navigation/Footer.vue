@@ -2,11 +2,9 @@
   <footer
     class="bg-base-200 border-t border-base-300 text-sm text-base-content/80"
   >
-    <!-- Hauptfooter -->
     <div
       class="max-w-screen-xl mx-auto px-6 py-12 grid grid-cols-2 md:grid-cols-4 gap-10"
     >
-      <!-- Branding / Mission -->
       <div class="col-span-2 md:col-span-1 flex flex-col gap-4">
         <NuxtLink to="/" class="inline-flex items-center gap-4 group">
           <img
@@ -24,14 +22,33 @@
           Technologie, die trägt - klar, sicher und menschlich.
         </p>
       </div>
-
-      <!-- Produkt -->
       <div>
-        <h3 class="text-base font-semibold text-primary mb-4">Produkt</h3>
+        <h3 class="text-base font-semibold text-primary mb-4">Unternehmen</h3>
         <ul class="space-y-2">
           <li>
-            <NuxtLink to="/products" class="hover:text-primary"
-              >Leistungen</NuxtLink
+            <NuxtLink to="/about" class="hover:text-primary">Über uns</NuxtLink>
+          </li>
+          <li>
+            <NuxtLink to="/contact" class="hover:text-primary"
+              >Kontakt</NuxtLink
+            >
+          </li>
+          <li><NuxtLink to="/faq" class="hover:text-primary">FAQ</NuxtLink></li>
+          <li>
+            <NuxtLink to="/jobs" class="hover:text-primary">Karriere</NuxtLink>
+          </li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="text-base font-semibold text-primary mb-4">Leistungen</h3>
+        <ul class="space-y-2">
+          <li>
+            <NuxtLink
+              to="/"
+              @click.prevent="scrollToAfterHero"
+              class="hover:text-primary"
+              >Produktübersicht</NuxtLink
             >
           </li>
           <li>
@@ -39,30 +56,10 @@
               >Projekte</NuxtLink
             >
           </li>
-          <li>
-            <NuxtLink to="/contact" class="hover:text-primary"
-              >Kontakt</NuxtLink
-            >
-          </li>
         </ul>
       </div>
 
-      <!-- Information -->
-      <div>
-        <h3 class="text-base font-semibold text-primary mb-4">Information</h3>
-        <ul class="space-y-2">
-          <li><NuxtLink to="/faq" class="hover:text-primary">FAQ</NuxtLink></li>
-          <li>
-            <NuxtLink to="/about" class="hover:text-primary">Über uns</NuxtLink>
-          </li>
-          <li>
-            <NuxtLink to="/jobs" class="hover:text-primary">Karriere</NuxtLink>
-          </li>
-        </ul>
-      </div>
-
-      <!-- Rechtliches -->
-      <div>
+      <div class="hidden md:block">
         <h3 class="text-base font-semibold text-primary mb-4">Rechtliches</h3>
         <ul class="space-y-2">
           <li>
@@ -82,16 +79,37 @@
       </div>
     </div>
 
-    <!-- Footer-Final -->
     <div
       class="border-t border-base-400 mt-8 pt-6 pb-8 text-center text-xs text-base-content/50 space-y-3 px-6"
     >
+      <div class="md:hidden grid grid-cols-3 gap-4 mb-4">
+        <div>
+          <h3 class="text-sm font-semibold text-primary mb-2">Rechtliches</h3>
+          <ul class="space-y-1">
+            <li>
+              <NuxtLink to="/imprint" class="hover:text-primary"
+                >Impressum</NuxtLink
+              >
+            </li>
+            <li>
+              <NuxtLink to="/privacy" class="hover:text-primary"
+                >Datenschutz</NuxtLink
+              >
+            </li>
+            <li>
+              <NuxtLink to="/terms" class="hover:text-primary">AGB</NuxtLink>
+            </li>
+          </ul>
+        </div>
+        <div></div>
+        <div></div>
+      </div>
+
       <p>
         © {{ new Date().getFullYear() }} Rieger Systems · Alle Rechte
         vorbehalten
       </p>
 
-      <!-- Cookie-Statement -->
       <p class="text-xs text-center text-base-content/50 leading-relaxed">
         🍪 Diese Website verwendet <strong>keine Cookies</strong> und kein
         externes Tracking.<br />
@@ -101,7 +119,6 @@
         >.
       </p>
 
-      <!-- Socials -->
       <div
         class="flex justify-center gap-6 pt-1 text-base md:text-lg text-base-content/60"
       >
@@ -164,4 +181,13 @@
 
 <script setup lang="ts">
 const { logoShort } = useAssets();
+
+function scrollToAfterHero() {
+  setTimeout(() => {
+    const element = document.getElementById("after-hero");
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  }, 100); // Kurze Verzögerung von 100 Millisekunden
+}
 </script>
