@@ -8,6 +8,7 @@ import {
   DocumentDuplicateIcon,
   WrenchScrewdriverIcon, // Although imported, WrenchScrewdriverIcon is not used in the template. Consider removing if not needed.
 } from "@heroicons/vue/24/outline";
+import NetPriceNote from "~/components/sections/products/NetPriceNote.vue";
 
 const software = products?.software || {};
 </script>
@@ -172,5 +173,6 @@ const software = products?.software || {};
         </p>
       </div>
     </div>
+    <NetPriceNote />
   </section>
 </template>

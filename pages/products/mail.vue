@@ -138,11 +138,13 @@
         </a>
       </aside>
     </div>
+    <NetPriceNote />
   </section>
 </template>
 
 <script setup>
 import { mail } from "@/data/products/mail";
+import NetPriceNote from "~/components/sections/products/NetPriceNote.vue";
 </script>
 
 <style scoped>

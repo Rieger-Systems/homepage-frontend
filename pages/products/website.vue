@@ -7,6 +7,7 @@ import {
   ChevronUpIcon,
 } from "@heroicons/vue/24/outline";
 import { ref } from "vue";
+import NetPriceNote from "~/components/sections/products/NetPriceNote.vue";
 
 const expandedModules = ref([]);
 
@@ -243,6 +244,7 @@ function findPackagesForModule(moduleId) {
         >.
       </div>
     </div>
+    <NetPriceNote />
   </section>
 </template>
 
