@@ -32,9 +32,9 @@
           menschenfreundlich. Von IT-Infrastruktur bis erklärbarer KI.
         </p>
         <div class="flex flex-col sm:flex-row justify-center gap-4">
-          <NuxtLink to="/products" class="btn btn-primary btn-lg">
+          <a href="#services-carousel" class="btn btn-primary btn-lg">
             Unsere Leistungen
-          </NuxtLink>
+          </a>
           <NuxtLink to="/contact" class="btn btn-outline btn-lg">
             Kontakt aufnehmen
           </NuxtLink>
