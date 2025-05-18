@@ -1,7 +1,7 @@
 import { aisystems } from "./aisystems";
 import { mail } from "./mail";
 import { services } from "./services";
-import { software } from "./software";
+import { software } from "./software/software";
 import { website } from "./website/website";
 import type { Product } from "~/data/types/product";
 
