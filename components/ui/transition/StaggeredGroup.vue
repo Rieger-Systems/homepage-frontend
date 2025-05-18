@@ -10,9 +10,9 @@ const props = defineProps({
   stagger: { type: Number, default: 50 }, // ms
 });
 
-// Für Stagger-Delay (optional, bei Bedarf anwendbar):
 const slots = useSlots();
 const children = slots.default?.() ?? [];
+
 const getStaggerStyle = (index: number) =>
   `--stagger-delay: ${index * props.stagger}ms;`;
 </script>
@@ -26,7 +26,14 @@ const getStaggerStyle = (index: number) =>
   >
     <template v-for="(child, i) in children" :key="child.key ?? i">
       <div :style="getStaggerStyle(i)">
-        <slot :name="child.type?.name" />
+        <!-- Nur falls du Slot-Name brauchst, sonst kannst du diese Zeile entfernen -->
+        <slot
+          :name="
+            typeof child.type === 'object' && 'name' in child.type
+              ? child.type.name
+              : undefined
+          "
+        />
         <component :is="child" />
       </div>
     </template>
