@@ -9,9 +9,17 @@
 </template>
 
 <script setup lang="ts">
+import { computed } from "vue";
 import { useRoute } from "vue-router";
 
 const props = defineProps<{ to: string }>();
 const route = useRoute();
-const isActive = computed(() => route.path.startsWith(props.to));
+
+const isActive = computed(() => {
+  if (props.to === "/") {
+    return route.path === "/";
+  } else {
+    return route.path.startsWith(props.to);
+  }
+});
 </script>

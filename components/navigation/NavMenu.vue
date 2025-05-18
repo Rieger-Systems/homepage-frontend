@@ -1,5 +1,15 @@
 <template>
   <div class="flex items-center gap-8">
+    <div class="flex gap-4 md:gap-8">
+      <NavLink
+        v-for="item in firstNavItems"
+        :key="item.to"
+        :to="item.to"
+        @click="$emit('select')"
+      >
+        {{ item.label }}
+      </NavLink>
+    </div>
     <ProductsDropdown
       label="Produkte"
       :items="productItems"
@@ -22,9 +32,11 @@
 import NavLink from "~/components/navigation/NavLink.vue";
 import ProductsDropdown from "./ProductsDropdown.vue";
 import { products } from "~/data/products";
-import type { Product } from "~/data/types/products";
+import type { Product } from "~/data/types/product";
 
 defineEmits(["select"]);
+
+const firstNavItems = [{ key: "home", label: "Startseite", to: "/" }];
 
 // Dynamisches Laden der Produkte
 const navItems = Object.keys(products).map((key) => {

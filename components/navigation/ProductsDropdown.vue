@@ -1,6 +1,56 @@
+<script setup lang="ts">
+import { ref, watch, computed } from "vue";
+import { Menu, MenuButton, MenuItems, MenuItem } from "@headlessui/vue";
+import { ChevronDownIcon } from "@heroicons/vue/20/solid";
+import { useRouter, useRoute } from "vue-router";
+import { products } from "~/data/products";
+
+// Produkt-Items vorbereiten
+const productItems = Object.keys(products).map((key) => {
+  const product = products[key];
+  return {
+    label: product.title.split(" - ")[0],
+    to: product.link,
+  };
+});
+
+const props = defineProps<{ label: string }>();
+const emit = defineEmits<{ (e: "select"): void }>();
+
+const router = useRouter();
+const route = useRoute();
+
+// Offen/Zu-Status für Menü (optional, falls du ihn brauchst)
+const isOpen = ref(false);
+
+// Menü schließt sich automatisch bei Routenwechsel
+watch(
+  () => route.path,
+  () => {
+    isOpen.value = false;
+  }
+);
+
+function isChildActive(item: { to: string }) {
+  return route.path === item.to;
+}
+
+const isParentActive = computed(() =>
+  productItems.some((item) => route.path.startsWith(item.to))
+);
+
+// Smoothe Menü-Navigation mit sanfter Animation
+function handleMenuClick(to: string, close: () => void) {
+  emit("select");
+  close(); // HeadlessUI Menü schließen
+  setTimeout(() => {
+    router.push(to);
+  }, 120); // Delay für schöne Animation (Passe ggf. an Transition an)
+}
+</script>
+
 <template>
-  <Menu as="div" class="relative inline-block" v-slot="{ open }">
-    <!-- Hauptmenü-Button -->
+  <Menu as="div" class="relative inline-block" v-slot="{ open, close }">
     <MenuButton
       class="transition duration-150 text-base-content/70 hover:text-primary inline-flex items-center gap-2 text-sm font-medium px-3 py-1 rounded focus:outline-none focus-visible:ring-2 focus-visible:ring-primary cursor-pointer"
       :class="{ 'text-primary font-semibold': isParentActive }"
@@ -13,7 +63,6 @@
       />
     </MenuButton>
 
-    <!-- Dropdown-Panel -->
     <Transition
       enter="transition ease-out duration-100"
       enter-from="opacity-0 translate-y-1"
@@ -23,9 +72,9 @@
       leave-to="opacity-0 translate-y-1"
     >
       <MenuItems
+        v-if="open"
         class="absolute left-0 mt-2 w-48 origin-top-left rounded-md bg-base-100 border border-base-300 shadow-lg ring-1 ring-black/5 focus:outline-none z-50"
       >
-        <!-- Dynamische Menüeinträge -->
         <MenuItem
           v-for="item in productItems"
           :key="item.to"
@@ -37,45 +86,15 @@
               : 'text-base-content/70 hover:text-primary hover:font-semibold',
           ]"
         >
-          <NuxtLink :to="item.to" @click="$emit('select')" class="block w-full">
+          <a
+            href="#"
+            class="block w-full"
+            @click.prevent="handleMenuClick(item.to, close)"
+          >
             {{ item.label }}
-          </NuxtLink>
+          </a>
         </MenuItem>
       </MenuItems>
     </Transition>
   </Menu>
 </template>
-
-<script setup lang="ts">
-import { Menu, MenuButton, MenuItems, MenuItem } from "@headlessui/vue";
-import { ChevronDownIcon } from "@heroicons/vue/20/solid";
-import { useRoute } from "vue-router";
-import { computed } from "vue";
-import { products } from "~/data/products";
-
-// Dynamische Produktauswahl aus Produktdateien
-const productItems = Object.keys(products).map((key) => {
-  const product = products[key];
-  return {
-    label: product.title.split(" - ")[0],
-    to: product.link,
-  };
-});
-
-const props = defineProps<{
-  label: string;
-}>();
-
-const emit = defineEmits<{
-  (e: "select"): void;
-}>();
-
-const route = useRoute();
-const isParentActive = computed(() =>
-  productItems.some((item) => route.path.startsWith(item.to))
-);
-
-function isChildActive(item: { to: string }) {
-  return route.path === item.to;
-}
-</script>

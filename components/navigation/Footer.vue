@@ -182,6 +182,7 @@
 <script setup lang="ts">
 const { logoShort } = useAssets();
 
+//todo VERBUGGT
 function scrollToAfterHero() {
   setTimeout(() => {
     const element = document.getElementById("after-hero");

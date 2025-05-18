@@ -317,7 +317,7 @@ const activeUseCase = ref(-1);
 const demoText = ref("");
 const demoResult = ref("");
 const demoLoading = ref(false);
-function normalizeText(text) {
+function normalizeText(text: string) {
   // Entfernt Sonderzeichen/Umlaute, nur Wortstämme
   return text
     .toLowerCase()

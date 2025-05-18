@@ -1,117 +1,136 @@
 <template>
-  <section class="max-w-screen-sm mx-auto px-6 py-24 text-sm">
-    <!-- Header -->
-    <div class="text-center mb-12">
-      <h1 class="text-4xl font-semibold tracking-tight">
-        Allgemeine Geschäftsbedingungen (AGB)
-      </h1>
-      <p class="text-gray-400 mt-2 text-base">
-        Stand: {{ new Date().getFullYear() }}
-      </p>
-    </div>
+  <section
+    class="max-w-screen-sm mx-auto px-4 sm:px-6 py-12 sm:py-16 md:py-20 text-base"
+    role="main"
+    aria-labelledby="agb-heading"
+  >
+    <!-- Header animiert -->
+    <FadeIn>
+      <header class="text-center mb-10 sm:mb-14">
+        <h1
+          id="agb-heading"
+          class="text-3xl sm:text-4xl font-semibold tracking-tight mb-1"
+          tabindex="0"
+        >
+          Allgemeine Geschäftsbedingungen (AGB)
+        </h1>
+        <p
+          class="text-base-content/70 text-base max-w-prose mx-auto"
+          tabindex="0"
+        >
+          Stand: 18.05.2025
+        </p>
+      </header>
+    </FadeIn>
 
-    <div class="prose prose-invert dark:prose-invert space-y-6">
-      <p>
-        Diese Allgemeinen Geschäftsbedingungen (AGB) gelten für alle
-        vertraglichen Beziehungen mit der
-        <strong>Rieger Systems GmbH (in Gründung)</strong>, sofern nicht
-        ausdrücklich abweichende Vereinbarungen getroffen wurden. Mit der
-        Nutzung unserer Website, der Kontaktaufnahme oder der Inanspruchnahme
-        von Leistungen erklären Sie sich mit diesen Bedingungen einverstanden.
-      </p>
+    <!-- Card mit leichtem Schatten & Farb-Akzent, SlideFadeIn -->
+    <SlideFadeIn :direction="'up'" :distance="36" :duration="0.7">
+      <article
+        class="relative bg-base-100 border-l-4 border-primary/70 rounded-lg px-4 sm:px-8 py-7 sm:py-10 flex flex-col gap-7 prose prose-invert dark:prose-invert max-w-prose mx-auto transition-all duration-300 outline-none focus:ring-4 focus:ring-primary/40 focus:ring-offset-2 focus:ring-offset-base-100"
+        tabindex="0"
+        aria-label="Allgemeine Geschäftsbedingungen"
+      >
+        <!-- Linker Farbverlauf als Akzent -->
+        <div
+          class="absolute left-0 top-0 h-full w-1 bg-gradient-to-b from-primary/50 via-primary/10 to-transparent rounded-l-lg pointer-events-none"
+        ></div>
 
-      <h2>1. Geltungsbereich</h2>
-      <p>
-        Diese AGB gelten für alle gegenwärtigen und künftigen Leistungen der
-        Rieger Systems GmbH, insbesondere in den Bereichen Softwareentwicklung,
-        künstliche Intelligenz, digitale Produkte, Beratung sowie technische
-        Dienstleistungen.
-      </p>
-
-      <h2>2. Vertragsabschluss</h2>
-      <p>
-        Ein Vertrag kommt zustande durch schriftliche Bestätigung, Annahme eines
-        Angebots oder Projektbeginn auf Basis einer Vereinbarung. Anfragen über
-        unsere Website, E-Mail oder andere Kanäle stellen kein verbindliches
-        Angebot dar.
-      </p>
-
-      <h2>3. Leistungsumfang</h2>
-      <p>
-        Art, Umfang und Ziel der Leistung ergeben sich aus dem jeweiligen
-        Angebot, der schriftlichen Vereinbarung oder dem Projektvertrag.
-        Änderungen und Erweiterungen bedürfen der schriftlichen Zustimmung
-        beider Parteien.
-      </p>
-
-      <h2>4. Preise und Zahlungsbedingungen</h2>
-      <p>
-        Alle Preise verstehen sich exklusive gesetzlicher Umsatzsteuer. Sofern
-        nicht anders vereinbart, ist der Rechnungsbetrag innerhalb von 14 Tagen
-        ab Rechnungsdatum ohne Abzug zur Zahlung fällig. Bei Zahlungsverzug
-        behalten wir uns die Sperrung oder Verzögerung weiterer Leistungen vor.
-      </p>
-
-      <h2>5. Nutzungsrechte</h2>
-      <p>
-        Sofern nicht explizit schriftlich übertragen, verbleiben sämtliche
-        Urheberrechte, Nutzungsrechte und Schutzrechte an entwickelten
-        Konzepten, Quellcodes, KI-Modellen oder Dokumentationen bei Rieger
-        Systems. Der Kunde erhält ein einfaches, nicht übertragbares,
-        zweckgebundenes Nutzungsrecht im vertraglich vereinbarten Umfang.
-      </p>
-
-      <h2>6. Haftung</h2>
-      <p>
-        Rieger Systems haftet ausschließlich bei Vorsatz oder grober
-        Fahrlässigkeit. Für leichte Fahrlässigkeit, mittelbare Schäden,
-        Folgeschäden, Datenverluste oder entgangenen Gewinn wird keine Haftung
-        übernommen. Die Nutzung unserer Systeme und Software erfolgt auf eigenes
-        Risiko des Kunden. Eine Haftung für Inhalte, Handlungen oder
-        Entscheidungen, die auf KI-basierten Empfehlungen beruhen, ist
-        ausgeschlossen.
-      </p>
-
-      <h2>7. Datenschutz</h2>
-      <p>
-        Die Verarbeitung personenbezogener Daten erfolgt ausschließlich im
-        Rahmen der geltenden Datenschutzgesetze. Nähere Informationen finden Sie
-        in unserer
-        <NuxtLink to="/privacy" class="underline hover:text-primary"
-          >Datenschutzerklärung</NuxtLink
-        >.
-      </p>
-
-      <h2>8. Vertraulichkeit</h2>
-      <p>
-        Beide Parteien verpflichten sich, sämtliche im Rahmen der Zusammenarbeit
-        erlangten Informationen, die nicht öffentlich zugänglich sind,
-        vertraulich zu behandeln – auch über das Ende der Geschäftsbeziehung
-        hinaus.
-      </p>
-
-      <h2>9. Gerichtsstand und anwendbares Recht</h2>
-      <p>
-        Es gilt ausschließlich österreichisches Recht unter Ausschluss des
-        UN-Kaufrechts. Gerichtsstand ist – soweit gesetzlich zulässig – [Ort
-        ergänzen]. Sollte eine Bestimmung dieser AGB ganz oder teilweise
-        unwirksam sein, bleibt die Gültigkeit der übrigen Bestimmungen
-        unberührt.
-      </p>
-
-      <h2>10. Kontakt</h2>
-      <p>
-        Rieger Systems GmbH (in Gründung)<br />
-        Musterstraße 12<br />
-        1234 Beispielstadt, Österreich<br />
-        E-Mail:
-        <a href="mailto:kontakt@rieger-systems.eu">kontakt@rieger-systems.eu</a>
-      </p>
-    </div>
+        <!-- Inhalt als Abschnitte -->
+        <template v-for="(section, i) in sections" :key="section.title">
+          <FadeIn :delay="0.09 + i * 0.04">
+            <section
+              class="flex flex-col gap-2 last:pb-0"
+              tabindex="0"
+              :aria-label="section.title"
+            >
+              <h2
+                v-if="section.title"
+                class="!mb-1 !mt-0 !text-primary !text-lg font-semibold"
+              >
+                {{ section.title }}
+              </h2>
+              <div
+                v-for="(content, idx) in section.contents"
+                :key="idx"
+                v-html="content"
+                class="leading-relaxed"
+              />
+            </section>
+          </FadeIn>
+        </template>
+      </article>
+    </SlideFadeIn>
   </section>
 </template>
 
 <script setup lang="ts">
+import FadeIn from "~/components/ui/transition/FadeIn.vue";
+import SlideFadeIn from "~/components/ui/transition/SlideFadeIn.vue";
+
+const sections = [
+  {
+    title: "1. Geltungsbereich",
+    contents: [
+      `Diese AGB gelten für alle gegenwärtigen und künftigen Leistungen der Rieger Systems GmbH, insbesondere in den Bereichen Softwareentwicklung, künstliche Intelligenz, digitale Produkte, Beratung sowie technische Dienstleistungen.`,
+    ],
+  },
+  {
+    title: "2. Vertragsabschluss",
+    contents: [
+      `Ein Vertrag kommt zustande durch schriftliche Bestätigung, Annahme eines Angebots oder Projektbeginn auf Basis einer Vereinbarung. Anfragen über unsere Website, E-Mail oder andere Kanäle stellen kein verbindliches Angebot dar.`,
+    ],
+  },
+  {
+    title: "3. Leistungsumfang",
+    contents: [
+      `Art, Umfang und Ziel der Leistung ergeben sich aus dem jeweiligen Angebot, der schriftlichen Vereinbarung oder dem Projektvertrag. Änderungen und Erweiterungen bedürfen der schriftlichen Zustimmung beider Parteien.`,
+    ],
+  },
+  {
+    title: "4. Preise und Zahlungsbedingungen",
+    contents: [
+      `Alle Preise verstehen sich exklusive gesetzlicher Umsatzsteuer. Sofern nicht anders vereinbart, ist der Rechnungsbetrag innerhalb von 14 Tagen ab Rechnungsdatum ohne Abzug zur Zahlung fällig. Bei Zahlungsverzug behalten wir uns die Sperrung oder Verzögerung weiterer Leistungen vor.`,
+    ],
+  },
+  {
+    title: "5. Nutzungsrechte",
+    contents: [
+      `Sofern nicht explizit schriftlich übertragen, verbleiben sämtliche Urheberrechte, Nutzungsrechte und Schutzrechte an entwickelten Konzepten, Quellcodes, KI-Modellen oder Dokumentationen bei Rieger Systems. Der Kunde erhält ein einfaches, nicht übertragbares, zweckgebundenes Nutzungsrecht im vertraglich vereinbarten Umfang.`,
+    ],
+  },
+  {
+    title: "6. Haftung",
+    contents: [
+      `Rieger Systems haftet ausschließlich bei Vorsatz oder grober Fahrlässigkeit. Für leichte Fahrlässigkeit, mittelbare Schäden, Folgeschäden, Datenverluste oder entgangenen Gewinn wird keine Haftung übernommen. Die Nutzung unserer Systeme und Software erfolgt auf eigenes Risiko des Kunden. Eine Haftung für Inhalte, Handlungen oder Entscheidungen, die auf KI-basierten Empfehlungen beruhen, ist ausgeschlossen.`,
+    ],
+  },
+  {
+    title: "7. Datenschutz",
+    contents: [
+      `Die Verarbeitung personenbezogener Daten erfolgt ausschließlich im Rahmen der geltenden Datenschutzgesetze. Nähere Informationen finden Sie in unserer <NuxtLink to="/privacy" class="text-primary hover:underline focus:underline outline-none" tabindex="0">Datenschutzerklärung</NuxtLink>.`,
+    ],
+  },
+  {
+    title: "8. Vertraulichkeit",
+    contents: [
+      `Beide Parteien verpflichten sich, sämtliche im Rahmen der Zusammenarbeit erlangten Informationen, die nicht öffentlich zugänglich sind, vertraulich zu behandeln – auch über das Ende der Geschäftsbeziehung hinaus.`,
+    ],
+  },
+  {
+    title: "9. Gerichtsstand und anwendbares Recht",
+    contents: [
+      `Es gilt ausschließlich österreichisches Recht unter Ausschluss des UN-Kaufrechts. Gerichtsstand ist – soweit gesetzlich zulässig – [Ort ergänzen]. Sollte eine Bestimmung dieser AGB ganz oder teilweise unwirksam sein, bleibt die Gültigkeit der übrigen Bestimmungen unberührt.`,
+    ],
+  },
+  {
+    title: "10. Kontakt",
+    contents: [
+      `Rieger Systems GmbH (in Gründung)<br>Musterstraße 12<br>1234 Beispielstadt, Österreich<br>
+      E-Mail: <a href="mailto:kontakt@rieger-systems.eu" class="text-primary hover:underline focus:underline outline-none" tabindex="0">kontakt@rieger-systems.eu</a>`,
+    ],
+  },
+];
+
 definePageMeta({
   title: "AGB – Rieger Systems",
   description:
@@ -119,3 +138,28 @@ definePageMeta({
   robots: "index,follow",
 });
 </script>
+
+<style scoped>
+/* Optional: bessere Lesbarkeit */
+.prose > * {
+  line-height: 1.6;
+}
+
+/* Fokusring für Artikel */
+article:focus {
+  outline-offset: 4px;
+}
+
+/* Sanfter Hover- und Fokus-Effekt auf Links */
+a:hover,
+a:focus {
+  text-decoration-thickness: 2px;
+}
+
+/* Scrollbare lange Listen mit Padding */
+.prose ul {
+  padding-left: 1.2em;
+  margin-top: 0.4em;
+  margin-bottom: 0.4em;
+}
+</style>

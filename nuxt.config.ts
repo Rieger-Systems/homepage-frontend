@@ -7,8 +7,9 @@ export default defineNuxtConfig({
   css: ["~/assets/css/main.css"],
   components: {
     global: true,
-    dirs: ["~/components", "~/components/ui"],
+    dirs: ["~/components", "~/components/ui", "~/components/ui/transition"],
   },
+
   vite: {
     plugins: [tailwindcss()],
   },
