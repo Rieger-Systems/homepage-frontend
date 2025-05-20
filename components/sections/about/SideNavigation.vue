@@ -1,11 +1,14 @@
 <template>
   <aside
+    v-motion-slide-left
     class="hidden xl:block fixed top-32 left-8 z-30"
     aria-label="Seiten-Navigation"
   >
     <ul class="border-l border-base-300 pl-3 space-y-2 text-sm font-medium">
-      <li v-for="item in sections" :key="item.id">
+      <li v-for="(item, i) in sections" :key="item.id">
         <a
+          v-motion-fade
+          :style="{ transitionDelay: `${0.08 + i * 0.06}s` }"
           :href="'#' + item.id"
           class="group flex items-center gap-2 pl-3 py-1.5 rounded-r-full transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-primary/30"
           :aria-current="activeId === item.id ? 'location' : undefined"

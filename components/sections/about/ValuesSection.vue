@@ -5,12 +5,43 @@
     role="region"
     class="py-24 even:bg-base-100 odd:bg-base-200 px-6 border-t border-base-300/20"
   >
-    <!-- 🔹 Titelbereich -->
     <div class="text-center mb-20">
-      <h2 id="heading-values" tabindex="-1" class="text-3xl font-bold mb-4">
+      <h2
+        v-motion="{
+          initial: { opacity: 0, y: 20 },
+          visibleOnce: {
+            // Animation nur einmal, wenn sichtbar
+            opacity: 1,
+            y: 0,
+            transition: {
+              type: 'spring',
+              stiffness: 250,
+              damping: 25,
+              delay: 100,
+            },
+          },
+        }"
+        id="heading-values"
+        tabindex="-1"
+        class="text-3xl font-bold mb-4"
+      >
         Unsere Werte
       </h2>
       <p
+        v-motion="{
+          initial: { opacity: 0, y: 30 },
+          visibleOnce: {
+            // Animation nur einmal, wenn sichtbar
+            opacity: 1,
+            y: 0,
+            transition: {
+              type: 'spring',
+              stiffness: 250,
+              damping: 25,
+              delay: 200,
+            },
+          },
+        }"
         class="text-base text-base-content/70 max-w-2xl mx-auto leading-relaxed"
       >
         Sie sind Entscheidungsfilter, Haltung und Orientierung zugleich – für
@@ -18,15 +49,26 @@
       </p>
     </div>
 
-    <!-- 🔸 Werte im Badge-Panel-Stil -->
     <div
       class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto"
     >
       <div
         v-for="(item, index) in values"
         :key="item.title"
-        class="bg-base-200/60 backdrop-blur-md border border-base-300/20 rounded-lg p-6 text-center hover:shadow-lg transition-shadow animate-fade-up"
-        :style="{ animationDelay: `${index * 100}ms` }"
+        v-motion="{
+          initial: { opacity: 0, y: 50 },
+          visibleOnce: {
+            opacity: 1,
+            y: 0,
+            transition: {
+              type: 'spring',
+              stiffness: 200,
+              damping: 20,
+              delay: 350 + index * 60,
+            },
+          },
+        }"
+        class="bg-base-200/60 backdrop-blur-md border border-base-300/20 rounded-lg p-6 text-center hover:shadow-lg transition-shadow"
       >
         <div class="mb-3 flex justify-center">
           <component :is="item.icon" class="w-8 h-8 text-primary" />
@@ -85,19 +127,3 @@ const values = [
   },
 ];
 </script>
-
-<style scoped>
-@keyframes fade-up {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-.animate-fade-up {
-  animation: fade-up 0.6s ease-out both;
-}
-</style>

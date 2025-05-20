@@ -4,69 +4,81 @@
     role="main"
     aria-labelledby="agb-heading"
   >
-    <!-- Header animiert -->
-    <FadeIn>
-      <header class="text-center mb-10 sm:mb-14">
-        <h1
-          id="agb-heading"
-          class="text-3xl sm:text-4xl font-semibold tracking-tight mb-1"
-          tabindex="0"
-        >
-          Allgemeine Geschäftsbedingungen (AGB)
-        </h1>
-        <p
-          class="text-base-content/70 text-base max-w-prose mx-auto"
-          tabindex="0"
-        >
-          Stand: 18.05.2025
-        </p>
-      </header>
-    </FadeIn>
-
-    <!-- Card mit leichtem Schatten & Farb-Akzent, SlideFadeIn -->
-    <SlideFadeIn :direction="'up'" :distance="36" :duration="0.7">
-      <article
-        class="relative bg-base-100 border-l-4 border-primary/70 rounded-lg px-4 sm:px-8 py-7 sm:py-10 flex flex-col gap-7 prose prose-invert dark:prose-invert max-w-prose mx-auto transition-all duration-300 outline-none focus:ring-4 focus:ring-primary/40 focus:ring-offset-2 focus:ring-offset-base-100"
+    <!-- Header: Motion Fade -->
+    <header v-motion-fade class="text-center mb-10 sm:mb-14">
+      <h1
+        id="agb-heading"
+        class="text-3xl sm:text-4xl font-semibold tracking-tight mb-1"
         tabindex="0"
-        aria-label="Allgemeine Geschäftsbedingungen"
       >
-        <!-- Linker Farbverlauf als Akzent -->
-        <div
-          class="absolute left-0 top-0 h-full w-1 bg-gradient-to-b from-primary/50 via-primary/10 to-transparent rounded-l-lg pointer-events-none"
-        ></div>
+        Allgemeine Geschäftsbedingungen (AGB)
+      </h1>
+      <p
+        class="text-base-content/70 text-base max-w-prose mx-auto"
+        tabindex="0"
+      >
+        Stand: 18.05.2025
+      </p>
+    </header>
 
-        <!-- Inhalt als Abschnitte -->
-        <template v-for="(section, i) in sections" :key="section.title">
-          <FadeIn :delay="0.09 + i * 0.04">
-            <section
-              class="flex flex-col gap-2 last:pb-0"
-              tabindex="0"
-              :aria-label="section.title"
-            >
-              <h2
-                v-if="section.title"
-                class="!mb-1 !mt-0 !text-primary !text-lg font-semibold"
-              >
-                {{ section.title }}
-              </h2>
-              <div
-                v-for="(content, idx) in section.contents"
-                :key="idx"
-                v-html="content"
-                class="leading-relaxed"
-              />
-            </section>
-          </FadeIn>
-        </template>
-      </article>
-    </SlideFadeIn>
+    <!-- Card mit Slide Up -->
+    <article
+      v-motion-slide-bottom
+      class="relative bg-base-100 border-l-4 border-primary/70 rounded-lg px-4 sm:px-8 py-7 sm:py-10 flex flex-col gap-7 prose prose-invert dark:prose-invert max-w-prose mx-auto transition-all duration-300 outline-none focus:ring-4 focus:ring-primary/40 focus:ring-offset-2 focus:ring-offset-base-100"
+      tabindex="0"
+      aria-label="Allgemeine Geschäftsbedingungen"
+    >
+      <!-- Linker Farbverlauf als Akzent -->
+      <div
+        class="absolute left-0 top-0 h-full w-1 bg-gradient-to-b from-primary/50 via-primary/10 to-transparent rounded-l-lg pointer-events-none"
+      ></div>
+
+      <!-- Inhalt als Abschnitte: jeder Abschnitt einzeln gefadet -->
+      <template v-for="(section, i) in sections" :key="section.title">
+        <section
+          v-motion-fade
+          :style="{ transitionDelay: `${0.09 + i * 0.04}s` }"
+          class="flex flex-col gap-2 last:pb-0"
+          tabindex="0"
+          :aria-label="section.title"
+        >
+          <h2
+            v-if="section.title"
+            class="!mb-1 !mt-0 !text-primary !text-lg font-semibold"
+          >
+            {{ section.title }}
+          </h2>
+          <div
+            v-for="(content, idx) in section.contents"
+            :key="idx"
+            v-html="content"
+            class="leading-relaxed"
+          />
+        </section>
+      </template>
+    </article>
   </section>
 </template>
 
-<script setup lang="ts">
-import FadeIn from "~/components/ui/transition/FadeIn.vue";
-import SlideFadeIn from "~/components/ui/transition/SlideFadeIn.vue";
+<style scoped>
+.prose > * {
+  line-height: 1.6;
+}
+article:focus {
+  outline-offset: 4px;
+}
+a:hover,
+a:focus {
+  text-decoration-thickness: 2px;
+}
+.prose ul {
+  padding-left: 1.2em;
+  margin-top: 0.4em;
+  margin-bottom: 0.4em;
+}
+</style>
 
+<script setup lang="ts">
 const sections = [
   {
     title: "1. Geltungsbereich",
@@ -138,28 +150,3 @@ definePageMeta({
   robots: "index,follow",
 });
 </script>
-
-<style scoped>
-/* Optional: bessere Lesbarkeit */
-.prose > * {
-  line-height: 1.6;
-}
-
-/* Fokusring für Artikel */
-article:focus {
-  outline-offset: 4px;
-}
-
-/* Sanfter Hover- und Fokus-Effekt auf Links */
-a:hover,
-a:focus {
-  text-decoration-thickness: 2px;
-}
-
-/* Scrollbare lange Listen mit Padding */
-.prose ul {
-  padding-left: 1.2em;
-  margin-top: 0.4em;
-  margin-bottom: 0.4em;
-}
-</style>

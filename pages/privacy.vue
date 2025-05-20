@@ -1,72 +1,4 @@
-<template>
-  <section
-    class="max-w-screen-sm mx-auto px-4 sm:px-6 py-12 sm:py-16 md:py-20 text-base"
-    role="main"
-    aria-labelledby="privacy-heading"
-  >
-    <!-- Header animiert -->
-    <FadeIn>
-      <header class="text-center mb-10 sm:mb-14">
-        <h1
-          id="privacy-heading"
-          class="text-3xl sm:text-4xl font-semibold tracking-tight mb-1"
-          tabindex="0"
-        >
-          Datenschutzerklärung
-        </h1>
-        <p
-          class="text-base-content/70 text-base max-w-prose mx-auto"
-          tabindex="0"
-        >
-          Informationen gemäß Art. 13 und 14 DSGVO
-        </p>
-      </header>
-    </FadeIn>
-
-    <!-- Card mit leichtem Schatten & Farbakzent, SlideFadeIn -->
-    <SlideFadeIn :direction="'up'" :distance="36" :duration="0.7">
-      <article
-        class="relative bg-base-100 border-l-4 border-primary/70 rounded-lg px-4 sm:px-8 py-7 sm:py-10 flex flex-col gap-7 prose prose-invert dark:prose-invert max-w-prose mx-auto transition-all duration-300 outline-none focus:ring-4 focus:ring-primary/40 focus:ring-offset-2 focus:ring-offset-base-100"
-        tabindex="0"
-        aria-label="Datenschutzerklärung"
-      >
-        <!-- Vertikaler Farbverlauf an der linken Seite -->
-        <div
-          class="absolute left-0 top-0 h-full w-1 bg-gradient-to-b from-primary/50 via-primary/10 to-transparent rounded-l-lg pointer-events-none"
-        ></div>
-
-        <!-- Inhalt dynamisch mit Animation -->
-        <template v-for="(block, i) in sections" :key="block.title">
-          <FadeIn :delay="0.09 + i * 0.04">
-            <section
-              class="flex flex-col gap-2 last:pb-0"
-              tabindex="0"
-              :aria-label="block.title"
-            >
-              <h2
-                v-if="block.title"
-                class="!mb-1 !mt-0 !text-primary !text-lg font-semibold"
-              >
-                {{ block.title }}
-              </h2>
-              <div
-                v-for="(content, idx) in block.contents"
-                :key="idx"
-                v-html="content"
-                class="leading-relaxed"
-              />
-            </section>
-          </FadeIn>
-        </template>
-      </article>
-    </SlideFadeIn>
-  </section>
-</template>
-
 <script setup lang="ts">
-import FadeIn from "~/components/ui/transition/FadeIn.vue";
-import SlideFadeIn from "~/components/ui/transition/SlideFadeIn.vue";
-
 // DSGVO-Abschnitte als strukturierte Daten
 const sections = [
   {
@@ -178,24 +110,79 @@ definePageMeta({
 });
 </script>
 
+<template>
+  <section
+    class="max-w-screen-sm mx-auto px-4 sm:px-6 py-12 sm:py-16 md:py-20 text-base"
+    role="main"
+    aria-labelledby="privacy-heading"
+  >
+    <!-- Header animiert -->
+    <header v-motion-fade class="text-center mb-10 sm:mb-14">
+      <h1
+        id="privacy-heading"
+        class="text-3xl sm:text-4xl font-semibold tracking-tight mb-1"
+        tabindex="0"
+      >
+        Datenschutzerklärung
+      </h1>
+      <p
+        class="text-base-content/70 text-base max-w-prose mx-auto"
+        tabindex="0"
+      >
+        Informationen gemäß Art. 13 und 14 DSGVO
+      </p>
+    </header>
+
+    <!-- Card mit SlideUp-Effekt -->
+    <article
+      v-motion-slide-bottom
+      class="relative bg-base-100 border-l-4 border-primary/70 rounded-lg px-4 sm:px-8 py-7 sm:py-10 flex flex-col gap-7 prose prose-invert dark:prose-invert max-w-prose mx-auto transition-all duration-300 outline-none focus:ring-4 focus:ring-primary/40 focus:ring-offset-2 focus:ring-offset-base-100"
+      tabindex="0"
+      aria-label="Datenschutzerklärung"
+    >
+      <!-- Vertikaler Farbverlauf -->
+      <div
+        class="absolute left-0 top-0 h-full w-1 bg-gradient-to-b from-primary/50 via-primary/10 to-transparent rounded-l-lg pointer-events-none"
+      ></div>
+
+      <!-- Abschnitte einzeln gefadet mit Stagger-Effekt -->
+      <template v-for="(block, i) in sections" :key="block.title">
+        <section
+          v-motion-fade
+          :style="{ transitionDelay: `${0.09 + i * 0.04}s` }"
+          class="flex flex-col gap-2 last:pb-0"
+          tabindex="0"
+          :aria-label="block.title"
+        >
+          <h2
+            v-if="block.title"
+            class="!mb-1 !mt-0 !text-primary !text-lg font-semibold"
+          >
+            {{ block.title }}
+          </h2>
+          <div
+            v-for="(content, idx) in block.contents"
+            :key="idx"
+            v-html="content"
+            class="leading-relaxed"
+          />
+        </section>
+      </template>
+    </article>
+  </section>
+</template>
+
 <style scoped>
-/* Optional: zusätzliche Lesbarkeit durch leicht vergrößerten Zeilenabstand */
 .prose > * {
   line-height: 1.6;
 }
-
-/* Fokusring & Outline verbessern */
 article:focus {
   outline-offset: 4px;
 }
-
-/* Sanfter Hovereffekt auf Links */
 a:hover,
 a:focus {
   text-decoration-thickness: 2px;
 }
-
-/* Scrollbare lange Listen mit Padding */
 .prose ul {
   padding-left: 1.2em;
   margin-top: 0.4em;

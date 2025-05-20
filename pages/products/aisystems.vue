@@ -1,23 +1,94 @@
 <template>
-  <section class="bg-base-200 min-h-screen pt-10 pb-20">
-    <div class="container mx-auto px-4 max-w-screen-lg">
-      <!-- HERO -->
+  <section class="bg-base-200 min-h-screen pt-16 pb-20">
+    <div class="container mx-auto px-4 max-w-7xl">
       <div
+        v-motion="{
+          initial: { opacity: 0, y: 50, scale: 0.98 },
+          enter: {
+            opacity: 1,
+            y: 0,
+            scale: 1,
+            transition: {
+              type: 'spring',
+              stiffness: 100,
+              damping: 20,
+              delay: 50,
+            },
+          },
+        }"
         class="relative rounded-xl overflow-hidden bg-gradient-to-br from-primary to-secondary text-primary-content shadow-lg p-10 mb-16"
       >
-        <div class="absolute inset-0 opacity-20 pointer-events-none">
-          <!-- Platz für animiertes SVG, Glow, KI-Bild (kannst du später ergänzen) -->
-        </div>
+        <div class="absolute inset-0 opacity-20 pointer-events-none"></div>
         <div class="relative z-10 text-center max-w-2xl mx-auto">
-          <SparklesIcon class="w-16 h-16 mx-auto mb-4 animate-pulse" />
-          <h1 class="text-5xl text-primary font-bold mb-4 drop-shadow">
+          <SparklesIcon
+            v-motion="{
+              initial: { opacity: 0, scale: 0.8 },
+              enter: {
+                opacity: 1,
+                scale: 1,
+                transition: {
+                  type: 'spring',
+                  stiffness: 250,
+                  damping: 25,
+                  delay: 200,
+                },
+              },
+            }"
+            class="w-16 h-16 mx-auto mb-4 animate-pulse"
+          />
+          <h1
+            v-motion="{
+              initial: { opacity: 0, y: 20 },
+              enter: {
+                opacity: 1,
+                y: 0,
+                transition: {
+                  type: 'spring',
+                  stiffness: 200,
+                  damping: 25,
+                  delay: 300,
+                },
+              },
+            }"
+            class="text-5xl text-primary font-bold mb-4 drop-shadow"
+          >
             A.M.A.R.A. – KI mit Haltung
           </h1>
-          <p class="text-xl mb-6">
+          <p
+            v-motion="{
+              initial: { opacity: 0, y: 20 },
+              enter: {
+                opacity: 1,
+                y: 0,
+                transition: {
+                  type: 'spring',
+                  stiffness: 180,
+                  damping: 25,
+                  delay: 400,
+                },
+              },
+            }"
+            class="text-xl mb-6"
+          >
             Entwickelt für Menschen, nicht für Märkte.<br />
             KI, die Verantwortung trägt. Für Sie, für Europa, für die Zukunft.
           </p>
-          <div class="flex justify-center gap-4 mb-4 flex-wrap">
+          <div
+            v-motion="{
+              initial: { opacity: 0, y: 20 },
+              enter: {
+                opacity: 1,
+                y: 0,
+                transition: {
+                  type: 'spring',
+                  stiffness: 150,
+                  damping: 20,
+                  delay: 500,
+                },
+              },
+            }"
+            class="flex justify-center gap-4 mb-4 flex-wrap"
+          >
             <a href="#demo" class="btn btn-secondary btn-lg"
               >Live-Demo ausprobieren</a
             >
@@ -28,8 +99,22 @@
         </div>
       </div>
 
-      <!-- VISION / MANIFEST -->
-      <div class="prose prose-invert mx-auto mb-14 text-center">
+      <div
+        v-motion="{
+          initial: { opacity: 0, y: 30 },
+          visibleOnce: {
+            opacity: 1,
+            y: 0,
+            transition: {
+              type: 'spring',
+              stiffness: 150,
+              damping: 20,
+              delay: 100,
+            },
+          },
+        }"
+        class="prose prose-invert mx-auto mb-14 text-center"
+      >
         <h2>Warum A.M.A.R.A.?</h2>
         <p>
           <b
@@ -43,15 +128,42 @@
         </p>
       </div>
 
-      <!-- VORTEILE -->
       <div class="mb-14">
-        <h2 class="text-2xl font-semibold text-primary mb-6 text-center">
+        <h2
+          v-motion="{
+            initial: { opacity: 0, y: 20 },
+            visibleOnce: {
+              opacity: 1,
+              y: 0,
+              transition: {
+                type: 'spring',
+                stiffness: 200,
+                damping: 25,
+                delay: 200,
+              },
+            },
+          }"
+          class="text-2xl font-semibold text-primary mb-6 text-center"
+        >
           Ihre Vorteile mit A.M.A.R.A.
         </h2>
         <ul class="grid md:grid-cols-2 gap-4">
           <li
             v-for="(adv, idx) in advantages"
             :key="idx"
+            v-motion="{
+              initial: { opacity: 0, x: -30 },
+              visibleOnce: {
+                opacity: 1,
+                x: 0,
+                transition: {
+                  type: 'spring',
+                  stiffness: 150,
+                  damping: 20,
+                  delay: 300 + idx * 80, // Staggered from left
+                },
+              },
+            }"
             class="flex items-start bg-base-100 shadow rounded-lg p-4"
           >
             <CheckCircleIcon
@@ -62,15 +174,42 @@
         </ul>
       </div>
 
-      <!-- INTERAKTIVER USE-CASE AUSWAHL -->
       <div class="">
-        <h2 class="text-2xl font-semibold text-primary mb-6 text-center">
+        <h2
+          v-motion="{
+            initial: { opacity: 0, y: 20 },
+            visibleOnce: {
+              opacity: 1,
+              y: 0,
+              transition: {
+                type: 'spring',
+                stiffness: 200,
+                damping: 25,
+                delay: 100,
+              },
+            },
+          }"
+          class="text-2xl font-semibold text-primary mb-6 text-center"
+        >
           Was möchten Sie erreichen?
         </h2>
         <div class="grid md:grid-cols-2 gap-6">
           <div
             v-for="(usecase, idx) in useCases"
             :key="idx"
+            v-motion="{
+              initial: { opacity: 0, y: 30 },
+              visibleOnce: {
+                opacity: 1,
+                y: 0,
+                transition: {
+                  type: 'spring',
+                  stiffness: 150,
+                  damping: 20,
+                  delay: 200 + idx * 100, // Staggered from bottom
+                },
+              },
+            }"
             class="card bg-base-100 shadow border border-base-300 cursor-pointer transition-transform hover:scale-105"
             @click="activeUseCase = idx"
           >
@@ -89,21 +228,77 @@
       </div>
 
       <div id="demo" class="pt-20 mb-16">
-        <h2 class="text-2xl font-semibold text-primary mb-6 text-center">
+        <h2
+          v-motion="{
+            initial: { opacity: 0, y: 20 },
+            visibleOnce: {
+              opacity: 1,
+              y: 0,
+              transition: {
+                type: 'spring',
+                stiffness: 200,
+                damping: 25,
+                delay: 100,
+              },
+            },
+          }"
+          class="text-2xl font-semibold text-primary mb-6 text-center"
+        >
           Live-Demo: Stimmungsanalyse
         </h2>
-        <SentimentDemo />
+        <SentimentDemo
+          v-motion="{
+            initial: { opacity: 0, y: 30 },
+            visibleOnce: {
+              opacity: 1,
+              y: 0,
+              transition: {
+                type: 'spring',
+                stiffness: 150,
+                damping: 20,
+                delay: 200,
+              },
+            },
+          }"
+        />
       </div>
 
-      <!-- ETHIK / PRINZIPIEN / PHILOSOPHIE -->
       <div class="mb-14">
-        <h2 class="text-2xl font-semibold text-primary mb-6 text-center">
+        <h2
+          v-motion="{
+            initial: { opacity: 0, y: 20 },
+            visibleOnce: {
+              opacity: 1,
+              y: 0,
+              transition: {
+                type: 'spring',
+                stiffness: 200,
+                damping: 25,
+                delay: 100,
+              },
+            },
+          }"
+          class="text-2xl font-semibold text-primary mb-6 text-center"
+        >
           Ethische Prinzipien
         </h2>
         <div class="flex flex-wrap justify-center gap-6">
           <div
             v-for="(eth, idx) in ethics"
             :key="idx"
+            v-motion="{
+              initial: { opacity: 0, scale: 0.8 },
+              visibleOnce: {
+                opacity: 1,
+                scale: 1,
+                transition: {
+                  type: 'spring',
+                  stiffness: 150,
+                  damping: 20,
+                  delay: 200 + idx * 70, // Staggered scale/fade
+                },
+              },
+            }"
             class="bg-base-100 p-4 rounded-lg shadow flex items-center gap-2"
           >
             <ShieldCheckIcon class="w-6 h-6 text-primary" />
@@ -112,81 +307,90 @@
         </div>
       </div>
 
-      <!-- ARCHITEKTUR / TECH (neues Feature-Grid statt Prose) -->
       <div class="mb-14">
-        <h2 class="text-2xl font-semibold text-primary mb-6 text-center">
+        <h2
+          v-motion="{
+            initial: { opacity: 0, y: 20 },
+            visibleOnce: {
+              opacity: 1,
+              y: 0,
+              transition: {
+                type: 'spring',
+                stiffness: 200,
+                damping: 25,
+                delay: 100,
+              },
+            },
+          }"
+          class="text-2xl font-semibold text-primary mb-6 text-center"
+        >
           Technische Basis & Architektur
         </h2>
         <div class="grid md:grid-cols-3 gap-6">
           <div
+            v-for="(tech, idx) in techStack"
+            :key="idx"
+            v-motion="{
+              initial: { opacity: 0, y: 40 },
+              visibleOnce: {
+                opacity: 1,
+                y: 0,
+                transition: {
+                  type: 'spring',
+                  stiffness: 150,
+                  damping: 20,
+                  delay: 200 + idx * 80, // Staggered from bottom
+                },
+              },
+            }"
             class="bg-base-100 p-6 rounded-lg shadow flex flex-col items-center"
           >
-            <Cog6ToothIcon class="w-10 h-10 text-primary mb-2" />
-            <span class="font-semibold text-base-content"
-              >Microservices-Architektur</span
-            >
-            <span class="text-xs text-base-content/60 mt-1">Java & Python</span>
-          </div>
-          <div
-            class="bg-base-100 p-6 rounded-lg shadow flex flex-col items-center"
-          >
-            <ServerStackIcon class="w-10 h-10 text-primary mb-2" />
-            <span class="font-semibold text-base-content">Qdrant & Neo4j</span>
-            <span class="text-xs text-base-content/60 mt-1"
-              >Vektor- & Graphdatenbanken</span
-            >
-          </div>
-          <div
-            class="bg-base-100 p-6 rounded-lg shadow flex flex-col items-center"
-          >
-            <GlobeEuropeAfricaIcon class="w-10 h-10 text-primary mb-2" />
-            <span class="font-semibold text-base-content"
-              >100 % EU-Hosting</span
-            >
-            <span class="text-xs text-base-content/60 mt-1"
-              >Keine US-Clouds, DSGVO</span
-            >
-          </div>
-          <div
-            class="bg-base-100 p-6 rounded-lg shadow flex flex-col items-center"
-          >
-            <SparklesIcon class="w-10 h-10 text-primary mb-2" />
-            <span class="font-semibold text-base-content"
-              >Open Source LLMs</span
-            >
-            <span class="text-xs text-base-content/60 mt-1"
-              >Mistral, GBERT, BLOOM</span
-            >
-          </div>
-          <div
-            class="bg-base-100 p-6 rounded-lg shadow flex flex-col items-center"
-          >
-            <ShieldCheckIcon class="w-10 h-10 text-primary mb-2" />
-            <span class="font-semibold text-base-content">Auditierbare KI</span>
-            <span class="text-xs text-base-content/60 mt-1"
-              >Transparente Prozesse</span
-            >
-          </div>
-          <div
-            class="bg-base-100 p-6 rounded-lg shadow flex flex-col items-center"
-          >
-            <CheckCircleIcon class="w-10 h-10 text-primary mb-2" />
-            <span class="font-semibold text-base-content"
-              >API, REST & gRPC</span
-            >
-            <span class="text-xs text-base-content/60 mt-1"
-              >Schnelle Integration</span
-            >
+            <component :is="tech.icon" class="w-10 h-10 text-primary mb-2" />
+            <span class="font-semibold text-base-content">{{
+              tech.title
+            }}</span>
+            <span class="text-xs text-base-content/60 mt-1">{{
+              tech.desc
+            }}</span>
           </div>
         </div>
       </div>
 
-      <!-- FEEDBACK / TESTIMONIALS (Platzhalter) -->
       <div class="mb-14 text-center">
-        <h2 class="text-2xl font-semibold text-primary mb-6">
+        <h2
+          v-motion="{
+            initial: { opacity: 0, y: 20 },
+            visibleOnce: {
+              opacity: 1,
+              y: 0,
+              transition: {
+                type: 'spring',
+                stiffness: 200,
+                damping: 25,
+                delay: 100,
+              },
+            },
+          }"
+          class="text-2xl font-semibold text-primary mb-6"
+        >
           Stimmen aus der Praxis
         </h2>
-        <div class="flex justify-center">
+        <div
+          v-motion="{
+            initial: { opacity: 0, scale: 0.95 },
+            visibleOnce: {
+              opacity: 1,
+              scale: 1,
+              transition: {
+                type: 'spring',
+                stiffness: 150,
+                damping: 20,
+                delay: 200,
+              },
+            },
+          }"
+          class="flex justify-center"
+        >
           <div
             class="max-w-xl bg-base-100 rounded-xl shadow-lg px-8 py-8 flex flex-col items-center opacity-80"
           >
@@ -207,21 +411,63 @@
             </div>
           </div>
         </div>
-        <div class="mt-6 text-base-content/60 text-sm">
+        <div
+          v-motion="{
+            initial: { opacity: 0, y: 10 },
+            visibleOnce: {
+              opacity: 1,
+              y: 0,
+              transition: {
+                type: 'spring',
+                stiffness: 150,
+                damping: 20,
+                delay: 300,
+              },
+            },
+          }"
+          class="mt-6 text-base-content/60 text-sm"
+        >
           Sie sind einer der ersten Tester. Ihre Meinung hilft uns, besser zu
           werden!
         </div>
       </div>
 
-      <!-- FAQ -->
       <div class="mb-16 max-w-2xl mx-auto">
-        <h2 class="text-2xl font-semibold text-primary mb-6 text-center">
+        <h2
+          v-motion="{
+            initial: { opacity: 0, y: 20 },
+            visibleOnce: {
+              opacity: 1,
+              y: 0,
+              transition: {
+                type: 'spring',
+                stiffness: 200,
+                damping: 25,
+                delay: 100,
+              },
+            },
+          }"
+          class="text-2xl font-semibold text-primary mb-6 text-center"
+        >
           Häufige Fragen
         </h2>
         <div
           class="collapse bg-base-100 mb-2"
           v-for="(faq, idx) in faqs"
           :key="idx"
+          v-motion="{
+            initial: { opacity: 0, y: 20 },
+            visibleOnce: {
+              opacity: 1,
+              y: 0,
+              transition: {
+                type: 'spring',
+                stiffness: 150,
+                damping: 20,
+                delay: 200 + idx * 80, // Staggered collapse items
+              },
+            },
+          }"
         >
           <input type="checkbox" class="peer" />
           <div class="collapse-title font-medium">
@@ -233,9 +479,21 @@
         </div>
       </div>
 
-      <!-- CTA -->
       <div
         id="beratung"
+        v-motion="{
+          initial: { opacity: 0, y: 40 },
+          visibleOnce: {
+            opacity: 1,
+            y: 0,
+            transition: {
+              type: 'spring',
+              stiffness: 120,
+              damping: 18,
+              delay: 100,
+            },
+          },
+        }"
         class="bg-primary text-primary-content rounded-xl p-8 text-center mt-16 shadow-lg"
       >
         <h3 class="text-2xl font-bold mb-2">
@@ -427,6 +685,39 @@ const ethics = [
   "Technik, die Menschen stärkt – nicht ersetzt",
 ];
 
+const techStack = [
+  {
+    icon: Cog6ToothIcon,
+    title: "Microservices-Architektur",
+    desc: "Java & Python",
+  },
+  {
+    icon: ServerStackIcon,
+    title: "Qdrant & Neo4j",
+    desc: "Vektor- & Graphdatenbanken",
+  },
+  {
+    icon: GlobeEuropeAfricaIcon,
+    title: "100 % EU-Hosting",
+    desc: "Keine US-Clouds, DSGVO",
+  },
+  {
+    icon: SparklesIcon,
+    title: "Open Source LLMs",
+    desc: "Mistral, GBERT, BLOOM",
+  },
+  {
+    icon: ShieldCheckIcon,
+    title: "Auditierbare KI",
+    desc: "Transparente Prozesse",
+  },
+  {
+    icon: CheckCircleIcon,
+    title: "API, REST & gRPC",
+    desc: "Schnelle Integration",
+  },
+];
+
 const testimonials = [
   {
     text: "A.M.A.R.A. hat uns erstmals ermöglicht, KI wirklich nachvollziehbar und sicher einzusetzen – ein echtes Vorzeigeprojekt!",
@@ -465,3 +756,20 @@ const faqs = [
   },
 ];
 </script>
+
+<style scoped>
+/* Nur @keyframes für 'pulse' behalten, da dies eine spezifische CSS-Animation ist */
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+.animate-pulse {
+  animation: pulse 1s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+</style>

@@ -1,27 +1,65 @@
 <template>
   <section class="bg-base-200 py-28 border-t border-base-300/20">
-    <!-- 🧭 Heading -->
     <div class="text-center mb-16 px-6">
-      <h2 class="text-4xl font-bold text-base-content mb-3 animate-fade-up">
+      <h2
+        class="text-4xl font-bold text-base-content mb-3"
+        v-motion="{
+          initial: { opacity: 0, y: 20 },
+          visibleOnce: {
+            opacity: 1,
+            y: 0,
+            transition: {
+              type: 'spring',
+              stiffness: 200,
+              damping: 25,
+              delay: 100,
+            },
+          },
+        }"
+      >
         Was uns besonders macht
       </h2>
       <p
-        class="text-base text-base-content/70 max-w-2xl mx-auto animate-fade-up delay-100"
+        class="text-base text-base-content/70 max-w-2xl mx-auto"
+        v-motion="{
+          initial: { opacity: 0, y: 20 },
+          visibleOnce: {
+            opacity: 1,
+            y: 0,
+            transition: {
+              type: 'spring',
+              stiffness: 180,
+              damping: 22,
+              delay: 200,
+            },
+          },
+        }"
       >
         Wir setzen auf Werte statt Buzzwords – mit Technik, die Vertrauen
         verdient.
       </p>
     </div>
 
-    <!-- 🌟 Grid mit Differenzierungsmerkmalen -->
     <div
       class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 max-w-7xl mx-auto px-6 text-center"
     >
       <div
         v-for="(item, i) in features"
         :key="item.title"
-        class="space-y-4 animate-fade-up"
-        :style="{ animationDelay: `${i * 100}ms` }"
+        v-motion="{
+          initial: { opacity: 0, y: 40 },
+          visibleOnce: {
+            opacity: 1,
+            y: 0,
+            transition: {
+              type: 'spring',
+              stiffness: 120,
+              damping: 18,
+              delay: 300 + i * 100, // Staggered entry for each feature card
+            },
+          },
+        }"
+        class="space-y-4"
       >
         <div
           class="w-14 h-14 mx-auto rounded-xl bg-primary/10 text-primary flex items-center justify-center"
@@ -61,25 +99,3 @@ const features = [
   },
 ];
 </script>
-
-<style scoped>
-@keyframes fade-up {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-.animate-fade-up {
-  animation: fade-up 0.8s ease-out both;
-}
-.animate-fade-up.delay-100 {
-  animation-delay: 0.1s;
-}
-.animate-fade-up.delay-300 {
-  animation-delay: 0.3s;
-}
-</style>

@@ -1,49 +1,61 @@
-<script setup>
-import { website } from "~/data/products/website/website.ts";
-import { websiteModules } from "~/data/products/website/website-modules.ts";
-import {
-  CheckIcon,
-  ChevronDownIcon,
-  ChevronUpIcon,
-} from "@heroicons/vue/24/outline";
-import { ref } from "vue";
-import NetPriceNote from "~/components/sections/products/NetPriceNote.vue";
-
-const expandedModules = ref([]);
-
-// Toggle für Detailansicht
-function toggleDetails(moduleId) {
-  if (expandedModules.value.includes(moduleId)) {
-    expandedModules.value = expandedModules.value.filter(
-      (id) => id !== moduleId
-    );
-  } else {
-    expandedModules.value.push(moduleId);
-  }
-}
-
-// Prüfen, ob ein Modul ausgeklappt ist
-function isExpanded(moduleId) {
-  return expandedModules.value.includes(moduleId);
-}
-
-// Robustere Funktion zum Finden der Pakete
-function findPackagesForModule(moduleId) {
-  if (!website?.packages) return [];
-  return website.packages.filter((pkg) => pkg.features?.includes(moduleId));
-}
-</script>
 <template>
   <section class="min-h-screen bg-base-200 text-base-content py-8 lg:py-16">
     <div class="max-w-6xl mx-auto px-4 lg:px-6">
       <div class="text-center mb-8">
-        <h1 class="text-3xl lg:text-4xl font-extrabold text-primary mb-3">
+        <h1
+          v-motion="{
+            initial: { opacity: 0, y: -20 },
+            enter: {
+              opacity: 1,
+              y: 0,
+              transition: {
+                type: 'spring',
+                stiffness: 250,
+                damping: 30,
+                delay: 50,
+              },
+            },
+          }"
+          class="text-3xl lg:text-4xl font-extrabold text-primary mb-3"
+        >
           {{ website.title }}
         </h1>
-        <p class="text-lg opacity-70">{{ website.shortDescription }}</p>
+        <p
+          v-motion="{
+            initial: { opacity: 0, y: -10 },
+            enter: {
+              opacity: 1,
+              y: 0,
+              transition: {
+                type: 'spring',
+                stiffness: 200,
+                damping: 25,
+                delay: 150,
+              },
+            },
+          }"
+          class="text-lg opacity-70"
+        >
+          {{ website.shortDescription }}
+        </p>
       </div>
 
-      <div class="bg-warning text-warning-content rounded-lg p-4 mb-8">
+      <div
+        v-motion="{
+          initial: { opacity: 0, y: 20 },
+          enter: {
+            opacity: 1,
+            y: 0,
+            transition: {
+              type: 'spring',
+              stiffness: 150,
+              damping: 20,
+              delay: 250,
+            },
+          },
+        }"
+        class="bg-warning text-warning-content rounded-lg p-4 mb-8"
+      >
         <p class="font-semibold">{{ website.notice.title }}</p>
         <p class="text-sm">{{ website.notice.description }}</p>
         <p class="text-xs opacity-80 mt-1">{{ website.notice.details }}</p>
@@ -51,7 +63,22 @@ function findPackagesForModule(moduleId) {
 
       <div class="overflow-x-auto hidden lg:block">
         <table class="table w-full rounded-md shadow-sm">
-          <thead class="bg-base-300 text-base-content">
+          <thead
+            v-motion="{
+              initial: { opacity: 0, y: -10 },
+              visibleOnce: {
+                opacity: 1,
+                y: 0,
+                transition: {
+                  type: 'spring',
+                  stiffness: 200,
+                  damping: 25,
+                  delay: 350,
+                },
+              },
+            }"
+            class="bg-base-300 text-base-content"
+          >
             <tr>
               <th class="py-4 px-6 text-left">Modul</th>
               <th
@@ -71,8 +98,21 @@ function findPackagesForModule(moduleId) {
             </tr>
           </thead>
           <tbody>
-            <template v-for="mod in websiteModules" :key="mod.id">
+            <template v-for="(mod, idx) in websiteModules" :key="mod.id">
               <tr
+                v-motion="{
+                  initial: { opacity: 0, x: -30 },
+                  visibleOnce: {
+                    opacity: 1,
+                    x: 0,
+                    transition: {
+                      type: 'spring',
+                      stiffness: 150,
+                      damping: 20,
+                      delay: 450 + idx * 70, // Stagger rows
+                    },
+                  },
+                }"
                 class="bg-base-100 cursor-pointer hover:bg-base-300 transition-colors duration-200"
                 @click="toggleDetails(mod.id)"
               >
@@ -150,8 +190,21 @@ function findPackagesForModule(moduleId) {
 
       <div class="lg:hidden">
         <div
-          v-for="mod in websiteModules"
+          v-for="(mod, idx) in websiteModules"
           :key="mod.id"
+          v-motion="{
+            initial: { opacity: 0, y: 30 },
+            visibleOnce: {
+              opacity: 1,
+              y: 0,
+              transition: {
+                type: 'spring',
+                stiffness: 150,
+                damping: 20,
+                delay: 100 + idx * 80, // Stagger mobile cards
+              },
+            },
+          }"
           class="bg-base-100 rounded-lg p-4 mb-4 shadow-md"
         >
           <h3 class="font-semibold text-lg text-primary">{{ mod.name }}</h3>
@@ -217,19 +270,65 @@ function findPackagesForModule(moduleId) {
         </div>
       </div>
 
-      <div class="mt-8 bg-base-100 rounded-lg p-4 shadow-md">
+      <div
+        v-motion="{
+          initial: { opacity: 0, y: 40 },
+          visibleOnce: {
+            opacity: 1,
+            y: 0,
+            transition: {
+              type: 'spring',
+              stiffness: 120,
+              damping: 18,
+              delay: 100,
+            },
+          },
+        }"
+        class="mt-8 bg-base-100 rounded-lg p-4 shadow-md"
+      >
         <h2 class="text-xl font-bold text-primary mb-2">
           Finanzierungsmöglichkeiten
         </h2>
         <p class="opacity-70">{{ website.financing.description }}</p>
         <ul class="list-disc list-inside mt-2 text-sm opacity-70">
-          <li v-for="adv in website.financing.advantages" :key="adv">
+          <li
+            v-for="(adv, idx) in website.financing.advantages"
+            :key="idx"
+            v-motion="{
+              initial: { opacity: 0, x: -20 },
+              visibleOnce: {
+                opacity: 1,
+                x: 0,
+                transition: {
+                  type: 'spring',
+                  stiffness: 100,
+                  damping: 15,
+                  delay: 200 + idx * 50, // Stagger financing advantages
+                },
+              },
+            }"
+          >
             {{ adv }}
           </li>
         </ul>
       </div>
 
-      <div class="mt-12 py-6 text-center opacity-70">
+      <div
+        v-motion="{
+          initial: { opacity: 0, y: 20 },
+          visibleOnce: {
+            opacity: 1,
+            y: 0,
+            transition: {
+              type: 'spring',
+              stiffness: 100,
+              damping: 15,
+              delay: 100,
+            },
+          },
+        }"
+        class="mt-12 py-6 text-center opacity-70"
+      >
         Möchten Sie mehr erfahren?
         <a
           href="/contact"
@@ -248,6 +347,41 @@ function findPackagesForModule(moduleId) {
   </section>
 </template>
 
+<script setup>
+import { website } from "~/data/products/website/website.ts";
+import { websiteModules } from "~/data/products/website/website-modules.ts";
+import {
+  CheckIcon,
+  ChevronDownIcon,
+  ChevronUpIcon,
+} from "@heroicons/vue/24/outline";
+import { ref } from "vue";
+import NetPriceNote from "~/components/sections/products/NetPriceNote.vue";
+
+const expandedModules = ref([]);
+
+// Toggle für Detailansicht
+function toggleDetails(moduleId) {
+  if (expandedModules.value.includes(moduleId)) {
+    expandedModules.value = expandedModules.value.filter(
+      (id) => id !== moduleId
+    );
+  } else {
+    expandedModules.value.push(moduleId);
+  }
+}
+
+// Prüfen, ob ein Modul ausgeklappt ist
+function isExpanded(moduleId) {
+  return expandedModules.value.includes(moduleId);
+}
+
+// Robustere Funktion zum Finden der Pakete
+function findPackagesForModule(moduleId) {
+  if (!website?.packages) return [];
+  return website.packages.filter((pkg) => pkg.features?.includes(moduleId));
+}
+</script>
 <style scoped>
 /* Desktop-Stile */
 @media (min-width: 1024px) {
@@ -266,17 +400,19 @@ function findPackagesForModule(moduleId) {
   .table tbody tr:hover td {
     background-color: var(--base-300);
   }
+  /* For the expanded row, remove transition for instant appearance */
   .table tbody tr.bg-base-200 td {
     padding: 1.5rem;
+    transition: none; /* Important to prevent animation on expansion */
   }
 }
 
 /* Mobile-Stile */
 @media (max-width: 1023px) {
-  /* Keine spezifischen Tabellenstile für Mobile */
+  /* No specific table styles for mobile */
 }
 
-/* Gemeinsame Stile */
+/* Common styles */
 .badge-neutral {
   background-color: var(--base-300);
   color: var(--base-content);

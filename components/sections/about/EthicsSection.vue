@@ -5,12 +5,43 @@
     role="region"
     class="scroll-mt-28 min-h-screen py-32 px-6 border-t border-base-300/20 bg-base-100"
   >
-    <!-- 🧭 Headline -->
     <div class="text-center mb-24">
-      <h2 id="heading-ethics" tabindex="-1" class="text-4xl font-bold mb-4">
+      <h2
+        v-motion="{
+          initial: { opacity: 0, y: 20 },
+          visibleOnce: {
+            // Animation nur einmal, wenn sichtbar
+            opacity: 1,
+            y: 0,
+            transition: {
+              type: 'spring',
+              stiffness: 250,
+              damping: 25,
+              delay: 100,
+            },
+          },
+        }"
+        id="heading-ethics"
+        tabindex="-1"
+        class="text-4xl font-bold mb-4"
+      >
         Unsere ethischen Prinzipien
       </h2>
       <p
+        v-motion="{
+          initial: { opacity: 0, y: 30 },
+          visibleOnce: {
+            // Animation nur einmal, wenn sichtbar
+            opacity: 1,
+            y: 0,
+            transition: {
+              type: 'spring',
+              stiffness: 250,
+              damping: 25,
+              delay: 200,
+            },
+          },
+        }"
         class="text-lg text-base-content/70 max-w-2xl mx-auto leading-relaxed text-balance"
       >
         Technologie darf nicht lenken – sie muss stärken. Unsere Systeme folgen
@@ -18,13 +49,24 @@
       </p>
     </div>
 
-    <!-- 🧱 Strukturierte Ethik-Grid -->
     <div class="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-6xl mx-auto">
       <div
         v-for="(item, index) in ethics"
         :key="item.title"
-        class="border-l-4 border-primary pl-6 space-y-3 animate-fade-up"
-        :style="{ animationDelay: `${index * 100}ms` }"
+        v-motion="{
+          initial: { opacity: 0, y: 50 },
+          visibleOnce: {
+            opacity: 1,
+            y: 0,
+            transition: {
+              type: 'spring',
+              stiffness: 200,
+              damping: 20,
+              delay: 350 + index * 150,
+            },
+          },
+        }"
+        class="border-l-4 border-primary pl-6 space-y-3"
       >
         <div class="flex items-center gap-2 text-primary font-semibold">
           <component :is="item.icon" class="w-5 h-5" />
@@ -101,19 +143,3 @@ const ethics = [
   },
 ];
 </script>
-
-<style scoped>
-@keyframes fade-up {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-.animate-fade-up {
-  animation: fade-up 0.6s ease-out both;
-}
-</style>

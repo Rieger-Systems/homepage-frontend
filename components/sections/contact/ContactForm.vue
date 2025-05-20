@@ -1,7 +1,6 @@
 <template>
   <form class="space-y-6" @submit.prevent="handleSubmit" novalidate>
-    <!-- Name -->
-    <div class="form-control">
+    <div v-motion="'fade-bottom'" :delay="50" class="form-control">
       <label for="name" class="label font-medium">Name</label>
       <input
         id="name"
@@ -14,8 +13,7 @@
       />
     </div>
 
-    <!-- E-Mail -->
-    <div class="form-control">
+    <div v-motion="'fade-bottom'" :delay="100" class="form-control">
       <label for="email" class="label font-medium">E-Mail</label>
       <input
         id="email"
@@ -28,8 +26,7 @@
       />
     </div>
 
-    <!-- Nachricht -->
-    <div class="form-control">
+    <div v-motion="'fade-bottom'" :delay="150" class="form-control">
       <label for="message" class="label font-medium">Nachricht</label>
       <textarea
         id="message"
@@ -41,8 +38,11 @@
       />
     </div>
 
-    <!-- Datenschutz + Hinweis -->
-    <div class="space-y-3 text-sm text-gray-500 mt-4">
+    <div
+      v-motion="'fade-bottom'"
+      :delay="200"
+      class="space-y-3 text-sm text-gray-500 mt-4"
+    >
       <label class="cursor-pointer flex items-start gap-3">
         <input
           type="checkbox"
@@ -58,13 +58,11 @@
         </span>
       </label>
 
-      <!-- Hinweis auf aktuellen Zustand -->
       <p class="leading-snug">
         Aktuell öffnet das Formular dein E-Mail-Programm. Eine direkte
         Übermittlung wird bald ergänzt.
       </p>
 
-      <!-- Fallback-Kontakt -->
       <p>
         Alternativ:
         <a
@@ -75,14 +73,12 @@
         </a>
       </p>
 
-      <!-- Fehleranzeige -->
       <p v-if="errorMessage" class="text-error text-sm text-center">
         {{ errorMessage }}
       </p>
     </div>
 
-    <!-- Submit -->
-    <div class="pt-4">
+    <div v-motion="'fade-bottom'" :delay="250" class="pt-4">
       <button class="btn btn-primary btn-block font-semibold" type="submit">
         Nachricht senden
       </button>

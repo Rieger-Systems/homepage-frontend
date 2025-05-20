@@ -1,25 +1,27 @@
 <template>
   <NuxtLink
     :to="`/projects/${project.slug}`"
-    class="card w-full bg-base-200 shadow-md hover:shadow-lg transition-shadow duration-300 rounded-md overflow-hidden relative"
+    class="card w-full bg-base-200 shadow-md hover:shadow-lg transition-shadow duration-300 rounded-md overflow-hidden relative group"
+    aria-label="Mehr Informationen zum Projekt"
   >
     <span class="absolute top-2 right-2 badge badge-sm badge-primary z-10">
       {{ project.status }}
     </span>
 
-    <figure class="relative">
+    <figure class="relative overflow-hidden">
       <img
         :src="project.image"
-        alt="Project Image"
-        class="w-full h-48 object-cover rounded-t-md"
+        :alt="`Vorschaubild für Projekt ${project.title}`"
+        class="w-full h-48 object-cover rounded-t-md transform group-hover:scale-105 transition-transform duration-500 ease-in-out"
       />
       <div
-        class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-30 hover:opacity-50 transition-opacity duration-300"
+        class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-30 group-hover:opacity-50 transition-opacity duration-300"
       ></div>
     </figure>
+
     <div class="card-body p-4">
       <h3
-        class="card-title text-xl font-semibold text-primary hover:text-secondary transition-colors duration-300"
+        class="card-title text-xl font-semibold text-primary group-hover:text-primary/50 transition-colors duration-300"
       >
         {{ project.title }}
       </h3>
@@ -27,7 +29,8 @@
         {{ project.description }}
       </p>
       <button
-        class="btn btn-sm btn-ghost text-primary hover:text-secondary transition-colors duration-300 w-full justify-end"
+        class="btn btn-sm btn-ghost text-primary group-hover:text-primary/50 transition-colors duration-300 w-full justify-end"
+        aria-label="Mehr erfahren"
       >
         Mehr erfahren
         <svg
@@ -55,3 +58,7 @@ import type { Project } from "~/data/types/project";
 
 const props = defineProps<{ project: Project }>();
 </script>
+
+<style scoped>
+/* Keine zusätzlichen spezifischen Styles mehr erforderlich, da Tailwind das übernimmt */
+</style>

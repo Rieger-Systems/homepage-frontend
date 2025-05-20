@@ -1,18 +1,39 @@
 <template>
-  <!-- Branding-Panel -->
-  <div class="flex flex-col justify-center items-center gap-5 text-center px-2">
+  <div
+    class="flex flex-col justify-center items-center gap-5 text-center px-2 py-8"
+  >
     <img
+      v-motion="'fade-bottom'"
+      :delay="50"
       :src="logo"
       alt="Rieger Systems Logo"
       class="w-96 rounded shadow-lg border border-base-300"
     />
 
-    <h2 class="text-xl font-semibold text-primary mt-2">Rieger Systems</h2>
-    <p class="text-base-content/60 text-sm leading-relaxed max-w-xs">
+    <h2
+      v-motion="'fade-bottom'"
+      :delay="150"
+      class="text-xl font-semibold text-primary mt-2"
+    >
+      Rieger Systems
+    </h2>
+    <p
+      v-motion="'fade-bottom'"
+      :delay="250"
+      class="text-base-content/60 text-sm leading-relaxed max-w-xs"
+    >
       Technologie, die trägt – klar, sicher und menschlich.
     </p>
-    <div class="divider w-full my-4"></div>
-    <div class="mt-2 text-sm text-base-content/70 space-y-1">
+    <div
+      v-motion="'fade-bottom'"
+      :delay="350"
+      class="divider w-full my-4"
+    ></div>
+    <div
+      v-motion="'fade-bottom'"
+      :delay="450"
+      class="mt-2 text-sm text-base-content/70 space-y-1"
+    >
       <p class="flex items-center justify-center gap-2">
         <MapPinIcon class="w-4 h-4 text-primary" />
         Musterstraße 12, 1234 Beispielstadt

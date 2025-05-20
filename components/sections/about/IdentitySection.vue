@@ -6,10 +6,40 @@
     class="py-24 even:bg-base-100 odd:bg-base-200 px-6 border-t border-base-300/20"
   >
     <div class="text-center mb-20">
-      <h2 id="heading-identity" tabindex="-1" class="text-3xl font-bold mb-4">
+      <h2
+        v-motion="{
+          initial: { opacity: 0, y: 20 },
+          visibleOnce: {
+            opacity: 1,
+            y: 0,
+            transition: {
+              type: 'spring',
+              stiffness: 280, // Etwas straffer für einen knackigeren Start
+              damping: 28, // Leichte Dämpfung, gut ausbalanciert
+              delay: 80, // Schnellerer Start der Headline
+            },
+          },
+        }"
+        id="heading-identity"
+        tabindex="-1"
+        class="text-3xl font-bold mb-4"
+      >
         Unsere Identität
       </h2>
       <p
+        v-motion="{
+          initial: { opacity: 0, y: 30 },
+          visibleOnce: {
+            opacity: 1,
+            y: 0,
+            transition: {
+              type: 'spring',
+              stiffness: 250,
+              damping: 30,
+              delay: 180, // Folgt der Überschrift
+            },
+          },
+        }"
         class="text-base text-base-content/70 max-w-2xl mx-auto leading-relaxed text-balance"
       >
         Wir bauen keine Plattformen – wir bauen digitale Räume mit Würde.
@@ -21,8 +51,21 @@
       <div
         v-for="(item, index) in identity"
         :key="item.title"
-        class="group bg-base-200/30 border border-base-300/20 rounded-xl p-8 text-center hover:shadow-xl transition-all animate-fade-up"
-        :style="{ animationDelay: `${index * 100}ms` }"
+        v-motion="{
+          initial: { opacity: 0, y: 60 }, // Etwas größerer Y-Versatz für deutlicheres Hochschweben
+          visibleOnce: {
+            opacity: 1,
+            y: 0,
+            transition: {
+              type: 'spring',
+              stiffness: 180, // Etwas weicher als Header, aber immer noch reaktionsfreudig
+              damping: 20, // Geringere Dämpfung für einen subtilen Bounce
+              mass: 1, // Fügt etwas 'Gewicht' hinzu für einen natürlicheren Sprung
+              delay: 300 + index * 150, // Beginnend nach dem Intro-Text, mit DEUTLICHEREM Staggering
+            },
+          },
+        }"
+        class="group bg-base-200/30 border border-base-300/20 rounded-xl p-8 text-center hover:shadow-xl transition-all"
       >
         <div class="mb-4 flex justify-center">
           <div
@@ -67,19 +110,3 @@ const identity = [
   },
 ];
 </script>
-
-<style scoped>
-@keyframes fade-up {
-  from {
-    opacity: 0;
-    transform: translateY(16px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-.animate-fade-up {
-  animation: fade-up 0.6s ease-out both;
-}
-</style>
