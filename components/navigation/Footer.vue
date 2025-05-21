@@ -1,11 +1,23 @@
 <template>
   <footer
     class="bg-base-200 border-t border-base-300 text-sm text-base-content/80"
+    v-motion="{
+      initial: { opacity: 0, y: 50 },
+      visibleOnce: {
+        opacity: 1,
+        y: 0,
+        transition: {
+          type: 'spring',
+          stiffness: 120, // Sanfteres Federn
+          damping: 18, // Weniger Nachschwingen
+          delay: 100, // Leichte Verzögerung beim Erscheinen
+        },
+      },
+    }"
   >
     <div
       class="max-w-screen-xl mx-auto px-6 py-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8"
     >
-      <!-- Logo + Text -->
       <div class="flex flex-col gap-4 max-w-xs">
         <NuxtLink
           to="/"
@@ -28,7 +40,6 @@
         </p>
       </div>
 
-      <!-- Unternehmen -->
       <nav aria-label="Unternehmen" class="flex flex-col gap-3">
         <h3 class="text-base font-semibold text-primary mb-2">Unternehmen</h3>
         <ul class="space-y-2">
@@ -47,7 +58,6 @@
         </ul>
       </nav>
 
-      <!-- Leistungen -->
       <nav aria-label="Leistungen" class="flex flex-col gap-3">
         <h3 class="text-base font-semibold text-primary mb-2">Leistungen</h3>
         <ul class="space-y-2">
@@ -71,7 +81,6 @@
         </ul>
       </nav>
 
-      <!-- Rechtliches -->
       <nav aria-label="Rechtliches" class="flex flex-col gap-3">
         <h3 class="text-base font-semibold text-primary mb-2">Rechtliches</h3>
         <ul class="space-y-2">
@@ -92,7 +101,6 @@
       </nav>
     </div>
 
-    <!-- Unterer Bereich -->
     <div
       class="border-t border-base-400 mt-8 pt-6 pb-8 text-center text-xs text-base-content/50 space-y-3 px-6"
     >
@@ -110,13 +118,11 @@
         >.
       </p>
 
-      <!-- Soziale Medien -->
       <div
         class="flex justify-center gap-6 pt-1 text-base md:text-lg text-base-content/60"
         role="list"
         aria-label="Social Media Links"
       >
-        <!-- LinkedIn -->
         <a
           href="https://www.linkedin.com/company/rieger-systems"
           target="_blank"
@@ -137,7 +143,6 @@
           </svg>
         </a>
 
-        <!-- GitHub -->
         <a
           href="https://github.com/rieger-systems"
           target="_blank"
@@ -158,7 +163,6 @@
           </svg>
         </a>
 
-        <!-- Email -->
         <a
           href="mailto:kontakt@rieger-systems.eu"
           class="hover:text-primary transition"

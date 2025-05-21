@@ -1,9 +1,21 @@
 <template>
   <header
     class="fixed top-0 left-0 w-full z-50 bg-base-100 border-b border-base-300 shadow-sm backdrop-blur-md"
+    v-motion="{
+      initial: { opacity: 0, y: -50 },
+      visibleOnce: {
+        opacity: 1,
+        y: 0,
+        transition: {
+          type: 'spring',
+          stiffness: 150,
+          damping: 20,
+          delay: 50,
+        },
+      },
+    }"
   >
     <div class="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between">
-      <!-- Logo -->
       <NuxtLink
         to="/"
         class="text-xl font-bold text-primary tracking-tight leading-none"
@@ -12,12 +24,10 @@
         Rieger Systems
       </NuxtLink>
 
-      <!-- Desktop Navigation -->
       <nav class="hidden md:flex items-center gap-8">
         <NavMenu />
       </nav>
 
-      <!-- Sprache & Burger -->
       <div class="flex items-center gap-3">
         <div class="hidden md:block">
           <LocaleSwitcher />
@@ -33,7 +43,6 @@
       </div>
     </div>
 
-    <!-- Mobile Navigation -->
     <Transition
       enter="transition ease-out duration-150"
       enter-from="opacity-0 -translate-y-2"
@@ -57,7 +66,7 @@
 
 <script setup lang="ts">
 import { ref } from "vue";
-import { Transition } from "vue";
+import { Transition } from "vue"; // `Transition` is correctly imported from 'vue'
 import NavMenu from "~/components/navigation/NavMenu.vue";
 import LocaleSwitcher from "~/components/navigation/LocaleSwitcher.vue";
 import { Bars3Icon } from "@heroicons/vue/24/outline";
