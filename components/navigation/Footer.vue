@@ -184,7 +184,7 @@ function handleClick() {
         :aria-label="t('footer.ariaLabels.socialMedia')"
       >
         <a
-          :href="AppConfig.contact.social.linkedin"
+          href="https://www.linkedin.com/company/rieger-systems"
           target="_blank"
           rel="noopener noreferrer"
           class="hover:text-primary transition"
@@ -204,7 +204,7 @@ function handleClick() {
         </a>
 
         <a
-          :href="AppConfig.contact.social.github"
+          href="https://github.com/Rieger-Systems"
           target="_blank"
           rel="noopener noreferrer"
           class="hover:text-primary transition"
@@ -224,7 +224,7 @@ function handleClick() {
         </a>
 
         <a
-          :href="`mailto:${AppConfig.contact.email}`"
+          :href="`mailto:kontakt@rieger-systems.eu`"
           class="hover:text-primary transition"
           aria-label="E-Mail"
           role="listitem"
