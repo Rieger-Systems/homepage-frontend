@@ -1,244 +1,58 @@
-<template>
-  <section
-    id="services-carousel"
-    class="py-20 bg-base-200 relative z-10 text-base-content"
-  >
-    <div class="text-center mb-12">
-      <h2
-        v-motion="{
-          initial: { opacity: 0, y: 20 },
-          visibleOnce: {
-            opacity: 1,
-            y: 0,
-            transition: {
-              type: 'spring',
-              stiffness: 200,
-              damping: 25,
-              delay: 100,
-            },
-          },
-        }"
-        class="text-4xl font-bold mb-2"
-      >
-        Unsere Leistungen
-      </h2>
-      <p
-        v-motion="{
-          initial: { opacity: 0, y: 20 },
-          visibleOnce: {
-            opacity: 1,
-            y: 0,
-            transition: {
-              type: 'spring',
-              stiffness: 180,
-              damping: 22,
-              delay: 200,
-            },
-          },
-        }"
-        class="text-lg text-base-content/70"
-      >
-        Wir bauen Systeme, die Menschen entlasten, Prozesse vereinfachen und
-        Vertrauen schaffen.
-      </p>
-    </div>
-
-    <div
-      v-if="hasServices"
-      class="carousel-container w-full md:w-3/4 max-w-3xl mx-auto relative overflow-hidden"
-      @mouseenter="stopAutoSlide"
-      @mouseleave="startAutoSlide"
-      v-motion="{
-        initial: { opacity: 0, scale: 0.95 },
-        visibleOnce: {
-          opacity: 1,
-          scale: 1,
-          transition: {
-            type: 'spring',
-            stiffness: 120,
-            damping: 18,
-            delay: 300,
-          },
-        },
-      }"
-    >
-      <div
-        class="carousel-track flex transition-transform duration-300 will-change-transform"
-        :style="{ transform: `translateX(-${currentSlide * 100}%)` }"
-      >
-        <NuxtLink
-          v-for="(item, index) in services"
-          :key="index"
-          :to="item.link"
-          class="carousel-item flex-none w-full block group"
-          :aria-label="`Mehr Informationen zu ${item.title}`"
-        >
-          <div
-            class="card bg-base-100 shadow-lg rounded-xl p-8 flex flex-col items-center text-center transition-transform group-hover:scale-105 h-full"
-            v-motion="{
-              // Animate only the currently active slide on initial load
-              // For subsequent slides, it's about the carousel 'slide' not individual card entry
-              initial: { opacity: 0, y: 20 },
-              // Use 'once' to ensure it only animates when the carousel itself appears
-              visibleOnce: {
-                opacity: 1,
-                y: 0,
-                transition: {
-                  type: 'spring',
-                  stiffness: 100,
-                  damping: 15,
-                  delay: 400, // Matches initial carousel delay
-                },
-              },
-            }"
-          >
-            <div
-              class="w-20 h-20 rounded-full bg-primary text-primary-content flex items-center justify-center mb-4"
-            >
-              <component :is="item.icon" class="w-10 h-10" />
-            </div>
-            <h3 class="font-bold text-xl mb-2">{{ item.title }}</h3>
-            <p class="text-base-content/70 mb-2">{{ item.desc }}</p>
-          </div>
-        </NuxtLink>
-      </div>
-
-      <template v-if="canSlide">
-        <div
-          class="carousel-buttons absolute inset-0 flex justify-between items-center px-4"
-        >
-          <button
-            @click="prevSlide"
-            class="btn btn-circle btn-sm bg-primary/70 hover:bg-primary text-primary-content"
-            aria-label="Vorherige Folie"
-            v-motion="{
-              initial: { opacity: 0, x: -20 },
-              visibleOnce: {
-                opacity: 1,
-                x: 0,
-                transition: {
-                  type: 'spring',
-                  stiffness: 150,
-                  damping: 20,
-                  delay: 500,
-                },
-              },
-            }"
-          >
-            ❮
-          </button>
-          <button
-            @click="nextSlide"
-            class="btn btn-circle btn-sm bg-primary/70 hover:bg-primary text-primary-content"
-            aria-label="Nächste Folie"
-            v-motion="{
-              initial: { opacity: 0, x: 20 },
-              visibleOnce: {
-                opacity: 1,
-                x: 0,
-                transition: {
-                  type: 'spring',
-                  stiffness: 150,
-                  damping: 20,
-                  delay: 500,
-                },
-              },
-            }"
-          >
-            ❯
-          </button>
-        </div>
-
-        <div class="flex justify-center gap-2 mt-4">
-          <button
-            v-for="(item, index) in services"
-            :key="`dot-${index}`"
-            @click="goToSlide(index)"
-            :class="[
-              'indicator-dot w-3 h-3 rounded-full cursor-pointer transition-all duration-200',
-              currentSlide === index
-                ? 'bg-primary scale-125'
-                : 'bg-base-300 hover:bg-primary/50',
-              'focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-base-200',
-            ]"
-            :aria-label="`Gehe zu Folie ${index + 1}: ${item.title}`"
-            v-motion="{
-              initial: { opacity: 0, y: 10 },
-              visibleOnce: {
-                opacity: 1,
-                y: 0,
-                transition: {
-                  type: 'spring',
-                  stiffness: 100,
-                  damping: 15,
-                  delay: 600 + index * 50, // Staggered entry for dots
-                },
-              },
-            }"
-          ></button>
-        </div>
-      </template>
-    </div>
-    <div v-else class="text-center py-10">
-      <p
-        v-motion="{
-          initial: { opacity: 0, y: 20 },
-          visibleOnce: {
-            opacity: 1,
-            y: 0,
-            transition: {
-              type: 'spring',
-              stiffness: 150,
-              damping: 20,
-              delay: 300,
-            },
-          },
-        }"
-        class="text-lg text-base-content/70"
-      >
-        Momentan sind keine Leistungen verfügbar.
-      </p>
-    </div>
-  </section>
-</template>
-
 <script setup lang="ts">
-import { ref, onMounted, onUnmounted } from "vue";
-import { products } from "~/data/products";
+import { ref, computed, onMounted, onUnmounted } from "vue";
+import { useI18n } from "vue-i18n";
+import {
+  EnvelopeIcon,
+  ServerStackIcon,
+  WrenchScrewdriverIcon,
+  GlobeAltIcon,
+  CpuChipIcon,
+} from "@heroicons/vue/24/outline";
 
-const services = Object.keys(products).map((key) => {
-  const product = products[key as keyof typeof products];
-  return {
-    title: product.title.split(" - ")[0],
-    desc: product.shortDescription,
-    icon: product.icon, // This should be a component or a string that resolves to a component
-    link: product.link,
-  };
-});
+// 1. Reihenfolge festlegen
+const serviceKeys = ["mail", "hosting", "software", "websites", "aiSystems"];
+
+const icons = [
+  EnvelopeIcon,
+  ServerStackIcon,
+  WrenchScrewdriverIcon,
+  GlobeAltIcon,
+  CpuChipIcon,
+];
+
+const { t } = useI18n();
+
+// 2. Services-Array aus i18n-Keys bauen
+const services = computed(() =>
+  serviceKeys.map((key, idx) => ({
+    title: t(`homepage.services.${key}`),
+    desc: t(`homepage.services.${key}Description`),
+    icon: icons[idx],
+    link: `/products/${key === "aiSystems" ? "aisystems" : key}`, // Passe ggf. Slug an
+  }))
+);
 
 const currentSlide = ref(0);
 const slideIntervalDuration = 3000;
 let autoSlideIntervalId: ReturnType<typeof setInterval> | null = null;
 
-const hasServices = services.length > 0;
-const canSlide = services.length > 1;
+const hasServices = computed(() => services.value.length > 0);
+const canSlide = computed(() => services.value.length > 1);
 
 function nextSlideLogic() {
-  if (!canSlide) return;
-  currentSlide.value = (currentSlide.value + 1) % services.length;
+  if (!canSlide.value) return;
+  currentSlide.value = (currentSlide.value + 1) % services.value.length;
 }
 
 function prevSlideLogic() {
-  if (!canSlide) return;
+  if (!canSlide.value) return;
   currentSlide.value =
-    (currentSlide.value - 1 + services.length) % services.length;
+    (currentSlide.value - 1 + services.value.length) % services.value.length;
 }
 
 function startAutoSlide() {
-  if (!canSlide) return;
-  if (autoSlideIntervalId) {
-    clearInterval(autoSlideIntervalId);
-  }
+  if (!canSlide.value) return;
+  if (autoSlideIntervalId) clearInterval(autoSlideIntervalId);
   autoSlideIntervalId = setInterval(() => {
     nextSlideLogic();
   }, slideIntervalDuration);
@@ -253,91 +67,155 @@ function stopAutoSlide() {
 
 function nextSlide() {
   nextSlideLogic();
-  if (canSlide) startAutoSlide();
+  if (canSlide.value) startAutoSlide();
 }
 
 function prevSlide() {
   prevSlideLogic();
-  if (canSlide) startAutoSlide();
+  if (canSlide.value) startAutoSlide();
 }
 
 function goToSlide(index: number) {
-  if (!canSlide) return;
+  if (!canSlide.value) return;
   currentSlide.value = index;
-  if (canSlide) startAutoSlide();
+  if (canSlide.value) startAutoSlide();
 }
 
 onMounted(() => {
-  if (canSlide) {
-    startAutoSlide();
-  }
+  if (canSlide.value) startAutoSlide();
 });
-
-onUnmounted(() => {
-  stopAutoSlide();
-});
+onUnmounted(stopAutoSlide);
 </script>
 
+<template>
+  <section
+    id="services-carousel"
+    class="py-20 bg-base-200 relative z-10 text-base-content"
+  >
+    <div class="text-center mb-20">
+      <h2
+        v-motion="{
+          initial: { opacity: 0, y: 30, scale: 0.98 },
+          visibleOnce: {
+            opacity: 1,
+            y: 0,
+            scale: 1,
+            transition: {
+              type: 'spring',
+              stiffness: 250,
+              damping: 30,
+              delay: 150,
+            },
+          },
+        }"
+        class="text-4xl lg:text-5xl font-extrabold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-primary to-base-content"
+      >
+        {{ t("homepage.services.sectionTitle") }}
+      </h2>
+      <p
+        v-motion="{
+          initial: { opacity: 0, y: 20 },
+          visibleOnce: {
+            opacity: 1,
+            y: 0,
+            transition: {
+              type: 'spring',
+              stiffness: 180,
+              damping: 22,
+              delay: 250,
+            },
+          },
+        }"
+        class="text-lg md:text-xl text-base-content/80 max-w-3xl mx-auto leading-relaxed"
+      >
+        {{ t("homepage.services.sectionDescription") }}
+      </p>
+    </div>
+
+    <div
+      v-if="hasServices"
+      class="w-full md:w-3/4 max-w-3xl mx-auto relative overflow-hidden pb-12"
+      @mouseenter="stopAutoSlide"
+      @mouseleave="startAutoSlide"
+    >
+      <div
+        class="flex transition-transform duration-300 will-change-transform"
+        :style="{ transform: `translateX(-${currentSlide * 100}%)` }"
+      >
+        <NuxtLink
+          v-for="(item, index) in services"
+          :key="index"
+          :to="item.link"
+          class="flex-none w-full block group relative px-2"
+          :aria-label="`Mehr Informationen zu ${item.title}`"
+        >
+          <div
+            class="card bg-base-100 shadow-xl rounded-2xl p-8 flex flex-col items-center text-center transition-all duration-300 group-hover:scale-[1.02] group-hover:shadow-2xl group-hover:bg-base-100/90 h-full overflow-hidden"
+          >
+            <div
+              class="w-24 h-24 rounded-full bg-primary text-primary-content flex items-center justify-center mb-8 transform transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6 shadow-md"
+            >
+              <component :is="item.icon" class="w-12 h-12" />
+            </div>
+            <h3 class="font-bold text-2xl md:text-3xl mb-3 text-base-content">
+              {{ item.title }}
+            </h3>
+            <p class="text-base-content/70 leading-relaxed text-balance">
+              {{ item.desc }}
+            </p>
+            <span
+              class="absolute inset-0 block rounded-2xl border-2 border-transparent group-hover:border-primary transition-colors duration-200 pointer-events-none"
+              aria-hidden="true"
+            ></span>
+          </div>
+        </NuxtLink>
+      </div>
+
+      <template v-if="canSlide">
+        <div
+          class="absolute inset-y-0 flex justify-between items-center w-full px-4"
+        >
+          <button
+            @click="prevSlide"
+            class="btn btn-circle bg-primary/70 hover:bg-primary text-primary-content shadow-lg transition-all duration-300 transform hover:scale-115 active:scale-95 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-base-200"
+            aria-label="Vorherige Folie"
+          >
+            ❮
+          </button>
+          <button
+            @click="nextSlide"
+            class="btn btn-circle bg-primary/70 hover:bg-primary text-primary-content shadow-lg transition-all duration-300 transform hover:scale-115 active:scale-95 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-base-200"
+            aria-label="Nächste Folie"
+          >
+            ❯
+          </button>
+        </div>
+        <div class="flex justify-center gap-2 mt-12">
+          <button
+            v-for="(item, index) in services"
+            :key="`dot-${index}`"
+            @click="goToSlide(index)"
+            :class="[
+              'h-3 rounded-full cursor-pointer transition-all duration-300 ease-in-out',
+              currentSlide === index
+                ? 'w-6 bg-primary shadow-lg'
+                : 'w-3 bg-base-300 hover:bg-primary/50',
+              'focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-base-200',
+            ]"
+            :aria-label="`Gehe zu Folie ${index + 1}: ${item.title}`"
+          ></button>
+        </div>
+      </template>
+    </div>
+    <div v-else class="text-center py-10">
+      <p class="text-lg text-base-content/70">
+        {{ t("homepage.services.empty") }}
+      </p>
+    </div>
+  </section>
+</template>
+
 <style scoped>
-.carousel-container {
-  position: relative;
-  max-width: 100%;
-  overflow: hidden;
-}
-
-.carousel-track {
-  display: flex;
-  transition: transform 0.3s ease; /* Unified with duration-300 */
-  will-change: transform;
-}
-
-.carousel-item {
-  min-width: 100%;
-  box-sizing: border-box;
-  display: block;
-}
-
-.carousel-item .card {
-  height: 100%;
-}
-
-.carousel-buttons {
-  /* inset-0, flex, justify-between, items-center from the template are primarily for positioning */
-  z-index: 10; /* Buttons above the cards */
-  pointer-events: none; /* IMPORTANT: Allows clicks to "fall through" to the link */
-}
-
-.carousel-buttons .btn-circle {
-  pointer-events: auto; /* IMPORTANT: Makes the buttons themselves clickable again */
-  /* Tailwind classes (bg-primary/70, hover:bg-primary, text-primary-content) control the appearance */
-  border: none;
-  transition-property: background-color, opacity, transform;
-  transition-duration: 0.2s;
-}
-/* Hover effects etc. are controlled by Tailwind classes in the template */
-
-.indicator-dot {
-  transition-property: background-color, transform;
-  transition-duration: 0.2s;
-  transition-timing-function: ease-in-out;
-}
-/* Focus and Hover styles are controlled by Tailwind classes in the template */
-
-@media (max-width: 768px) {
-  .card {
-    padding: 1.5rem; /* 24px */
-  }
-
-  /* The positioning of .carousel-buttons is still handled by inset-0 etc. */
-  /* Adjustments for button size remain */
-  .carousel-buttons .btn-circle {
-    width: 2.5rem; /* 40px */
-    height: 2.5rem; /* 40px */
-  }
-
-  .indicator-dot {
-    width: 0.625rem; /* 10px */
-    height: 0.625rem; /* 10px */
-  }
-}
+/* All styles are now handled by Tailwind CSS utility classes in the template. */
+/* No custom CSS needed here. */
 </style>

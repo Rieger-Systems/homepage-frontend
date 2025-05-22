@@ -8,6 +8,22 @@
       "claim": "Wir glauben an eine Technologie, die stärkt – nicht ersetzt."
     },
 
+    "services": {
+      "sectionTitle": "Unsere Leistungen",
+      "sectionDescription": "Wir bauen Systeme, die Menschen entlasten, Prozesse vereinfachen und Vertrauen schaffen.",
+      "empty": "Momentan sind keine Leistungen verfügbar.",
+      "mail": "Mail",
+      "mailDescription": "DSGVO-konformer E-Mail-Service für Unternehmen und NGOs.",
+      "hosting": "Hosting",
+      "hostingDescription": "Sicheres, zuverlässiges und betreutes Hosting für Websites und Plattformen.",
+      "software": "Software",
+      "softwareDescription": "Individuelle Softwareentwicklung – exakt angepasst an Ihre Prozesse.",
+      "websites": "Websites",
+      "websitesDescription": "Maßgeschneiderte Websites und interaktive Webanwendungen.",
+      "aiSystems": "KI-Systeme",
+      "aiSystemsDescription": "Intelligente Assistenzlösungen für Automatisierung und fundierte Entscheidungen."
+    },
+
     "cta": {
       "headline": "Lust auf Austausch?",
       "description": "Ob Zusammenarbeit, Idee oder Rückmeldung – wir freuen uns über jede Nachricht.",
