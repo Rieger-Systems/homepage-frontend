@@ -1,1 +1,27 @@
-{}
+{
+  "homepage": {
+    "hero": {
+      "headline": "Technology with integrity.",
+      "description": "We build systems you can rely on – robust, well-documented, and human-centered. From IT infrastructure to explainable AI.",
+      "primaryButton": "Our Services",
+      "secondaryButton": "Contact Us",
+      "claim": "We believe in technology that empowers – not replaces."
+    },
+
+    "cta": {
+      "headline": "Want to get in touch?",
+      "description": "Whether it's collaboration, an idea, or feedback – we look forward to hearing from you.",
+      "emailButton": "Send an Email",
+      "contactButton": "Contact Form"
+    },
+
+    "features": {
+      "sectionTitle": "What makes us special",
+      "sectionDescription": "We focus on values instead of buzzwords – with technology that earns trust.",
+      "protection": "Protection, not exploitation",
+      "ethics": "Ethics & GDPR from day one",
+      "europeanDevelopment": "European development",
+      "maintainable": "Maintainable & documented"
+    }
+  }
+}

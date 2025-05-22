@@ -24,9 +24,9 @@
             scale: 1,
             transition: {
               type: 'spring',
-              stiffness: 100, // Weniger Steifigkeit für sanfteres Gefühl
-              damping: 15, // Mehr Dämpfung für weniger Schwingen
-              delay: 50, // Kurze Verzögerung
+              stiffness: 100,
+              damping: 15,
+              delay: 50,
             },
           },
         }"
@@ -40,14 +40,14 @@
               y: 0,
               transition: {
                 type: 'spring',
-                stiffness: 120, // Sanfter als das Elternelement
+                stiffness: 120,
                 damping: 16,
-                delay: 200, // Etwas verzögert nach dem Container
+                delay: 200,
               },
             },
           }"
         >
-          Technologie mit Haltung.
+          {{ t("homepage.hero.headline") }}
         </h1>
         <p
           class="text-base sm:text-lg text-base-content/80 leading-relaxed mb-8 text-center"
@@ -60,13 +60,12 @@
                 type: 'spring',
                 stiffness: 110,
                 damping: 15,
-                delay: 350, // Verzögert nach dem Titel
+                delay: 350,
               },
             },
           }"
         >
-          Wir entwickeln Systeme, die tragen – stabil, dokumentiert und
-          menschenfreundlich. Von IT-Infrastruktur bis erklärbarer KI.
+          {{ t("homepage.hero.description") }}
         </p>
         <div class="flex flex-col sm:flex-row justify-center gap-4">
           <a
@@ -81,12 +80,12 @@
                   type: 'spring',
                   stiffness: 100,
                   damping: 14,
-                  delay: 500, // Verzögert nach dem Text
+                  delay: 500,
                 },
               },
             }"
           >
-            Unsere Leistungen
+            {{ t("homepage.hero.primaryButton") }}
           </a>
           <NuxtLink
             to="/contact"
@@ -100,15 +99,14 @@
                   type: 'spring',
                   stiffness: 100,
                   damping: 14,
-                  delay: 600, // Verzögert nach dem ersten Button
+                  delay: 600,
                 },
               },
             }"
           >
-            Kontakt aufnehmen
+            {{ t("homepage.hero.secondaryButton") }}
           </NuxtLink>
         </div>
-
         <p
           class="mt-10 text-xs text-center text-base-content/50"
           v-motion="{
@@ -120,12 +118,12 @@
                 type: 'spring',
                 stiffness: 90,
                 damping: 13,
-                delay: 750, // Verzögert nach den Buttons
+                delay: 750,
               },
             },
           }"
         >
-          Wir glauben an eine Technologie, die stärkt – nicht ersetzt.
+          {{ t("homepage.hero.claim") }}
         </p>
       </div>
     </div>
@@ -142,7 +140,7 @@
             type: 'spring',
             stiffness: 80,
             damping: 12,
-            delay: 900, // Ganz am Ende
+            delay: 900,
           },
         },
       }"
@@ -165,5 +163,7 @@
 </template>
 
 <script setup lang="ts">
+import { useI18n } from "vue-i18n";
 import HeroCanvas from "~/components/sections/homepage/HeroCanvas.vue";
+const { t } = useI18n();
 </script>

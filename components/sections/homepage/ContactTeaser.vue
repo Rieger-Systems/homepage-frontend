@@ -1,3 +1,10 @@
+<script setup lang="ts">
+import { useI18n } from "vue-i18n";
+
+// Kein definePageMeta mehr hier!
+const { t } = useI18n();
+</script>
+
 <template>
   <section
     class="py-28 bg-base-100 border-t border-base-300/20 text-center relative z-10 px-6"
@@ -18,7 +25,7 @@
         },
       }"
     >
-      Lust auf Austausch?
+      {{ t("homepage.cta.headline") }}
     </h2>
     <p
       class="text-base text-base-content/70 mb-10 max-w-xl mx-auto"
@@ -36,8 +43,7 @@
         },
       }"
     >
-      Ob Zusammenarbeit, Idee oder Rückmeldung – wir freuen uns über jede
-      Nachricht.
+      {{ t("homepage.cta.description") }}
     </p>
 
     <div
@@ -57,10 +63,10 @@
       }"
     >
       <a href="mailto:kontakt@rieger-systems.eu" class="btn btn-primary btn-lg">
-        E-Mail schreiben
+        {{ t("homepage.cta.emailButton") }}
       </a>
       <NuxtLink to="/contact" class="btn btn-outline btn-lg">
-        Kontaktformular
+        {{ t("homepage.cta.contactButton") }}
       </NuxtLink>
     </div>
   </section>

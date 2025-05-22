@@ -17,7 +17,7 @@
           },
         }"
       >
-        Was uns besonders macht
+        {{ t("homepage.features.sectionTitle") }}
       </h2>
       <p
         class="text-base text-base-content/70 max-w-2xl mx-auto"
@@ -35,8 +35,7 @@
           },
         }"
       >
-        Wir setzen auf Werte statt Buzzwords – mit Technik, die Vertrauen
-        verdient.
+        {{ t("homepage.features.sectionDescription") }}
       </p>
     </div>
 
@@ -45,8 +44,9 @@
     >
       <div
         v-for="(item, i) in features"
-        :key="item.title"
+        :key="item.key"
         v-motion="{
+          // Key anpassen
           initial: { opacity: 0, y: 40 },
           visibleOnce: {
             opacity: 1,
@@ -55,7 +55,7 @@
               type: 'spring',
               stiffness: 120,
               damping: 18,
-              delay: 300 + i * 100, // Staggered entry for each feature card
+              delay: 300 + i * 100,
             },
           },
         }"
@@ -66,13 +66,15 @@
         >
           <component :is="item.icon" class="w-6 h-6" />
         </div>
-        <p class="font-medium text-base-content">{{ item.title }}</p>
+        <p class="font-medium text-base-content">{{ t(item.titleKey) }}</p>
       </div>
     </div>
   </section>
 </template>
 
 <script setup lang="ts">
+import { computed } from "vue";
+import { useI18n } from "vue-i18n";
 import {
   ShieldCheckIcon,
   ScaleIcon,
@@ -80,22 +82,31 @@ import {
   WrenchScrewdriverIcon,
 } from "@heroicons/vue/24/outline";
 
-const features = [
-  {
-    title: "Schutz statt Ausbeutung",
-    icon: ShieldCheckIcon,
-  },
-  {
-    title: "Ethik & DSGVO von Anfang an",
-    icon: ScaleIcon,
-  },
-  {
-    title: "Europäische Entwicklung",
-    icon: GlobeEuropeAfricaIcon,
-  },
-  {
-    title: "Wartbar & dokumentiert",
-    icon: WrenchScrewdriverIcon,
-  },
+const { t } = useI18n(); // tm wird hier nicht mehr benötigt
+
+const icons = [
+  ShieldCheckIcon,
+  ScaleIcon,
+  GlobeEuropeAfricaIcon,
+  WrenchScrewdriverIcon,
 ];
+
+const features = computed(() => {
+  // Definition der Features direkt im Skript
+  // Wir verwenden die keys aus der JSON, um sie mit t() abzurufen
+  const items = [
+    { key: "protection", titleKey: "homepage.features.protection" },
+    { key: "ethics", titleKey: "homepage.features.ethics" },
+    {
+      key: "europeanDevelopment",
+      titleKey: "homepage.features.europeanDevelopment",
+    },
+    { key: "maintainable", titleKey: "homepage.features.maintainable" },
+  ];
+
+  return items.map((item, i) => ({
+    ...item,
+    icon: icons[i],
+  }));
+});
 </script>

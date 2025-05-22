@@ -1,1 +1,27 @@
-{}
+{
+  "homepage": {
+    "hero": {
+      "headline": "Technologie mit Haltung.",
+      "description": "Wir entwickeln Systeme, die tragen – stabil, dokumentiert und menschenfreundlich. Von IT-Infrastruktur bis erklärbarer KI.",
+      "primaryButton": "Unsere Leistungen",
+      "secondaryButton": "Kontakt aufnehmen",
+      "claim": "Wir glauben an eine Technologie, die stärkt – nicht ersetzt."
+    },
+
+    "cta": {
+      "headline": "Lust auf Austausch?",
+      "description": "Ob Zusammenarbeit, Idee oder Rückmeldung – wir freuen uns über jede Nachricht.",
+      "emailButton": "E-Mail schreiben",
+      "contactButton": "Kontaktformular"
+    },
+
+    "features": {
+      "sectionTitle": "Was uns besonders macht",
+      "sectionDescription": "Wir setzen auf Werte statt Buzzwords – mit Technik, die Vertrauen verdient.",
+      "protection": "Schutz statt Ausbeutung",
+      "ethics": "Ethik & DSGVO von Anfang an",
+      "europeanDevelopment": "Europäische Entwicklung",
+      "maintainable": "Wartbar & dokumentiert"
+    }
+  }
+}
