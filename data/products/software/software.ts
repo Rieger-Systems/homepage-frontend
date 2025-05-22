@@ -12,8 +12,7 @@ export const software = {
   `,
   link: "/products/software",
   icon: WrenchScrewdriverIcon,
-
-  // 💡 Hinweis
+  i18nKey: "products.software",
   notice: {
     title: "Warum auf individuelle Software setzen?",
     description: `

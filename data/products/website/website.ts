@@ -18,6 +18,7 @@ export const website: WebsiteProduct = {
     details:
       "Nach einem persönlichen Gespräch erstellen wir ein individuelles Angebot, das optimal auf Sie zugeschnitten ist.",
   },
+  i18nKey: "products.website",
   packages: [
     {
       name: "Starter Website",

@@ -8,6 +8,7 @@ export const services = {
   link: "/products/services",
   icon: ServerStackIcon,
   tagline: "Ihre sorgenfreie Komplettlösung – alles aus einer Hand",
+  i18nKey: "products.services",
   advantages: [
     "Alles aus einer Hand: Infrastruktur, Support & Wartung perfekt verzahnt.",
     "Transparente Kosten: Klare Service-Pauschalen und transparente Serverkosten.",

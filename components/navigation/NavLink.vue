@@ -11,13 +11,15 @@
 <script setup lang="ts">
 import { computed } from "vue";
 import { useRoute } from "vue-router";
+import { useI18n } from "vue-i18n";
 
 const props = defineProps<{ to: string }>();
 const route = useRoute();
+const { locale } = useI18n();
 
 const isActive = computed(() => {
-  if (props.to === "/") {
-    return route.path === "/";
+  if (props.to === "/" || props.to === `/${locale.value}`) {
+    return route.path === "/" || route.path === `/${locale.value}`;
   } else {
     return route.path.startsWith(props.to);
   }

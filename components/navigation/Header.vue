@@ -19,9 +19,9 @@
       <NuxtLink
         to="/"
         class="text-xl font-bold text-primary tracking-tight leading-none"
-        aria-label="Zur Startseite"
+        :aria-label="t('header.toHome')"
       >
-        Rieger Systems
+        {{ t("header.company") }}
       </NuxtLink>
 
       <nav class="hidden md:flex items-center gap-8">
@@ -35,7 +35,7 @@
         <button
           @click="toggleMobile"
           :aria-expanded="mobileOpen"
-          aria-label="Menü öffnen"
+          :aria-label="t('header.openMenu')"
           class="btn btn-ghost btn-square md:hidden"
         >
           <Bars3Icon class="w-6 h-6" />
@@ -66,10 +66,13 @@
 
 <script setup lang="ts">
 import { ref } from "vue";
-import { Transition } from "vue"; // `Transition` is correctly imported from 'vue'
+import { Transition } from "vue";
 import NavMenu from "~/components/navigation/NavMenu.vue";
 import LocaleSwitcher from "~/components/navigation/LocaleSwitcher.vue";
 import { Bars3Icon } from "@heroicons/vue/24/outline";
+import { useI18n } from "vue-i18n";
+
+const { t } = useI18n();
 
 const mobileOpen = ref(false);
 const toggleMobile = () => (mobileOpen.value = !mobileOpen.value);

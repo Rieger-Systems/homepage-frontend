@@ -8,6 +8,7 @@ export const mail = {
   link: "/products/mail",
   icon: EnvelopeIcon,
   tagline: "powered by mailbox.org – DSGVO-konform, sicher und zuverlässig",
+  i18nKey: "products.mail",
   advantages: [
     "Fokus aufs Geschäft: Wir übernehmen die technische E-Mail-Administration für Sie.",
     "DSGVO-konform: E-Mail made in Germany mit hohen Datenschutzstandards.",

@@ -1,0 +1,48 @@
+{
+  "header": {
+    "company": "Rieger Systems",
+    "home": "Startseite",
+    "products": "Produkte",
+    "projects": "Projekte",
+    "about": "Über uns",
+    "contact": "Kontakt",
+    "career": "Karriere",
+    "language": "Sprache",
+    "toHome": "Zur Startseite",
+    "openMenu": "Menü öffnen"
+  },
+  "footer": {
+    "company": "Rieger Systems",
+    "slogan": "Technologie, die trägt – klar, sicher und menschlich.",
+    "sections": {
+      "company": "Unternehmen",
+      "services": "Leistungen",
+      "legal": "Rechtliches"
+    },
+    "links": {
+      "about": "Über uns",
+      "contact": "Kontakt",
+      "faq": "FAQ",
+      "career": "Karriere",
+      "products": "Produktübersicht",
+      "projects": "Projekte",
+      "imprint": "Impressum",
+      "privacy": "Datenschutz",
+      "terms": "AGB"
+    },
+    "copyright": "© {year} Rieger Systems · Alle Rechte vorbehalten",
+    "nocookies": "Diese Website verwendet keine Cookies und kein externes Tracking.",
+    "privacyMore": "Weitere Informationen finden Sie in unserer Datenschutzerklärung."
+  },
+  "company": {
+    "linkedin": "https://www.linkedin.com/company/rieger-systems",
+    "github": "https://github.com/rieger-systems"
+  },
+  "products": {
+    "mail": "Mail",
+    "software": "Software",
+    "services": "Hosting",
+    "ai": "KI-Systeme",
+    "website": "Websites"
+  }
+}

@@ -4,15 +4,21 @@ import { Menu, MenuButton, MenuItems, MenuItem } from "@headlessui/vue";
 import { ChevronDownIcon } from "@heroicons/vue/20/solid";
 import { useRouter, useRoute } from "vue-router";
 import { products } from "~/data/products";
+import { useI18n } from "vue-i18n";
+import { useLocalePath } from "#i18n";
 
-// Produkt-Items vorbereiten
-const productItems = Object.keys(products).map((key) => {
-  const product = products[key];
-  return {
-    label: product.title.split(" - ")[0],
-    to: product.link,
-  };
-});
+const { t } = useI18n();
+const localePath = useLocalePath();
+
+const productItems = computed(() =>
+  Object.keys(products).map((key) => {
+    const product = products[key];
+    return {
+      label: t(product.i18nKey),
+      to: localePath(product.link),
+    };
+  })
+);
 
 const props = defineProps<{ label: string }>();
 const emit = defineEmits<{ (e: "select"): void }>();
@@ -20,10 +26,8 @@ const emit = defineEmits<{ (e: "select"): void }>();
 const router = useRouter();
 const route = useRoute();
 
-// Offen/Zu-Status für Menü (optional, falls du ihn brauchst)
 const isOpen = ref(false);
 
-// Menü schließt sich automatisch bei Routenwechsel
 watch(
   () => route.path,
   () => {
@@ -36,16 +40,15 @@ function isChildActive(item: { to: string }) {
 }
 
 const isParentActive = computed(() =>
-  productItems.some((item) => route.path.startsWith(item.to))
+  productItems.value.some((item) => route.path.startsWith(item.to))
 );
 
-// Smoothe Menü-Navigation mit sanfter Animation
 function handleMenuClick(to: string, close: () => void) {
   emit("select");
-  close(); // HeadlessUI Menü schließen
+  close();
   setTimeout(() => {
     router.push(to);
-  }, 120); // Delay für schöne Animation (Passe ggf. an Transition an)
+  }, 120);
 }
 </script>
 
@@ -54,7 +57,7 @@ function handleMenuClick(to: string, close: () => void) {
     <MenuButton
       class="transition duration-150 text-base-content/70 hover:text-primary inline-flex items-center gap-2 text-sm font-medium px-3 py-1 rounded focus:outline-none focus-visible:ring-2 focus-visible:ring-primary cursor-pointer"
       :class="{ 'text-primary font-semibold': isParentActive }"
-      aria-label="Produkte anzeigen"
+      :aria-label="label"
     >
       <span>{{ label }}</span>
       <ChevronDownIcon

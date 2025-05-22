@@ -1,3 +1,33 @@
+<script setup lang="ts">
+const { t } = useI18n();
+const { logoShort } = useAssets();
+import { useRouter, useRoute } from "vue-router";
+
+const router = useRouter();
+const route = useRoute();
+
+function scrollToAfterHero() {
+  setTimeout(() => {
+    const element = document.getElementById("services-carousel");
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  }, 100);
+}
+
+function handleClick() {
+  if (route.path === "/") {
+    scrollToAfterHero();
+  } else {
+    router.push("/").then(() => {
+      setTimeout(() => {
+        scrollToAfterHero();
+      }, 300);
+    });
+  }
+}
+</script>
+
 <template>
   <footer
     class="bg-base-200 border-t border-base-300 text-sm text-base-content/80"
@@ -8,9 +38,9 @@
         y: 0,
         transition: {
           type: 'spring',
-          stiffness: 120, // Sanfteres Federn
-          damping: 18, // Weniger Nachschwingen
-          delay: 100, // Leichte Verzögerung beim Erscheinen
+          stiffness: 120,
+          damping: 18,
+          delay: 100,
         },
       },
     }"
@@ -32,34 +62,48 @@
           <span
             class="text-xl font-semibold text-primary tracking-tight leading-snug"
           >
-            Rieger Systems
+            {{ t("header.company") }}
           </span>
         </NuxtLink>
         <p class="text-sm text-base-content/60 leading-relaxed">
-          Technologie, die trägt – klar, sicher und menschlich.
+          {{ t("footer.slogan") }}
         </p>
       </div>
 
+      <!-- Unternehmen -->
       <nav aria-label="Unternehmen" class="flex flex-col gap-3">
-        <h3 class="text-base font-semibold text-primary mb-2">Unternehmen</h3>
+        <h3 class="text-base font-semibold text-primary mb-2">
+          {{ t("footer.sections.company") }}
+        </h3>
         <ul class="space-y-2">
           <li>
-            <NuxtLink to="/about" class="hover:text-primary">Über uns</NuxtLink>
+            <NuxtLink to="/about" class="hover:text-primary">{{
+              t("footer.links.about")
+            }}</NuxtLink>
           </li>
           <li>
-            <NuxtLink to="/contact" class="hover:text-primary"
-              >Kontakt</NuxtLink
-            >
+            <NuxtLink to="/contact" class="hover:text-primary">{{
+              t("footer.links.contact")
+            }}</NuxtLink>
           </li>
-          <li><NuxtLink to="/faq" class="hover:text-primary">FAQ</NuxtLink></li>
           <li>
-            <NuxtLink to="/jobs" class="hover:text-primary">Karriere</NuxtLink>
+            <NuxtLink to="/faq" class="hover:text-primary">{{
+              t("footer.links.faq")
+            }}</NuxtLink>
+          </li>
+          <li>
+            <NuxtLink to="/jobs" class="hover:text-primary">{{
+              t("footer.links.career")
+            }}</NuxtLink>
           </li>
         </ul>
       </nav>
 
+      <!-- Leistungen -->
       <nav aria-label="Leistungen" class="flex flex-col gap-3">
-        <h3 class="text-base font-semibold text-primary mb-2">Leistungen</h3>
+        <h3 class="text-base font-semibold text-primary mb-2">
+          {{ t("footer.sections.services") }}
+        </h3>
         <ul class="space-y-2">
           <li>
             <a
@@ -70,32 +114,37 @@
               tabindex="0"
               aria-label="Produktübersicht scrollen"
             >
-              Produktübersicht
+              {{ t("footer.links.products") }}
             </a>
           </li>
           <li>
-            <NuxtLink to="/projects" class="hover:text-primary"
-              >Projekte</NuxtLink
-            >
+            <NuxtLink to="/projects" class="hover:text-primary">
+              {{ t("footer.links.projects") }}
+            </NuxtLink>
           </li>
         </ul>
       </nav>
 
+      <!-- Rechtliches -->
       <nav aria-label="Rechtliches" class="flex flex-col gap-3">
-        <h3 class="text-base font-semibold text-primary mb-2">Rechtliches</h3>
+        <h3 class="text-base font-semibold text-primary mb-2">
+          {{ t("footer.sections.legal") }}
+        </h3>
         <ul class="space-y-2">
           <li>
-            <NuxtLink to="/imprint" class="hover:text-primary"
-              >Impressum</NuxtLink
-            >
+            <NuxtLink to="/imprint" class="hover:text-primary">{{
+              t("footer.links.imprint")
+            }}</NuxtLink>
           </li>
           <li>
-            <NuxtLink to="/privacy" class="hover:text-primary"
-              >Datenschutz</NuxtLink
-            >
+            <NuxtLink to="/privacy" class="hover:text-primary">{{
+              t("footer.links.privacy")
+            }}</NuxtLink>
           </li>
           <li>
-            <NuxtLink to="/terms" class="hover:text-primary">AGB</NuxtLink>
+            <NuxtLink to="/terms" class="hover:text-primary">{{
+              t("footer.links.terms")
+            }}</NuxtLink>
           </li>
         </ul>
       </nav>
@@ -105,16 +154,15 @@
       class="border-t border-base-400 mt-8 pt-6 pb-8 text-center text-xs text-base-content/50 space-y-3 px-6"
     >
       <p>
-        © {{ new Date().getFullYear() }} Rieger Systems · Alle Rechte
-        vorbehalten
+        {{ t("footer.copyright", { year: new Date().getFullYear() }) }}
       </p>
 
       <p class="text-xs leading-relaxed">
-        🍪 Diese Website verwendet <strong>keine Cookies</strong> und kein
-        externes Tracking.<br />
-        Weitere Informationen finden Sie in unserer
-        <NuxtLink to="/privacy" class="underline hover:text-primary"
-          >Datenschutzerklärung</NuxtLink
+        🍪 {{ t("footer.nocookies") }}<br />
+        {{ t("footer.privacyMore") }}
+        <NuxtLink to="/privacy" class="underline hover:text-primary">{{
+          t("footer.links.privacy")
+        }}</NuxtLink
         >.
       </p>
 
@@ -124,7 +172,7 @@
         aria-label="Social Media Links"
       >
         <a
-          href="https://www.linkedin.com/company/rieger-systems"
+          :href="t('company.linkedin')"
           target="_blank"
           rel="noopener noreferrer"
           class="hover:text-primary transition"
@@ -144,7 +192,7 @@
         </a>
 
         <a
-          href="https://github.com/rieger-systems"
+          :href="t('company.github')"
           target="_blank"
           rel="noopener noreferrer"
           class="hover:text-primary transition"
@@ -184,32 +232,3 @@
     </div>
   </footer>
 </template>
-
-<script setup lang="ts">
-const { logoShort } = useAssets();
-import { useRouter, useRoute } from "vue-router";
-
-const router = useRouter();
-const route = useRoute();
-
-function scrollToAfterHero() {
-  setTimeout(() => {
-    const element = document.getElementById("services-carousel");
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth", block: "start" });
-    }
-  }, 100);
-}
-
-function handleClick() {
-  if (route.path === "/") {
-    scrollToAfterHero();
-  } else {
-    router.push("/").then(() => {
-      setTimeout(() => {
-        scrollToAfterHero();
-      }, 300);
-    });
-  }
-}
-</script>

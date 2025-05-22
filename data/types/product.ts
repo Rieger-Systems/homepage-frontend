@@ -8,6 +8,7 @@ export interface BaseProduct {
     email: string;
     website: string;
   };
+  i18nKey: string;
 }
 
 export interface MailProduct extends BaseProduct {

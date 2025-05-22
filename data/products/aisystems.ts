@@ -11,4 +11,5 @@ export const aisystems = {
     email: "kontakt@rieger-systems.eu",
     website: "https://www.rieger-systems.eu/products/aisystems",
   },
+  i18nKey: "products.ai",
 };
