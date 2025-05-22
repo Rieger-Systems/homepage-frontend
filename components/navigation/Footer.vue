@@ -1,7 +1,12 @@
 <script setup lang="ts">
-const { t } = useI18n();
-const { logoShort } = useAssets();
+import { useI18n } from "vue-i18n";
 import { useRouter, useRoute } from "vue-router";
+import { useLocalePath } from "#i18n"; // useLocalePath korrekt importieren
+
+const { t } = useI18n();
+const { logoShort } = useAssets(); // Angenommen, useAssets ist vorhanden und liefert logoShort
+
+const localePath = useLocalePath(); // localePath initialisieren
 
 const router = useRouter();
 const route = useRoute();
@@ -15,11 +20,14 @@ function scrollToAfterHero() {
   }, 100);
 }
 
+// Angepasste handleClick, um localePath zu verwenden
 function handleClick() {
-  if (route.path === "/") {
+  // Wenn wir bereits auf der Startseite sind, scrolle
+  if (route.path === localePath("/")) {
     scrollToAfterHero();
   } else {
-    router.push("/").then(() => {
+    // Navigiere zur Startseite in der aktuellen Sprache und scrolle dann
+    router.push(localePath("/")).then(() => {
       setTimeout(() => {
         scrollToAfterHero();
       }, 300);
@@ -50,13 +58,13 @@ function handleClick() {
     >
       <div class="flex flex-col gap-4 max-w-xs">
         <NuxtLink
-          to="/"
+          :to="localePath('/')"
           class="inline-flex items-center gap-4 group"
-          aria-label="Zur Startseite"
+          :aria-label="t('footer.ariaLabels.home')"
         >
           <img
             :src="logoShort"
-            alt="Rieger Systems Logo"
+            :alt="t('footer.ariaLabels.logoAlt')"
             class="w-12 h-12 md:w-14 md:h-14 rounded shadow"
           />
           <span
@@ -70,37 +78,41 @@ function handleClick() {
         </p>
       </div>
 
-      <!-- Unternehmen -->
-      <nav aria-label="Unternehmen" class="flex flex-col gap-3">
+      <nav
+        :aria-label="t('footer.sections.company')"
+        class="flex flex-col gap-3"
+      >
         <h3 class="text-base font-semibold text-primary mb-2">
           {{ t("footer.sections.company") }}
         </h3>
         <ul class="space-y-2">
           <li>
-            <NuxtLink to="/about" class="hover:text-primary">{{
+            <NuxtLink :to="localePath('/about')" class="hover:text-primary">{{
               t("footer.links.about")
             }}</NuxtLink>
           </li>
           <li>
-            <NuxtLink to="/contact" class="hover:text-primary">{{
+            <NuxtLink :to="localePath('/contact')" class="hover:text-primary">{{
               t("footer.links.contact")
             }}</NuxtLink>
           </li>
           <li>
-            <NuxtLink to="/faq" class="hover:text-primary">{{
+            <NuxtLink :to="localePath('/faq')" class="hover:text-primary">{{
               t("footer.links.faq")
             }}</NuxtLink>
           </li>
           <li>
-            <NuxtLink to="/jobs" class="hover:text-primary">{{
+            <NuxtLink :to="localePath('/jobs')" class="hover:text-primary">{{
               t("footer.links.career")
             }}</NuxtLink>
           </li>
         </ul>
       </nav>
 
-      <!-- Leistungen -->
-      <nav aria-label="Leistungen" class="flex flex-col gap-3">
+      <nav
+        :aria-label="t('footer.sections.services')"
+        class="flex flex-col gap-3"
+      >
         <h3 class="text-base font-semibold text-primary mb-2">
           {{ t("footer.sections.services") }}
         </h3>
@@ -112,37 +124,36 @@ function handleClick() {
               @click.prevent="handleClick"
               role="link"
               tabindex="0"
-              aria-label="Produktübersicht scrollen"
+              :aria-label="t('footer.ariaLabels.productsScroll')"
             >
               {{ t("footer.links.products") }}
             </a>
           </li>
           <li>
-            <NuxtLink to="/projects" class="hover:text-primary">
+            <NuxtLink :to="localePath('/projects')" class="hover:text-primary">
               {{ t("footer.links.projects") }}
             </NuxtLink>
           </li>
         </ul>
       </nav>
 
-      <!-- Rechtliches -->
-      <nav aria-label="Rechtliches" class="flex flex-col gap-3">
+      <nav :aria-label="t('footer.sections.legal')" class="flex flex-col gap-3">
         <h3 class="text-base font-semibold text-primary mb-2">
           {{ t("footer.sections.legal") }}
         </h3>
         <ul class="space-y-2">
           <li>
-            <NuxtLink to="/imprint" class="hover:text-primary">{{
+            <NuxtLink :to="localePath('/imprint')" class="hover:text-primary">{{
               t("footer.links.imprint")
             }}</NuxtLink>
           </li>
           <li>
-            <NuxtLink to="/privacy" class="hover:text-primary">{{
+            <NuxtLink :to="localePath('/privacy')" class="hover:text-primary">{{
               t("footer.links.privacy")
             }}</NuxtLink>
           </li>
           <li>
-            <NuxtLink to="/terms" class="hover:text-primary">{{
+            <NuxtLink :to="localePath('/terms')" class="hover:text-primary">{{
               t("footer.links.terms")
             }}</NuxtLink>
           </li>
@@ -160,19 +171,20 @@ function handleClick() {
       <p class="text-xs leading-relaxed">
         🍪 {{ t("footer.nocookies") }}<br />
         {{ t("footer.privacyMore") }}
-        <NuxtLink to="/privacy" class="underline hover:text-primary">{{
-          t("footer.links.privacy")
-        }}</NuxtLink
+        <NuxtLink
+          :to="localePath('/privacy')"
+          class="underline hover:text-primary"
+          >{{ t("footer.links.privacy") }}</NuxtLink
         >.
       </p>
 
       <div
         class="flex justify-center gap-6 pt-1 text-base md:text-lg text-base-content/60"
         role="list"
-        aria-label="Social Media Links"
+        :aria-label="t('footer.ariaLabels.socialMedia')"
       >
         <a
-          :href="t('company.linkedin')"
+          :href="AppConfig.contact.social.linkedin"
           target="_blank"
           rel="noopener noreferrer"
           class="hover:text-primary transition"
@@ -192,7 +204,7 @@ function handleClick() {
         </a>
 
         <a
-          :href="t('company.github')"
+          :href="AppConfig.contact.social.github"
           target="_blank"
           rel="noopener noreferrer"
           class="hover:text-primary transition"
@@ -212,7 +224,7 @@ function handleClick() {
         </a>
 
         <a
-          href="mailto:kontakt@rieger-systems.eu"
+          :href="`mailto:${AppConfig.contact.email}`"
           class="hover:text-primary transition"
           aria-label="E-Mail"
           role="listitem"
@@ -224,7 +236,7 @@ function handleClick() {
             viewBox="0 0 24 24"
           >
             <path
-              d="M20 4H4a2 2 0 00-2 2v12a2 2 0 002 2h16a2 2 0 002-2V6a2 2 0 00-2-2zm-1.4 2L12 11.3 5.4 6h13.2zM4 18V8l8 6 8-6v10H4z"
+              d="M20 4H4a2 2 0 00-2 2v12a2 2 0 002 2h16a2 2 0 002-2V6a2 2 0 002-2zm-1.4 2L12 11.3 5.4 6h13.2zM4 18V8l8 6 8-6v10H4z"
             />
           </svg>
         </a>

@@ -66,7 +66,6 @@
 
 <script setup lang="ts">
 import { ref } from "vue";
-import { Transition } from "vue";
 import NavMenu from "~/components/navigation/NavMenu.vue";
 import LocaleSwitcher from "~/components/navigation/LocaleSwitcher.vue";
 import { Bars3Icon } from "@heroicons/vue/24/outline";
