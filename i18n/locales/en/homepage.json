@@ -24,6 +24,14 @@
       "aiSystemsDescription": "Intelligent assistant solutions for automation and informed decisions."
     },
 
+    "highlight": {
+      "sectionTitle": "Project in Focus",
+      "sectionDescription": "Our core solution – technology-driven, human-centered, and with a clear focus on ethical standards and European sovereignty.",
+      "button": "Learn more",
+      "notLoaded": "The main project could not be loaded.",
+      "toAll": "See all projects"
+    },
+
     "cta": {
       "headline": "Want to get in touch?",
       "description": "Whether it's collaboration, an idea, or feedback – we look forward to hearing from you.",

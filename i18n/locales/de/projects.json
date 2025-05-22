@@ -1,1 +1,39 @@
-{}
+{
+  "projects": {
+    "amara": {
+      "title": "A.M.A.R.A - Zentrales KI-System",
+      "description": "Das zentrale KI-System von Rieger Systems. Flexible, ethische und datenschutzkonforme Lösung.",
+      "status": "In Entwicklung",
+
+      "descriptionHeading": "Beschreibung",
+      "descriptionContent": "A.M.A.R.A (A Machine Always Ready to Assist) ist das zentrale KI-System von Rieger Systems. ...",
+
+      "inspirationHeading": "Inspiration",
+      "inspirationContent": "A.M.A.R.A wurde vom menschlichen Gehirn inspiriert ...",
+
+      "functionsHeading": "Funktionen",
+      "functionsList": [
+        "Langzeitgedächtnis: Speicherung von Wissen und Gesprächsfazit zur Mustererkennung.",
+        "Kurzzeitgedächtnis: Dynamisches Speichern aktueller Kontexte und Gesprächsinhalte.",
+        "Emotionserkennung: Analyse und Interpretation von Gesprächston und emotionalem Gehalt.",
+        "Steuerzentrum (A.M.A.R.A-Agent): Koordiniert die Nutzung der verschiedenen 'Gehirnareale' je nach Anforderung.",
+        "Live-Gedankenstrom: Verfolgt die aktuellen Denkprozesse während der Interaktion."
+      ],
+
+      "nextStepsHeading": "Nächste Schritte",
+      "nextStepsList": [
+        "Gehirnstruktur aufbauen: Langzeit- und Kurzzeitgedächtnis klar voneinander trennen.",
+        "Emotionserkennung und Sprachverständnis weiter verbessern, speziell für die deutsche Sprache.",
+        "Sicherheits- und Datenschutzarchitektur: DSGVO-Konformität sicherstellen.",
+        "Schnittstellen und Live-Interaktion standardisieren und dokumentieren.",
+        "Optimierung und Feedback: Nutzerfeedback sammeln und analysieren."
+      ],
+
+      "visionHeading": "Vision und Mehrwert",
+      "visionContent": "A.M.A.R.A soll als stille, unterstützende digitale Präsenz fungieren ...",
+
+      "partnersHeading": "Partnerschaften",
+      "partnersContent": "Wir sind offen für Kooperationen mit Unternehmen und Forschungsprojekten, ..."
+    }
+  }
+}

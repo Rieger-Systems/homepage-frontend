@@ -24,6 +24,14 @@
       "aiSystemsDescription": "Intelligente Assistenzlösungen für Automatisierung und fundierte Entscheidungen."
     },
 
+    "highlight": {
+      "sectionTitle": "Projekt im Fokus",
+      "sectionDescription": "Unsere zentrale Lösung – technologiegetrieben, menschenzentriert und mit klarem Fokus auf ethische Standards und europäische Souveränität.",
+      "button": "Mehr erfahren",
+      "notLoaded": "Das zentrale Projekt konnte nicht geladen werden.",
+      "toAll": "Zu den anderen Projekten"
+    },
+
     "cta": {
       "headline": "Lust auf Austausch?",
       "description": "Ob Zusammenarbeit, Idee oder Rückmeldung – wir freuen uns über jede Nachricht.",
