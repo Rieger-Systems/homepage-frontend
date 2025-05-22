@@ -1,7 +1,6 @@
 <template>
   <section
     class="py-24 relative z-10 text-base-content overflow-hidden bg-cover bg-center md:bg-fixed"
-    :style="{ backgroundImage: 'url(/img/project-background.jpg)' }"
     aria-labelledby="highlight-section-title"
   >
     <div

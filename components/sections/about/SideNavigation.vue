@@ -2,7 +2,7 @@
   <aside
     v-motion-slide-left
     class="hidden xl:block fixed top-32 left-8 z-30"
-    aria-label="Seiten-Navigation"
+    :aria-label="t('about.ariaLabels.pageNavigation')"
   >
     <ul class="border-l border-base-300 pl-3 space-y-2 text-sm font-medium">
       <li v-for="(item, i) in sections" :key="item.id">
@@ -34,13 +34,17 @@
 </template>
 
 <script setup lang="ts">
-const props = defineProps<{ activeId: string }>();
+import { useI18n } from "vue-i18n"; // useI18n importieren
 
+const props = defineProps<{ activeId: string }>();
+const { t } = useI18n(); // t initialisieren
+
+// Das sections Array wird jetzt dynamisch aus den I18n-Texten aufgebaut
 const sections = [
-  { id: "claim", label: "Claim" },
-  { id: "vision", label: "Vision" },
-  { id: "identity", label: "Identität" },
-  { id: "values", label: "Werte" },
-  { id: "ethics", label: "Ethik" },
+  { id: "claim", label: t("about.sections.claim") },
+  { id: "vision", label: t("about.sections.vision") },
+  { id: "identity", label: t("about.sections.identity") },
+  { id: "values", label: t("about.sections.values") },
+  { id: "ethics", label: t("about.sections.ethics") },
 ];
 </script>

@@ -10,7 +10,6 @@
         v-motion="{
           initial: { opacity: 0, y: 20 },
           visibleOnce: {
-            // Animation nur einmal, wenn sichtbar
             opacity: 1,
             y: 0,
             transition: {
@@ -25,13 +24,12 @@
         tabindex="-1"
         class="text-4xl font-bold mb-4"
       >
-        Unsere ethischen Prinzipien
+        {{ t("about.ethics.title") }}
       </h2>
       <p
         v-motion="{
           initial: { opacity: 0, y: 30 },
           visibleOnce: {
-            // Animation nur einmal, wenn sichtbar
             opacity: 1,
             y: 0,
             transition: {
@@ -44,15 +42,12 @@
         }"
         class="text-lg text-base-content/70 max-w-2xl mx-auto leading-relaxed text-balance"
       >
-        Technologie darf nicht lenken – sie muss stärken. Unsere Systeme folgen
-        Prinzipien. Kein Marketing. Kein Zufall.
+        {{ t("about.ethics.description") }}
       </p>
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-6xl mx-auto">
       <div
-        v-for="(item, index) in ethics"
-        :key="item.title"
         v-motion="{
           initial: { opacity: 0, y: 50 },
           visibleOnce: {
@@ -62,24 +57,163 @@
               type: 'spring',
               stiffness: 200,
               damping: 20,
-              delay: 350 + index * 150,
+              delay: 350, // Erster Block
             },
           },
         }"
         class="border-l-4 border-primary pl-6 space-y-3"
       >
         <div class="flex items-center gap-2 text-primary font-semibold">
-          <component :is="item.icon" class="w-5 h-5" />
-          <h3 class="text-lg font-bold text-base-content">{{ item.title }}</h3>
+          <component :is="UserIcon" class="w-5 h-5" />
+          <h3 class="text-lg font-bold text-base-content">
+            {{ t("about.ethics.principles.autonomy.title") }}
+          </h3>
         </div>
         <p class="text-base text-base-content/80 leading-relaxed">
-          {{ item.desc }}
+          {{ t("about.ethics.principles.autonomy.desc") }}
         </p>
         <p class="text-sm text-base-content/70 italic leading-relaxed">
-          {{ item.explanation }}
+          {{ t("about.ethics.principles.autonomy.explanation") }}
         </p>
         <p class="text-sm text-base-content/60 leading-relaxed">
-          <strong>Beispiel:</strong> {{ item.example }}
+          <strong>{{ t("about.ethics.examplePrefix") }}:</strong>
+          {{ t("about.ethics.principles.autonomy.example") }}
+        </p>
+      </div>
+
+      <div
+        v-motion="{
+          initial: { opacity: 0, y: 50 },
+          visibleOnce: {
+            opacity: 1,
+            y: 0,
+            transition: {
+              type: 'spring',
+              stiffness: 200,
+              damping: 20,
+              delay: 500, // Zweiter Block (350 + 150)
+            },
+          },
+        }"
+        class="border-l-4 border-primary pl-6 space-y-3"
+      >
+        <div class="flex items-center gap-2 text-primary font-semibold">
+          <component :is="EyeIcon" class="w-5 h-5" />
+          <h3 class="text-lg font-bold text-base-content">
+            {{ t("about.ethics.principles.responsibility.title") }}
+          </h3>
+        </div>
+        <p class="text-base text-base-content/80 leading-relaxed">
+          {{ t("about.ethics.principles.responsibility.desc") }}
+        </p>
+        <p class="text-sm text-base-content/70 italic leading-relaxed">
+          {{ t("about.ethics.principles.responsibility.explanation") }}
+        </p>
+        <p class="text-sm text-base-content/60 leading-relaxed">
+          <strong>{{ t("about.ethics.examplePrefix") }}:</strong>
+          {{ t("about.ethics.principles.responsibility.example") }}
+        </p>
+      </div>
+
+      <div
+        v-motion="{
+          initial: { opacity: 0, y: 50 },
+          visibleOnce: {
+            opacity: 1,
+            y: 0,
+            transition: {
+              type: 'spring',
+              stiffness: 200,
+              damping: 20,
+              delay: 650, // Dritter Block (350 + 2*150)
+            },
+          },
+        }"
+        class="border-l-4 border-primary pl-6 space-y-3"
+      >
+        <div class="flex items-center gap-2 text-primary font-semibold">
+          <component :is="LightBulbIcon" class="w-5 h-5" />
+          <h3 class="text-lg font-bold text-base-content">
+            {{ t("about.ethics.principles.transparency.title") }}
+          </h3>
+        </div>
+        <p class="text-base text-base-content/80 leading-relaxed">
+          {{ t("about.ethics.principles.transparency.desc") }}
+        </p>
+        <p class="text-sm text-base-content/70 italic leading-relaxed">
+          {{ t("about.ethics.principles.transparency.explanation") }}
+        </p>
+        <p class="text-sm text-base-content/60 leading-relaxed">
+          <strong>{{ t("about.ethics.examplePrefix") }}:</strong>
+          {{ t("about.ethics.principles.transparency.example") }}
+        </p>
+      </div>
+
+      <div
+        v-motion="{
+          initial: { opacity: 0, y: 50 },
+          visibleOnce: {
+            opacity: 1,
+            y: 0,
+            transition: {
+              type: 'spring',
+              stiffness: 200,
+              damping: 20,
+              delay: 800, // Vierter Block (350 + 3*150)
+            },
+          },
+        }"
+        class="border-l-4 border-primary pl-6 space-y-3"
+      >
+        <div class="flex items-center gap-2 text-primary font-semibold">
+          <component :is="LockClosedIcon" class="w-5 h-5" />
+          <h3 class="text-lg font-bold text-base-content">
+            {{ t("about.ethics.principles.noExploitation.title") }}
+          </h3>
+        </div>
+        <p class="text-base text-base-content/80 leading-relaxed">
+          {{ t("about.ethics.principles.noExploitation.desc") }}
+        </p>
+        <p class="text-sm text-base-content/70 italic leading-relaxed">
+          {{ t("about.ethics.principles.noExploitation.explanation") }}
+        </p>
+        <p class="text-sm text-base-content/60 leading-relaxed">
+          <strong>{{ t("about.ethics.examplePrefix") }}:</strong>
+          {{ t("about.ethics.principles.noExploitation.example") }}
+        </p>
+      </div>
+
+      <div
+        v-motion="{
+          initial: { opacity: 0, y: 50 },
+          visibleOnce: {
+            opacity: 1,
+            y: 0,
+            transition: {
+              type: 'spring',
+              stiffness: 200,
+              damping: 20,
+              delay: 950, // Fünfter Block (350 + 4*150)
+            },
+          },
+        }"
+        class="border-l-4 border-primary pl-6 space-y-3"
+      >
+        <div class="flex items-center gap-2 text-primary font-semibold">
+          <component :is="ScaleIcon" class="w-5 h-5" />
+          <h3 class="text-lg font-bold text-base-content">
+            {{ t("about.ethics.principles.longTermThinking.title") }}
+          </h3>
+        </div>
+        <p class="text-base text-base-content/80 leading-relaxed">
+          {{ t("about.ethics.principles.longTermThinking.desc") }}
+        </p>
+        <p class="text-sm text-base-content/70 italic leading-relaxed">
+          {{ t("about.ethics.principles.longTermThinking.explanation") }}
+        </p>
+        <p class="text-sm text-base-content/60 leading-relaxed">
+          <strong>{{ t("about.ethics.examplePrefix") }}:</strong>
+          {{ t("about.ethics.principles.longTermThinking.example") }}
         </p>
       </div>
     </div>
@@ -94,52 +228,10 @@ import {
   LockClosedIcon,
   ScaleIcon,
 } from "@heroicons/vue/24/outline";
+import { useI18n } from "vue-i18n";
 
-const ethics = [
-  {
-    title: "Autonomie schützen",
-    desc: "Nutzer:innen behalten jederzeit die Kontrolle. Keine Eingriffe. Kein Nudging.",
-    icon: UserIcon,
-    explanation:
-      "Technologie soll uns befähigen – nicht manipulieren. Viele Systeme beeinflussen heute Entscheidungen subtil: durch Design, durch Algorithmen, durch Unklarheit. Wir halten dagegen.",
-    example:
-      "Soziale Medien, die Suchtmechaniken einsetzen, um Verweildauer zu erhöhen – ohne Rücksicht auf Wohlbefinden oder Autonomie.",
-  },
-  {
-    title: "Verantwortung übernehmen",
-    desc: "Entscheidungen sind nachvollziehbar und überprüfbar.",
-    icon: EyeIcon,
-    explanation:
-      "Wir übernehmen Verantwortung für das, was unsere Systeme tun. Kein „die KI hat das entschieden“. Entscheidungen müssen rückverfolgbar, erklärbar und absichtlich sein.",
-    example:
-      "Ein Algorithmus lehnt einen Kreditantrag ab – ohne, dass jemand erklären kann, warum. So etwas darf nicht passieren.",
-  },
-  {
-    title: "Transparenz leben",
-    desc: "Wir zeigen offen, was gespeichert wird – und warum.",
-    icon: LightBulbIcon,
-    explanation:
-      "Vertrauen entsteht nicht durch Versprechen, sondern durch Klarheit. Nutzer:innen haben ein Recht darauf zu wissen, was mit ihren Daten passiert.",
-    example:
-      "Viele Anbieter sammeln Bewegungsdaten und geben sie weiter – ohne Nutzen für die Nutzer:innen.",
-  },
-  {
-    title: "Keine Ausbeutung",
-    desc: "Keine Tracker. Keine Datenverkäufe. Kein Profiling.",
-    icon: LockClosedIcon,
-    explanation:
-      "Daten sind keine Ressource, die man ausschlachten darf. Unsere Systeme verkaufen nicht – sie schützen.",
-    example:
-      "Tracking-Werbung, die dir noch Monate später Produkte zeigt, obwohl du sie nie gekauft hast.",
-  },
-  {
-    title: "Langfristig denken",
-    desc: "Nicht kurzfristiger Profit, sondern nachhaltige Wirkung.",
-    icon: ScaleIcon,
-    explanation:
-      "Ethische Technologie braucht Langfristigkeit: in Wartung, Wirkung und Wirkungskontrolle.",
-    example:
-      "Startups, die ohne Rücksicht auf technische oder soziale Folgen schnell skalieren wollen.",
-  },
-];
+const { t } = useI18n();
+
+// Die Icons werden nun direkt im Template mit <component :is="IconName" /> verwendet.
+// Das ethicsPrinciples computed property ist nicht mehr nötig.
 </script>

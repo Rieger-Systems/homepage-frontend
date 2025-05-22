@@ -43,7 +43,7 @@
         tabindex="-1"
         class="text-5xl font-extrabold tracking-tight text-balance"
       >
-        Technologie, die trägt.
+        {{ t("about.claim.title") }}
       </h1>
 
       <p
@@ -62,7 +62,7 @@
         }"
         class="text-base text-base-content/70 leading-relaxed text-balance"
       >
-        Für Menschen. Mit Verantwortung. Kein Slogan – unser Maßstab.
+        {{ t("about.claim.description") }}
       </p>
     </div>
   </section>
@@ -70,4 +70,7 @@
 
 <script setup lang="ts">
 import { BuildingLibraryIcon } from "@heroicons/vue/24/outline";
+import { useI18n } from "vue-i18n"; // useI18n importieren
+
+const { t } = useI18n(); // t initialisieren
 </script>

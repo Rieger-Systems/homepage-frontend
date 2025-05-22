@@ -10,7 +10,6 @@
         v-motion="{
           initial: { opacity: 0, y: 20 },
           visibleOnce: {
-            // Animation nur einmal, wenn sichtbar
             opacity: 1,
             y: 0,
             transition: {
@@ -25,27 +24,25 @@
         tabindex="-1"
         class="text-3xl font-bold mb-4"
       >
-        Unsere Werte
+        {{ t("about.values.title") }}
       </h2>
       <p
         v-motion="{
           initial: { opacity: 0, y: 30 },
           visibleOnce: {
-            // Animation nur einmal, wenn sichtbar
             opacity: 1,
             y: 0,
             transition: {
               type: 'spring',
               stiffness: 250,
               damping: 25,
-              delay: 200,
+              // delay: 200, // Die Animationseinstellungen bleiben wie im Original
             },
           },
         }"
         class="text-base text-base-content/70 max-w-2xl mx-auto leading-relaxed"
       >
-        Sie sind Entscheidungsfilter, Haltung und Orientierung zugleich – für
-        jedes Produkt, jeden Code und jede Begegnung.
+        {{ t("about.values.description") }}
       </p>
     </div>
 
@@ -53,8 +50,6 @@
       class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto"
     >
       <div
-        v-for="(item, index) in values"
-        :key="item.title"
         v-motion="{
           initial: { opacity: 0, y: 50 },
           visibleOnce: {
@@ -64,20 +59,155 @@
               type: 'spring',
               stiffness: 200,
               damping: 20,
-              delay: 350 + index * 60,
+              delay: 350, // Manuell angepasste Verzögerung
             },
           },
         }"
         class="bg-base-200/60 backdrop-blur-md border border-base-300/20 rounded-lg p-6 text-center hover:shadow-lg transition-shadow"
       >
         <div class="mb-3 flex justify-center">
-          <component :is="item.icon" class="w-8 h-8 text-primary" />
+          <component :is="ShieldCheckIcon" class="w-8 h-8 text-primary" />
         </div>
         <h3 class="text-lg font-bold text-base-content mb-2">
-          {{ item.title }}
+          {{ t("about.values.list.responsibility.title") }}
         </h3>
         <p class="text-sm text-base-content/70 leading-relaxed">
-          {{ item.desc }}
+          {{ t("about.values.list.responsibility.desc") }}
+        </p>
+      </div>
+
+      <div
+        v-motion="{
+          initial: { opacity: 0, y: 50 },
+          visibleOnce: {
+            opacity: 1,
+            y: 0,
+            transition: {
+              type: 'spring',
+              stiffness: 200,
+              damping: 20,
+              delay: 410, // Manuell angepasste Verzögerung (350 + 60)
+            },
+          },
+        }"
+        class="bg-base-200/60 backdrop-blur-md border border-base-300/20 rounded-lg p-6 text-center hover:shadow-lg transition-shadow"
+      >
+        <div class="mb-3 flex justify-center">
+          <component :is="UserIcon" class="w-8 h-8 text-primary" />
+        </div>
+        <h3 class="text-lg font-bold text-base-content mb-2">
+          {{ t("about.values.list.humanDignityEthics.title") }}
+        </h3>
+        <p class="text-sm text-base-content/70 leading-relaxed">
+          {{ t("about.values.list.humanDignityEthics.desc") }}
+        </p>
+      </div>
+
+      <div
+        v-motion="{
+          initial: { opacity: 0, y: 50 },
+          visibleOnce: {
+            opacity: 1,
+            y: 0,
+            transition: {
+              type: 'spring',
+              stiffness: 200,
+              damping: 20,
+              delay: 470, // Manuell angepasste Verzögerung (350 + 2*60)
+            },
+          },
+        }"
+        class="bg-base-200/60 backdrop-blur-md border border-base-300/20 rounded-lg p-6 text-center hover:shadow-lg transition-shadow"
+      >
+        <div class="mb-3 flex justify-center">
+          <component :is="MagnifyingGlassIcon" class="w-8 h-8 text-primary" />
+        </div>
+        <h3 class="text-lg font-bold text-base-content mb-2">
+          {{ t("about.values.list.transparency.title") }}
+        </h3>
+        <p class="text-sm text-base-content/70 leading-relaxed">
+          {{ t("about.values.list.transparency.desc") }}
+        </p>
+      </div>
+
+      <div
+        v-motion="{
+          initial: { opacity: 0, y: 50 },
+          visibleOnce: {
+            opacity: 1,
+            y: 0,
+            transition: {
+              type: 'spring',
+              stiffness: 200,
+              damping: 20,
+              delay: 530, // Manuell angepasste Verzögerung (350 + 3*60)
+            },
+          },
+        }"
+        class="bg-base-200/60 backdrop-blur-md border border-base-300/20 rounded-lg p-6 text-center hover:shadow-lg transition-shadow"
+      >
+        <div class="mb-3 flex justify-center">
+          <component :is="RocketLaunchIcon" class="w-8 h-8 text-primary" />
+        </div>
+        <h3 class="text-lg font-bold text-base-content mb-2">
+          {{ t("about.values.list.innovation.title") }}
+        </h3>
+        <p class="text-sm text-base-content/70 leading-relaxed">
+          {{ t("about.values.list.innovation.desc") }}
+        </p>
+      </div>
+
+      <div
+        v-motion="{
+          initial: { opacity: 0, y: 50 },
+          visibleOnce: {
+            opacity: 1,
+            y: 0,
+            transition: {
+              type: 'spring',
+              stiffness: 200,
+              damping: 20,
+              delay: 590, // Manuell angepasste Verzögerung (350 + 4*60)
+            },
+          },
+        }"
+        class="bg-base-200/60 backdrop-blur-md border border-base-300/20 rounded-lg p-6 text-center hover:shadow-lg transition-shadow"
+      >
+        <div class="mb-3 flex justify-center">
+          <component :is="ArrowPathIcon" class="w-8 h-8 text-primary" />
+        </div>
+        <h3 class="text-lg font-bold text-base-content mb-2">
+          {{ t("about.values.list.sustainability.title") }}
+        </h3>
+        <p class="text-sm text-base-content/70 leading-relaxed">
+          {{ t("about.values.list.sustainability.desc") }}
+        </p>
+      </div>
+
+      <div
+        v-motion="{
+          initial: { opacity: 0, y: 50 },
+          visibleOnce: {
+            opacity: 1,
+            y: 0,
+            transition: {
+              type: 'spring',
+              stiffness: 200,
+              damping: 20,
+              delay: 650, // Manuell angepasste Verzögerung (350 + 5*60)
+            },
+          },
+        }"
+        class="bg-base-200/60 backdrop-blur-md border border-base-300/20 rounded-lg p-6 text-center hover:shadow-lg transition-shadow"
+      >
+        <div class="mb-3 flex justify-center">
+          <component :is="ScaleIcon" class="w-8 h-8 text-primary" />
+        </div>
+        <h3 class="text-lg font-bold text-base-content mb-2">
+          {{ t("about.values.list.legalCompliance.title") }}
+        </h3>
+        <p class="text-sm text-base-content/70 leading-relaxed">
+          {{ t("about.values.list.legalCompliance.desc") }}
         </p>
       </div>
     </div>
@@ -93,37 +223,7 @@ import {
   ArrowPathIcon,
   ScaleIcon,
 } from "@heroicons/vue/24/outline";
+import { useI18n } from "vue-i18n";
 
-const values = [
-  {
-    title: "Verantwortung",
-    desc: "Wir übernehmen Verantwortung für Auswirkungen unserer Technologien – auf Menschen, Gesellschaft und Umwelt.",
-    icon: ShieldCheckIcon,
-  },
-  {
-    title: "Menschenwürde & Ethik",
-    desc: "Unsere KI dient dem Menschen – sie ersetzt nicht, sie schützt.",
-    icon: UserIcon,
-  },
-  {
-    title: "Transparenz",
-    desc: "Wir handeln nachvollziehbar – in Code, Kommunikation und Entscheidungen.",
-    icon: MagnifyingGlassIcon,
-  },
-  {
-    title: "Innovation",
-    desc: "Wir verbessern das Richtige – nicht das Falsche effizienter.",
-    icon: RocketLaunchIcon,
-  },
-  {
-    title: "Nachhaltigkeit",
-    desc: "Unsere Systeme sind wartbar, ressourcenschonend und menschenfreundlich.",
-    icon: ArrowPathIcon,
-  },
-  {
-    title: "Rechtskonformität",
-    desc: "Wir leben DSGVO und KI-Verordnung – technisch und ideell.",
-    icon: ScaleIcon,
-  },
-];
+const { t } = useI18n();
 </script>

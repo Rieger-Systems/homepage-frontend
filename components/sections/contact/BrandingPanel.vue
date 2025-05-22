@@ -6,7 +6,7 @@
       v-motion="'fade-bottom'"
       :delay="50"
       :src="logo"
-      alt="Rieger Systems Logo"
+      :alt="t('contact.companyName') + ' Logo'"
       class="w-96 rounded shadow-lg border border-base-300"
     />
 
@@ -15,14 +15,14 @@
       :delay="150"
       class="text-xl font-semibold text-primary mt-2"
     >
-      Rieger Systems
+      {{ t("contact.companyName") }}
     </h2>
     <p
       v-motion="'fade-bottom'"
       :delay="250"
       class="text-base-content/60 text-sm leading-relaxed max-w-xs"
     >
-      Technologie, die trägt – klar, sicher und menschlich.
+      {{ t("contact.slogan") }}
     </p>
     <div
       v-motion="'fade-bottom'"
@@ -36,15 +36,29 @@
     >
       <p class="flex items-center justify-center gap-2">
         <MapPinIcon class="w-4 h-4 text-primary" />
-        Musterstraße 12, 1234 Beispielstadt
+        {{ AppConfig.contact.address.street }},
+        {{ AppConfig.contact.address.zipCity }},
+        {{ AppConfig.contact.address.country }}
       </p>
       <p class="flex items-center justify-center gap-2">
         <EnvelopeIcon class="w-4 h-4 text-primary" />
         <a
-          href="mailto:kontakt@rieger-systems.eu"
+          :href="`mailto:${AppConfig.contact.email}`"
           class="underline hover:text-primary"
         >
-          kontakt@rieger-systems.eu
+          {{ AppConfig.contact.email }}
+        </a>
+      </p>
+      <p
+        v-if="AppConfig.contact.phone"
+        class="flex items-center justify-center gap-2"
+      >
+        <PhoneIcon class="w-4 h-4 text-primary" />
+        <a
+          :href="`tel:${AppConfig.contact.phone.replace(/\s/g, '')}`"
+          class="underline hover:text-primary"
+        >
+          {{ AppConfig.contact.phone }}
         </a>
       </p>
     </div>
@@ -52,6 +66,10 @@
 </template>
 
 <script setup lang="ts">
-import { MapPinIcon, EnvelopeIcon } from "@heroicons/vue/24/outline";
+import { MapPinIcon, EnvelopeIcon, PhoneIcon } from "@heroicons/vue/24/outline"; // PhoneIcon hinzugefügt
+import { useI18n } from "vue-i18n";
+import { AppConfig } from "~/config/app.config";
+
+const { t } = useI18n();
 const { logo } = useAssets();
 </script>

@@ -1,38 +1,44 @@
 <template>
   <form class="space-y-6" @submit.prevent="handleSubmit" novalidate>
     <div v-motion="'fade-bottom'" :delay="50" class="form-control">
-      <label for="name" class="label font-medium">Name</label>
+      <label for="name" class="label font-medium">{{
+        t("contact.form.nameLabel")
+      }}</label>
       <input
         id="name"
         type="text"
         v-model="form.name"
         class="input input-bordered w-full"
-        placeholder="Max Mustermann"
+        :placeholder="t('contact.form.namePlaceholder')"
         required
         autocomplete="name"
       />
     </div>
 
     <div v-motion="'fade-bottom'" :delay="100" class="form-control">
-      <label for="email" class="label font-medium">E-Mail</label>
+      <label for="email" class="label font-medium">{{
+        t("contact.form.emailLabel")
+      }}</label>
       <input
         id="email"
         type="email"
         v-model="form.email"
         class="input input-bordered w-full"
-        placeholder="max@beispiel.at"
+        placeholder="max@mustermann.com"
         required
         autocomplete="email"
       />
     </div>
 
     <div v-motion="'fade-bottom'" :delay="150" class="form-control">
-      <label for="message" class="label font-medium">Nachricht</label>
+      <label for="message" class="label font-medium">{{
+        t("contact.form.messageLabel")
+      }}</label>
       <textarea
         id="message"
         v-model="form.message"
         class="textarea textarea-bordered w-full min-h-[140px]"
-        placeholder="Worum geht's?"
+        :placeholder="t('contact.form.messagePlaceholder')"
         required
         autocomplete="off"
       />
@@ -50,26 +56,25 @@
           v-model="form.consent"
         />
         <span>
-          Ich habe die
-          <NuxtLink to="/privacy" class="underline text-primary">
-            Datenschutzerklärung
+          {{ t("contact.form.privacyConsentPart1") }}
+          <NuxtLink :to="localePath('/privacy')" class="underline text-primary">
+            {{ t("contact.form.privacyConsentLink") }}
           </NuxtLink>
-          gelesen und stimme der Verarbeitung meiner Angaben zu.
+          {{ t("contact.form.privacyConsentPart2") }}
         </span>
       </label>
 
       <p class="leading-snug">
-        Aktuell öffnet das Formular dein E-Mail-Programm. Eine direkte
-        Übermittlung wird bald ergänzt.
+        {{ t("contact.form.currentEmailClientInfo") }}
       </p>
 
       <p>
-        Alternativ:
+        {{ t("contact.form.alternative") }}
         <a
-          href="mailto:kontakt@rieger-systems.eu"
+          :href="`mailto:${AppConfig.contact.email}`"
           class="underline text-primary"
         >
-          kontakt@rieger-systems.eu
+          {{ AppConfig.contact.email }}
         </a>
       </p>
 
@@ -80,13 +85,21 @@
 
     <div v-motion="'fade-bottom'" :delay="250" class="pt-4">
       <button class="btn btn-primary btn-block font-semibold" type="submit">
-        Nachricht senden
+        {{ t("contact.form.sendButton") }}
       </button>
     </div>
   </form>
 </template>
 
 <script setup lang="ts">
+import { reactive, ref } from "vue"; // reactive und ref importieren
+import { useI18n } from "vue-i18n"; // useI18n importieren
+import { AppConfig } from "~/config/app.config"; // AppConfig importieren
+import { useLocalePath } from "#i18n";
+
+const { t } = useI18n();
+const localePath = useLocalePath();
+
 const form = reactive({
   name: "",
   email: "",
@@ -98,17 +111,24 @@ const errorMessage = ref("");
 
 function handleSubmit() {
   if (!form.consent) {
-    errorMessage.value = "Bitte bestätige die Datenschutzerklärung.";
+    errorMessage.value = t("contact.form.errorConsentRequired"); // Fehlermeldung übersetzen
     return;
   }
 
   errorMessage.value = "";
 
-  const subject = encodeURIComponent(`Kontaktanfrage von ${form.name}`);
-  const body = encodeURIComponent(
-    `Name: ${form.name}\nE-Mail: ${form.email}\n\nNachricht:\n${form.message}\n\n[✓] Absender hat der Datenschutzerklärung zugestimmt.`
+  // Die Mailto-Link-Generierung verwendet jetzt auch übersetzte Teile
+  const subject = encodeURIComponent(
+    `${t("contact.form.subjectPrefix")} ${form.name}`
   );
-  const mailtoLink = `mailto:kontakt@rieger-systems.eu?subject=${subject}&body=${body}`;
+  const body = encodeURIComponent(
+    `${t("contact.form.mailBodyPrefix")}: ${form.name}\n${t(
+      "contact.form.mailBodyEmail"
+    )}: ${form.email}\n\n${t("contact.form.mailBodyMessage")}:\n${
+      form.message
+    }\n\n${t("contact.form.mailBodyConsent")}`
+  );
+  const mailtoLink = `mailto:${AppConfig.contact.email}?subject=${subject}&body=${body}`; // E-Mail aus AppConfig
 
   const link = document.createElement("a");
   link.href = mailtoLink;

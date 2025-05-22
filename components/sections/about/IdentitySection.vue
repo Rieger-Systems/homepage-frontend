@@ -14,9 +14,9 @@
             y: 0,
             transition: {
               type: 'spring',
-              stiffness: 280, // Etwas straffer für einen knackigeren Start
-              damping: 28, // Leichte Dämpfung, gut ausbalanciert
-              delay: 80, // Schnellerer Start der Headline
+              stiffness: 280,
+              damping: 28,
+              delay: 80,
             },
           },
         }"
@@ -24,7 +24,7 @@
         tabindex="-1"
         class="text-3xl font-bold mb-4"
       >
-        Unsere Identität
+        {{ t("about.identity.title") }}
       </h2>
       <p
         v-motion="{
@@ -36,32 +36,29 @@
               type: 'spring',
               stiffness: 250,
               damping: 30,
-              delay: 180, // Folgt der Überschrift
+              delay: 180,
             },
           },
         }"
         class="text-base text-base-content/70 max-w-2xl mx-auto leading-relaxed text-balance"
       >
-        Wir bauen keine Plattformen – wir bauen digitale Räume mit Würde.
-        Technologie als Verantwortung, nicht als Spiel.
+        {{ t("about.identity.description") }}
       </p>
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
       <div
-        v-for="(item, index) in identity"
-        :key="item.title"
         v-motion="{
-          initial: { opacity: 0, y: 60 }, // Etwas größerer Y-Versatz für deutlicheres Hochschweben
+          initial: { opacity: 0, y: 60 },
           visibleOnce: {
             opacity: 1,
             y: 0,
             transition: {
               type: 'spring',
-              stiffness: 180, // Etwas weicher als Header, aber immer noch reaktionsfreudig
-              damping: 20, // Geringere Dämpfung für einen subtilen Bounce
-              mass: 1, // Fügt etwas 'Gewicht' hinzu für einen natürlicheren Sprung
-              delay: 300 + index * 150, // Beginnend nach dem Intro-Text, mit DEUTLICHEREM Staggering
+              stiffness: 180,
+              damping: 20,
+              mass: 1,
+              delay: 300, // Manuell angepasste Verzögerung
             },
           },
         }"
@@ -71,14 +68,78 @@
           <div
             class="bg-primary/10 text-primary rounded-full w-16 h-16 flex items-center justify-center"
           >
-            <component :is="item.icon" class="w-7 h-7" />
+            <component :is="ShieldCheckIcon" class="w-7 h-7" />
           </div>
         </div>
         <h3 class="text-xl font-bold text-base-content mb-2">
-          {{ item.title }}
+          {{ t("about.identity.list.guardian.title") }}
         </h3>
         <p class="text-sm text-base-content/70 leading-relaxed">
-          {{ item.desc }}
+          {{ t("about.identity.list.guardian.desc") }}
+        </p>
+      </div>
+
+      <div
+        v-motion="{
+          initial: { opacity: 0, y: 60 },
+          visibleOnce: {
+            opacity: 1,
+            y: 0,
+            transition: {
+              type: 'spring',
+              stiffness: 180,
+              damping: 20,
+              mass: 1,
+              delay: 450, // Manuell angepasste Verzögerung (300 + 150)
+            },
+          },
+        }"
+        class="group bg-base-200/30 border border-base-300/20 rounded-xl p-8 text-center hover:shadow-xl transition-all"
+      >
+        <div class="mb-4 flex justify-center">
+          <div
+            class="bg-primary/10 text-primary rounded-full w-16 h-16 flex items-center justify-center"
+          >
+            <component :is="BuildingLibraryIcon" class="w-7 h-7" />
+          </div>
+        </div>
+        <h3 class="text-xl font-bold text-base-content mb-2">
+          {{ t("about.identity.list.architect.title") }}
+        </h3>
+        <p class="text-sm text-base-content/70 leading-relaxed">
+          {{ t("about.identity.list.architect.desc") }}
+        </p>
+      </div>
+
+      <div
+        v-motion="{
+          initial: { opacity: 0, y: 60 },
+          visibleOnce: {
+            opacity: 1,
+            y: 0,
+            transition: {
+              type: 'spring',
+              stiffness: 180,
+              damping: 20,
+              mass: 1,
+              delay: 600, // Manuell angepasste Verzögerung (300 + 2*150)
+            },
+          },
+        }"
+        class="group bg-base-200/30 border border-base-300/20 rounded-xl p-8 text-center hover:shadow-xl transition-all"
+      >
+        <div class="mb-4 flex justify-center">
+          <div
+            class="bg-primary/10 text-primary rounded-full w-16 h-16 flex items-center justify-center"
+          >
+            <component :is="PaintBrushIcon" class="w-7 h-7" />
+          </div>
+        </div>
+        <h3 class="text-xl font-bold text-base-content mb-2">
+          {{ t("about.identity.list.designer.title") }}
+        </h3>
+        <p class="text-sm text-base-content/70 leading-relaxed">
+          {{ t("about.identity.list.designer.desc") }}
         </p>
       </div>
     </div>
@@ -91,22 +152,7 @@ import {
   BuildingLibraryIcon,
   PaintBrushIcon,
 } from "@heroicons/vue/24/outline";
+import { useI18n } from "vue-i18n";
 
-const identity = [
-  {
-    title: "Der Hüter",
-    desc: "Wir wahren, was verletzlich ist – mit Klarheit, Haltung und Schutz.",
-    icon: ShieldCheckIcon,
-  },
-  {
-    title: "Der Architekt",
-    desc: "Wir entwerfen tragfähige Strukturen – modular, verständlich und dauerhaft.",
-    icon: BuildingLibraryIcon,
-  },
-  {
-    title: "Der Gestalter",
-    desc: "Technologie ist Gestaltung mit Bedeutung. Sie dient dem Menschen, nicht dem Selbstzweck.",
-    icon: PaintBrushIcon,
-  },
-];
+const { t } = useI18n();
 </script>
