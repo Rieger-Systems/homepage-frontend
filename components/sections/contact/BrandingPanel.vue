@@ -36,29 +36,21 @@
     >
       <p class="flex items-center justify-center gap-2">
         <MapPinIcon class="w-4 h-4 text-primary" />
-        {{ AppConfig.contact.address.street }},
-        {{ AppConfig.contact.address.zipCity }},
-        {{ AppConfig.contact.address.country }}
+        Teststraße 123, Teststadt, Österreich
       </p>
       <p class="flex items-center justify-center gap-2">
         <EnvelopeIcon class="w-4 h-4 text-primary" />
         <a
-          :href="`mailto:${AppConfig.contact.email}`"
+          :href="`mailto:kontakt@rieger-systems.eu`"
           class="underline hover:text-primary"
         >
-          {{ AppConfig.contact.email }}
+          kontakt@rieger-systems.eu
         </a>
       </p>
-      <p
-        v-if="AppConfig.contact.phone"
-        class="flex items-center justify-center gap-2"
-      >
+      <p class="flex items-center justify-center gap-2">
         <PhoneIcon class="w-4 h-4 text-primary" />
-        <a
-          :href="`tel:${AppConfig.contact.phone.replace(/\s/g, '')}`"
-          class="underline hover:text-primary"
-        >
-          {{ AppConfig.contact.phone }}
+        <a :href="`tel:0664 1234567`" class="underline hover:text-primary">
+          0664 1234567
         </a>
       </p>
     </div>
@@ -68,7 +60,6 @@
 <script setup lang="ts">
 import { MapPinIcon, EnvelopeIcon, PhoneIcon } from "@heroicons/vue/24/outline"; // PhoneIcon hinzugefügt
 import { useI18n } from "vue-i18n";
-import { AppConfig } from "~/config/app.config";
 
 const { t } = useI18n();
 const { logo } = useAssets();

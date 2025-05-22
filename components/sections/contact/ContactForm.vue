@@ -71,10 +71,10 @@
       <p>
         {{ t("contact.form.alternative") }}
         <a
-          :href="`mailto:${AppConfig.contact.email}`"
+          :href="`mailto:kontakt@rieger-systems.eu`"
           class="underline text-primary"
         >
-          {{ AppConfig.contact.email }}
+          kontakt@rieger-systems.eu
         </a>
       </p>
 
@@ -94,7 +94,6 @@
 <script setup lang="ts">
 import { reactive, ref } from "vue"; // reactive und ref importieren
 import { useI18n } from "vue-i18n"; // useI18n importieren
-import { AppConfig } from "~/config/app.config"; // AppConfig importieren
 import { useLocalePath } from "#i18n";
 
 const { t } = useI18n();
@@ -128,7 +127,7 @@ function handleSubmit() {
       form.message
     }\n\n${t("contact.form.mailBodyConsent")}`
   );
-  const mailtoLink = `mailto:${AppConfig.contact.email}?subject=${subject}&body=${body}`; // E-Mail aus AppConfig
+  const mailtoLink = `mailto:kontakt@rieger-systems.eu?subject=${subject}&body=${body}`; // E-Mail aus AppConfig
 
   const link = document.createElement("a");
   link.href = mailtoLink;
