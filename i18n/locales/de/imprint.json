@@ -1,1 +1,53 @@
-{}
+{
+  "imprint": {
+    "pageTitle": "Impressum – Rieger Systems",
+    "pageDescription": "Rechtliche Angaben gemäß §5 ECG für die Website von Rieger Systems.",
+    "heading": "Impressum",
+    "subheading": "Rechtliche Angaben gemäß §5 ECG, §14 UGB und §25 Mediengesetz",
+    "fields": {
+      "companyName": {
+        "title": "Unternehmensname"
+      },
+      "companyForm": {
+        "title": "Unternehmensform"
+      },
+      "address": {
+        "title": "Anschrift"
+      },
+      "contact": {
+        "title": "Kontakt"
+      },
+      "commercialRegisterNumber": {
+        "title": "Firmenbuchnummer"
+      },
+      "commercialRegisterCourt": {
+        "title": "Firmenbuchgericht"
+      },
+      "uidNumber": {
+        "title": "UID-Nummer"
+      },
+      "managingDirector": {
+        "title": "Geschäftsführer"
+      },
+      "companyPurpose": {
+        "title": "Unternehmensgegenstand",
+        "content": "Entwicklung und Betrieb von Software- und KI-Systemen"
+      },
+      "chamberMembership": {
+        "title": "Mitglied der Wirtschaftskammer",
+        "content": "Wirtschaftskammer Österreich – Sparte Information & Consulting"
+      },
+      "mediaLawResponsibility": {
+        "title": "Inhaltlich verantwortlich gemäß §25 MedienG",
+        "content": "Tobias Rieger, Anschrift wie oben"
+      },
+      "onlineDisputeResolution": {
+        "title": "Online-Streitbeilegung (EU)"
+      },
+      "disclaimer": {
+        "title": "Haftungsausschluss",
+        "content": "Trotz sorgfältiger inhaltlicher Kontrolle übernehmen wir keine Haftung für die Inhalte externer Links. Für den Inhalt der verlinkten Seiten sind ausschließlich deren Betreiber verantwortlich."
+      }
+    }
+  }
+}

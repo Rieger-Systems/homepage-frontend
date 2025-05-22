@@ -1,9 +1,3 @@
-<script setup lang="ts">
-import { EnvelopeIcon } from "@heroicons/vue/24/outline";
-import ContactForm from "~/components/sections/contact/ContactForm.vue";
-import BrandingPanel from "~/components/sections/contact/BrandingPanel.vue";
-</script>
-
 <template>
   <section
     class="max-w-screen-lg mx-auto px-4 sm:px-6 py-10 sm:py-16 md:py-24 text-base"
@@ -28,7 +22,7 @@ import BrandingPanel from "~/components/sections/contact/BrandingPanel.vue";
         class="text-3xl sm:text-4xl font-semibold tracking-tight inline-flex items-center gap-2 sm:gap-3 justify-center"
       >
         <EnvelopeIcon class="w-6 h-6 sm:w-7 sm:h-7 text-primary" />
-        Kontakt
+        {{ t("contact.pageTitle") }}
       </h1>
       <p
         v-motion="{
@@ -46,8 +40,7 @@ import BrandingPanel from "~/components/sections/contact/BrandingPanel.vue";
         }"
         class="text-base-content/60 mt-3 sm:mt-2 text-base max-w-lg mx-auto"
       >
-        Du hast eine Frage oder möchtest uns etwas mitteilen? Wir freuen uns auf
-        deine Nachricht.
+        {{ t("contact.pageDescription") }}
       </p>
     </header>
 
@@ -116,3 +109,12 @@ import BrandingPanel from "~/components/sections/contact/BrandingPanel.vue";
     </div>
   </section>
 </template>
+
+<script setup lang="ts">
+import { EnvelopeIcon } from "@heroicons/vue/24/outline";
+import ContactForm from "~/components/sections/contact/ContactForm.vue";
+import BrandingPanel from "~/components/sections/contact/BrandingPanel.vue";
+import { useI18n } from "vue-i18n";
+
+const { t } = useI18n();
+</script>

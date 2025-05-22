@@ -1,1 +1,118 @@
-{}
+{
+  "about": {
+    "sections": {
+      "claim": "Claim",
+      "vision": "Vision",
+      "identity": "Identity",
+      "values": "Values",
+      "ethics": "Ethics"
+    },
+    "ariaLabels": {
+      "pageNavigation": "Page Navigation"
+    },
+    "claim": {
+      "title": "Technology that truly matters.",
+      "description": "For people. With responsibility. Not just a slogan – our benchmark."
+    },
+    "vision": {
+      "title": "Vision & Mission",
+      "description": "Our drive. Our attitude. Our goal.",
+      "visionCard": {
+        "title": "Our Vision",
+        "text": "We set the global standard for human-centered, ethical AI systems. For us, technology is not a show – but a quiet force that accompanies, empowers, and protects.",
+        "quote": "\"Technology as a quiet force for a good life.\""
+      },
+      "missionCard": {
+        "title": "Our Mission",
+        "text": "We develop systems that sustainably improve people's lives – with dignity, transparency, and responsibility. Our AI strengthens autonomy, protects data, and acts in harmony with European values.",
+        "quote": "Progress with attitude. Not with speed."
+      }
+    },
+    "identity": {
+      "title": "Our Identity",
+      "description": "We don't build platforms – we build digital spaces with dignity. Technology as responsibility, not as a game.",
+      "list": {
+        "guardian": {
+          "title": "The Guardian",
+          "desc": "We safeguard what is vulnerable – with clarity, stance, and protection."
+        },
+        "architect": {
+          "title": "The Architect",
+          "desc": "We design robust structures – modular, understandable, and durable."
+        },
+        "designer": {
+          "title": "The Designer",
+          "desc": "Technology is design with meaning. It serves humanity, not as an end in itself."
+        }
+      }
+    },
+    "values": {
+      "title": "Our Values",
+      "description": "They serve as a decision filter, attitude, and orientation – for every product, every line of code, and every encounter.",
+      "list": {
+        "responsibility": {
+          "title": "Responsibility",
+          "desc": "We take responsibility for the impact of our technologies – on people, society, and the environment."
+        },
+        "humanDignityEthics": {
+          "title": "Human Dignity & Ethics",
+          "desc": "Our AI serves humanity – it does not replace, it protects."
+        },
+        "transparency": {
+          "title": "Transparency",
+          "desc": "We act transparently – in code, communication, and decisions."
+        },
+        "innovation": {
+          "title": "Innovation",
+          "desc": "We improve the right things – not just make the wrong things more efficient."
+        },
+        "sustainability": {
+          "title": "Sustainability",
+          "desc": "Our systems are maintainable, resource-efficient, and human-friendly."
+        },
+        "legalCompliance": {
+          "title": "Legal Compliance",
+          "desc": "We embody GDPR and AI regulation – technically and ideally."
+        }
+      }
+    },
+    "ethics": {
+      "title": "Our Ethical Principles",
+      "description": "Technology must not dictate – it must empower. Our systems follow principles. No marketing. No coincidence.",
+      "examplePrefix": "Example",
+
+      "principles": {
+        "autonomy": {
+          "title": "Protect Autonomy",
+          "desc": "Users retain control at all times. No interference. No nudging.",
+          "explanation": "Technology should empower us – not manipulate. Many systems today subtly influence decisions: through design, through algorithms, through ambiguity. We stand against this.",
+          "example": "Social media platforms that use addictive mechanics to increase dwell time – without regard for well-being or autonomy."
+        },
+        "responsibility": {
+          "title": "Assume Responsibility",
+          "desc": "Decisions are traceable and verifiable.",
+          "explanation": "We take responsibility for what our systems do. No 'the AI decided that'. Decisions must be traceable, explainable, and intentional.",
+          "example": "An algorithm rejects a loan application – without anyone being able to explain why. This must not happen."
+        },
+        "transparency": {
+          "title": "Live Transparency",
+          "desc": "We openly show what is stored – and why.",
+          "explanation": "Trust is built not on promises, but on clarity. Users have a right to know what happens with their data.",
+          "example": "Many providers collect movement data and share it – without any benefit to the users."
+        },
+        "noExploitation": {
+          "title": "No Exploitation",
+          "desc": "No trackers. No data sales. No profiling.",
+          "explanation": "Data is not a resource to be exploited. Our systems do not sell – they protect.",
+          "example": "Tracking advertising that shows you you products months later, even if you never bought them."
+        },
+        "longTermThinking": {
+          "title": "Think Long-Term",
+          "desc": "Not short-term profit, but sustainable impact.",
+          "explanation": "Ethical technology requires a long-term perspective: in maintenance, impact, and impact control.",
+          "example": "Startups that want to scale quickly without regard for technical or social consequences."
+        }
+      }
+    }
+  }
+}

@@ -32,7 +32,13 @@
     },
     "copyright": "© {year} Rieger Systems · All rights reserved",
     "nocookies": "This website does not use cookies or any external tracking.",
-    "privacyMore": "For more information, please see our"
+    "privacyMore": "For more information, please see our",
+    "ariaLabels": {
+      "home": "Go to homepage",
+      "logoAlt": "Rieger Systems Logo",
+      "productsScroll": "Scroll to product overview",
+      "socialMedia": "Social media links"
+    }
   },
   "company": {
     "linkedin": "https://www.linkedin.com/company/rieger-systems",

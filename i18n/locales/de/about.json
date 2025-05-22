@@ -1,1 +1,117 @@
-{}
+{
+  "about": {
+    "sections": {
+      "claim": "Claim",
+      "vision": "Vision",
+      "identity": "Identität",
+      "values": "Werte",
+      "ethics": "Ethik"
+    },
+    "ariaLabels": {
+      "pageNavigation": "Seiten-Navigation"
+    },
+    "claim": {
+      "title": "Technologie, die trägt.",
+      "description": "Für Menschen. Mit Verantwortung. Kein Slogan – unser Maßstab."
+    },
+    "vision": {
+      "title": "Vision & Mission",
+      "description": "Unser Antrieb. Unsere Haltung. Unser Ziel.",
+      "visionCard": {
+        "title": "Unsere Vision",
+        "text": "Wir setzen den globalen Standard für menschenzentrierte, ethische KI-Systeme. Technologie ist für uns keine Show – sondern eine stille Kraft, die begleitet, stärkt und schützt.",
+        "quote": "„Technologie als leise Kraft für ein gutes Leben.“"
+      },
+      "missionCard": {
+        "title": "Unsere Mission",
+        "text": "Wir entwickeln Systeme, die das Leben der Menschen nachhaltig verbessern – mit Würde, Transparenz und Verantwortung. Unsere KI stärkt Autonomie, schützt Daten und handelt im Einklang mit den europäischen Werten.",
+        "quote": "Fortschritt mit Haltung. Nicht mit Geschwindigkeit."
+      }
+    },
+    "identity": {
+      "title": "Unsere Identität",
+      "description": "Wir bauen keine Plattformen – wir bauen digitale Räume mit Würde. Technologie als Verantwortung, nicht als Spiel.",
+      "list": {
+        "guardian": {
+          "title": "Der Hüter",
+          "desc": "Wir wahren, was verletzlich ist – mit Klarheit, Haltung und Schutz."
+        },
+        "architect": {
+          "title": "Der Architekt",
+          "desc": "Wir entwerfen tragfähige Strukturen – modular, verständlich und dauerhaft."
+        },
+        "designer": {
+          "title": "Der Gestalter",
+          "desc": "Technologie ist Gestaltung mit Bedeutung. Sie dient dem Menschen, nicht dem Selbstzweck."
+        }
+      }
+    },
+    "values": {
+      "title": "Unsere Werte",
+      "description": "Sie sind Entscheidungsfilter, Haltung und Orientierung zugleich – für jedes Produkt, jeden Code und jede Begegnung.",
+      "list": {
+        "responsibility": {
+          "title": "Verantwortung",
+          "desc": "Wir übernehmen Verantwortung für Auswirkungen unserer Technologien – auf Menschen, Gesellschaft und Umwelt."
+        },
+        "humanDignityEthics": {
+          "title": "Menschenwürde & Ethik",
+          "desc": "Unsere KI dient dem Menschen – sie ersetzt nicht, sie schützt."
+        },
+        "transparency": {
+          "title": "Transparenz",
+          "desc": "Wir handeln nachvollziehbar – in Code, Kommunikation und Entscheidungen."
+        },
+        "innovation": {
+          "title": "Innovation",
+          "desc": "Wir verbessern das Richtige – nicht das Falsche effizienter."
+        },
+        "sustainability": {
+          "title": "Nachhaltigkeit",
+          "desc": "Unsere Systeme sind wartbar, ressourcenschonend und menschenfreundlich."
+        },
+        "legalCompliance": {
+          "title": "Rechtskonformität",
+          "desc": "Wir leben DSGVO und KI-Verordnung – technisch und ideell."
+        }
+      }
+    },
+    "ethics": {
+      "title": "Unsere ethischen Prinzipien",
+      "description": "Technologie darf nicht lenken – sie muss stärken. Unsere Systeme folgen Prinzipien. Kein Marketing. Kein Zufall.",
+      "examplePrefix": "Beispiel",
+      "principles": {
+        "autonomy": {
+          "title": "Autonomie schützen",
+          "desc": "Nutzer:innen behalten jederzeit die Kontrolle. Keine Eingriffe. Kein Nudging.",
+          "explanation": "Technologie soll uns befähigen – nicht manipulieren. Viele Systeme beeinflussen heute Entscheidungen subtil: durch Design, durch Algorithmen, durch Unklarheit. Wir halten dagegen.",
+          "example": "Soziale Medien, die Suchtmechaniken einsetzen, um Verweildauer zu erhöhen – ohne Rücksicht auf Wohlbefinden oder Autonomie."
+        },
+        "responsibility": {
+          "title": "Verantwortung übernehmen",
+          "desc": "Entscheidungen sind nachvollziehbar und überprüfbar.",
+          "explanation": "Wir übernehmen Verantwortung für das, was unsere Systeme tun. Kein „die KI hat das entschieden“. Entscheidungen müssen rückverfolgbar, erklärbar und absichtlich sein.",
+          "example": "Ein Algorithmus lehnt einen Kreditantrag ab – ohne, dass jemand erklären kann, warum. So etwas darf nicht passieren."
+        },
+        "transparency": {
+          "title": "Transparenz leben",
+          "desc": "Wir zeigen offen, was gespeichert wird – und warum.",
+          "explanation": "Vertrauen entsteht nicht durch Versprechen, sondern durch Klarheit. Nutzer:innen haben ein Recht darauf zu wissen, was mit ihren Daten passiert.",
+          "example": "Viele Anbieter sammeln Bewegungsdaten und geben sie weiter – ohne Nutzen für die Nutzer:innen."
+        },
+        "noExploitation": {
+          "title": "Keine Ausbeutung",
+          "desc": "Keine Tracker. Keine Datenverkäufe. Kein Profiling.",
+          "explanation": "Daten sind keine Ressource, die man ausschlachten darf. Unsere Systeme verkaufen nicht – sie schützen.",
+          "example": "Tracking-Werbung, die dir noch Monate später Produkte zeigt, obwohl du sie nie gekauft hast."
+        },
+        "longTermThinking": {
+          "title": "Langfristig denken",
+          "desc": "Nicht kurzfristiger Profit, sondern nachhaltige Wirkung.",
+          "explanation": "Ethische Technologie braucht Langfristigkeit: in Wartung, Wirkung und Wirkungskontrolle.",
+          "example": "Startups, die ohne Rücksicht auf technische oder soziale Folgen schnell skalieren wollen."
+        }
+      }
+    }
+  }
+}

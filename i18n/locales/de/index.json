@@ -44,5 +44,11 @@
     "services": "Hosting",
     "ai": "KI-Systeme",
     "website": "Websites"
+  },
+  "ariaLabels": {
+    "home": "Zur Startseite",
+    "logoAlt": "Rieger Systems Logo",
+    "productsScroll": "Zu den Produktübersichten scrollen",
+    "socialMedia": "Social Media Links"
   }
 }
