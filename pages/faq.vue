@@ -1,99 +1,155 @@
 <script setup lang="ts">
 import FaqItem from "~/components/sections/faq/FaqItem.vue";
 import { NuxtLink } from "#components";
+import { useI18n } from "vue-i18n";
+import { useLocalePath } from "#i18n";
 
-const faqs = [
+const { t } = useI18n();
+const localePath = useLocalePath();
+
+// Define the email address directly in the component script
+const emailAddress = "kontakt@rieger-systems.eu";
+
+// Define an interface for the link object to include isEmail as optional
+interface FaqLink {
+  textKey: string;
+  to: string;
+  isEmail?: boolean; // Make isEmail optional
+}
+
+// Define an interface for each FAQ item
+interface FaqItemData {
+  questionKey: string;
+  answerKey: string;
+  link1?: FaqLink; // Make link1 optional
+  link2?: FaqLink; // Make link2 optional
+}
+
+const faqs: FaqItemData[] = [
+  // Apply the FaqItemData type to the faqs array
   {
-    question: "Was unterscheidet Rieger Systems von anderen Softwarefirmen?",
-    answer: `
-      Wir entwickeln nicht nur funktionale Software, sondern Systeme mit Haltung. Unsere Lösungen sind bewusst klar, transparent und verantwortungsvoll gebaut – ohne Abhängigkeiten, ohne Datenhunger, dafür mit Struktur, Ethik und Substanz.
-    `,
+    questionKey: "faq.question1",
+    answerKey: "faq.answer1",
   },
   {
-    question: "Wo steht Rieger Systems aktuell in der Entwicklung?",
-    answer: `
-      Wir befinden uns in der Aufbauphase und entwickeln unsere ersten Produkte – darunter ein KI-gestütztes System für den Gesundheitsbereich. Erste Partnerschaften und Pilotkunden werden derzeit aufgebaut.
-    `,
+    questionKey: "faq.question2",
+    answerKey: "faq.answer2",
   },
   {
-    question: "Bietet ihr individuelle Softwareentwicklung an?",
-    answer: `
-      In ausgewählten Fällen ja. Wir realisieren Projekte, wenn sie unseren Werten entsprechen und technologisch herausfordern. Besonders im Bereich ethischer KI und sicherer digitaler Infrastruktur sind wir offen für Kooperationen.
-    `,
+    questionKey: "faq.question3",
+    answerKey: "faq.answer3",
   },
   {
-    question: "Wie geht ihr mit künstlicher Intelligenz um?",
-    answer: `
-      Mit Verantwortung. Unsere KI-Systeme sind nicht laut, sondern präzise. Sie unterstützen, ohne zu manipulieren. Wir setzen auf Transparenz, Kontrolle und menschenzentriertes Design – keine Blackbox, kein Bullshit.
-    `,
+    questionKey: "faq.question4",
+    answerKey: "faq.answer4",
   },
   {
-    question: "Wie werden Daten bei euch verarbeitet?",
-    answer: `
-      So wenig wie möglich. Wir hosten alles selbst, nutzen keine Cloud-Anbieter aus Drittstaaten und vermeiden unnötige Erfassung. Alle Verarbeitungen erfolgen DSGVO-konform auf Servern in der EU.
-    `,
+    questionKey: "faq.question5",
+    answerKey: "faq.answer5",
   },
   {
-    question: "Ist Rieger Systems auch für kleine Unternehmen interessant?",
-    answer: `
-      Absolut. Gerade kleinen Unternehmen fehlen oft sichere, skalierbare Tools. Unsere Systeme sind bewusst modular und fair gebaut – damit sie auch für kleinere Organisationen zugänglich sind.
-    `,
+    questionKey: "faq.question6",
+    answerKey: "faq.answer6",
   },
   {
-    question: "Kann ich bei euch einsteigen oder mitarbeiten?",
-    answer: `
-      Wenn du denkst, dass du nicht nur etwas baust, sondern etwas bewirken willst – ja. Wir suchen Menschen, keine Rollen. Offene Stellen und Initiativbewerbungen findest du unter <NuxtLink to="/jobs" class="underline hover:text-primary">Karriere</NuxtLink>.
-    `,
+    questionKey: "faq.question7",
+    answerKey: "faq.question7",
+    link1: {
+      textKey: "faq.careerLinkText",
+      to: localePath("/jobs"),
+      // isEmail is implicitly false (undefined) if not present, which is correct for NuxtLink
+    },
   },
   {
-    question: "Wie kann ich euch erreichen?",
-    answer: `
-      Am einfachsten über unser <NuxtLink to="/contact" class="underline hover:text-primary">Kontaktformular</NuxtLink> oder direkt per E-Mail an <a href="mailto:kontakt@rieger-systems.eu" class="underline hover:text-primary">kontakt@rieger-systems.eu</a>. Wir antworten persönlich, ohne Ticketnummern.
-    `,
+    questionKey: "faq.question8",
+    answerKey: "faq.question8",
+    link1: {
+      textKey: "faq.contactFormText",
+      to: localePath("/contact"),
+    },
+    link2: {
+      textKey: emailAddress,
+      to: "mailto:" + emailAddress,
+      isEmail: true, // Explicitly true for email links
+    },
   },
   {
-    question: "Wird eure Software Open Source sein?",
-    answer: `
-      Teile davon – ja. Besonders im Bereich Infrastruktur, Schnittstellen oder ethischer Komponenten streben wir Open Source an. Kritische Kernsysteme mit hoher Verantwortung werden kontrolliert entwickelt und betrieben.
-    `,
+    questionKey: "faq.question9",
+    answerKey: "faq.answer9",
   },
   {
-    question: "Was kostet eure Software?",
-    answer: `
-      Unsere Produkte werden modular angeboten – ohne Lock-in, ohne versteckte Kosten. Preise sind abhängig von Nutzung, Umfang und Lizenzmodell. Für Pilotprojekte gelten individuelle Vereinbarungen.
-    `,
+    questionKey: "faq.question10",
+    answerKey: "faq.answer10",
   },
 ];
 
-definePageMeta({
-  title: "FAQ – Rieger Systems",
-  description:
-    "Antworten auf häufige Fragen rund um Rieger Systems, Technologie, Datenschutz und Zusammenarbeit.",
-  robots: "index,follow",
+import { useHead } from "#app";
+useHead({
+  title: t("faq.pageTitle"),
+  meta: [
+    { name: "description", content: t("faq.pageDescription") },
+    { name: "robots", content: "index,follow" },
+  ],
 });
 </script>
 
 <template>
   <section class="max-w-screen-md mx-auto px-6 py-24 text-sm">
-    <!-- Header -->
     <div class="text-center mb-12">
       <h1 v-motion-fade class="text-4xl font-semibold tracking-tight">
-        Häufige Fragen
+        {{ t("faq.headerTitle") }}
       </h1>
       <p
         v-motion-fade
         :style="{ transitionDelay: '0.13s' }"
         class="text-gray-400 mt-2 text-base"
       >
-        Antworten, die Klarheit schaffen.
+        {{ t("faq.headerSubtitle") }}
       </p>
     </div>
 
     <div class="join join-vertical w-full space-y-2">
-      <template v-for="(faq, i) in faqs" :key="faq.question">
+      <template v-for="(faq, i) in faqs" :key="faq.questionKey">
         <div v-motion-fade :style="{ transitionDelay: `${0.09 + i * 0.04}s` }">
-          <FaqItem :question="faq.question">
-            <div v-html="faq.answer" />
+          <FaqItem :question="t(faq.questionKey)">
+            <p class="text-sm text-base-content/70 leading-relaxed">
+              {{ t(faq.answerKey) }}
+            </p>
+
+            <div class="mt-4 flex flex-col gap-2" v-if="faq.link1 || faq.link2">
+              <template v-if="faq.link1">
+                <NuxtLink
+                  v-if="!faq.link1.isEmail"
+                  :to="faq.link1.to"
+                  class="underline hover:text-primary"
+                >
+                  {{ t(faq.link1.textKey) }}
+                </NuxtLink>
+                <a
+                  v-else
+                  :href="faq.link1.to"
+                  class="underline hover:text-primary"
+                >
+                  {{ t(faq.link1.textKey) }}
+                </a>
+              </template>
+              <template v-if="faq.link2">
+                <NuxtLink
+                  v-if="!faq.link2.isEmail"
+                  :to="faq.link2.to"
+                  class="underline hover:text-primary"
+                >
+                  {{ t(faq.link2.textKey) }}
+                </NuxtLink>
+                <a
+                  v-else
+                  :href="faq.link2.to"
+                  class="underline hover:text-primary"
+                >
+                  {{ t(faq.link2.textKey) }}
+                </a>
+              </template>
+            </div>
           </FaqItem>
         </div>
       </template>

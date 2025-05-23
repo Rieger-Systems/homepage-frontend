@@ -1,1 +1,20 @@
-{}
+{
+  "jobs": {
+    "title": "Werde Teil von Rieger Systems",
+    "description": "Wir schreiben selten Stellen aus – aber wir lesen jede Initiativbewerbung. Vielleicht beginnt hier etwas Neues.",
+    "fullstackDevelopmentTitle": "Fullstack-Entwicklung",
+    "fullstackDevelopmentDescription": "Von Architektur bis Schnittstelle. Du denkst modular, nachhaltig und dokumentiert.",
+    "uxUiDesignTitle": "UX/UI Design",
+    "uxUiDesignDescription": "Du gestaltest Interfaces mit Klarheit, Gefühl und funktionaler Eleganz.",
+    "itSecurityDataProtectionTitle": "IT-Sicherheit & Datenschutz",
+    "itSecurityDataProtectionDescription": "Du schützt nicht nur Systeme, sondern auch die Menschen dahinter.",
+    "networkInfrastructureTitle": "Netzwerktechnik & Infrastruktur",
+    "networkInfrastructureDescription": "Du planst und betreibst Systeme, die zuverlässig, unabhängig und wartbar sind.",
+    "aiAnalyticsTitle": "KI & Analyse",
+    "aiAnalyticsDescription": "Du baust Systeme, die verstehen statt urteilen – mit ethischem Anspruch.",
+    "projectCoordinationTitle": "Projektkoordination",
+    "projectCoordinationDescription": "Du bringst Struktur, Kommunikation und Sorgfalt in technische Prozesse.",
+    "aboutUsButton": "Mehr über uns erfahren",
+    "emailCallToAction": "Oder direkt per Mail:"
+  }
+}

@@ -4,56 +4,90 @@
     role="main"
     aria-labelledby="agb-heading"
   >
-    <!-- Header: Motion Fade -->
     <header v-motion-fade class="text-center mb-10 sm:mb-14">
       <h1
         id="agb-heading"
         class="text-3xl sm:text-4xl font-semibold tracking-tight mb-1"
         tabindex="0"
       >
-        Allgemeine Geschäftsbedingungen (AGB)
+        {{ t("terms.headerTitle") }}
       </h1>
       <p
         class="text-base-content/70 text-base max-w-prose mx-auto"
         tabindex="0"
       >
-        Stand: 18.05.2025
+        {{ t("terms.headerDate") }}
       </p>
     </header>
 
-    <!-- Card mit Slide Up -->
     <article
       v-motion-slide-bottom
       class="relative bg-base-100 border-l-4 border-primary/70 rounded-lg px-4 sm:px-8 py-7 sm:py-10 flex flex-col gap-7 prose prose-invert dark:prose-invert max-w-prose mx-auto transition-all duration-300 outline-none focus:ring-4 focus:ring-primary/40 focus:ring-offset-2 focus:ring-offset-base-100"
       tabindex="0"
-      aria-label="Allgemeine Geschäftsbedingungen"
+      :aria-label="t('terms.headerTitle')"
     >
-      <!-- Linker Farbverlauf als Akzent -->
       <div
         class="absolute left-0 top-0 h-full w-1 bg-gradient-to-b from-primary/50 via-primary/10 to-transparent rounded-l-lg pointer-events-none"
       ></div>
 
-      <!-- Inhalt als Abschnitte: jeder Abschnitt einzeln gefadet -->
-      <template v-for="(section, i) in sections" :key="section.title">
+      <template v-for="(section, i) in sections" :key="section.titleKey">
         <section
           v-motion-fade
           :style="{ transitionDelay: `${0.09 + i * 0.04}s` }"
           class="flex flex-col gap-2 last:pb-0"
           tabindex="0"
-          :aria-label="section.title"
+          :aria-label="t(section.titleKey)"
         >
           <h2
-            v-if="section.title"
+            v-if="section.titleKey"
             class="!mb-1 !mt-0 !text-primary !text-lg font-semibold"
           >
-            {{ section.title }}
+            {{ t(section.titleKey) }}
           </h2>
-          <div
-            v-for="(content, idx) in section.contents"
-            :key="idx"
-            v-html="content"
-            class="leading-relaxed"
-          />
+          <template v-if="section.contentKey === 'terms.section7Content'">
+            <p class="leading-relaxed">
+              <i18n-t :keypath="section.contentKey" tag="span">
+                <template #privacyPolicyLink>
+                  <NuxtLink
+                    :to="localePath('/privacy')"
+                    class="text-primary hover:underline focus:underline outline-none"
+                    tabindex="0"
+                  >
+                    {{ t("terms.privacyPolicyLinkText") }}
+                  </NuxtLink>
+                </template>
+              </i18n-t>
+            </p>
+          </template>
+          <template v-else-if="section.contentKey === 'terms.section10Content'">
+            <p class="leading-relaxed">
+              {{ t("terms.section10Company") }}<br />
+              {{ t("terms.section10AddressLine1") }}<br />
+              {{ t("terms.section10AddressLine2") }}<br />
+              {{ t("terms.section10EmailLabel") }}
+              <a
+                :href="'mailto:' + emailAddress"
+                class="text-primary hover:underline focus:underline outline-none"
+                tabindex="0"
+              >
+                {{ emailAddress }}
+              </a>
+            </p>
+          </template>
+          <template v-else-if="Array.isArray(section.contentKey)">
+            <p
+              v-for="(key, idx) in section.contentKey"
+              :key="idx"
+              class="leading-relaxed"
+            >
+              {{ t(key) }}
+            </p>
+          </template>
+          <template v-else>
+            <p class="leading-relaxed">
+              {{ t(section.contentKey) }}
+            </p>
+          </template>
         </section>
       </template>
     </article>
@@ -61,6 +95,7 @@
 </template>
 
 <style scoped>
+/* Keep your styles as they are */
 .prose > * {
   line-height: 1.6;
 }
@@ -79,74 +114,74 @@ a:focus {
 </style>
 
 <script setup lang="ts">
-const sections = [
+import { useI18n } from "vue-i18n";
+import { NuxtLink } from "#components";
+import { useHead } from "#app";
+import { useLocalePath } from "#i18n";
+
+const { t } = useI18n();
+const localePath = useLocalePath();
+
+const emailAddress = "kontakt@rieger-systems.eu"; // Keep email here
+
+interface Section {
+  titleKey: string;
+  contentKey: string | string[]; // Can be a single key or an array of keys
+}
+
+const sections: Section[] = [
   {
-    title: "1. Geltungsbereich",
-    contents: [
-      `Diese AGB gelten für alle gegenwärtigen und künftigen Leistungen der Rieger Systems GmbH, insbesondere in den Bereichen Softwareentwicklung, künstliche Intelligenz, digitale Produkte, Beratung sowie technische Dienstleistungen.`,
+    titleKey: "terms.section1Title",
+    contentKey: "terms.section1Content",
+  },
+  {
+    titleKey: "terms.section2Title",
+    contentKey: "terms.section2Content",
+  },
+  {
+    titleKey: "terms.section3Title",
+    contentKey: "terms.section3Content",
+  },
+  {
+    titleKey: "terms.section4Title",
+    contentKey: "terms.section4Content",
+  },
+  {
+    titleKey: "terms.section5Title",
+    contentKey: "terms.section5Content",
+  },
+  {
+    titleKey: "terms.section6Title",
+    contentKey: "terms.section6Content",
+  },
+  {
+    titleKey: "terms.section7Title",
+    contentKey: "terms.section7Content", // This will be handled by i18n-t
+  },
+  {
+    titleKey: "terms.section8Title",
+    contentKey: "terms.section8Content",
+  },
+  {
+    titleKey: "terms.section9Title",
+    contentKey: [
+      // Split into multiple content keys for better flexibility
+      "terms.section9Content1",
+      "terms.section9Content2",
+      "terms.section9Content3",
     ],
   },
   {
-    title: "2. Vertragsabschluss",
-    contents: [
-      `Ein Vertrag kommt zustande durch schriftliche Bestätigung, Annahme eines Angebots oder Projektbeginn auf Basis einer Vereinbarung. Anfragen über unsere Website, E-Mail oder andere Kanäle stellen kein verbindliches Angebot dar.`,
-    ],
-  },
-  {
-    title: "3. Leistungsumfang",
-    contents: [
-      `Art, Umfang und Ziel der Leistung ergeben sich aus dem jeweiligen Angebot, der schriftlichen Vereinbarung oder dem Projektvertrag. Änderungen und Erweiterungen bedürfen der schriftlichen Zustimmung beider Parteien.`,
-    ],
-  },
-  {
-    title: "4. Preise und Zahlungsbedingungen",
-    contents: [
-      `Alle Preise verstehen sich exklusive gesetzlicher Umsatzsteuer. Sofern nicht anders vereinbart, ist der Rechnungsbetrag innerhalb von 14 Tagen ab Rechnungsdatum ohne Abzug zur Zahlung fällig. Bei Zahlungsverzug behalten wir uns die Sperrung oder Verzögerung weiterer Leistungen vor.`,
-    ],
-  },
-  {
-    title: "5. Nutzungsrechte",
-    contents: [
-      `Sofern nicht explizit schriftlich übertragen, verbleiben sämtliche Urheberrechte, Nutzungsrechte und Schutzrechte an entwickelten Konzepten, Quellcodes, KI-Modellen oder Dokumentationen bei Rieger Systems. Der Kunde erhält ein einfaches, nicht übertragbares, zweckgebundenes Nutzungsrecht im vertraglich vereinbarten Umfang.`,
-    ],
-  },
-  {
-    title: "6. Haftung",
-    contents: [
-      `Rieger Systems haftet ausschließlich bei Vorsatz oder grober Fahrlässigkeit. Für leichte Fahrlässigkeit, mittelbare Schäden, Folgeschäden, Datenverluste oder entgangenen Gewinn wird keine Haftung übernommen. Die Nutzung unserer Systeme und Software erfolgt auf eigenes Risiko des Kunden. Eine Haftung für Inhalte, Handlungen oder Entscheidungen, die auf KI-basierten Empfehlungen beruhen, ist ausgeschlossen.`,
-    ],
-  },
-  {
-    title: "7. Datenschutz",
-    contents: [
-      `Die Verarbeitung personenbezogener Daten erfolgt ausschließlich im Rahmen der geltenden Datenschutzgesetze. Nähere Informationen finden Sie in unserer <NuxtLink to="/privacy" class="text-primary hover:underline focus:underline outline-none" tabindex="0">Datenschutzerklärung</NuxtLink>.`,
-    ],
-  },
-  {
-    title: "8. Vertraulichkeit",
-    contents: [
-      `Beide Parteien verpflichten sich, sämtliche im Rahmen der Zusammenarbeit erlangten Informationen, die nicht öffentlich zugänglich sind, vertraulich zu behandeln – auch über das Ende der Geschäftsbeziehung hinaus.`,
-    ],
-  },
-  {
-    title: "9. Gerichtsstand und anwendbares Recht",
-    contents: [
-      `Es gilt ausschließlich österreichisches Recht unter Ausschluss des UN-Kaufrechts. Gerichtsstand ist – soweit gesetzlich zulässig – [Ort ergänzen]. Sollte eine Bestimmung dieser AGB ganz oder teilweise unwirksam sein, bleibt die Gültigkeit der übrigen Bestimmungen unberührt.`,
-    ],
-  },
-  {
-    title: "10. Kontakt",
-    contents: [
-      `Rieger Systems GmbH (in Gründung)<br>Musterstraße 12<br>1234 Beispielstadt, Österreich<br>
-      E-Mail: <a href="mailto:kontakt@rieger-systems.eu" class="text-primary hover:underline focus:underline outline-none" tabindex="0">kontakt@rieger-systems.eu</a>`,
-    ],
+    titleKey: "terms.section10Title",
+    contentKey: "terms.section10Content", // Handled separately in template for address/email
   },
 ];
 
-definePageMeta({
-  title: "AGB – Rieger Systems",
-  description:
-    "Allgemeine Geschäftsbedingungen für Leistungen und Angebote von Rieger Systems.",
-  robots: "index,follow",
+useHead({
+  title: t("terms.pageTitle"),
+  meta: [
+    { name: "description", content: t("terms.pageDescription") },
+    { name: "robots", content: "index,follow" },
+  ],
 });
 </script>

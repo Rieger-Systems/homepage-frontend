@@ -1,1 +1,34 @@
-{}
+{
+  "terms": {
+    "headerTitle": "Allgemeine Geschäftsbedingungen (AGB)",
+    "headerDate": "Stand: 18.05.2025",
+    "section1Title": "1. Geltungsbereich",
+    "section1Content": "Diese AGB gelten für alle gegenwärtigen und künftigen Leistungen der Rieger Systems GmbH, insbesondere in den Bereichen Softwareentwicklung, künstliche Intelligenz, digitale Produkte, Beratung sowie technische Dienstleistungen.",
+    "section2Title": "2. Vertragsabschluss",
+    "section2Content": "Ein Vertrag kommt zustande durch schriftliche Bestätigung, Annahme eines Angebots oder Projektbeginn auf Basis einer Vereinbarung. Anfragen über unsere Website, E-Mail oder andere Kanäle stellen kein verbindliches Angebot dar.",
+    "section3Title": "3. Leistungsumfang",
+    "section3Content": "Art, Umfang und Ziel der Leistung ergeben sich aus dem jeweiligen Angebot, der schriftlichen Vereinbarung oder dem Projektvertrag. Änderungen und Erweiterungen bedürfen der schriftlichen Zustimmung beider Parteien.",
+    "section4Title": "4. Preise und Zahlungsbedingungen",
+    "section4Content": "Alle Preise verstehen sich exklusive gesetzlicher Umsatzsteuer. Sofern nicht anders vereinbart, ist der Rechnungsbetrag innerhalb von 14 Tagen ab Rechnungsdatum ohne Abzug zur Zahlung fällig. Bei Zahlungsverzug behalten wir uns die Sperrung oder Verzögerung weiterer Leistungen vor.",
+    "section5Title": "5. Nutzungsrechte",
+    "section5Content": "Sofern nicht explizit schriftlich übertragen, verbleiben sämtliche Urheberrechte, Nutzungsrechte und Schutzrechte an entwickelten Konzepten, Quellcodes, KI-Modellen oder Dokumentationen bei Rieger Systems. Der Kunde erhält ein einfaches, nicht übertragbares, zweckgebundenes Nutzungsrecht im vertraglich vereinbarten Umfang.",
+    "section6Title": "6. Haftung",
+    "section6Content": "Rieger Systems haftet ausschließlich bei Vorsatz oder grober Fahrlässigkeit. Für leichte Fahrlässigkeit, mittelbare Schäden, Folgeschäden, Datenverluste oder entgangenen Gewinn wird keine Haftung übernommen. Die Nutzung unserer Systeme und Software erfolgt auf eigenes Risiko des Kunden. Eine Haftung für Inhalte, Handlungen oder Entscheidungen, die auf KI-basierten Empfehlungen beruhen, ist ausgeschlossen.",
+    "section7Title": "7. Datenschutz",
+    "section7Content": "Die Verarbeitung personenbezogener Daten erfolgt ausschließlich im Rahmen der geltenden Datenschutzgesetze. Nähere Informationen finden Sie in unserer {privacyPolicyLink}.",
+    "privacyPolicyLinkText": "Datenschutzerklärung",
+    "section8Title": "8. Vertraulichkeit",
+    "section8Content": "Beide Parteien verpflichten sich, sämtliche im Rahmen der Zusammenarbeit erlangten Informationen, die nicht öffentlich zugänglich sind, vertraulich zu behandeln – auch über das Ende der Geschäftsbeziehung hinaus.",
+    "section9Title": "9. Gerichtsstand und anwendbares Recht",
+    "section9Content1": "Es gilt ausschließlich österreichisches Recht unter Ausschluss des UN-Kaufrechts.",
+    "section9Content2": "Gerichtsstand ist – soweit gesetzlich zulässig – [Ort ergänzen].",
+    "section9Content3": "Sollte eine Bestimmung dieser AGB ganz oder teilweise unwirksam sein, bleibt die Gültigkeit der übrigen Bestimmungen unberührt.",
+    "section10Title": "10. Kontakt",
+    "section10Company": "Rieger Systems GmbH (in Gründung)",
+    "section10AddressLine1": "Musterstraße 12",
+    "section10AddressLine2": "1234 Beispielstadt, Österreich",
+    "section10EmailLabel": "E-Mail:",
+    "pageTitle": "AGB – Rieger Systems",
+    "pageDescription": "Allgemeine Geschäftsbedingungen für Leistungen und Angebote von Rieger Systems."
+  }
+}

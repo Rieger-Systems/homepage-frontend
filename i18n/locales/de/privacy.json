@@ -1,1 +1,71 @@
-{}
+{
+  "privacy": {
+    "headerTitle": "Datenschutzerklärung",
+    "headerSubtitle": "Informationen gemäß Art. 13 und 14 DSGVO",
+
+    "section1Title": "1. Verantwortlicher",
+    "section1Company": "Rieger Systems GmbH (in Gründung)",
+    "section1Address": "Musterstraße 12, 1234 Beispielstadt, Österreich",
+    "section1EmailLabel": "E-Mail:",
+
+    "section2Title": "2. Allgemeine Grundsätze",
+    "section2Content": "Wir verarbeiten personenbezogene Daten ausschließlich im Einklang mit der DSGVO und dem österreichischen Datenschutzgesetz. Wir verzichten bewusst auf Datenverarbeitung, die nicht erforderlich ist, und setzen auf Transparenz, Datensparsamkeit und technische Sicherheit.",
+
+    "section3Title": "3. Hosting",
+    "section3Content1": "Unsere Website wird bei der Hetzner Online GmbH (Industriestr. 25, 91710 Gunzenhausen, Deutschland) gehostet.",
+    "section3Content2": "Die Server befinden sich ausschließlich innerhalb der Europäischen Union. Es besteht ein Auftragsverarbeitungsvertrag gemäß Art. 28 DSGVO mit dem Hostinganbieter.",
+
+    "section4Title": "4. Server-Logfiles",
+    "section4Content1": "Beim Aufruf unserer Website werden durch unseren Hosting-Provider automatisch folgende Daten erfasst und für maximal 7 Tage gespeichert:",
+    "section4ListItem1": "IP-Adresse des zugreifenden Geräts",
+    "section4ListItem2": "Datum und Uhrzeit der Serveranfrage",
+    "section4ListItem3": "Browsertyp und Betriebssystem",
+    "section4ListItem4": "Referrer-URL (die zuvor besuchte Seite)",
+    "section4Content2": "Diese Daten dienen der Gewährleistung eines sicheren und stabilen Serverbetriebs und der Erkennung von Angriffen. Eine Zusammenführung mit anderen Datenquellen oder Profilbildung findet nicht statt. Nach Ablauf der Speicherfrist werden die Daten automatisch gelöscht.",
+    "section4LegalBasis": "Rechtsgrundlage: Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an der sicheren Bereitstellung der Website)",
+
+    "section5Title": "5. Kontakt-, Feedback- und Bewerbungsformulare",
+    "section5Content1": "Wenn Sie über ein Formular (z. B. Kontakt, Feedback oder Bewerbung) mit uns in Kontakt treten, verarbeiten wir die von Ihnen übermittelten Daten (z. B. Name, E-Mail, Nachricht, ggf. Anhänge) ausschließlich zur Bearbeitung Ihres Anliegens.",
+    "section5Content2": "Die Daten werden nicht an Dritte weitergegeben und ausschließlich intern verarbeitet. Bewerbungsdaten werden spätestens 6 Monate nach Abschluss des Auswahlverfahrens gelöscht.",
+    "section5LegalBasis": "Rechtsgrundlage: Art. 6 Abs. 1 lit. a (Einwilligung) und lit. b (vorvertragliche Maßnahmen)",
+
+    "section6Title": "6. Webanalyse mit Umami",
+    "section6Content1": "Wir verwenden das datenschutzfreundliche Analyse-Tool {umamiHighlight} in einer selbst gehosteten Version. Es werden keine Cookies gesetzt und keine personenbezogenen Daten gespeichert. Erfasst werden ausschließlich anonymisierte Nutzungsdaten:",
+    "section6ListItem1": "Besuchte Seiten",
+    "section6ListItem2": "Datum und Uhrzeit",
+    "section6ListItem3": "Referrer",
+    "section6ListItem4": "Gerätetyp und Browser (anonymisiert)",
+    "section6Content2": "Diese Daten dienen ausschließlich der technischen Verbesserung unserer Website. Es erfolgt keine Weitergabe an Dritte.",
+    "section6LegalBasis": "Rechtsgrundlage: Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an Reichweitenanalyse ohne Profilbildung)",
+
+    "section7Title": "7. Keine Cookies oder Dritt-Tracking",
+    "section7Content": "Unsere Website setzt keine Cookies und nutzt keine Trackingdienste wie Google Analytics, Facebook Pixel oder ähnliche. Auch externe Ressourcen (z. B. Fonts oder Icons) werden ausschließlich lokal eingebunden.",
+
+    "section8Title": "8. Technische Sicherheit",
+    "section8Content": "Der Zugriff auf unsere Website erfolgt ausschließlich verschlüsselt über HTTPS (TLS). Unsere Server und Dienste werden regelmäßig aktualisiert, überwacht und durch geeignete technische und organisatorische Maßnahmen (TOMs) abgesichert.",
+
+    "section8aTitle": "8a. IP-Anonymisierung im Captcha-System",
+    "section8aContent1": "Um unser Kontaktformular vor automatisierten Angriffen (z. B. Spam oder Bots) zu schützen, verwenden wir ein eigens entwickeltes Captcha-System. Dabei wird die IP-Adresse des anfragenden Geräts {notStoredHighlight}, sondern vor der Verarbeitung technisch anonymisiert.",
+    "section8aContent2": "Hierfür wird die IP-Adresse mit einem Einweg-Hashverfahren (SHA-256) anonymisiert und nur in dieser nicht rückführbaren Form temporär in unserem Sicherheitssystem verarbeitet. Die Speicherung erfolgt ausschließlich für die technische Erkennung von missbräuchlichen Mehrfachzugriffen und wird nach spätestens 10 Minuten automatisch gelöscht.",
+    "section8aContent3": "{noProfileHighlight}, {noDataMergeHighlight} und {noThirdPartyHighlight}.",
+    "section8aLegalBasis": "Rechtsgrundlage: Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an der Sicherheit unserer Systeme)",
+
+    "section9Title": "9. Ihre Rechte",
+    "section9Content1": "Sie haben das Recht auf:",
+    "section9ListItem1": "Auskunft über Ihre gespeicherten Daten (Art. 15 DSGVO)",
+    "section9ListItem2": "Berichtigung unrichtiger Daten (Art. 16 DSGVO)",
+    "section9ListItem3": "Löschung Ihrer Daten (Art. 17 DSGVO)",
+    "section9ListItem4": "Einschränkung der Verarbeitung (Art. 18 DSGVO)",
+    "section9ListItem5": "Datenübertragbarkeit (Art. 20 DSGVO)",
+    "section9ListItem6": "Widerspruch gegen die Verarbeitung (Art. 21 DSGVO)",
+    "section9ListItem7": "Beschwerde bei einer Aufsichtsbehörde",
+    "section9AuthorityLabel": "Zuständige Behörde in Österreich:",
+    "section9AuthorityLinkText": "Datenschutzbehörde – www.dsb.gv.at",
+
+    "section10Title": "10. Änderungen dieser Datenschutzerklärung",
+    "section10Content": "Wir behalten uns vor, diese Datenschutzerklärung zu aktualisieren, wenn sich die Rechtslage oder unser Angebot ändert. Die jeweils aktuelle Version finden Sie jederzeit auf dieser Seite.",
+
+    "pageTitle": "Datenschutzerklärung – Rieger Systems",
+    "pageDescription": "Informationen zum Datenschutz gemäß DSGVO bei Rieger Systems."
+  }
+}

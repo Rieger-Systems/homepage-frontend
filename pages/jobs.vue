@@ -9,36 +9,41 @@ import {
   ArrowRightIcon,
 } from "@heroicons/vue/24/outline";
 import { ref } from "vue";
+import { useI18n } from "vue-i18n";
+import { useLocalePath } from "#i18n";
+
+const { t } = useI18n();
+const localePath = useLocalePath();
 
 const jobs = [
   {
-    title: "Fullstack-Entwicklung",
-    desc: "Von Architektur bis Schnittstelle. Du denkst modular, nachhaltig und dokumentiert.",
+    titleKey: "jobs.fullstackDevelopmentTitle",
+    descKey: "jobs.fullstackDevelopmentDescription",
     icon: CodeBracketIcon,
   },
   {
-    title: "UX/UI Design",
-    desc: "Du gestaltest Interfaces mit Klarheit, Gefühl und funktionaler Eleganz.",
+    titleKey: "jobs.uxUiDesignTitle",
+    descKey: "jobs.uxUiDesignDescription",
     icon: GlobeAltIcon,
   },
   {
-    title: "IT-Sicherheit & Datenschutz",
-    desc: "Du schützt nicht nur Systeme, sondern auch die Menschen dahinter.",
+    titleKey: "jobs.itSecurityDataProtectionTitle",
+    descKey: "jobs.itSecurityDataProtectionDescription",
     icon: ShieldCheckIcon,
   },
   {
-    title: "Netzwerktechnik & Infrastruktur",
-    desc: "Du planst und betreibst Systeme, die zuverlässig, unabhängig und wartbar sind.",
+    titleKey: "jobs.networkInfrastructureTitle",
+    descKey: "jobs.networkInfrastructureDescription",
     icon: ServerStackIcon,
   },
   {
-    title: "KI & Analyse",
-    desc: "Du baust Systeme, die verstehen statt urteilen – mit ethischem Anspruch.",
+    titleKey: "jobs.aiAnalyticsTitle",
+    descKey: "jobs.aiAnalyticsDescription",
     icon: CpuChipIcon,
   },
   {
-    title: "Projektkoordination",
-    desc: "Du bringst Struktur, Kommunikation und Sorgfalt in technische Prozesse.",
+    titleKey: "jobs.projectCoordinationTitle",
+    descKey: "jobs.projectCoordinationDescription",
     icon: ClipboardDocumentListIcon,
   },
 ];
@@ -89,7 +94,7 @@ function resetTilt(index: number) {
         }"
         class="text-4xl font-bold text-base-content mb-3"
       >
-        Werde Teil von Rieger Systems
+        {{ t("jobs.title") }}
       </h2>
       <p
         v-motion="{
@@ -107,8 +112,7 @@ function resetTilt(index: number) {
         }"
         class="text-base-content/70 max-w-2xl mx-auto text-lg"
       >
-        Wir schreiben selten Stellen aus – aber wir lesen jede
-        Initiativbewerbung. Vielleicht beginnt hier etwas Neues.
+        {{ t("jobs.description") }}
       </p>
     </div>
 
@@ -125,10 +129,10 @@ function resetTilt(index: number) {
             y: 0,
             transition: {
               type: 'spring',
-              stiffness: 170, // Etwas weicherer Spring für die Karten
-              damping: 26, // Geringere Dämpfung für einen subtilen Bounce
-              mass: 1, // Fügt etwas 'Gewicht' hinzu
-              delay: 350 + i * 120, // Startet nach dem Header, mit deutlichem Staggering
+              stiffness: 170,
+              damping: 26,
+              mass: 1,
+              delay: 350 + i * 120,
             },
           },
         }"
@@ -146,10 +150,10 @@ function resetTilt(index: number) {
             <component :is="job.icon" class="w-6 h-6" />
           </div>
           <h3 class="font-semibold text-lg text-base-content">
-            {{ job.title }}
+            {{ t(job.titleKey) }}
           </h3>
           <p class="text-sm text-base-content/70 leading-relaxed">
-            {{ job.desc }}
+            {{ t(job.descKey) }}
           </p>
         </div>
       </div>
@@ -165,22 +169,26 @@ function resetTilt(index: number) {
             type: 'spring',
             stiffness: 200,
             damping: 30,
-            delay: 700, // Deutlich nach den Karten
+            delay: 700,
           },
         },
       }"
       class="text-center mt-20 space-y-4"
     >
-      <NuxtLink to="/about" class="btn btn-primary btn-lg group">
-        <span>Mehr über uns erfahren</span>
+      <NuxtLink :to="localePath('/about')" class="btn btn-primary btn-lg group">
+        <span>{{ t("jobs.aboutUsButton") }}</span>
         <ArrowRightIcon
           class="w-5 h-5 ml-2 transition-transform group-hover:translate-x-1"
         />
       </NuxtLink>
       <p class="text-sm text-base-content/60">
-        Oder direkt per Mail:
-        <a href="mailto:jobs@rieger-systems.eu" class="underline text-primary">
-          jobs@rieger-systems.eu
+        {{ t("jobs.emailCallToAction") }}
+        <a
+          href="mailto:kontakt@rieger-systems.eu"
+          class="underline text-primary"
+          target="_blank"
+        >
+          kontakt@rieger-systems.eu
         </a>
       </p>
     </div>

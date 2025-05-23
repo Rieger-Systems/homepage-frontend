@@ -1,1 +1,28 @@
-{}
+{
+  "faq": {
+    "headerTitle": "Häufige Fragen",
+    "headerSubtitle": "Antworten, die Klarheit schaffen.",
+    "question1": "Was unterscheidet Rieger Systems von anderen Softwarefirmen?",
+    "answer1": "Wir entwickeln nicht nur funktionale Software, sondern Systeme mit Haltung. Unsere Lösungen sind bewusst klar, transparent und verantwortungsvoll gebaut – ohne Abhängigkeiten, ohne Datenhunger, dafür mit Struktur, Ethik und Substanz.",
+    "question2": "Wo steht Rieger Systems aktuell in der Entwicklung?",
+    "answer2": "Wir befinden uns in der Aufbauphase und entwickeln unsere ersten Produkte – darunter ein KI-gestütztes System für den Gesundheitsbereich. Erste Partnerschaften und Pilotkunden werden derzeit aufgebaut.",
+    "question3": "Bietet ihr individuelle Softwareentwicklung an?",
+    "answer3": "In ausgewählten Fällen ja. Wir realisieren Projekte, wenn sie unseren Werten entsprechen und technologisch herausfordern. Besonders im Bereich ethischer KI und sicherer digitaler Infrastruktur sind wir offen für Kooperationen.",
+    "question4": "Wie geht ihr mit künstlicher Intelligenz um?",
+    "answer4": "Mit Verantwortung. Unsere KI-Systeme sind nicht laut, sondern präzise. Sie unterstützen, ohne zu manipulieren. Wir setzen auf Transparenz, Kontrolle und menschenzentriertes Design – keine Blackbox, kein Bullshit.",
+    "question5": "Wie werden Daten bei euch verarbeitet?",
+    "answer5": "So wenig wie möglich. Wir hosten alles selbst, nutzen keine Cloud-Anbieter aus Drittstaaten und vermeiden unnötige Erfassung. Alle Verarbeitungen erfolgen DSGVO-konform auf Servern in der EU.",
+    "question6": "Ist Rieger Systems auch für kleine Unternehmen interessant?",
+    "answer6": "Absolut. Gerade kleinen Unternehmen fehlen oft sichere, skalierbare Tools. Unsere Systeme sind bewusst modular und fair gebaut – damit sie auch für kleinere Organisationen zugänglich sind.",
+    "question7": "Wenn du denkst, dass du nicht nur etwas baust, sondern etwas bewirken willst – ja. Wir suchen Menschen, keine Rollen. Offene Stellen und Initiativbewerbungen findest du unter dem Bereich Karriere.",
+    "question8": "Am einfachsten über unser Kontaktformular oder direkt per E-Mail.",
+    "question9": "Wird eure Software Open Source sein?",
+    "answer9": "Teile davon – ja. Besonders im Bereich Infrastruktur, Schnittstellen oder ethischer Komponenten streben wir Open Source an. Kritische Kernsysteme mit hoher Verantwortung werden kontrolliert entwickelt und betrieben.",
+    "question10": "Was kostet eure Software?",
+    "answer10": "Unsere Produkte werden modular angeboten – ohne Lock-in, ohne versteckte Kosten. Preise sind abhängig von Nutzung, Umfang und Lizenzmodell. Für Pilotprojekte gelten individuelle Vereinbarungen.",
+    "pageTitle": "FAQ – Rieger Systems",
+    "pageDescription": "Antworten auf häufige Fragen rund um Rieger Systems, Technologie, Datenschutz und Zusammenarbeit.",
+    "contactFormText": "Zum Kontaktformular",
+    "careerLinkText": "Karriere"
+  }
+}
