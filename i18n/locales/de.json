@@ -1,0 +1,533 @@
+{
+  "about": {
+    "sections": {
+      "claim": "Claim",
+      "vision": "Vision",
+      "identity": "Identität",
+      "values": "Werte",
+      "ethics": "Ethik"
+    },
+    "ariaLabels": {
+      "pageNavigation": "Seiten-Navigation"
+    },
+    "claim": {
+      "title": "Technologie, die trägt.",
+      "description": "Für Menschen. Mit Verantwortung. Kein Slogan – unser Maßstab."
+    },
+    "vision": {
+      "title": "Vision & Mission",
+      "description": "Unser Antrieb. Unsere Haltung. Unser Ziel.",
+      "visionCard": {
+        "title": "Unsere Vision",
+        "text": "Wir setzen den globalen Standard für menschenzentrierte, ethische KI-Systeme. Technologie ist für uns keine Show – sondern eine stille Kraft, die begleitet, stärkt und schützt.",
+        "quote": "„Technologie als leise Kraft für ein gutes Leben.“"
+      },
+      "missionCard": {
+        "title": "Unsere Mission",
+        "text": "Wir entwickeln Systeme, die das Leben der Menschen nachhaltig verbessern – mit Würde, Transparenz und Verantwortung. Unsere KI stärkt Autonomie, schützt Daten und handelt im Einklang mit den europäischen Werten.",
+        "quote": "Fortschritt mit Haltung. Nicht mit Geschwindigkeit."
+      }
+    },
+    "identity": {
+      "title": "Unsere Identität",
+      "description": "Wir bauen keine Plattformen – wir bauen digitale Räume mit Würde. Technologie als Verantwortung, nicht als Spiel.",
+      "list": {
+        "guardian": {
+          "title": "Der Hüter",
+          "desc": "Wir wahren, was verletzlich ist – mit Klarheit, Haltung und Schutz."
+        },
+        "architect": {
+          "title": "Der Architekt",
+          "desc": "Wir entwerfen tragfähige Strukturen – modular, verständlich und dauerhaft."
+        },
+        "designer": {
+          "title": "Der Gestalter",
+          "desc": "Technologie ist Gestaltung mit Bedeutung. Sie dient dem Menschen, nicht dem Selbstzweck."
+        }
+      }
+    },
+    "values": {
+      "title": "Unsere Werte",
+      "description": "Sie sind Entscheidungsfilter, Haltung und Orientierung zugleich – für jedes Produkt, jeden Code und jede Begegnung.",
+      "list": {
+        "responsibility": {
+          "title": "Verantwortung",
+          "desc": "Wir übernehmen Verantwortung für Auswirkungen unserer Technologien – auf Menschen, Gesellschaft und Umwelt."
+        },
+        "humanDignityEthics": {
+          "title": "Menschenwürde & Ethik",
+          "desc": "Unsere KI dient dem Menschen – sie ersetzt nicht, sie schützt."
+        },
+        "transparency": {
+          "title": "Transparenz",
+          "desc": "Wir handeln nachvollziehbar – in Code, Kommunikation und Entscheidungen."
+        },
+        "innovation": {
+          "title": "Innovation",
+          "desc": "Wir verbessern das Richtige – nicht das Falsche effizienter."
+        },
+        "sustainability": {
+          "title": "Nachhaltigkeit",
+          "desc": "Unsere Systeme sind wartbar, ressourcenschonend und menschenfreundlich."
+        },
+        "legalCompliance": {
+          "title": "Rechtskonformität",
+          "desc": "Wir leben DSGVO und KI-Verordnung – technisch und ideell."
+        }
+      }
+    },
+    "ethics": {
+      "title": "Unsere ethischen Prinzipien",
+      "description": "Technologie darf nicht lenken – sie muss stärken. Unsere Systeme folgen Prinzipien. Kein Marketing. Kein Zufall.",
+      "examplePrefix": "Beispiel",
+      "principles": {
+        "autonomy": {
+          "title": "Autonomie schützen",
+          "desc": "Nutzer:innen behalten jederzeit die Kontrolle. Keine Eingriffe. Kein Nudging.",
+          "explanation": "Technologie soll uns befähigen – nicht manipulieren. Viele Systeme beeinflussen heute Entscheidungen subtil: durch Design, durch Algorithmen, durch Unklarheit. Wir halten dagegen.",
+          "example": "Soziale Medien, die Suchtmechaniken einsetzen, um Verweildauer zu erhöhen – ohne Rücksicht auf Wohlbefinden oder Autonomie."
+        },
+        "responsibility": {
+          "title": "Verantwortung übernehmen",
+          "desc": "Entscheidungen sind nachvollziehbar und überprüfbar.",
+          "explanation": "Wir übernehmen Verantwortung für das, was unsere Systeme tun. Kein „die KI hat das entschieden“. Entscheidungen müssen rückverfolgbar, erklärbar und absichtlich sein.",
+          "example": "Ein Algorithmus lehnt einen Kreditantrag ab – ohne, dass jemand erklären kann, warum. So etwas darf nicht passieren."
+        },
+        "transparency": {
+          "title": "Transparenz leben",
+          "desc": "Wir zeigen offen, was gespeichert wird – und warum.",
+          "explanation": "Vertrauen entsteht nicht durch Versprechen, sondern durch Klarheit. Nutzer:innen haben ein Recht darauf zu wissen, was mit ihren Daten passiert.",
+          "example": "Viele Anbieter sammeln Bewegungsdaten und geben sie weiter – ohne Nutzen für die Nutzer:innen."
+        },
+        "noExploitation": {
+          "title": "Keine Ausbeutung",
+          "desc": "Keine Tracker. Keine Datenverkäufe. Kein Profiling.",
+          "explanation": "Daten sind keine Ressource, die man ausschlachten darf. Unsere Systeme verkaufen nicht – sie schützen.",
+          "example": "Tracking-Werbung, die dir noch Monate später Produkte zeigt, obwohl du sie nie gekauft hast."
+        },
+        "longTermThinking": {
+          "title": "Langfristig denken",
+          "desc": "Nicht kurzfristiger Profit, sondern nachhaltige Wirkung.",
+          "explanation": "Ethische Technologie braucht Langfristigkeit: in Wartung, Wirkung und Wirkungskontrolle.",
+          "example": "Startups, die ohne Rücksicht auf technische oder soziale Folgen schnell skalieren wollen."
+        }
+      }
+    }
+  },
+  "contact": {
+    "companyName": "Rieger Systems",
+    "slogan": "Technologie, die trägt – klar, sicher und menschlich.",
+    "form": {
+      "nameLabel": "Name",
+      "namePlaceholder": "Max Mustermann",
+      "emailLabel": "E-Mail",
+      "messageLabel": "Nachricht",
+      "messagePlaceholder": "Worum geht's?",
+      "privacyConsentPart1": "Ich habe die",
+      "privacyConsentLink": "Datenschutzerklärung",
+      "privacyConsentPart2": "gelesen und stimme der Verarbeitung meiner Angaben zu.",
+      "currentEmailClientInfo": "Aktuell öffnet das Formular dein E-Mail-Programm. Eine direkte Übermittlung wird bald ergänzt.",
+      "alternative": "Alternativ:",
+      "sendButton": "Nachricht senden",
+      "errorConsentRequired": "Bitte bestätige die Datenschutzerklärung.",
+      "subjectPrefix": "Kontaktanfrage von",
+      "mailBodyPrefix": "Name",
+      "mailBodyEmail": "E-Mail",
+      "mailBodyMessage": "Nachricht",
+      "mailBodyConsent": "[✓] Absender hat der Datenschutzerklärung zugestimmt."
+    },
+    "pageTitle": "Kontakt",
+    "pageDescription": "Du hast eine Frage oder möchtest uns etwas mitteilen? Wir freuen uns auf deine Nachricht."
+  },
+  "faq": {
+    "headerTitle": "Häufige Fragen",
+    "headerSubtitle": "Antworten, die Klarheit schaffen.",
+    "question1": "Was unterscheidet Rieger Systems von anderen Softwarefirmen?",
+    "answer1": "Wir entwickeln nicht nur funktionale Software, sondern Systeme mit Haltung. Unsere Lösungen sind bewusst klar, transparent und verantwortungsvoll gebaut – ohne Abhängigkeiten, ohne Datenhunger, dafür mit Struktur, Ethik und Substanz.",
+    "question2": "Wo steht Rieger Systems aktuell in der Entwicklung?",
+    "answer2": "Wir befinden uns in der Aufbauphase und entwickeln unsere ersten Produkte – darunter ein KI-gestütztes System für den Gesundheitsbereich. Erste Partnerschaften und Pilotkunden werden derzeit aufgebaut.",
+    "question3": "Bietet ihr individuelle Softwareentwicklung an?",
+    "answer3": "In ausgewählten Fällen ja. Wir realisieren Projekte, wenn sie unseren Werten entsprechen und technologisch herausfordern. Besonders im Bereich ethischer KI und sicherer digitaler Infrastruktur sind wir offen für Kooperationen.",
+    "question4": "Wie geht ihr mit künstlicher Intelligenz um?",
+    "answer4": "Mit Verantwortung. Unsere KI-Systeme sind nicht laut, sondern präzise. Sie unterstützen, ohne zu manipulieren. Wir setzen auf Transparenz, Kontrolle und menschenzentriertes Design – keine Blackbox, kein Bullshit.",
+    "question5": "Wie werden Daten bei euch verarbeitet?",
+    "answer5": "So wenig wie möglich. Wir hosten alles selbst, nutzen keine Cloud-Anbieter aus Drittstaaten und vermeiden unnötige Erfassung. Alle Verarbeitungen erfolgen DSGVO-konform auf Servern in der EU.",
+    "question6": "Ist Rieger Systems auch für kleine Unternehmen interessant?",
+    "answer6": "Absolut. Gerade kleinen Unternehmen fehlen oft sichere, skalierbare Tools. Unsere Systeme sind bewusst modular und fair gebaut – damit sie auch für kleinere Organisationen zugänglich sind.",
+    "question7": "Wenn du denkst, dass du nicht nur etwas baust, sondern etwas bewirken willst – ja. Wir suchen Menschen, keine Rollen. Offene Stellen und Initiativbewerbungen findest du unter dem Bereich Karriere.",
+    "question8": "Am einfachsten über unser Kontaktformular oder direkt per E-Mail.",
+    "question9": "Wird eure Software Open Source sein?",
+    "answer9": "Teile davon – ja. Besonders im Bereich Infrastruktur, Schnittstellen oder ethischer Komponenten streben wir Open Source an. Kritische Kernsysteme mit hoher Verantwortung werden kontrolliert entwickelt und betrieben.",
+    "question10": "Was kostet eure Software?",
+    "answer10": "Unsere Produkte werden modular angeboten – ohne Lock-in, ohne versteckte Kosten. Preise sind abhängig von Nutzung, Umfang und Lizenzmodell. Für Pilotprojekte gelten individuelle Vereinbarungen.",
+    "pageTitle": "FAQ – Rieger Systems",
+    "pageDescription": "Antworten auf häufige Fragen rund um Rieger Systems, Technologie, Datenschutz und Zusammenarbeit.",
+    "contactFormText": "Zum Kontaktformular",
+    "careerLinkText": "Karriere"
+  },
+  "homepage": {
+    "hero": {
+      "headline": "Technologie mit Haltung.",
+      "description": "Wir entwickeln Systeme, die tragen – stabil, dokumentiert und menschenfreundlich. Von IT-Infrastruktur bis erklärbarer KI.",
+      "primaryButton": "Unsere Leistungen",
+      "secondaryButton": "Kontakt aufnehmen",
+      "claim": "Wir glauben an eine Technologie, die stärkt – nicht ersetzt."
+    },
+    "services": {
+      "sectionTitle": "Unsere Leistungen",
+      "sectionDescription": "Wir bauen Systeme, die Menschen entlasten, Prozesse vereinfachen und Vertrauen schaffen.",
+      "empty": "Momentan sind keine Leistungen verfügbar.",
+      "mail": "Mail",
+      "mailDescription": "DSGVO-konformer E-Mail-Service für Unternehmen und NGOs.",
+      "hosting": "Hosting",
+      "hostingDescription": "Sicheres, zuverlässiges und betreutes Hosting für Websites und Plattformen.",
+      "software": "Software",
+      "softwareDescription": "Individuelle Softwareentwicklung – exakt angepasst an Ihre Prozesse.",
+      "websites": "Websites",
+      "websitesDescription": "Maßgeschneiderte Websites und interaktive Webanwendungen.",
+      "aiSystems": "KI-Systeme",
+      "aiSystemsDescription": "Intelligente Assistenzlösungen für Automatisierung und fundierte Entscheidungen."
+    },
+    "highlight": {
+      "sectionTitle": "Projekt im Fokus",
+      "sectionDescription": "Unsere zentrale Lösung – technologiegetrieben, menschenzentriert und mit klarem Fokus auf ethische Standards und europäische Souveränität.",
+      "button": "Mehr erfahren",
+      "notLoaded": "Das zentrale Projekt konnte nicht geladen werden.",
+      "toAll": "Zu den anderen Projekten"
+    },
+    "cta": {
+      "headline": "Lust auf Austausch?",
+      "description": "Ob Zusammenarbeit, Idee oder Rückmeldung – wir freuen uns über jede Nachricht.",
+      "emailButton": "E-Mail schreiben",
+      "contactButton": "Kontaktformular"
+    },
+    "features": {
+      "sectionTitle": "Was uns besonders macht",
+      "sectionDescription": "Wir setzen auf Werte statt Buzzwords – mit Technik, die Vertrauen verdient.",
+      "protection": "Schutz statt Ausbeutung",
+      "ethics": "Ethik & DSGVO von Anfang an",
+      "europeanDevelopment": "Europäische Entwicklung",
+      "maintainable": "Wartbar & dokumentiert"
+    }
+  },
+  "imprint": {
+    "headerTitle": "Impressum",
+    "headerSubtitle": "Rechtliche Angaben gemäß §5 ECG, §14 UGB und §25 Mediengesetz",
+    "companyNameTitle": "Unternehmensname",
+    "companyNameContent": "Rieger Systems GmbH (in Gründung)",
+    "companyFormTitle": "Unternehmensform",
+    "companyFormContent": "Gesellschaft mit beschränkter Haftung (GmbH), gründungsprivilegiert",
+    "addressTitle": "Anschrift",
+    "addressLine1": "Musterstraße 12",
+    "addressLine2": "1234 Beispielstadt, Österreich",
+    "contactTitle": "Kontakt",
+    "contactEmailLabel": "E-Mail:",
+    "contactPhoneLabel": "Tel:",
+    "companyRegisterNumberTitle": "Firmenbuchnummer",
+    "companyRegisterNumberContent": "in Vorbereitung",
+    "companyRegisterCourtTitle": "Firmenbuchgericht",
+    "companyRegisterCourtContent": "Handelsgericht Wien",
+    "uidNumberTitle": "UID-Nummer",
+    "uidNumberContent": "in Vorbereitung",
+    "managingDirectorTitle": "Geschäftsführer",
+    "managingDirectorContent": "Tobias Rieger",
+    "businessPurposeTitle": "Unternehmensgegenstand",
+    "businessPurposeContent": "Entwicklung und Betrieb von Software- und KI-Systemen",
+    "chamberMembershipTitle": "Mitglied der Wirtschaftskammer",
+    "chamberMembershipContent": "Wirtschaftskammer Österreich – Sparte Information & Consulting",
+    "mediaResponsibilityTitle": "Inhaltlich verantwortlich gemäß §25 MedienG",
+    "mediaResponsibilityContent": "Tobias Rieger, Anschrift wie oben",
+    "onlineDisputeResolutionTitle": "Online-Streitbeilegung (EU)",
+    "onlineDisputeResolutionLinkText": "Plattform der EU-Kommission:",
+    "disclaimerTitle": "Haftungsausschluss",
+    "disclaimerContent": "Trotz sorgfältiger inhaltlicher Kontrolle übernehmen wir keine Haftung für die Inhalte externer Links. Für den Inhalt der verlinkten Seiten sind ausschließlich deren Betreiber verantwortlich.",
+    "pageTitle": "Impressum – Rieger Systems",
+    "pageDescription": "Rechtliche Angaben gemäß §5 ECG für die Website von Rieger Systems."
+  },
+  "header": {
+    "company": "Rieger Systems",
+    "home": "Startseite",
+    "products": "Produkte",
+    "projects": "Projekte",
+    "about": "Über uns",
+    "contact": "Kontakt",
+    "career": "Karriere",
+    "language": "Sprache",
+    "toHome": "Zur Startseite",
+    "openMenu": "Menü öffnen"
+  },
+  "footer": {
+    "company": "Rieger Systems",
+    "slogan": "Technologie, die trägt – klar, sicher und menschlich.",
+    "sections": {
+      "company": "Unternehmen",
+      "services": "Leistungen",
+      "legal": "Rechtliches"
+    },
+    "links": {
+      "about": "Über uns",
+      "contact": "Kontakt",
+      "faq": "FAQ",
+      "career": "Karriere",
+      "products": "Produktübersicht",
+      "projects": "Projekte",
+      "imprint": "Impressum",
+      "privacy": "Datenschutz",
+      "terms": "AGB"
+    },
+    "ariaLabels": {
+      "home": "Zur Startseite",
+      "logoAlt": "Rieger Systems Logo",
+      "productsScroll": "Zu den Produktübersichten scrollen",
+      "socialMedia": "Social Media Links"
+    },
+    "copyright": "© {year} Rieger Systems · Alle Rechte vorbehalten",
+    "nocookies": "Diese Website verwendet keine Cookies und kein externes Tracking.",
+    "privacyMore": "Weitere Informationen finden Sie in unserer Datenschutzerklärung."
+  },
+  "company": {
+    "linkedin": "https://www.linkedin.com/company/rieger-systems",
+    "github": "https://github.com/rieger-systems"
+  },
+  "products": {
+    "mail": "Mail",
+    "software": "Software",
+    "services": "Hosting",
+    "ai": "KI-Systeme",
+    "website": "Websites"
+  },
+  "ariaLabels": {
+    "home": "Zur Startseite",
+    "logoAlt": "Rieger Systems Logo",
+    "productsScroll": "Zu den Produktübersichten scrollen",
+    "socialMedia": "Social Media Links"
+  },
+  "jobs": {
+    "title": "Werde Teil von Rieger Systems",
+    "description": "Wir schreiben selten Stellen aus – aber wir lesen jede Initiativbewerbung. Vielleicht beginnt hier etwas Neues.",
+    "fullstackDevelopmentTitle": "Fullstack-Entwicklung",
+    "fullstackDevelopmentDescription": "Von Architektur bis Schnittstelle. Du denkst modular, nachhaltig und dokumentiert.",
+    "uxUiDesignTitle": "UX/UI Design",
+    "uxUiDesignDescription": "Du gestaltest Interfaces mit Klarheit, Gefühl und funktionaler Eleganz.",
+    "itSecurityDataProtectionTitle": "IT-Sicherheit & Datenschutz",
+    "itSecurityDataProtectionDescription": "Du schützt nicht nur Systeme, sondern auch die Menschen dahinter.",
+    "networkInfrastructureTitle": "Netzwerktechnik & Infrastruktur",
+    "networkInfrastructureDescription": "Du planst und betreibst Systeme, die zuverlässig, unabhängig und wartbar sind.",
+    "aiAnalyticsTitle": "KI & Analyse",
+    "aiAnalyticsDescription": "Du baust Systeme, die verstehen statt urteilen – mit ethischem Anspruch.",
+    "projectCoordinationTitle": "Projektkoordination",
+    "projectCoordinationDescription": "Du bringst Struktur, Kommunikation und Sorgfalt in technische Prozesse.",
+    "aboutUsButton": "Mehr über uns erfahren",
+    "emailCallToAction": "Oder direkt per Mail:"
+  },
+  "privacy": {
+    "headerTitle": "Datenschutzerklärung",
+    "headerSubtitle": "Informationen gemäß Art. 13 und 14 DSGVO",
+    "section1Title": "1. Verantwortlicher",
+    "section1Company": "Rieger Systems GmbH (in Gründung)",
+    "section1Address": "Musterstraße 12, 1234 Beispielstadt, Österreich",
+    "section1EmailLabel": "E-Mail:",
+    "section2Title": "2. Allgemeine Grundsätze",
+    "section2Content": "Wir verarbeiten personenbezogene Daten ausschließlich im Einklang mit der DSGVO und dem österreichischen Datenschutzgesetz. Wir verzichten bewusst auf Datenverarbeitung, die nicht erforderlich ist, und setzen auf Transparenz, Datensparsamkeit und technische Sicherheit.",
+    "section3Title": "3. Hosting",
+    "section3Content1": "Unsere Website wird bei der Hetzner Online GmbH (Industriestr. 25, 91710 Gunzenhausen, Deutschland) gehostet.",
+    "section3Content2": "Die Server befinden sich ausschließlich innerhalb der Europäischen Union. Es besteht ein Auftragsverarbeitungsvertrag gemäß Art. 28 DSGVO mit dem Hostinganbieter.",
+    "section4Title": "4. Server-Logfiles",
+    "section4Content1": "Beim Aufruf unserer Website werden durch unseren Hosting-Provider automatisch folgende Daten erfasst und für maximal 7 Tage gespeichert:",
+    "section4ListItem1": "IP-Adresse des zugreifenden Geräts",
+    "section4ListItem2": "Datum und Uhrzeit der Serveranfrage",
+    "section4ListItem3": "Browsertyp und Betriebssystem",
+    "section4ListItem4": "Referrer-URL (die zuvor besuchte Seite)",
+    "section4Content2": "Diese Daten dienen der Gewährleistung eines sicheren und stabilen Serverbetriebs und der Erkennung von Angriffen. Eine Zusammenführung mit anderen Datenquellen oder Profilbildung findet nicht statt. Nach Ablauf der Speicherfrist werden die Daten automatisch gelöscht.",
+    "section4LegalBasis": "Rechtsgrundlage: Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an der sicheren Bereitstellung der Website)",
+    "section5Title": "5. Kontakt-, Feedback- und Bewerbungsformulare",
+    "section5Content1": "Wenn Sie über ein Formular (z. B. Kontakt, Feedback oder Bewerbung) mit uns in Kontakt treten, verarbeiten wir die von Ihnen übermittelten Daten (z. B. Name, E-Mail, Nachricht, ggf. Anhänge) ausschließlich zur Bearbeitung Ihres Anliegens.",
+    "section5Content2": "Die Daten werden nicht an Dritte weitergegeben und ausschließlich intern verarbeitet. Bewerbungsdaten werden spätestens 6 Monate nach Abschluss des Auswahlverfahrens gelöscht.",
+    "section5LegalBasis": "Rechtsgrundlage: Art. 6 Abs. 1 lit. a (Einwilligung) und lit. b (vorvertragliche Maßnahmen)",
+    "section6Title": "6. Webanalyse mit Umami",
+    "section6Content1": "Wir verwenden das datenschutzfreundliche Analyse-Tool {umamiHighlight} in einer selbst gehosteten Version. Es werden keine Cookies gesetzt und keine personenbezogenen Daten gespeichert. Erfasst werden ausschließlich anonymisierte Nutzungsdaten:",
+    "section6ListItem1": "Besuchte Seiten",
+    "section6ListItem2": "Datum und Uhrzeit",
+    "section6ListItem3": "Referrer",
+    "section6ListItem4": "Gerätetyp und Browser (anonymisiert)",
+    "section6Content2": "Diese Daten dienen ausschließlich der technischen Verbesserung unserer Website. Es erfolgt keine Weitergabe an Dritte.",
+    "section6LegalBasis": "Rechtsgrundlage: Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an Reichweitenanalyse ohne Profilbildung)",
+    "section7Title": "7. Keine Cookies oder Dritt-Tracking",
+    "section7Content": "Unsere Website setzt keine Cookies und nutzt keine Trackingdienste wie Google Analytics, Facebook Pixel oder ähnliche. Auch externe Ressourcen (z. B. Fonts oder Icons) werden ausschließlich lokal eingebunden.",
+    "section8Title": "8. Technische Sicherheit",
+    "section8Content": "Der Zugriff auf unsere Website erfolgt ausschließlich verschlüsselt über HTTPS (TLS). Unsere Server und Dienste werden regelmäßig aktualisiert, überwacht und durch geeignete technische und organisatorische Maßnahmen (TOMs) abgesichert.",
+    "section8aTitle": "8a. IP-Anonymisierung im Captcha-System",
+    "section8aContent1": "Um unser Kontaktformular vor automatisierten Angriffen (z. B. Spam oder Bots) zu schützen, verwenden wir ein eigens entwickeltes Captcha-System. Dabei wird die IP-Adresse des anfragenden Geräts {notStoredHighlight}, sondern vor der Verarbeitung technisch anonymisiert.",
+    "section8aContent2": "Hierfür wird die IP-Adresse mit einem Einweg-Hashverfahren (SHA-256) anonymisiert und nur in dieser nicht rückführbaren Form temporär in unserem Sicherheitssystem verarbeitet. Die Speicherung erfolgt ausschließlich für die technische Erkennung von missbräuchlichen Mehrfachzugriffen und wird nach spätestens 10 Minuten automatisch gelöscht.",
+    "section8aContent3": "{noProfileHighlight}, {noDataMergeHighlight} und {noThirdPartyHighlight}.",
+    "section8aLegalBasis": "Rechtsgrundlage: Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an der Sicherheit unserer Systeme)",
+    "section9Title": "9. Ihre Rechte",
+    "section9Content1": "Sie haben das Recht auf:",
+    "section9ListItem1": "Auskunft über Ihre gespeicherten Daten (Art. 15 DSGVO)",
+    "section9ListItem2": "Berichtigung unrichtiger Daten (Art. 16 DSGVO)",
+    "section9ListItem3": "Löschung Ihrer Daten (Art. 17 DSGVO)",
+    "section9ListItem4": "Einschränkung der Verarbeitung (Art. 18 DSGVO)",
+    "section9ListItem5": "Datenübertragbarkeit (Art. 20 DSGVO)",
+    "section9ListItem6": "Widerspruch gegen die Verarbeitung (Art. 21 DSGVO)",
+    "section9ListItem7": "Beschwerde bei einer Aufsichtsbehörde",
+    "section9AuthorityLabel": "Zuständige Behörde in Österreich:",
+    "section9AuthorityLinkText": "Datenschutzbehörde – www.dsb.gv.at",
+    "section10Title": "10. Änderungen dieser Datenschutzerklärung",
+    "section10Content": "Wir behalten uns vor, diese Datenschutzerklärung zu aktualisieren, wenn sich die Rechtslage oder unser Angebot ändert. Die jeweils aktuelle Version finden Sie jederzeit auf dieser Seite.",
+    "pageTitle": "Datenschutzerklärung – Rieger Systems",
+    "pageDescription": "Informationen zum Datenschutz gemäß DSGVO bei Rieger Systems."
+  },
+  "projects": {
+    "amara": {
+      "id": "amara",
+      "slug": "amara",
+      "image": "/images/projects/amara.png",
+      "title": "A.M.A.R.A - Zentrales KI-System",
+      "description": "Das zentrale KI-System von Rieger Systems. Flexible, ethische und datenschutzkonforme Lösung.",
+      "status": "In Entwicklung",
+
+      "section1Title": "Beschreibung",
+      "section1Content": "A.M.A.R.A (A Machine Always Ready to Assist) ist das zentrale KI-System von Rieger Systems. Es dient als modularer Kern für verschiedene Anwendungsbereiche und wird sowohl im Gesundheitswesen (AmaraWell) als auch in Unternehmenslösungen (AmaraCall) integriert. A.M.A.R.A ist darauf ausgelegt, flexibel, ethisch und datenschutzkonform zu arbeiten, während es menschliche Entscheidungen unterstützt, aber nicht ersetzt.",
+
+      "section2Title": "Inspiration",
+      "section2Content": "A.M.A.R.A wurde vom menschlichen Gehirn inspiriert und orientiert sich an dessen Funktionsweise.",
+
+      "section3Title": "Funktionen",
+      "section3ListItem1": "Langzeitgedächtnis: Speicherung von Wissen und Gesprächsfazit zur Mustererkennung.",
+      "section3ListItem2": "Kurzzeitgedächtnis: Dynamisches Speichern aktueller Kontexte und Gesprächsinhalte.",
+      "section3ListItem3": "Emotionserkennung: Analyse und Interpretation von Gesprächston und emotionalem Gehalt.",
+      "section3ListItem4": "Steuerzentrum (A.M.A.R.A-Agent): Koordiniert die Nutzung der verschiedenen 'Gehirnareale' je nach Anforderung.",
+      "section3ListItem5": "Live-Gedankenstrom: Verfolgt die aktuellen Denkprozesse während der Interaktion.",
+
+      "section4Title": "Nächste Schritte",
+      "section4ListItem1": "Gehirnstruktur aufbauen: Langzeit- und Kurzzeitgedächtnis klar voneinander trennen.",
+      "section4ListItem2": "Emotionserkennung und Sprachverständnis weiter verbessern, speziell für die deutsche Sprache.",
+      "section4ListItem3": "Sicherheits- und Datenschutzarchitektur: DSGVO-Konformität sicherstellen.",
+      "section4ListItem4": "Schnittstellen und Live-Interaktion standardisieren und dokumentieren.",
+      "section4ListItem5": "Optimierung und Feedback: Nutzerfeedback sammeln und analysieren.",
+
+      "section5Title": "Vision und Mehrwert",
+      "section5Content": "A.M.A.R.A soll als stille, unterstützende digitale Präsenz fungieren, die den Nutzer nicht bevormundet, sondern begleitet. Der Fokus liegt auf Klarheit, Verlässlichkeit und Menschlichkeit, um eine ethisch vertretbare KI-Interaktion zu gewährleisten.",
+
+      "section6Title": "Partnerschaften",
+      "section6Content": "Wir sind offen für Kooperationen mit Unternehmen und Forschungsprojekten, die A.M.A.R.A in eigenen Anwendungen testen und weiterentwickeln möchten."
+    },
+    "amaracall": {
+      "id": "amaracall",
+      "slug": "amaracall",
+      "image": "/images/projects/amaracall.png",
+      "title": "AmaraCall - KI-gestützter Anrufbeantworter",
+      "description": "Flexible Anruflösung für Unternehmen",
+      "status": "Konzeptphase",
+
+      "section1Title": "Beschreibung",
+      "section1Content": "AmaraCall ist ein flexibles, KI-gestütztes Anrufsystem für Unternehmen aus verschiedenen Branchen. Die Lösung bietet eine intelligente Telefonassistenz, die Anrufe entgegennimmt, Gespräche führt und relevante Informationen strukturiert aufbereitet. Der Fokus liegt auf einer zentralen Verarbeitung, um die Verwaltung und Aktualisierung der KI-Modelle effizient und zuverlässig zu gestalten. AmaraCall wird als zentral gehosteter Dienst angeboten, um eine schnelle und unkomplizierte Integration in bestehende Systeme zu ermöglichen.",
+
+      "section2Title": "Zielsetzung",
+      "section2Content": "In vielen Unternehmen gehören verpasste Anrufe und mangelnde Erreichbarkeit zu den häufigsten Problemen im Kundenkontakt. Gerade in Branchen wie Arztpraxen, Kanzleien, Kundenhotlines und vielen weiteren Bereichen ist eine stetige telefonische Verfügbarkeit entscheidend für den Erfolg. AmaraCall bietet hier eine innovative Lösung, die Anrufmanagement automatisiert und gleichzeitig die Qualität der Kundenkommunikation verbessert. Mit AmaraCall möchten wir Unternehmen ermöglichen, Zeit und Ressourcen zu sparen, ohne die Erreichbarkeit einzuschränken.",
+
+      "section3Title": "Kernfunktionen",
+      "section3ListItem1": "Automatische Anrufannahme: Intelligente Gesprächsführung bei Abwesenheit des Personals.",
+      "section3ListItem2": "Branchenflexible Nutzung: Einsetzbar in Arztpraxen, Kanzleien, Kundenhotlines und vielen weiteren Bereichen.",
+      "section3ListItem3": "Termin- und Anfrageverwaltung: Automatisierte Erfassung von Kundenanliegen, Terminwünschen oder Serviceanfragen.",
+      "section3ListItem4": "Zusammenfassung und Protokoll: Strukturierte Weitergabe der Gesprächsinhalte an das jeweilige Unternehmenssystem.",
+      "section3ListItem5": "Zentrale Verwaltung: Updates und Verbesserungen erfolgen zentral, um eine gleichbleibende Qualität sicherzustellen.",
+      "section3ListItem6": "Flexibilität: Anpassbar an branchenspezifische Anforderungen und Unternehmensprozesse.",
+      "section3ListItem7": "A.M.A.R.A als Rückgrat: Das zentrale KI-System A.M.A.R.A bildet die Basis für die Anrufverarbeitung und -analyse.",
+
+      "section4Title": "Nächste Schritte",
+      "section4ListItem1": "Technologieanalyse: Technologien und Umsetzungsmöglichkeiten ausloten.",
+      "section4ListItem2": "Pilotphase starten: Unternehmen aus verschiedenen Branchen gewinnen, um Praxistests durchzuführen.",
+      "section4ListItem3": "Feedbackschleife: Praxistests zur Validierung der Gesprächsqualität und Flexibilität durchführen.",
+      "section4ListItem4": "Anpassungen basierend auf Nutzerfeedback und branchenspezifischen Anforderungen vornehmen.",
+
+      "section5Title": "Vision und Mehrwert",
+      "section5Content": "AmaraCall soll als intelligente und flexible Anruflösung für verschiedenste Branchen etabliert werden. Durch die Kombination aus moderner KI, zentralisierter Verwaltung und hoher Anpassbarkeit bietet AmaraCall eine effiziente Möglichkeit, Kundenanrufe zu managen und dabei gleichzeitig den Personalaufwand zu reduzieren. AmaraCall wird Unternehmen dabei unterstützen, telefonische Erreichbarkeit professionell sicherzustellen, ohne die menschliche Komponente komplett zu ersetzen. Der Fokus liegt darauf, Routineanrufe und einfache Anfragen automatisiert zu bearbeiten, sodass Mitarbeiter sich auf komplexere Anliegen konzentrieren können.",
+
+      "section6Title": "Partnerschaften",
+      "section6Content": "Wir suchen Unternehmen aus unterschiedlichen Branchen, die AmaraCall in einer Pilotphase testen und gemeinsam mit uns weiterentwickeln möchten. Durch die enge Zusammenarbeit mit Pilotpartnern wollen wir die Anwendung praxisnah optimieren und branchenübergreifend nutzbar machen."
+    },
+    "amarawell": {
+      "id": "amarawell",
+      "slug": "amarawell",
+      "image": "/images/projects/amarawell.png",
+      "title": "AmaraWell – Psychologische KI-Begleitung",
+      "description": "KI-gestützte Plattform zur Unterstützung der mentalen Gesundheit.",
+      "status": "Konzeptphase",
+
+      "section1Title": "Beschreibung",
+      "section1Content": "AmaraWell ist eine KI-gestützte Plattform, die psychologische Begleitung und Unterstützung bietet. Das Projekt entstand aus der Überzeugung, dass mentale Gesundheit eine zentrale Rolle im Leben jedes Menschen spielt und in der heutigen Zeit häufig vernachlässigt wird. In einer Welt voller digitaler Reize, sozialen Drucks und steigender Anforderungen ist es umso wichtiger, Menschen dabei zu unterstützen, mentale Resilienz aufzubauen und seelische Krisen zu bewältigen.",
+
+      "section2Title": "Gesellschaftliche Relevanz",
+      "section2ListItem1": "Österreich: 1.212 Suizide im Jahr 2023 – dreimal so viele wie im Straßenverkehr. 80% der Suizidtoten waren Männer. Besonders betroffen: Menschen im mittleren Lebensalter (45–64 Jahre).",
+      "section2ListItem2": "Deutschland: 10.300 Suizide im Jahr 2023 – Anstieg von 1,8% gegenüber dem Vorjahr. 73% der Suizidtoten waren Männer. Besonders betroffen: Menschen über 65 Jahre.",
+      "section2ListItem3": "Europäische Union: 47.346 Todesfälle durch Suizid im Jahr 2021. Durchschnittliche Suizidrate: 10,2 pro 100.000 Einwohner.",
+      "section2ListItem4": "Weltweit: Jährlich über 700.000 Suizide – mehr als durch Malaria, HIV/AIDS oder Brustkrebs. Auf jeden Suizid kommen 10 bis 30 Suizidversuche.",
+      "section2Content": "[DIAGRAM]",
+
+      "section3Title": "Unterstützung durch medizinisches Fachpersonal",
+      "section3Content": "Psychiater, Psychotherapeuten und psychologische Fachkräfte leisten eine unschätzbare Arbeit. Ihre Expertise, Empathie und therapeutischen Fähigkeiten sind essenziell, um Menschen auf ihrem Weg zur mentalen Stabilität zu begleiten.",
+
+      "section4Title": "AmaraWell als Werkzeug – nicht als Ersatz",
+      "section4Content": "AmaraWell versteht sich nicht als Ersatz für medizinisches Fachpersonal, sondern als Werkzeug zur Unterstützung und Ergänzung. Unser Ziel ist es, die wertvolle Arbeit von Ärzten und Therapeuten zu entlasten, indem AmaraWell die Lücken zwischen den Sitzungen füllt und versteckte Probleme sichtbar macht.",
+
+      "section5Title": "Kernfunktionen",
+      "section5ListItem1": "Verlässliche Begleitung: Menschen haben jederzeit die Möglichkeit, mit AmaraWell zu sprechen – ohne Hemmschwelle und ohne Druck.",
+      "section5ListItem2": "Verdeckte Themen entdecken: Durch kontinuierliche Interaktion kann AmaraWell Themen erkennen, die tief verankert sind, aber selten ausgesprochen werden.",
+      "section5ListItem3": "Gezielte Unterstützung: Therapeuten können durch die pseudonymisierten Analysen gezielt auf wiederkehrende Themen eingehen.",
+      "section5ListItem4": "Transparente Zusammenarbeit: Nur mit ausdrücklicher Einwilligung des Patienten können Fachkräfte auf die von AmaraWell erfassten pseudonymisierten Hinweise zugreifen.",
+
+      "section6Title": "Nächste Schritte",
+      "section6ListItem1": "Weiterentwicklung der Konzeptphase und Ausbau der Anwendungsmöglichkeiten.",
+      "section6ListItem2": "Gewinnung von Pilotkliniken und -therapeuten zur Validierung in der Praxis.",
+      "section6ListItem3": "Austausch mit Fachleuten aus Psychologie und Medizin zur wissenschaftlichen Fundierung.",
+
+      "section7Title": "Vision und Mehrwert",
+      "section7Content": "AmaraWell soll europaweit als ethischer, verlässlicher KI-Begleiter etabliert werden, der Menschen unterstützt und gleichzeitig die Arbeit von Fachkräften sinnvoll ergänzt. AmaraWell ist kein Ersatz für menschliche Zuwendung, sondern eine Unterstützung im Hintergrund, die es ermöglicht, Verläufe besser nachzuvollziehen und unbemerkte Themen anzusprechen.",
+
+      "section8Title": "Partnerschaften",
+      "section8Content": "Wir suchen Therapeuten, Kliniken und Forschungseinrichtungen, die AmaraWell in einer Pilotphase testen und gemeinsam mit uns weiterentwickeln möchten. Durch die Zusammenarbeit mit Fachpersonal wollen wir sicherstellen, dass AmaraWell praxisnah und an den realen Bedürfnissen orientiert gestaltet ist."
+    },
+    "index": {
+      "id": "index",
+      "slug": "index",
+      "title": "Projektübersicht",
+      "subtitle": "Alle Kernprojekte",
+      "description": "Übersicht aller aktuellen und geplanten Kernprojekte von Rieger Systems.",
+      "short": "Schneller Überblick, was wir bauen.",
+      "features": [],
+      "status": "active",
+      "image": "/images/projects/overview.png"
+    },
+    "aria": {
+      "moreInfo": "Mehr Informationen zum Projekt {title}",
+      "imageAlt": "Vorschaubild für Projekt {title}"
+    },
+    "status": {
+      "active": "Aktiv",
+      "prototyp": "Prototyp"
+    },
+    "readMore": "Mehr erfahren"
+  },
+  "terms": {
+    "headerTitle": "Allgemeine Geschäftsbedingungen (AGB)",
+    "headerDate": "Stand: 18.05.2025",
+    "section1Title": "1. Geltungsbereich",
+    "section1Content": "Diese AGB gelten für alle gegenwärtigen und künftigen Leistungen der Rieger Systems GmbH, insbesondere in den Bereichen Softwareentwicklung, künstliche Intelligenz, digitale Produkte, Beratung sowie technische Dienstleistungen.",
+    "section2Title": "2. Vertragsabschluss",
+    "section2Content": "Ein Vertrag kommt zustande durch schriftliche Bestätigung, Annahme eines Angebots oder Projektbeginn auf Basis einer Vereinbarung. Anfragen über unsere Website, E-Mail oder andere Kanäle stellen kein verbindliches Angebot dar.",
+    "section3Title": "3. Leistungsumfang",
+    "section3Content": "Art, Umfang und Ziel der Leistung ergeben sich aus dem jeweiligen Angebot, der schriftlichen Vereinbarung oder dem Projektvertrag. Änderungen und Erweiterungen bedürfen der schriftlichen Zustimmung beider Parteien.",
+    "section4Title": "4. Preise und Zahlungsbedingungen",
+    "section4Content": "Alle Preise verstehen sich exklusive gesetzlicher Umsatzsteuer. Sofern nicht anders vereinbart, ist der Rechnungsbetrag innerhalb von 14 Tagen ab Rechnungsdatum ohne Abzug zur Zahlung fällig. Bei Zahlungsverzug behalten wir uns die Sperrung oder Verzögerung weiterer Leistungen vor.",
+    "section5Title": "5. Nutzungsrechte",
+    "section5Content": "Sofern nicht explizit schriftlich übertragen, verbleiben sämtliche Urheberrechte, Nutzungsrechte und Schutzrechte an entwickelten Konzepten, Quellcodes, KI-Modellen oder Dokumentationen bei Rieger Systems. Der Kunde erhält ein einfaches, nicht übertragbares, zweckgebundenes Nutzungsrecht im vertraglich vereinbarten Umfang.",
+    "section6Title": "6. Haftung",
+    "section6Content": "Rieger Systems haftet ausschließlich bei Vorsatz oder grober Fahrlässigkeit. Für leichte Fahrlässigkeit, mittelbare Schäden, Folgeschäden, Datenverluste oder entgangenen Gewinn wird keine Haftung übernommen. Die Nutzung unserer Systeme und Software erfolgt auf eigenes Risiko des Kunden. Eine Haftung für Inhalte, Handlungen oder Entscheidungen, die auf KI-basierten Empfehlungen beruhen, ist ausgeschlossen.",
+    "section7Title": "7. Datenschutz",
+    "section7Content": "Die Verarbeitung personenbezogener Daten erfolgt ausschließlich im Rahmen der geltenden Datenschutzgesetze. Nähere Informationen finden Sie in unserer {privacyPolicyLink}.",
+    "privacyPolicyLinkText": "Datenschutzerklärung",
+    "section8Title": "8. Vertraulichkeit",
+    "section8Content": "Beide Parteien verpflichten sich, sämtliche im Rahmen der Zusammenarbeit erlangten Informationen vertraulich zu behandeln und nicht an Dritte weiterzugeben, es sei denn, dies ist zur Vertragserfüllung erforderlich oder gesetzlich vorgeschrieben."
+  }
+}

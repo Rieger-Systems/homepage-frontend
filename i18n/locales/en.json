@@ -1,0 +1,532 @@
+{
+  "about": {
+    "sections": {
+      "claim": "Claim",
+      "vision": "Vision",
+      "identity": "Identity",
+      "values": "Values",
+      "ethics": "Ethics"
+    },
+    "ariaLabels": {
+      "pageNavigation": "Page navigation"
+    },
+    "claim": {
+      "title": "Technology that supports.",
+      "description": "For people. With responsibility. Not a slogan – our standard."
+    },
+    "vision": {
+      "title": "Vision & Mission",
+      "description": "Our drive. Our attitude. Our goal.",
+      "visionCard": {
+        "title": "Our Vision",
+        "text": "We set the global standard for human-centered, ethical AI systems. For us, technology is not a show – it is a quiet force that supports, empowers, and protects.",
+        "quote": "“Technology as a quiet force for a good life.”"
+      },
+      "missionCard": {
+        "title": "Our Mission",
+        "text": "We develop systems that sustainably improve people's lives – with dignity, transparency, and responsibility. Our AI strengthens autonomy, protects data, and acts in harmony with European values.",
+        "quote": "Progress with attitude. Not with speed."
+      }
+    },
+    "identity": {
+      "title": "Our Identity",
+      "description": "We don't build platforms – we create digital spaces with dignity. Technology as responsibility, not as a game.",
+      "list": {
+        "guardian": {
+          "title": "The Guardian",
+          "desc": "We safeguard what is vulnerable – with clarity, attitude, and protection."
+        },
+        "architect": {
+          "title": "The Architect",
+          "desc": "We design sustainable structures – modular, understandable, and enduring."
+        },
+        "designer": {
+          "title": "The Designer",
+          "desc": "Technology is meaningful design. It serves people, not itself."
+        }
+      }
+    },
+    "values": {
+      "title": "Our Values",
+      "description": "They are our decision filter, attitude, and guidance – for every product, every line of code, every interaction.",
+      "list": {
+        "responsibility": {
+          "title": "Responsibility",
+          "desc": "We take responsibility for the impact of our technologies – on people, society, and the environment."
+        },
+        "humanDignityEthics": {
+          "title": "Human Dignity & Ethics",
+          "desc": "Our AI serves people – it does not replace, it protects."
+        },
+        "transparency": {
+          "title": "Transparency",
+          "desc": "We act transparently – in code, communication, and decisions."
+        },
+        "innovation": {
+          "title": "Innovation",
+          "desc": "We improve the right things – not make the wrong things more efficient."
+        },
+        "sustainability": {
+          "title": "Sustainability",
+          "desc": "Our systems are maintainable, resource-efficient, and people-friendly."
+        },
+        "legalCompliance": {
+          "title": "Legal Compliance",
+          "desc": "We embody GDPR and the AI Act – both technically and in spirit."
+        }
+      }
+    },
+    "ethics": {
+      "title": "Our Ethical Principles",
+      "description": "Technology must not control – it must empower. Our systems follow principles. No marketing. No coincidence.",
+      "examplePrefix": "Example",
+      "principles": {
+        "autonomy": {
+          "title": "Protect Autonomy",
+          "desc": "Users retain control at all times. No interference. No nudging.",
+          "explanation": "Technology should empower us – not manipulate. Many systems subtly influence decisions today: through design, through algorithms, through ambiguity. We counteract this.",
+          "example": "Social media that uses addiction mechanics to increase time spent – with no regard for well-being or autonomy."
+        },
+        "responsibility": {
+          "title": "Take Responsibility",
+          "desc": "Decisions are traceable and verifiable.",
+          "explanation": "We take responsibility for what our systems do. No 'the AI made that decision.' Decisions must be traceable, explainable, and intentional.",
+          "example": "An algorithm rejects a loan application – and no one can explain why. This must not happen."
+        },
+        "transparency": {
+          "title": "Live Transparency",
+          "desc": "We openly show what is stored – and why.",
+          "explanation": "Trust is built not through promises, but through clarity. Users have a right to know what happens to their data.",
+          "example": "Many providers collect location data and pass it on – with no benefit for the users."
+        },
+        "noExploitation": {
+          "title": "No Exploitation",
+          "desc": "No trackers. No data sales. No profiling.",
+          "explanation": "Data is not a resource to be exploited. Our systems do not sell – they protect.",
+          "example": "Tracking ads that show you products for months, even though you never bought them."
+        },
+        "longTermThinking": {
+          "title": "Think Long Term",
+          "desc": "Not short-term profit, but sustainable impact.",
+          "explanation": "Ethical technology requires long-term thinking: in maintenance, in impact, and in impact control.",
+          "example": "Startups that scale rapidly without regard for technical or social consequences."
+        }
+      }
+    }
+  },
+  "contact": {
+    "companyName": "Rieger Systems",
+    "slogan": "Technology that supports – clear, secure, and human-centered.",
+    "form": {
+      "nameLabel": "Name",
+      "namePlaceholder": "John Doe",
+      "emailLabel": "E-mail",
+      "messageLabel": "Message",
+      "messagePlaceholder": "What's it about?",
+      "privacyConsentPart1": "I have read the",
+      "privacyConsentLink": "Privacy Policy",
+      "privacyConsentPart2": "and agree to the processing of my information.",
+      "currentEmailClientInfo": "Currently, the form opens your email program. Direct submission will be added soon.",
+      "alternative": "Alternatively:",
+      "sendButton": "Send message",
+      "errorConsentRequired": "Please confirm the privacy policy.",
+      "subjectPrefix": "Contact request from",
+      "mailBodyPrefix": "Name",
+      "mailBodyEmail": "E-mail",
+      "mailBodyMessage": "Message",
+      "mailBodyConsent": "[✓] Sender has agreed to the privacy policy."
+    },
+    "pageTitle": "Contact",
+    "pageDescription": "Do you have a question or want to tell us something? We look forward to your message."
+  },
+  "faq": {
+    "headerTitle": "Frequently Asked Questions",
+    "headerSubtitle": "Answers that create clarity.",
+    "question1": "What sets Rieger Systems apart from other software companies?",
+    "answer1": "We don't just develop functional software, but systems with attitude. Our solutions are deliberately clear, transparent, and responsible – without dependencies, without data hunger, but with structure, ethics, and substance.",
+    "question2": "Where is Rieger Systems currently in its development?",
+    "answer2": "We are in the setup phase, developing our first products – including an AI-powered system for healthcare. Initial partnerships and pilot customers are currently being established.",
+    "question3": "Do you offer custom software development?",
+    "answer3": "In selected cases, yes. We take on projects if they align with our values and are technologically challenging. We are especially open to collaborations in ethical AI and secure digital infrastructure.",
+    "question4": "How do you handle artificial intelligence?",
+    "answer4": "With responsibility. Our AI systems are not loud, but precise. They support without manipulating. We focus on transparency, control, and human-centered design – no black box, no bullshit.",
+    "question5": "How is data processed by you?",
+    "answer5": "As little as possible. We host everything ourselves, do not use cloud providers from third countries, and avoid unnecessary collection. All processing is GDPR-compliant on servers in the EU.",
+    "question6": "Is Rieger Systems interesting for small businesses?",
+    "answer6": "Absolutely. Especially small businesses often lack secure, scalable tools. Our systems are intentionally modular and fair – so they are accessible even to smaller organizations.",
+    "question7": "If you believe you are not just building something, but want to make a difference – yes. We look for people, not roles. Open positions and unsolicited applications can be found under the Careers section.",
+    "question8": "The easiest way is via our contact form or directly by e-mail.",
+    "question9": "Will your software be open source?",
+    "answer9": "Parts of it – yes. Especially for infrastructure, interfaces, or ethical components, we aim for open source. Critical core systems with high responsibility will be developed and operated under controlled conditions.",
+    "question10": "What does your software cost?",
+    "answer10": "Our products are offered modularly – no lock-in, no hidden costs. Prices depend on usage, scope, and license model. For pilot projects, individual agreements apply.",
+    "pageTitle": "FAQ – Rieger Systems",
+    "pageDescription": "Answers to frequently asked questions about Rieger Systems, technology, data protection, and collaboration.",
+    "contactFormText": "To the contact form",
+    "careerLinkText": "Careers"
+  },
+  "homepage": {
+    "hero": {
+      "headline": "Technology with attitude.",
+      "description": "We develop systems that support – stable, documented, and people-friendly. From IT infrastructure to explainable AI.",
+      "primaryButton": "Our Services",
+      "secondaryButton": "Contact us",
+      "claim": "We believe in technology that empowers – not replaces."
+    },
+    "services": {
+      "sectionTitle": "Our Services",
+      "sectionDescription": "We build systems that relieve people, simplify processes, and build trust.",
+      "empty": "No services available at the moment.",
+      "mail": "Mail",
+      "mailDescription": "GDPR-compliant email service for companies and NGOs.",
+      "hosting": "Hosting",
+      "hostingDescription": "Secure, reliable, and managed hosting for websites and platforms.",
+      "software": "Software",
+      "softwareDescription": "Custom software development – precisely tailored to your processes.",
+      "websites": "Websites",
+      "websitesDescription": "Custom-built websites and interactive web applications.",
+      "aiSystems": "AI Systems",
+      "aiSystemsDescription": "Intelligent assistant solutions for automation and informed decisions."
+    },
+    "highlight": {
+      "sectionTitle": "Project in Focus",
+      "sectionDescription": "Our core solution – technology-driven, human-centered, and with a clear focus on ethical standards and European sovereignty.",
+      "button": "Learn more",
+      "notLoaded": "The central project could not be loaded.",
+      "toAll": "To other projects"
+    },
+    "cta": {
+      "headline": "Interested in a conversation?",
+      "description": "Whether it's collaboration, an idea, or feedback – we welcome every message.",
+      "emailButton": "Write an e-mail",
+      "contactButton": "Contact form"
+    },
+    "features": {
+      "sectionTitle": "What sets us apart",
+      "sectionDescription": "We focus on values over buzzwords – with technology that earns trust.",
+      "protection": "Protection instead of exploitation",
+      "ethics": "Ethics & GDPR from the start",
+      "europeanDevelopment": "European development",
+      "maintainable": "Maintainable & documented"
+    }
+  },
+  "imprint": {
+    "headerTitle": "Imprint",
+    "headerSubtitle": "Legal information according to §5 ECG, §14 UGB, and §25 Media Act",
+    "companyNameTitle": "Company Name",
+    "companyNameContent": "Rieger Systems GmbH (in formation)",
+    "companyFormTitle": "Company Form",
+    "companyFormContent": "Limited Liability Company (GmbH), with start-up privileges",
+    "addressTitle": "Address",
+    "addressLine1": "Musterstraße 12",
+    "addressLine2": "1234 Sample City, Austria",
+    "contactTitle": "Contact",
+    "contactEmailLabel": "E-mail:",
+    "contactPhoneLabel": "Phone:",
+    "companyRegisterNumberTitle": "Company Registration Number",
+    "companyRegisterNumberContent": "in preparation",
+    "companyRegisterCourtTitle": "Commercial Court",
+    "companyRegisterCourtContent": "Commercial Court Vienna",
+    "uidNumberTitle": "VAT Number",
+    "uidNumberContent": "in preparation",
+    "managingDirectorTitle": "Managing Director",
+    "managingDirectorContent": "Tobias Rieger",
+    "businessPurposeTitle": "Business Purpose",
+    "businessPurposeContent": "Development and operation of software and AI systems",
+    "chamberMembershipTitle": "Chamber Membership",
+    "chamberMembershipContent": "Austrian Federal Economic Chamber – Information & Consulting division",
+    "mediaResponsibilityTitle": "Content Responsible under §25 Media Act",
+    "mediaResponsibilityContent": "Tobias Rieger, address as above",
+    "onlineDisputeResolutionTitle": "Online Dispute Resolution (EU)",
+    "onlineDisputeResolutionLinkText": "Platform of the EU Commission:",
+    "disclaimerTitle": "Disclaimer",
+    "disclaimerContent": "Despite careful content control, we assume no liability for the content of external links. The operators of the linked pages are solely responsible for their content.",
+    "pageTitle": "Imprint – Rieger Systems",
+    "pageDescription": "Legal information according to §5 ECG for the website of Rieger Systems."
+  },
+  "header": {
+    "company": "Rieger Systems",
+    "home": "Home",
+    "products": "Products",
+    "projects": "Projects",
+    "about": "About us",
+    "contact": "Contact",
+    "career": "Careers",
+    "language": "Language",
+    "toHome": "Back to home",
+    "openMenu": "Open menu"
+  },
+  "footer": {
+    "company": "Rieger Systems",
+    "slogan": "Technology that supports – clear, secure, and human-centered.",
+    "sections": {
+      "company": "Company",
+      "services": "Services",
+      "legal": "Legal"
+    },
+    "links": {
+      "about": "About us",
+      "contact": "Contact",
+      "faq": "FAQ",
+      "career": "Careers",
+      "products": "Product overview",
+      "projects": "Projects",
+      "imprint": "Imprint",
+      "privacy": "Privacy",
+      "terms": "Terms"
+    },
+    "ariaLabels": {
+      "home": "Back to home",
+      "logoAlt": "Rieger Systems Logo",
+      "productsScroll": "Scroll to product overview",
+      "socialMedia": "Social media links"
+    },
+    "copyright": "© {year} Rieger Systems · All rights reserved",
+    "nocookies": "This website uses no cookies and no external tracking.",
+    "privacyMore": "For more information, see our privacy policy."
+  },
+  "company": {
+    "linkedin": "https://www.linkedin.com/company/rieger-systems",
+    "github": "https://github.com/rieger-systems"
+  },
+  "products": {
+    "mail": "Mail",
+    "software": "Software",
+    "services": "Hosting",
+    "ai": "AI Systems",
+    "website": "Websites"
+  },
+  "ariaLabels": {
+    "home": "Back to home",
+    "logoAlt": "Rieger Systems Logo",
+    "productsScroll": "Scroll to product overview",
+    "socialMedia": "Social media links"
+  },
+  "jobs": {
+    "title": "Join Rieger Systems",
+    "description": "We rarely post job openings – but we read every speculative application. Maybe something new starts here.",
+    "fullstackDevelopmentTitle": "Fullstack Development",
+    "fullstackDevelopmentDescription": "From architecture to interface. You think modularly, sustainably, and with documentation.",
+    "uxUiDesignTitle": "UX/UI Design",
+    "uxUiDesignDescription": "You design interfaces with clarity, feeling, and functional elegance.",
+    "itSecurityDataProtectionTitle": "IT Security & Data Protection",
+    "itSecurityDataProtectionDescription": "You don't just protect systems, but also the people behind them.",
+    "networkInfrastructureTitle": "Network Technology & Infrastructure",
+    "networkInfrastructureDescription": "You plan and operate systems that are reliable, independent, and maintainable.",
+    "aiAnalyticsTitle": "AI & Analytics",
+    "aiAnalyticsDescription": "You build systems that understand instead of judge – with ethical standards.",
+    "projectCoordinationTitle": "Project Coordination",
+    "projectCoordinationDescription": "You bring structure, communication, and diligence to technical processes.",
+    "aboutUsButton": "Learn more about us",
+    "emailCallToAction": "Or directly by mail:"
+  },
+  "privacy": {
+    "headerTitle": "Privacy Policy",
+    "headerSubtitle": "Information in accordance with Art. 13 and 14 GDPR",
+    "section1Title": "1. Controller",
+    "section1Company": "Rieger Systems GmbH (in formation)",
+    "section1Address": "Musterstraße 12, 1234 Sample City, Austria",
+    "section1EmailLabel": "E-mail:",
+    "section2Title": "2. General Principles",
+    "section2Content": "We process personal data exclusively in accordance with the GDPR and the Austrian Data Protection Act. We deliberately avoid data processing that is not necessary and focus on transparency, data minimization, and technical security.",
+    "section3Title": "3. Hosting",
+    "section3Content1": "Our website is hosted by Hetzner Online GmbH (Industriestr. 25, 91710 Gunzenhausen, Germany).",
+    "section3Content2": "The servers are located exclusively within the European Union. There is a data processing agreement in accordance with Art. 28 GDPR with the hosting provider.",
+    "section4Title": "4. Server Log Files",
+    "section4Content1": "When accessing our website, our hosting provider automatically collects and stores the following data for up to 7 days:",
+    "section4ListItem1": "IP address of the accessing device",
+    "section4ListItem2": "Date and time of server request",
+    "section4ListItem3": "Browser type and operating system",
+    "section4ListItem4": "Referrer URL (the previously visited page)",
+    "section4Content2": "These data are used to ensure secure and stable server operation and to detect attacks. The data are not combined with other data sources or used for profiling. After the retention period, the data are automatically deleted.",
+    "section4LegalBasis": "Legal basis: Art. 6 para. 1 lit. f GDPR (legitimate interest in the secure provision of the website)",
+    "section5Title": "5. Contact, Feedback, and Application Forms",
+    "section5Content1": "If you contact us via a form (e.g., contact, feedback, or application), we process the data you provide (e.g., name, email, message, attachments if applicable) exclusively to process your request.",
+    "section5Content2": "The data will not be passed on to third parties and will be processed internally only. Application data will be deleted no later than 6 months after the conclusion of the selection process.",
+    "section5LegalBasis": "Legal basis: Art. 6 para. 1 lit. a (consent) and lit. b (pre-contractual measures)",
+    "section6Title": "6. Web Analytics with Umami",
+    "section6Content1": "We use the privacy-friendly analytics tool {umamiHighlight} in a self-hosted version. No cookies are set and no personal data are stored. Only anonymized usage data are collected:",
+    "section6ListItem1": "Visited pages",
+    "section6ListItem2": "Date and time",
+    "section6ListItem3": "Referrer",
+    "section6ListItem4": "Device type and browser (anonymized)",
+    "section6Content2": "These data are used exclusively to technically improve our website. There is no disclosure to third parties.",
+    "section6LegalBasis": "Legal basis: Art. 6 para. 1 lit. f GDPR (legitimate interest in reach analysis without profiling)",
+    "section7Title": "7. No Cookies or Third-Party Tracking",
+    "section7Content": "Our website does not use cookies or tracking services such as Google Analytics, Facebook Pixel, or similar. External resources (e.g., fonts or icons) are embedded locally only.",
+    "section8Title": "8. Technical Security",
+    "section8Content": "Access to our website is exclusively encrypted via HTTPS (TLS). Our servers and services are regularly updated, monitored, and secured by appropriate technical and organizational measures (TOMs).",
+    "section8aTitle": "8a. IP Anonymization in the Captcha System",
+    "section8aContent1": "To protect our contact form from automated attacks (e.g., spam or bots), we use a custom captcha system. The IP address of the requesting device is {notStoredHighlight}, but technically anonymized before processing.",
+    "section8aContent2": "For this purpose, the IP address is anonymized using a one-way hashing procedure (SHA-256) and processed only in this irreversibly anonymized form temporarily in our security system. Storage is solely for technical detection of abusive multiple access and is automatically deleted after a maximum of 10 minutes.",
+    "section8aContent3": "{noProfileHighlight}, {noDataMergeHighlight}, and {noThirdPartyHighlight}.",
+    "section8aLegalBasis": "Legal basis: Art. 6 para. 1 lit. f GDPR (legitimate interest in the security of our systems)",
+    "section9Title": "9. Your Rights",
+    "section9Content1": "You have the right to:",
+    "section9ListItem1": "Information about your stored data (Art. 15 GDPR)",
+    "section9ListItem2": "Rectification of incorrect data (Art. 16 GDPR)",
+    "section9ListItem3": "Erasure of your data (Art. 17 GDPR)",
+    "section9ListItem4": "Restriction of processing (Art. 18 GDPR)",
+    "section9ListItem5": "Data portability (Art. 20 GDPR)",
+    "section9ListItem6": "Objection to processing (Art. 21 GDPR)",
+    "section9ListItem7": "Lodge a complaint with a supervisory authority",
+    "section9AuthorityLabel": "Competent authority in Austria:",
+    "section9AuthorityLinkText": "Data Protection Authority – www.dsb.gv.at",
+    "section10Title": "10. Changes to this Privacy Policy",
+    "section10Content": "We reserve the right to update this privacy policy if the legal situation or our services change. The current version is always available on this page.",
+    "pageTitle": "Privacy Policy – Rieger Systems",
+    "pageDescription": "Information on data protection according to GDPR at Rieger Systems."
+  },
+  "projects": {
+    "amara": {
+      "id": "amara",
+      "slug": "amara",
+      "image": "/images/projects/amara.png",
+      "title": "A.M.A.R.A - Central AI System",
+      "description": "The central AI system of Rieger Systems. Flexible, ethical, and data protection-compliant solution.",
+      "status": "In development",
+
+      "section1Title": "Description",
+      "section1Content": "A.M.A.R.A (A Machine Always Ready to Assist) is the central AI system of Rieger Systems. It serves as a modular core for various application areas and is integrated both in healthcare (AmaraWell) and in business solutions (AmaraCall). A.M.A.R.A is designed to operate flexibly, ethically, and in compliance with data protection, supporting but not replacing human decisions.",
+
+      "section2Title": "Inspiration",
+      "section2Content": "A.M.A.R.A was inspired by the human brain and is modeled after its way of functioning.",
+
+      "section3Title": "Features",
+      "section3ListItem1": "Long-term memory: Stores knowledge and conversation summaries for pattern recognition.",
+      "section3ListItem2": "Short-term memory: Dynamically stores current contexts and conversation contents.",
+      "section3ListItem3": "Emotion recognition: Analyzes and interprets the tone and emotional content of conversations.",
+      "section3ListItem4": "Control center (A.M.A.R.A agent): Coordinates the use of different 'brain areas' as required.",
+      "section3ListItem5": "Live thought stream: Tracks the current thought processes during interactions.",
+
+      "section4Title": "Next steps",
+      "section4ListItem1": "Build brain structure: Clearly separate long-term and short-term memory.",
+      "section4ListItem2": "Further improve emotion recognition and language understanding, especially for the German language.",
+      "section4ListItem3": "Security and data protection architecture: Ensure GDPR compliance.",
+      "section4ListItem4": "Standardize and document interfaces and live interaction.",
+      "section4ListItem5": "Optimization and feedback: Collect and analyze user feedback.",
+
+      "section5Title": "Vision and added value",
+      "section5Content": "A.M.A.R.A is intended to serve as a quiet, supportive digital presence that does not patronize users but accompanies them. The focus is on clarity, reliability, and humanity to ensure ethically justifiable AI interaction.",
+
+      "section6Title": "Partnerships",
+      "section6Content": "We are open to collaborations with companies and research projects that want to test and further develop A.M.A.R.A in their own applications."
+    },
+    "amaracall": {
+      "id": "amaracall",
+      "slug": "amaracall",
+      "image": "/images/projects/amaracall.png",
+      "title": "AmaraCall – AI-Powered Answering Service",
+      "description": "Flexible call solution for businesses",
+      "status": "Concept phase",
+
+      "section1Title": "Description",
+      "section1Content": "AmaraCall is a flexible, AI-powered call system for companies from various industries. The solution provides intelligent telephone assistance that answers calls, holds conversations, and prepares relevant information in a structured way. The focus is on centralized processing to make management and updates of AI models efficient and reliable. AmaraCall is offered as a centrally hosted service to enable quick and easy integration into existing systems.",
+
+      "section2Title": "Objectives",
+      "section2Content": "Missed calls and lack of availability are among the most common problems in customer contact for many companies. Especially in sectors such as medical practices, law firms, customer hotlines, and many others, constant phone availability is crucial to success. AmaraCall offers an innovative solution that automates call management while improving the quality of customer communication. With AmaraCall, we want to help businesses save time and resources without compromising on availability.",
+
+      "section3Title": "Core features",
+      "section3ListItem1": "Automatic call answering: Intelligent conversations when staff are absent.",
+      "section3ListItem2": "Industry-flexible use: Applicable in medical practices, law firms, customer hotlines, and many more.",
+      "section3ListItem3": "Appointment and request management: Automated capture of customer concerns, appointment requests, or service inquiries.",
+      "section3ListItem4": "Summaries and reports: Structured transfer of conversation content to the respective business system.",
+      "section3ListItem5": "Central management: Updates and improvements are carried out centrally to ensure consistent quality.",
+      "section3ListItem6": "Flexibility: Adaptable to industry-specific requirements and business processes.",
+      "section3ListItem7": "A.M.A.R.A as backbone: The central AI system A.M.A.R.A forms the basis for call processing and analysis.",
+
+      "section4Title": "Next steps",
+      "section4ListItem1": "Technology analysis: Explore technologies and implementation options.",
+      "section4ListItem2": "Start pilot phase: Win companies from different industries to carry out practical tests.",
+      "section4ListItem3": "Feedback loop: Carry out practical tests to validate call quality and flexibility.",
+      "section4ListItem4": "Adjustments based on user feedback and industry-specific requirements.",
+
+      "section5Title": "Vision and added value",
+      "section5Content": "AmaraCall aims to be established as an intelligent and flexible call solution for a wide range of industries. By combining modern AI, centralized management, and high adaptability, AmaraCall offers an efficient way to manage customer calls while reducing personnel effort. AmaraCall will help businesses ensure professional telephone availability without completely replacing the human component. The focus is on automating routine calls and simple inquiries so that employees can focus on more complex matters.",
+
+      "section6Title": "Partnerships",
+      "section6Content": "We are looking for companies from different sectors to test AmaraCall in a pilot phase and further develop it together with us. By working closely with pilot partners, we want to optimize the application in practice and make it usable across industries."
+    },
+    "amarawell": {
+      "id": "amarawell",
+      "slug": "amarawell",
+      "image": "/images/projects/amarawell.png",
+      "title": "AmaraWell – Psychological AI Support",
+      "description": "AI-powered platform to support mental health.",
+      "status": "Concept phase",
+
+      "section1Title": "Description",
+      "section1Content": "AmaraWell is an AI-powered platform that provides psychological support and guidance. The project arose from the conviction that mental health plays a central role in everyone’s life and is often neglected in today’s world. In a world full of digital stimuli, social pressure, and rising demands, it is more important than ever to help people build resilience and cope with emotional crises.",
+
+      "section2Title": "Societal relevance",
+      "section2ListItem1": "Austria: 1,212 suicides in 2023 – three times as many as in road traffic. 80% of suicide victims were men. Particularly affected: people in middle age (45–64 years).",
+      "section2ListItem2": "Germany: 10,300 suicides in 2023 – an increase of 1.8% compared to the previous year. 73% of suicide victims were men. Particularly affected: people over 65.",
+      "section2ListItem3": "European Union: 47,346 suicide deaths in 2021. Average suicide rate: 10.2 per 100,000 inhabitants.",
+      "section2ListItem4": "Worldwide: Over 700,000 suicides annually – more than from malaria, HIV/AIDS, or breast cancer. For every suicide, there are 10 to 30 suicide attempts.",
+
+      "section3Title": "Support by medical professionals",
+      "section3Content": "Psychiatrists, psychotherapists, and psychological professionals provide invaluable services. Their expertise, empathy, and therapeutic skills are essential in supporting people on their path to mental stability.",
+
+      "section4Title": "AmaraWell as a tool – not a replacement",
+      "section4Content": "AmaraWell is not a substitute for medical professionals but rather a tool for support and complement. Our goal is to relieve the valuable work of doctors and therapists by filling the gaps between sessions and making hidden issues visible.",
+
+      "section5Title": "Core features",
+      "section5ListItem1": "Reliable support: People can speak with AmaraWell at any time – without barriers and without pressure.",
+      "section5ListItem2": "Uncover hidden issues: Through continuous interaction, AmaraWell can identify topics that are deeply rooted but rarely spoken about.",
+      "section5ListItem3": "Targeted support: Therapists can address recurring topics based on pseudonymized analyses.",
+      "section5ListItem4": "Transparent collaboration: Only with the patient's explicit consent can professionals access the pseudonymized notes captured by AmaraWell.",
+
+      "section6Title": "Next steps",
+      "section6ListItem1": "Further develop the concept phase and expand application possibilities.",
+      "section6ListItem2": "Recruit pilot clinics and therapists for practical validation.",
+      "section6ListItem3": "Engage with professionals from psychology and medicine for scientific foundation.",
+
+      "section7Title": "Vision and added value",
+      "section7Content": "AmaraWell aims to be established throughout Europe as an ethical, reliable AI companion that supports people and meaningfully complements the work of professionals. AmaraWell is not a substitute for human care, but a support in the background, enabling better tracking of progress and addressing unnoticed issues.",
+
+      "section8Title": "Partnerships",
+      "section8Content": "We are looking for therapists, clinics, and research institutions to test AmaraWell in a pilot phase and develop it further together. Working with professionals ensures that AmaraWell is designed in a way that is practical and aligned with real needs."
+    },
+    "index": {
+      "id": "index",
+      "slug": "index",
+      "title": "Project Overview",
+      "subtitle": "All Core Projects",
+      "description": "Overview of all current and planned core projects of Rieger Systems.",
+      "short": "Quick overview of what we're building.",
+      "features": [],
+      "status": "active",
+      "image": "/images/projects/overview.png"
+    },
+    "aria": {
+      "moreInfo": "More information about the project {title}",
+      "imageAlt": "Preview image for project {title}"
+    },
+    "status": {
+      "active": "Active",
+      "prototyp": "Prototype"
+    },
+    "readMore": "Learn more"
+  },
+  "terms": {
+    "headerTitle": "General Terms and Conditions (GTC)",
+    "headerDate": "As of: 18.05.2025",
+    "section1Title": "1. Scope",
+    "section1Content": "These GTC apply to all current and future services of Rieger Systems GmbH, especially in the areas of software development, artificial intelligence, digital products, consulting, and technical services.",
+    "section2Title": "2. Conclusion of Contract",
+    "section2Content": "A contract is concluded by written confirmation, acceptance of an offer, or the start of a project based on an agreement. Inquiries via our website, email, or other channels do not constitute a binding offer.",
+    "section3Title": "3. Scope of Services",
+    "section3Content": "The type, scope, and objective of the service result from the respective offer, written agreement, or project contract. Changes and extensions require written consent from both parties.",
+    "section4Title": "4. Prices and Payment Terms",
+    "section4Content": "All prices are exclusive of statutory VAT. Unless otherwise agreed, the invoice amount is due for payment within 14 days of the invoice date without deduction. In the event of late payment, we reserve the right to suspend or delay further services.",
+    "section5Title": "5. Rights of Use",
+    "section5Content": "Unless explicitly transferred in writing, all copyrights, usage rights, and proprietary rights to developed concepts, source codes, AI models, or documentation remain with Rieger Systems. The customer receives a simple, non-transferable, purpose-bound right of use within the contractually agreed scope.",
+    "section6Title": "6. Liability",
+    "section6Content": "Rieger Systems is liable only for intent or gross negligence. No liability is assumed for slight negligence, indirect damages, consequential damages, data loss, or loss of profit. Use of our systems and software is at the customer's own risk. Liability for content, actions, or decisions based on AI-driven recommendations is excluded.",
+    "section7Title": "7. Data Protection",
+    "section7Content": "The processing of personal data takes place exclusively within the framework of the applicable data protection laws. More information can be found in our {privacyPolicyLink}.",
+    "privacyPolicyLinkText": "Privacy Policy",
+    "section8Title": "8. Confidentiality",
+    "section8Content": "Both parties undertake to treat all information obtained in the course of cooperation as confidential and not to disclose it to third parties, unless required for contract fulfillment or by law."
+  }
+}

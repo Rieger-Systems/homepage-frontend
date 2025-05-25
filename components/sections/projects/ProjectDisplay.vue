@@ -1,17 +1,27 @@
+<script setup lang="ts">
+import { useI18n } from "vue-i18n";
+import type { Project } from "~/types/project";
+import { useLocalePath } from "#i18n";
+
+const props = defineProps<{ project: Project }>();
+const { t } = useI18n();
+const localePath = useLocalePath(); // localePath initialisieren
+</script>
+
 <template>
   <NuxtLink
-    :to="`/projects/${project.slug}`"
+    :to="localePath(`/projects/${project.slug}`)"
     class="card w-full bg-base-200 shadow-md hover:shadow-lg transition-shadow duration-300 rounded-md overflow-hidden relative group"
-    aria-label="Mehr Informationen zum Projekt"
+    :aria-label="t('projects.aria.moreInfo', { title: project.title })"
   >
     <span class="absolute top-2 right-2 badge badge-sm badge-primary z-10">
-      {{ project.status }}
+      {{ t(`projects.status.${project.status}`) }}
     </span>
 
     <figure class="relative overflow-hidden">
       <img
         :src="project.image"
-        :alt="`Vorschaubild für Projekt ${project.title}`"
+        :alt="t('projects.aria.imageAlt', { title: project.title })"
         class="w-full h-48 object-cover rounded-t-md transform group-hover:scale-105 transition-transform duration-500 ease-in-out"
       />
       <div
@@ -25,14 +35,14 @@
       >
         {{ project.title }}
       </h3>
-      <p class="text-base-content text-opacity-70 text-sm">
+      <p class="text-base-content text-opacity-70 text-sm mb-2">
         {{ project.description }}
       </p>
       <button
         class="btn btn-sm btn-ghost text-primary group-hover:text-primary/50 transition-colors duration-300 w-full justify-end"
-        aria-label="Mehr erfahren"
+        :aria-label="t('projects.readMore')"
       >
-        Mehr erfahren
+        {{ t("projects.readMore") }}
         <svg
           xmlns="http://www.w3.org/2000/svg"
           class="w-4 h-4 ml-1"
@@ -51,14 +61,3 @@
     </div>
   </NuxtLink>
 </template>
-
-<script setup lang="ts">
-import { defineProps } from "vue";
-import type { Project } from "~/data/types/project";
-
-const props = defineProps<{ project: Project }>();
-</script>
-
-<style scoped>
-/* Keine zusätzlichen spezifischen Styles mehr erforderlich, da Tailwind das übernimmt */
-</style>
