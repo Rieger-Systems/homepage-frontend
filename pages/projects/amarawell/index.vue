@@ -1,7 +1,9 @@
 <script setup>
 import { useI18n } from "vue-i18n";
-// import DiagramAmarawell from "~/components/sections/projects/DiagramAmarawell.vue";
+import { useLocalePath } from "#i18n";
+
 const { t } = useI18n();
+const localePath = useLocalePath();
 
 const key = "projects.amarawell";
 
@@ -46,6 +48,11 @@ const project = {
   status: t(`${key}.status`),
   sections: getSections(),
 };
+
+// Optional: i18n-Link-Text (falls du willst)
+// const linkText = t(`${key}.section2LinkText`) || "Alle Zahlen & Grafiken auf einen Blick";
+const linkText = "Alle Zahlen & Grafiken auf einen Blick"; // Standardtext für den Link
+const statisticsUrl = localePath("/projects/amarawell/statistics");
 </script>
 
 <template>
@@ -73,14 +80,30 @@ const project = {
             {{ section.title }}
           </h2>
           <div v-if="section.content" class="text-base-content mb-2">
+            <!-- Diagramm-Platzhalter bleibt wie gehabt -->
             <template v-if="section.content.includes('[DIAGRAM]')">
-              <!-- Bei mehreren Platzhaltern, splitten und Diagramm einfügen -->
               <template
                 v-for="(part, idx) in section.content.split('[DIAGRAM]')"
                 :key="idx"
               >
-                <!-- <DiagramAmarawell v-if="idx > 0" class="my-6" /> -->
                 <span v-if="part.trim()">{{ part }}</span>
+              </template>
+            </template>
+            <!-- Neu: [LINK]-Platzhalter ersetzen -->
+            <template v-else-if="section.content.includes('[LINK]')">
+              <template
+                v-for="(part, idx) in section.content.split('[LINK]')"
+                :key="idx"
+              >
+                <span v-if="part.trim()">{{ part }}</span>
+                <template v-if="idx === 0">
+                  <NuxtLink
+                    :to="statisticsUrl"
+                    class="underline font-semibold hover:text-primary ml-1"
+                  >
+                    {{ linkText }}
+                  </NuxtLink>
+                </template>
               </template>
             </template>
             <template v-else>
