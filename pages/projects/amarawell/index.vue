@@ -49,9 +49,7 @@ const project = {
   sections: getSections(),
 };
 
-// Optional: i18n-Link-Text (falls du willst)
-// const linkText = t(`${key}.section2LinkText`) || "Alle Zahlen & Grafiken auf einen Blick";
-const linkText = "Alle Zahlen & Grafiken auf einen Blick"; // Standardtext für den Link
+const linkText = t(`${key}.section2LinkText`);
 const statisticsUrl = localePath("/projects/amarawell/statistics");
 </script>
 
