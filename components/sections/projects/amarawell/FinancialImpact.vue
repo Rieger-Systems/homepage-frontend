@@ -1,7 +1,8 @@
 <script lang="ts" setup>
 import { Bar } from "vue-chartjs";
+import { useI18n } from "vue-i18n";
+import { computed } from "vue";
 import stats from "~/data/statistics/amarawell/financialImpact.js";
-import type { ChartOptions } from "chart.js";
 import {
   Chart as ChartJS,
   Title,
@@ -21,119 +22,136 @@ ChartJS.register(
   LinearScale
 );
 
-// Beibehalten der ursprünglichen Balkenfarben, da sie als Datenfarben
-// oft unabhängig vom Theme gewählt werden und gut kontrastieren können.
-const barColors = ["#406AFF", "#4BC9B6", "#FFBB6C", "#A68BFA", "#8E9BAE"]; // Leuchtende Farben
+const { t, locale } = useI18n();
+const fiKey = "projects.amarawell.financialImpact";
 
-const savingsColors = ["#1e40af", "#0f766e", "#b45309", "#6d28d9", "#475569"]; // Dunklere Versionen der Hauptfarben
+// Farben
+const barColors = ["#406AFF", "#4BC9B6", "#FFBB6C", "#A68BFA", "#8E9BAE"];
+const savingsColors = ["#1e40af", "#0f766e", "#b45309", "#6d28d9", "#475569"];
 
-const chartData = {
-  labels: stats.labels,
-  datasets: [
-    {
-      label: "Kosten pro Kopf/Jahr (€)",
-      data: stats.data,
-      backgroundColor: barColors,
-      borderRadius: 16,
-      maxBarThickness: 48,
-    },
-    {
-      label: "Potentielle Einsparungen durch AmaraWell (ca. 10%)",
-      data: stats.data.map((val) => +(val * 0.1).toFixed(2)),
-      backgroundColor: savingsColors, // Dunklere Farben für Einsparungen
-      borderRadius: 16,
-      maxBarThickness: 48,
-    },
-  ],
-};
+// Computed Chart Data
+const chartData = computed(() => {
+  let labelsRaw = t(`${fiKey}.labels`, { returnObjects: true });
+  // Fallback: Wenn es kein Array ist (sondern z. B. ein String), Default-Labels nutzen
+  const labels =
+    Array.isArray(labelsRaw) && labelsRaw.every((l) => typeof l === "string")
+      ? (labelsRaw as string[])
+      : ["Deutschland", "Österreich", "Schweiz", "EU", "Weltweit"];
+  return {
+    labels,
+    datasets: [
+      {
+        label: t(`${fiKey}.legend.cost`) ?? "Kosten pro Kopf/Jahr (€)",
+        data: stats.data,
+        backgroundColor: barColors,
+        borderRadius: 16,
+        maxBarThickness: 48,
+      },
+      {
+        label:
+          t(`${fiKey}.legend.savings`) ?? "Potentielle Einsparungen (ca. 10%)",
+        data: stats.data.map((val: number) => +(val * 0.1).toFixed(2)),
+        backgroundColor: savingsColors,
+        borderRadius: 16,
+        maxBarThickness: 48,
+      },
+    ],
+  };
+});
 
-const chartOptions: ChartOptions<"bar"> = {
-  responsive: true,
-  aspectRatio: 1.45,
-  plugins: {
-    legend: {
-      position: "top",
-      labels: {
-        // Textfarbe der Legende passt sich dem Theme an
-        color: "hsl(var(--bc))", // base-content color
-        font: { size: 14, weight: "bold" },
+const chartOptions = computed(
+  () =>
+    ({
+      responsive: true,
+      aspectRatio: 1.45,
+      plugins: {
+        legend: {
+          position: "top" as const, // <-- das behebt das Problem!
+          labels: {
+            color: "hsl(var(--bc))",
+            font: { size: 14, weight: "bold" },
+          },
+        },
+        title: {
+          display: true,
+          text: t(`${fiKey}.title`),
+          color: "hsl(var(--bc))",
+          font: {
+            size: 22,
+            weight: "bold",
+            family: "'Inter', 'Segoe UI', sans-serif",
+          },
+          padding: { top: 18, bottom: 16 },
+        },
+        tooltip: {
+          backgroundColor: "hsl(var(--b3))",
+          titleFont: {
+            family: "'Inter', 'Segoe UI', sans-serif",
+            size: 15,
+            weight: "bold",
+          },
+          bodyFont: { family: "'Inter', 'Segoe UI', sans-serif", size: 14 },
+          borderColor: "hsl(var(--p))",
+          borderWidth: 1,
+          caretSize: 7,
+          padding: 16,
+          callbacks: {
+            label: (ctx: any) =>
+              `${ctx.dataset.label}: ${ctx.parsed.y.toLocaleString(
+                locale.value === "de" ? "de-DE" : "en-US",
+                { maximumFractionDigits: 2 }
+              )} €`,
+          },
+        },
       },
-    },
-    title: {
-      display: true,
-      text: stats.title,
-      // Titeltextfarbe passt sich dem Theme an
-      color: "hsl(var(--bc))", // base-content color
-      font: {
-        size: 22,
-        weight: "bold",
-        family: "'Inter', 'Segoe UI', sans-serif",
+      scales: {
+        y: {
+          beginAtZero: true,
+          max: Math.max(...stats.data) * 1.15,
+          title: {
+            display: true,
+            text: t(`${fiKey}.axes.y`),
+            color: "hsl(var(--bc) / 0.7)",
+            font: { size: 15, weight: "bold", family: "'Inter', 'sans-serif'" },
+          },
+          ticks: {
+            color: "hsl(var(--bc) / 0.6)",
+            font: { size: 13 },
+            callback: (value: number) => value + " €",
+            stepSize: 500,
+          },
+          grid: { color: "hsl(var(--b2))" },
+        },
+        x: {
+          title: {
+            display: true,
+            text: t(`${fiKey}.axes.x`),
+            color: "hsl(var(--bc) / 0.7)",
+            font: { size: 14, weight: "bold", family: "'Inter', 'sans-serif'" },
+          },
+          ticks: {
+            color: "hsl(var(--bc) / 0.9)",
+            font: { size: 14, weight: "bold" },
+          },
+          grid: { display: false },
+        },
       },
-      padding: { top: 18, bottom: 16 },
-    },
-    tooltip: {
-      // Hintergrund des Tooltips, dunkler als base-100 für Kontrast
-      backgroundColor: "hsl(var(--b3))", // A darker base color
-      titleFont: {
-        family: "'Inter', 'Segoe UI', sans-serif",
-        size: 15,
-        weight: "bold",
-      },
-      // Textfarbe des Tooltips, hell im Dark Mode, dunkel im Light Mode
-      bodyFont: { family: "'Inter', 'Segoe UI', sans-serif", size: 14 },
-      // Randfarbe des Tooltips, z.B. Primary oder Accent Color
-      borderColor: "hsl(var(--p))", // Primary color for border
-      borderWidth: 1,
-      caretSize: 7,
-      padding: 16,
-      callbacks: {
-        label: (ctx) =>
-          `${ctx.dataset.label}: ${ctx.parsed.y.toLocaleString("de-DE", {
-            maximumFractionDigits: 2,
-          })} €`,
-      },
-    },
-  },
-  scales: {
-    y: {
-      beginAtZero: true,
-      max: Math.max(...stats.data) * 1.15, // Dynamischer Max-Wert
-      title: {
-        display: true,
-        text: "Kosten pro Jahr (€)",
-        // Achsentitel-Farbe passt sich dem Theme an
-        color: "hsl(var(--bc) / 0.7)", // base-content, leicht transparenter
-        font: { size: 15, weight: "bold", family: "'Inter', 'sans-serif'" },
-      },
-      ticks: {
-        // Achsen-Ticks-Farbe passt sich dem Theme an
-        color: "hsl(var(--bc) / 0.6)", // base-content, noch transparenter
-        font: { size: 13 },
-        callback: (value) => value + " €",
-        stepSize: 500,
-      },
-      grid: {
-        // Gitterlinien-Farbe passt sich dem Theme an, sehr dezent
-        color: "hsl(var(--b2))", // A lighter base color for subtle grids
-      },
-    },
-    x: {
-      title: {
-        display: true,
-        text: "Region / Land",
-        // Achsentitel-Farbe passt sich dem Theme an
-        color: "hsl(var(--bc) / 0.7)",
-        font: { size: 14, weight: "bold", family: "'Inter', 'sans-serif'" },
-      },
-      ticks: {
-        // Achsen-Ticks-Farbe passt sich dem Theme an
-        color: "hsl(var(--bc) / 0.9)", // slightly stronger than grid
-        font: { size: 14, weight: "bold" },
-      },
-      grid: { display: false },
-    },
-  },
-};
+    } as import("chart.js").ChartOptions<"bar">)
+);
+
+// Quellen aus i18n holen
+const sourceEntries = computed(() =>
+  stats.sources.map((src) => ({
+    name: t(`${fiKey}.sources.${src.key}`),
+    url: src.url,
+  }))
+);
+
+const explanationLabel = computed(
+  () => t(`${fiKey}.explanationLabel`) ?? "Erklärung:"
+);
+const noteLabel = computed(() => t(`${fiKey}.noteLabel`) ?? "Hinweis:");
+const sourcesLabel = computed(() => t(`${fiKey}.sourcesLabel`) ?? "Quellen:");
 </script>
 
 <template>
@@ -143,27 +161,27 @@ const chartOptions: ChartOptions<"bar"> = {
   >
     <NuxtTransition name="fade" mode="out-in" appear>
       <client-only>
+        <!-- Unbedingt .value im Template -->
         <Bar :data="chartData" :options="chartOptions" />
       </client-only>
     </NuxtTransition>
 
     <div class="space-y-4 text-base mt-8">
       <p class="text-base-content text-center leading-relaxed">
-        <span class="font-semibold">Erklärung:</span> {{ stats.explanation }}
+        <span class="font-semibold">{{ explanationLabel }}</span>
+        {{ t(`${fiKey}.explanation`) }}
       </p>
 
       <div
-        v-if="stats.note"
+        v-if="t(`${fiKey}.note`)"
         class="bg-warning/10 border-l-4 border-warning text-warning px-6 py-3 rounded mb-2 text-sm text-center italic font-semibold select-none"
       >
-        Hinweis: Die Kosten sind Durchschnittswerte pro Kopf aller Einwohner
-        inklusive gesunder Personen. Die individuellen Kosten Betroffener sind
-        deutlich höher.
+        {{ noteLabel }} {{ t(`${fiKey}.note`) }}
       </div>
 
       <div class="text-center text-base-content/80 text-sm">
-        <span class="font-semibold">Quellen:</span>
-        <span v-for="(src, idx) in stats.sources" :key="idx">
+        <span class="font-semibold">{{ sourcesLabel }}</span>
+        <span v-for="(src, idx) in sourceEntries" :key="idx">
           <a
             :href="src.url"
             target="_blank"
@@ -171,21 +189,9 @@ const chartOptions: ChartOptions<"bar"> = {
             class="underline hover:text-primary transition"
             >{{ src.name }}</a
           >
-          <span v-if="idx < stats.sources.length - 1">| </span>
+          <span v-if="idx < sourceEntries.length - 1">| </span>
         </span>
       </div>
     </div>
   </div>
 </template>
-
-<style scoped>
-/* Beibehalten für NuxtTransition */
-.fade-enter-active,
-.fade-leave-active {
-  transition: opacity 0.5s ease;
-}
-.fade-enter-from,
-.fade-leave-to {
-  opacity: 0;
-}
-</style>

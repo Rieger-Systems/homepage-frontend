@@ -483,7 +483,30 @@
       "section7Content": "AmaraWell aims to be established throughout Europe as an ethical, reliable AI companion that supports people and meaningfully complements the work of professionals. AmaraWell is not a substitute for human care, but a support in the background, enabling better tracking of progress and addressing unnoticed issues.",
 
       "section8Title": "Partnerships",
-      "section8Content": "We are looking for therapists, clinics, and research institutions to test AmaraWell in a pilot phase and develop it further together. Working with professionals ensures that AmaraWell is designed in a way that is practical and aligned with real needs."
+      "section8Content": "We are looking for therapists, clinics, and research institutions to test AmaraWell in a pilot phase and develop it further together. Working with professionals ensures that AmaraWell is designed in a way that is practical and aligned with real needs.",
+      "financialImpact": {
+        "title": "Annual cost of mental illness per person",
+        "labels": ["Germany", "Austria", "Switzerland", "EU", "Worldwide"],
+        "unit": "€ per year",
+        "explanation": "The annual cost of mental illness per person is about €764 in Germany, €1,244 in Austria, and as much as €2,370 in Switzerland. The EU average is €1,100, and globally it’s around €130. These costs include direct medical care, productivity losses, and other indirect burdens.",
+        "explanationLabel": "Explanation:",
+        "note": "Costs in Switzerland are especially high due to above-average healthcare spending and wage levels. Globally, costs vary widely depending on the country and income level.",
+        "sources": {
+          "oecd": "OECD/EU Health at a Glance, 2022",
+          "obsan": "BAG/Obsan, Switzerland, 2022",
+          "who": "WHO, 2022 (World)"
+        },
+        "legend": {
+          "cost": "Cost per person/year (€)",
+          "savings": "Potential savings with AmaraWell (approx. 10%)"
+        },
+        "axes": {
+          "y": "Cost per year (€)",
+          "x": "Region / Country"
+        },
+        "noteLabel": "Note: The costs shown are population averages, including healthy individuals. Individual costs for those affected are significantly higher.",
+        "sourcesLabel": "Sources:"
+      }
     },
     "index": {
       "id": "index",

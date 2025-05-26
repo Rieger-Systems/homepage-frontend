@@ -483,7 +483,30 @@
       "section7Content": "AmaraWell soll europaweit als ethischer, verlässlicher KI-Begleiter etabliert werden, der Menschen unterstützt und gleichzeitig die Arbeit von Fachkräften sinnvoll ergänzt. AmaraWell ist kein Ersatz für menschliche Zuwendung, sondern eine Unterstützung im Hintergrund, die es ermöglicht, Verläufe besser nachzuvollziehen und unbemerkte Themen anzusprechen.",
 
       "section8Title": "Partnerschaften",
-      "section8Content": "Wir suchen Therapeuten, Kliniken und Forschungseinrichtungen, die AmaraWell in einer Pilotphase testen und gemeinsam mit uns weiterentwickeln möchten. Durch die Zusammenarbeit mit Fachpersonal wollen wir sicherstellen, dass AmaraWell praxisnah und an den realen Bedürfnissen orientiert gestaltet ist."
+      "section8Content": "Wir suchen Therapeuten, Kliniken und Forschungseinrichtungen, die AmaraWell in einer Pilotphase testen und gemeinsam mit uns weiterentwickeln möchten. Durch die Zusammenarbeit mit Fachpersonal wollen wir sicherstellen, dass AmaraWell praxisnah und an den realen Bedürfnissen orientiert gestaltet ist.",
+      "financialImpact": {
+        "title": "Jährliche Kosten psychischer Erkrankungen pro Person",
+        "labels": ["Deutschland", "Österreich", "Schweiz", "EU", "Weltweit"],
+        "unit": "€ pro Jahr",
+        "explanation": "Die jährlichen Kosten psychischer Erkrankungen pro Person betragen in Deutschland rund 764 €, in Österreich 1.244 €, in der Schweiz sogar etwa 2.370 €. Der EU-Durchschnitt liegt bei 1.100 €, weltweit sind es ca. 130 €. Die Kosten umfassen sowohl direkte medizinische Behandlung als auch Produktivitätsausfälle und andere indirekte Belastungen.",
+        "explanationLabel": "Erklärung:",
+        "note": "In der Schweiz sind die Kosten besonders hoch, da hier die Gesundheitsausgaben und das Lohnniveau über dem EU-Durchschnitt liegen. Weltweit variieren die Kosten sehr stark je nach Land und Einkommensniveau.",
+        "sources": {
+          "oecd": "OECD/EU Health at a Glance, 2022",
+          "obsan": "BAG/Obsan, Schweiz, 2022",
+          "who": "WHO, 2022 (Welt)"
+        },
+        "legend": {
+          "cost": "Kosten pro Kopf/Jahr (€)",
+          "savings": "Potentielle Einsparungen durch AmaraWell (ca. 10%)"
+        },
+        "axes": {
+          "y": "Kosten pro Jahr (€)",
+          "x": "Region / Land"
+        },
+        "noteLabel": "Hinweis: Die Kosten sind Durchschnittswerte pro Kopf aller Einwohner inklusive gesunder Personen. Die individuellen Kosten Betroffener sind deutlich höher.",
+        "sourcesLabel": "Quellen:"
+      }
     },
     "index": {
       "id": "index",
