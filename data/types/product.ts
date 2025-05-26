@@ -1,13 +1,20 @@
+// Ein gemeinsames Contact-Interface für alle Produkte
+export interface ProductContact {
+  email: string;
+  website: string;
+  title?: string;
+  description?: string;
+  callToAction?: string;
+}
+
+// Basistyp für alle Produkte
 export interface BaseProduct {
   title: string;
   shortDescription: string;
   description: string;
   link: string;
   icon: object;
-  contact: {
-    email: string;
-    website: string;
-  };
+  contact: ProductContact; // <-- angepasster Typ!
   i18nKey: string;
 }
 
@@ -37,22 +44,35 @@ export interface ServiceProduct extends BaseProduct {
 }
 
 export interface SoftwareProduct extends BaseProduct {
-  packages: {
-    name: string;
-    type: string;
-    target: string;
-    description: string[];
-    startPrice: string;
-    useCases?: string[];
-  }[];
-  modules: {
-    name: string;
+  notice: {
+    title: string;
     description: string;
-    price: string;
+    details: string;
+  };
+  services: {
+    category: string;
+    items: string[];
   }[];
+  pricing: {
+    title: string;
+    description: string;
+    details: string;
+  };
+  financing: {
+    title: string;
+    description: string;
+    callToAction: string;
+  };
+  advantages: string[];
+  contact: {
+    title: string;
+    description: string;
+    email: string;
+    website: string;
+    callToAction: string;
+  };
 }
 
-// data/types/product.ts
 export interface WebsiteProduct extends BaseProduct {
   notice: {
     title: string;

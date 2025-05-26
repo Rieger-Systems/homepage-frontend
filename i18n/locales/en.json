@@ -294,7 +294,8 @@
     "software": "Software",
     "services": "Hosting",
     "ai": "AI Systems",
-    "website": "Websites"
+    "website": "Websites",
+    "priceNote": "* All prices are net amounts plus applicable VAT."
   },
   "ariaLabels": {
     "home": "Back to home",
@@ -580,5 +581,50 @@
     "privacyPolicyLinkText": "Privacy Policy",
     "section8Title": "8. Confidentiality",
     "section8Content": "Both parties undertake to treat all information obtained in the course of cooperation as confidential and not to disclose it to third parties, unless required for contract fulfillment or by law."
+  },
+  "services": {
+    "title": "Hosting, Support & Maintenance – Your Worry-Free Complete Solution",
+    "shortDescription": "Comprehensive hosting with proactive support & maintenance.",
+    "tagline": "Your worry-free complete solution – everything from a single source",
+    "advantagesTitle": "Advantages",
+    "advantages": [
+      "Everything from a single source: Infrastructure, support & maintenance perfectly integrated.",
+      "Transparent costs: Clear service flat rates and transparent server costs.",
+      "Proactive monitoring: Early detection and resolution of problems.",
+      "Personal contact: Direct contact and dedicated contacts.",
+      "Scalable & flexible: Adaptable to growing requirements.",
+      "Security focus: Monthly security updates at OS level."
+    ],
+    "packagesTitle": "Packages & Prices",
+    "supportTitle": "Support & Additional Services",
+    "standardSupport": "Standard Support",
+    "premiumSLA": "Premium SLA",
+    "additionalSupport": "Additional Support Packages",
+    "serverModels": "Server Models",
+    "ctaTitle": "Ready for worry-free hosting?",
+    "ctaText": "Request now & secure your individual solution:",
+    "contactButton": "Contact us",
+    "learnMore": "Or learn more:",
+    "contactPage": "Contact page",
+    "emergencyNote": "24/7 emergency support for business-critical applications (details on request)",
+    "table": {
+      "package": "Package",
+      "price": "Price",
+      "hours": "Included hours",
+      "rate": "Hourly rate",
+      "name": "Name",
+      "vcpu": "vCPU",
+      "ram": "RAM",
+      "ssd": "SSD",
+      "traffic": "Traffic",
+      "cost": "Cost",
+      "server": "Server",
+      "response": "Response time",
+      "availability": "Availability",
+      "priority": "Priority",
+      "critical": "Critical incident",
+      "high": "Major function",
+      "reporting": "Reporting"
+    }
   }
 }

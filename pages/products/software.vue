@@ -371,7 +371,6 @@
 </template>
 
 <script setup>
-import { products } from "~/data/products";
 import {
   CheckIcon,
   InformationCircleIcon,
@@ -381,8 +380,11 @@ import {
   WrenchScrewdriverIcon, // Although imported, WrenchScrewdriverIcon is not used in the template. Consider removing if not needed.
 } from "@heroicons/vue/24/outline";
 import NetPriceNote from "~/components/sections/products/NetPriceNote.vue";
+import { getSoftwareProduct } from "~/data/products/software/software";
+import { useI18n } from "vue-i18n";
+const { locale } = useI18n();
 
-const software = products?.software || {};
+const software = getSoftwareProduct(locale.value);
 </script>
 
 <style scoped>

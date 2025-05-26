@@ -1,41 +1,7 @@
 // ~/data/products/mail.ts
 import { EnvelopeIcon } from "@heroicons/vue/24/outline";
 
-// Optionales Interface für Typing
-export interface MailProduct {
-  title: string;
-  shortDescription: string;
-  description: string;
-  link: string;
-  icon: any;
-  tagline: string;
-  i18nKey: string;
-  sections: {
-    advantages: string;
-    oneTime: string;
-    individual: string;
-    security: string;
-    contract: string;
-    learnMore: string;
-  };
-  advantages: string[];
-  supportNote: { title: string; content: string };
-  pricing: {
-    title: string;
-    description: string;
-    table: Array<any>;
-  };
-  addons: {
-    title: string;
-    oneTimeServices: Array<any>;
-    individualServices: Array<any>;
-  };
-  security: { title: string; points: string[] };
-  contract: { title: string; details: string[] };
-  contact: { title: string; content: string; email: string; website: string };
-}
-
-const mail_de: MailProduct = {
+const mail_de = {
   title: "RiegerMail - Administrierter Business Mail Service",
   shortDescription: "DSGVO-konformer E-Mail-Service für Unternehmen und NGOs.",
   description:
@@ -181,7 +147,7 @@ const mail_de: MailProduct = {
   },
 };
 
-const mail_en: MailProduct = {
+const mail_en = {
   title: "RiegerMail – Managed Business Mail Service",
   shortDescription: "GDPR-compliant email service for companies and NGOs.",
   description:
@@ -326,7 +292,7 @@ const mail_en: MailProduct = {
   },
 };
 
-export function getMailProduct(lang: string = "de"): MailProduct {
+export function getMailProduct(lang: string = "de") {
   switch ((lang || "").substring(0, 2).toLowerCase()) {
     case "en":
       return mail_en;

@@ -3,6 +3,7 @@
     <div class="container mx-auto px-4 max-w-screen-lg">
       <div class="text-center mb-12">
         <ServerStackIcon
+          class="w-16 h-16 mx-auto text-primary mb-4"
           v-motion="{
             initial: { opacity: 0, scale: 0.8 },
             enter: {
@@ -16,9 +17,9 @@
               },
             },
           }"
-          class="w-16 h-16 mx-auto text-primary mb-4"
         />
         <h1
+          class="text-4xl font-bold text-primary"
           v-motion="{
             initial: { opacity: 0, y: 20 },
             enter: {
@@ -32,11 +33,11 @@
               },
             },
           }"
-          class="text-4xl font-bold text-primary"
         >
           {{ services.title }}
         </h1>
         <p
+          class="text-lg text-base-content/70 mt-2"
           v-motion="{
             initial: { opacity: 0, y: 20 },
             enter: {
@@ -50,11 +51,11 @@
               },
             },
           }"
-          class="text-lg text-base-content/70 mt-2"
         >
           {{ services.shortDescription }}
         </p>
         <p
+          class="text-sm text-base-content/50 mt-1"
           v-motion="{
             initial: { opacity: 0, y: 20 },
             enter: {
@@ -68,14 +69,15 @@
               },
             },
           }"
-          class="text-sm text-base-content/50 mt-1"
         >
           {{ services.tagline }}
         </p>
       </div>
 
+      <!-- Vorteile -->
       <div class="mb-12">
         <h2
+          class="text-2xl font-semibold text-primary mb-4"
           v-motion="{
             initial: { opacity: 0, y: 20 },
             visibleOnce: {
@@ -89,14 +91,14 @@
               },
             },
           }"
-          class="text-2xl font-semibold text-primary mb-4"
         >
-          Vorteile
+          {{ t("services.advantagesTitle") }}
         </h2>
         <ul class="grid md:grid-cols-2 gap-4">
           <li
             v-for="(adv, idx) in services.advantages"
             :key="idx"
+            class="bg-base-100 shadow rounded-lg p-4 flex items-start"
             v-motion="{
               initial: { opacity: 0, x: -30 },
               visibleOnce: {
@@ -106,11 +108,10 @@
                   type: 'spring',
                   stiffness: 150,
                   damping: 20,
-                  delay: 200 + idx * 80, // Staggered entry for each advantage
+                  delay: 200 + idx * 80,
                 },
               },
             }"
-            class="bg-base-100 shadow rounded-lg p-4 flex items-start"
           >
             <CheckCircleIcon
               class="w-6 h-6 text-primary mr-2 mt-1 flex-shrink-0"
@@ -120,8 +121,10 @@
         </ul>
       </div>
 
+      <!-- Pakete & Preise -->
       <div class="mb-16">
         <h2
+          class="text-2xl font-semibold text-primary mb-4"
           v-motion="{
             initial: { opacity: 0, y: 20 },
             visibleOnce: {
@@ -135,14 +138,14 @@
               },
             },
           }"
-          class="text-2xl font-semibold text-primary mb-4"
         >
-          Pakete & Preise
+          {{ t("services.packagesTitle") }}
         </h2>
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           <div
             v-for="(pkg, idx) in services.packages"
             :key="idx"
+            class="card bg-base-100 shadow-xl border border-base-300"
             v-motion="{
               initial: { opacity: 0, y: 40 },
               visibleOnce: {
@@ -152,20 +155,24 @@
                   type: 'spring',
                   stiffness: 120,
                   damping: 18,
-                  delay: 200 + idx * 100, // Staggered entry for each package card
+                  delay: 200 + idx * 100,
                 },
               },
             }"
-            class="card bg-base-100 shadow-xl border border-base-300"
           >
             <div class="card-body">
               <h3 class="card-title text-primary">{{ pkg.name }}</h3>
               <p class="text-base-content/70 mb-2">{{ pkg.target }}</p>
               <ul class="text-sm space-y-1 mb-3">
-                <li><b>Servicegebühr:</b> {{ pkg.serviceFee }}</li>
-                <li><b>Server:</b> {{ pkg.serverInstance }}</li>
                 <li>
-                  <b>Gesamtpreis (mtl.):</b>
+                  <b>{{ t("services.table.price") }}:</b> {{ pkg.serviceFee }}
+                </li>
+                <li>
+                  <b>{{ t("services.table.server") || "Server:" }}</b>
+                  {{ pkg.serverInstance }}
+                </li>
+                <li>
+                  <b>{{ t("services.table.cost") }} (mtl.):</b>
                   <span class="font-bold">{{ pkg.estimatedCost }}</span>
                 </li>
                 <li><b>Support:</b> {{ pkg.supportHours }}</li>
@@ -176,8 +183,10 @@
         </div>
       </div>
 
+      <!-- Support & Zusatzleistungen -->
       <div class="mb-12">
         <h2
+          class="text-2xl font-semibold text-primary mb-4"
           v-motion="{
             initial: { opacity: 0, y: 20 },
             visibleOnce: {
@@ -191,9 +200,8 @@
               },
             },
           }"
-          class="text-2xl font-semibold text-primary mb-4"
         >
-          Support & Zusatzleistungen
+          {{ t("services.supportTitle") }}
         </h2>
         <div class="grid md:grid-cols-2 gap-6">
           <div
@@ -211,17 +219,23 @@
               },
             }"
           >
-            <h3 class="font-semibold mb-2">Standard Support</h3>
+            <h3 class="font-semibold mb-2">
+              {{ t("services.standardSupport") }}
+            </h3>
             <ul class="text-sm space-y-1">
               <li>
-                <b>Reaktionszeit:</b> {{ services.support.standard.response }}
+                <b>{{ t("services.table.response") || "Reaktionszeit:" }}</b>
+                {{ services.support.standard.response }}
               </li>
               <li>
-                <b>Verfügbarkeit:</b>
+                <b>{{
+                  t("services.table.availability") || "Verfügbarkeit:"
+                }}</b>
                 {{ services.support.standard.availability }}
               </li>
               <li>
-                <b>Priorität:</b> {{ services.support.standard.priority }}
+                <b>{{ t("services.table.priority") || "Priorität:" }}</b>
+                {{ services.support.standard.priority }}
               </li>
             </ul>
           </div>
@@ -235,48 +249,37 @@
                   type: 'spring',
                   stiffness: 150,
                   damping: 20,
-                  delay: 300, // Slightly delayed
+                  delay: 300,
                 },
               },
             }"
           >
-            <h3 class="font-semibold mb-2">Premium SLA</h3>
+            <h3 class="font-semibold mb-2">{{ t("services.premiumSLA") }}</h3>
             <ul class="text-sm space-y-1">
               <li>
-                <b>Reaktionszeit:</b>
+                <b>{{ t("services.table.response") || "Reaktionszeit:" }}</b>
                 {{ services.support.premiumSLA.responseTime }}
               </li>
               <li>
-                <b>Kritische Störung:</b>
+                <b>{{
+                  t("services.table.critical") || "Kritische Störung:"
+                }}</b>
                 {{ services.support.premiumSLA.critical }}
               </li>
               <li>
-                <b>Wichtige Funktion:</b> {{ services.support.premiumSLA.high }}
+                <b>{{ t("services.table.high") || "Wichtige Funktion:" }}</b>
+                {{ services.support.premiumSLA.high }}
               </li>
               <li>
-                <b>Reporting:</b> {{ services.support.premiumSLA.reporting }}
+                <b>{{ t("services.table.reporting") || "Reporting:" }}</b>
+                {{ services.support.premiumSLA.reporting }}
               </li>
             </ul>
           </div>
         </div>
         <div class="mt-8">
-          <h3
-            v-motion="{
-              initial: { opacity: 0, y: 20 },
-              visibleOnce: {
-                opacity: 1,
-                y: 0,
-                transition: {
-                  type: 'spring',
-                  stiffness: 180,
-                  damping: 22,
-                  delay: 400,
-                },
-              },
-            }"
-            class="font-semibold mb-2"
-          >
-            Zusätzliche Support-Pakete
+          <h3 class="font-semibold mb-2">
+            {{ t("services.additionalSupport") }}
           </h3>
           <div
             class="overflow-x-auto"
@@ -297,10 +300,10 @@
             <table class="table table-zebra w-full">
               <thead>
                 <tr>
-                  <th>Paket</th>
-                  <th>Preis</th>
-                  <th>Inkl. Stunden</th>
-                  <th>Stundensatz</th>
+                  <th>{{ t("services.table.package") }}</th>
+                  <th>{{ t("services.table.price") }}</th>
+                  <th>{{ t("services.table.hours") }}</th>
+                  <th>{{ t("services.table.rate") }}</th>
                 </tr>
               </thead>
               <tbody>
@@ -316,7 +319,7 @@
                         type: 'spring',
                         stiffness: 100,
                         damping: 15,
-                        delay: 600 + idx * 50, // Staggered entry for table rows
+                        delay: 600 + idx * 50,
                       },
                     },
                   }"
@@ -346,13 +349,15 @@
               },
             }"
           >
-            {{ services.support.emergency }}
+            {{ t("services.emergencyNote") }}
           </p>
         </div>
       </div>
 
+      <!-- Server-Modelle -->
       <div class="mb-12">
         <h2
+          class="text-2xl font-semibold text-primary mb-4"
           v-motion="{
             initial: { opacity: 0, y: 20 },
             visibleOnce: {
@@ -366,9 +371,8 @@
               },
             },
           }"
-          class="text-2xl font-semibold text-primary mb-4"
         >
-          Server-Modelle
+          {{ t("services.serverModels") }}
         </h2>
         <div
           class="overflow-x-auto"
@@ -389,12 +393,12 @@
           <table class="table table-compact w-full">
             <thead>
               <tr>
-                <th>Name</th>
-                <th>vCPU</th>
-                <th>RAM</th>
-                <th>SSD</th>
-                <th>Traffic</th>
-                <th>Preis</th>
+                <th>{{ t("services.table.name") }}</th>
+                <th>{{ t("services.table.vcpu") }}</th>
+                <th>{{ t("services.table.ram") }}</th>
+                <th>{{ t("services.table.ssd") }}</th>
+                <th>{{ t("services.table.traffic") }}</th>
+                <th>{{ t("services.table.cost") }}</th>
               </tr>
             </thead>
             <tbody>
@@ -410,7 +414,7 @@
                       type: 'spring',
                       stiffness: 100,
                       damping: 15,
-                      delay: 300 + idx * 50, // Staggered entry for server rows
+                      delay: 300 + idx * 50,
                     },
                   },
                 }"
@@ -427,6 +431,7 @@
         </div>
       </div>
 
+      <!-- Call to Action -->
       <div
         class="bg-primary text-primary-content rounded-xl p-8 text-center mt-16 shadow-lg"
         v-motion="{
@@ -444,9 +449,11 @@
         }"
       >
         <h3 class="text-2xl font-bold mb-2">
-          Bereit für sorgenfreies Hosting?
+          {{ t("services.ctaTitle") }}
         </h3>
-        <p class="mb-4">Jetzt anfragen & individuelle Lösung sichern:</p>
+        <p class="mb-4">
+          {{ t("services.ctaText") }}
+        </p>
         <a
           :href="'mailto:' + services.contact.email"
           class="btn btn-secondary btn-lg"
@@ -464,7 +471,7 @@
             },
           }"
         >
-          Kontakt aufnehmen
+          {{ t("services.contactButton") }}
         </a>
         <p
           class="mt-2 text-sm opacity-80"
@@ -482,10 +489,10 @@
             },
           }"
         >
-          Oder mehr erfahren:
-          <NuxtLink to="/contact" class="underline text-primary-content"
-            >Kontaktseite</NuxtLink
-          >
+          {{ t("services.learnMore") }}
+          <NuxtLink to="/contact" class="underline text-primary-content">
+            {{ t("services.contactPage") }}
+          </NuxtLink>
         </p>
       </div>
     </div>
@@ -494,12 +501,16 @@
 </template>
 
 <script setup lang="ts">
-import { services } from "~/data/products/services";
+import { getServicesProduct } from "~/data/products/services";
 import { ServerStackIcon } from "@heroicons/vue/24/outline";
 import NetPriceNote from "~/components/sections/products/NetPriceNote.vue";
 import { CheckCircleIcon } from "@heroicons/vue/24/solid";
+import { useI18n } from "vue-i18n";
+
+const { t, locale } = useI18n();
+const services = getServicesProduct(locale.value);
 </script>
 
 <style scoped>
-/* No specific styles are needed for v-motion. All animations are handled by the directive. */
+/* No specific styles needed for v-motion. All handled by directive. */
 </style>

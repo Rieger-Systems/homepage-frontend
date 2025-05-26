@@ -294,7 +294,8 @@
     "software": "Software",
     "services": "Hosting",
     "ai": "KI-Systeme",
-    "website": "Websites"
+    "website": "Websites",
+    "priceNote": "* Alle Preise verstehen sich als Netto-Beträge zzgl. gesetzlicher Umsatzsteuer (USt)."
   },
   "ariaLabels": {
     "home": "Zur Startseite",
@@ -580,5 +581,116 @@
     "privacyPolicyLinkText": "Datenschutzerklärung",
     "section8Title": "8. Vertraulichkeit",
     "section8Content": "Beide Parteien verpflichten sich, sämtliche im Rahmen der Zusammenarbeit erlangten Informationen vertraulich zu behandeln und nicht an Dritte weiterzugeben, es sei denn, dies ist zur Vertragserfüllung erforderlich oder gesetzlich vorgeschrieben."
+  },
+  "ai": {
+    "hero": {
+      "title": "A.M.A.R.A. – KI mit Haltung",
+      "subtitle": "Entwickelt für Menschen, nicht für Märkte. KI, die Verantwortung trägt. Für Sie, für Europa, für die Zukunft.",
+      "demo": "Live-Demo ausprobieren",
+      "consult": "Jetzt beraten lassen"
+    },
+    "why": {
+      "headline": "Warum A.M.A.R.A.?",
+      "text1": "Künstliche Intelligenz darf nicht nur mächtig, sondern muss auch menschlich und nachvollziehbar sein.",
+      "text2": "Unsere KI begleitet, analysiert, empfiehlt – aber sie ersetzt und manipuliert niemals. A.M.A.R.A. wurde geschaffen, um den Menschen zu stärken und Technologie wieder ins Zentrum der europäischen Werte zu rücken."
+    },
+    "advantagesTitle": "Ihre Vorteile mit A.M.A.R.A.",
+    "advantages": [
+      "Keine Black-Box – Entscheidungen nachvollziehbar",
+      "DSGVO-konform, keine Datenübertragung in Drittländer",
+      "Modular & flexibel für individuelle Use Cases",
+      "Pseudonymisierung & Datenschutz garantiert",
+      "Integration via API, gRPC, REST",
+      "Betreut & entwickelt in Europa"
+    ],
+    "goalsTitle": "Was möchten Sie erreichen?",
+    "useCases": [
+      {
+        "title": "Textanalyse (NLP)",
+        "desc": "Stimmungs-, Themen- und Sentiment-Analyse für Ihre Texte.",
+        "details": "Unsere KI erkennt Themen, Emotionen und Stimmungen in beliebigen Texten, egal ob Feedback, Supportanfragen oder medizinische Dokumentation."
+      },
+      {
+        "title": "Spracherkennung & Transkription",
+        "desc": "Automatische Transkription von Sprache in Text.",
+        "details": "Ideal für Arztbriefe, Meetings, Dokumentation oder Barrierefreiheit. DSGVO-konform, keine US-Cloud."
+      },
+      {
+        "title": "Individuelle KI-Workflows",
+        "desc": "Spezielle Lösungen für Unternehmen, Forschung & Medizin.",
+        "details": "Von Chatbots bis Workflow-Automatisierung. Auf Wunsch auch komplett On-Premise."
+      },
+      {
+        "title": "Ethikberatung für KI-Projekte",
+        "desc": "Unterstützung bei der Einführung und Auditierung von KI-Systemen.",
+        "details": "Workshops, Gutachten und Reviews – damit Ihre KI fair, transparent und rechtssicher bleibt."
+      }
+    ],
+    "liveDemo": {
+      "title": "Live-Demo: Stimmungsanalyse"
+    },
+    "ethicsTitle": "Ethische Prinzipien",
+    "ethics": [
+      "Kein US-Hosting, keine Black-Box-Modelle",
+      "Transparente, auditierbare Prozesse",
+      "Entwickelt & betreut in Europa",
+      "Entscheidungen jederzeit nachvollziehbar",
+      "100 % DSGVO-konform",
+      "Technik, die Menschen stärkt – nicht ersetzt"
+    ],
+    "techTitle": "Technische Basis & Architektur",
+    "testimonialsTitle": "Stimmen aus der Praxis",
+    "noTestimonial": "Noch keine Erfahrungsberichte vorhanden. Wir freuen uns auf Ihr Feedback!",
+    "firstTester": "Sie sind einer der ersten Tester. Ihre Meinung hilft uns, besser zu werden!",
+    "faqTitle": "Häufige Fragen",
+    "consultCtaTitle": "Bereit für verantwortungsvolle KI?",
+    "consultCtaText": "Jetzt Demo buchen, Whitepaper anfordern oder persönlich beraten lassen:",
+    "consult": "Beratung anfragen",
+    "whitepaper": "Whitepaper downloaden"
+  },
+  "services": {
+    "title": "Hosting, Support & Wartung – Ihre sorgenfreie Komplettlösung",
+    "shortDescription": "Umfassendes Hosting mit proaktivem Support & Wartung.",
+    "tagline": "Ihre sorgenfreie Komplettlösung – alles aus einer Hand",
+    "advantagesTitle": "Vorteile",
+    "advantages": [
+      "Alles aus einer Hand: Infrastruktur, Support & Wartung perfekt verzahnt.",
+      "Transparente Kosten: Klare Service-Pauschalen und transparente Serverkosten.",
+      "Proaktives Monitoring: Früherkennung und Behebung von Problemen.",
+      "Persönlicher Ansprechpartner: Direkter Kontakt und feste Ansprechpartner.",
+      "Skalierbar & flexibel: Anpassbar an wachsende Anforderungen.",
+      "Security-Fokus: Monatliche Sicherheitsupdates auf Betriebssystem-Ebene."
+    ],
+    "packagesTitle": "Pakete & Preise",
+    "supportTitle": "Support & Zusatzleistungen",
+    "standardSupport": "Standard Support",
+    "premiumSLA": "Premium SLA",
+    "additionalSupport": "Zusätzliche Support-Pakete",
+    "serverModels": "Server-Modelle",
+    "ctaTitle": "Bereit für sorgenfreies Hosting?",
+    "ctaText": "Jetzt anfragen & individuelle Lösung sichern:",
+    "contactButton": "Kontakt aufnehmen",
+    "learnMore": "Oder mehr erfahren:",
+    "contactPage": "Kontaktseite",
+    "emergencyNote": "24/7 Notfall-Support für unternehmenskritische Anwendungen (Details auf Anfrage)",
+    "table": {
+      "package": "Paket",
+      "price": "Preis",
+      "hours": "Inkl. Stunden",
+      "rate": "Stundensatz",
+      "name": "Name",
+      "vcpu": "vCPU",
+      "ram": "RAM",
+      "ssd": "SSD",
+      "traffic": "Traffic",
+      "cost": "Preis",
+      "server": "Server",
+      "response": "Reaktionszeit",
+      "availability": "Verfügbarkeit",
+      "priority": "Priorität",
+      "critical": "Kritische Störung",
+      "high": "Wichtige Funktion",
+      "reporting": "Reporting"
+    }
   }
 }

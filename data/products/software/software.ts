@@ -1,6 +1,9 @@
+// src/data/products/software.ts
 import { WrenchScrewdriverIcon } from "@heroicons/vue/24/outline";
+import type { SoftwareProduct } from "~/data/types/product";
 
-export const software = {
+// --- Deutsch ---
+const software_de: Omit<SoftwareProduct, "i18nKey"> = {
   title: "Rieger Software – Ihre individuelle Lösung",
   shortDescription:
     "Standardsoftware passt nicht immer – wir entwickeln Software, die sich Ihrem Unternehmen anpasst.",
@@ -12,7 +15,6 @@ export const software = {
   `,
   link: "/products/software",
   icon: WrenchScrewdriverIcon,
-  i18nKey: "products.software",
   notice: {
     title: "Warum auf individuelle Software setzen?",
     description: `
@@ -27,8 +29,6 @@ export const software = {
       - Kostenkontrolle: Keine unnötigen Funktionen, nur das, was Sie brauchen.
     `,
   },
-
-  // 🔧 Leistungsübersicht
   services: [
     {
       category: "Beratung und Konzeptentwicklung",
@@ -65,8 +65,6 @@ export const software = {
       ],
     },
   ],
-
-  // 💰 Kostenkalkulation
   pricing: {
     title: "Kosten und Kalkulation – absolut transparent",
     description: `
@@ -87,8 +85,6 @@ export const software = {
       Unser Versprechen: Sie zahlen nur für die Leistungen, die Sie wirklich brauchen – ohne versteckte Kosten.
     `,
   },
-
-  // 💳 Finanzierung
   financing: {
     title: "Flexible Finanzierung – sicher und planbar",
     description: `
@@ -101,8 +97,6 @@ export const software = {
     callToAction:
       "Sprechen Sie uns an – wir unterstützen Sie bei der Finanzierung!",
   },
-
-  // 💡 Vorteile
   advantages: [
     "Verstehen statt verkaufen: Ihre Bedürfnisse stehen im Mittelpunkt.",
     "Individuelle Lösungen: Keine Standardpakete – nur das, was Sie wirklich brauchen.",
@@ -110,8 +104,6 @@ export const software = {
     "Langfristige Partnerschaft: Wir begleiten Sie von der Idee bis zur Weiterentwicklung.",
     "Verlässlichkeit und Sicherheit: Qualität und Datenschutz haben oberste Priorität.",
   ],
-
-  // 📧 Kontaktinformationen
   contact: {
     title: "Lassen Sie uns gemeinsam starten!",
     description: `
@@ -123,3 +115,126 @@ export const software = {
     callToAction: "Ihre Herausforderung – unsere Lösung. Kontaktieren Sie uns!",
   },
 };
+
+// --- English ---
+const software_en: Omit<SoftwareProduct, "i18nKey"> = {
+  title: "Rieger Software – Your Individual Solution",
+  shortDescription:
+    "Standard software doesn’t always fit – we develop solutions tailored to your business.",
+  description: `
+    Whether lightweight desktop app, web platform or mobile application – we build software that fits your processes:
+    - Efficient and reliable
+    - Secure and privacy-compliant
+    - Future-proof and scalable
+  `,
+  link: "/products/software",
+  icon: WrenchScrewdriverIcon,
+  notice: {
+    title: "Why choose custom software?",
+    description: `
+      Every company has unique processes and requirements – that’s why standard solutions are often not suitable.
+      We know your software needs to adapt to your reality, not the other way around.
+    `,
+    details: `
+      With our custom-built software you gain:
+      - More efficiency: Your processes are mapped exactly.
+      - Maximum flexibility: Adaptable to your company’s growth.
+      - Future-proof: Scalable and integratable.
+      - Cost control: No unnecessary features, just what you need.
+    `,
+  },
+  services: [
+    {
+      category: "Consulting and Concept Development",
+      items: [
+        "Requirements analysis: We listen and understand your vision.",
+        "Personalized consulting: We create a concept that fits you perfectly.",
+        "Prototyping: Early visualization of your solution for tangible ideas.",
+      ],
+    },
+    {
+      category: "Development and Implementation",
+      items: [
+        "Desktop applications: Custom tools for your internal workflows.",
+        "Web-based platforms: Company portals with secure access.",
+        "Mobile applications: iOS, Android and cross-platform solutions.",
+        "API integration: Seamless connection with existing systems.",
+        "Security and privacy: GDPR-compliant architecture with user and rights management.",
+      ],
+    },
+    {
+      category: "Data Management and Reporting",
+      items: [
+        "Data analysis tools: Visualization of your business KPIs.",
+        "Reporting systems: Automated reports and data dashboards.",
+        "Cloud synchronization: Always access current data – securely and reliably.",
+      ],
+    },
+    {
+      category: "Further Development and Support",
+      items: [
+        "Maintenance and updates: Always up-to-date.",
+        "Scalability: Your software grows with your requirements.",
+        "Long-term support: Personal contact for changes and extensions.",
+      ],
+    },
+  ],
+  pricing: {
+    title: "Pricing & Calculation – Absolutely Transparent",
+    description: `
+      The cost of your custom software depends on several factors:
+      - Project complexity: How extensive is the solution?
+      - Features: What exactly do you need?
+      - System integration: Need to connect with existing systems?
+      - Design & usability: How user-friendly should it be?
+      - Long-term support: Do you want regular maintenance and development?
+    `,
+    details: `
+      How do we calculate?
+      1. Initial consultation: We collect your requirements and develop a first concept.
+      2. Transparent offer: Based on the requirements, we create a clear offer.
+      3. Implementation plan: You know exactly what to expect.
+      4. Flexibility: Adjustments and extensions are always possible.
+
+      Our promise: You only pay for what you really need – no hidden costs.
+    `,
+  },
+  financing: {
+    title: "Flexible Financing – Secure and Plannable",
+    description: `
+      We know larger investments must be planned. That’s why we offer custom financing:
+      - 30% deposit: Start without major upfront costs.
+      - Flexible installments: Terms from 6 to 60 months – adapted to your budget.
+      - Predictable costs: No hidden fees.
+      - Partnering with major banks: Your security comes first.
+    `,
+    callToAction: "Let’s talk – we’ll support you with financing options!",
+  },
+  advantages: [
+    "Understanding over selling: Your needs come first.",
+    "Individual solutions: No standard packages – just what you need.",
+    "Collaboration: We work closely together to ensure the solution fits.",
+    "Long-term partnership: From idea to further development.",
+    "Reliability and security: Quality and data protection are top priority.",
+  ],
+  contact: {
+    title: "Let’s start together!",
+    description: `
+      Talk to us about your ideas and requirements. Together we’ll create the optimal solution for your business.
+      Book a non-binding consultation now:
+    `,
+    email: "kontakt@rieger-systems.eu",
+    website: "https://www.rieger-systems.eu/products/software",
+    callToAction: "Your challenge – our solution. Contact us!",
+  },
+};
+
+export function getSoftwareProduct(lang: string = "de"): SoftwareProduct {
+  switch ((lang || "").substring(0, 2).toLowerCase()) {
+    case "en":
+      return { ...software_en, i18nKey: "products.software" };
+    case "de":
+    default:
+      return { ...software_de, i18nKey: "products.software" };
+  }
+}

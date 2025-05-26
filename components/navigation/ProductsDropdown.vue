@@ -3,24 +3,12 @@ import { ref, watch, computed } from "vue";
 import { Menu, MenuButton, MenuItems, MenuItem } from "@headlessui/vue";
 import { ChevronDownIcon } from "@heroicons/vue/20/solid";
 import { useRouter, useRoute } from "vue-router";
-import { products } from "~/data/products";
-import { useI18n } from "vue-i18n";
-import { useLocalePath } from "#i18n";
 
-const { t } = useI18n();
-const localePath = useLocalePath();
-
-const productItems = computed(() =>
-  Object.keys(products).map((key) => {
-    const product = products[key];
-    return {
-      label: t(product.i18nKey),
-      to: localePath(product.link),
-    };
-  })
-);
-
-const props = defineProps<{ label: string }>();
+// Props und Events
+const props = defineProps<{
+  label: string;
+  items: { key: string; label: string; to: string }[];
+}>();
 const emit = defineEmits<{ (e: "select"): void }>();
 
 const router = useRouter();
@@ -40,7 +28,7 @@ function isChildActive(item: { to: string }) {
 }
 
 const isParentActive = computed(() =>
-  productItems.value.some((item) => route.path.startsWith(item.to))
+  props.items.some((item) => route.path.startsWith(item.to))
 );
 
 function handleMenuClick(to: string, close: () => void) {
@@ -79,7 +67,7 @@ function handleMenuClick(to: string, close: () => void) {
         class="absolute left-0 mt-2 w-48 origin-top-left rounded-md bg-base-100 border border-base-300 shadow-lg ring-1 ring-black/5 focus:outline-none z-50"
       >
         <MenuItem
-          v-for="item in productItems"
+          v-for="item in props.items"
           :key="item.to"
           as="div"
           class="block px-4 py-2 text-sm text-left tracking-wide transition-colors"

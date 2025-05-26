@@ -1,6 +1,7 @@
 <template>
   <section class="bg-base-200 min-h-screen pt-16 pb-20">
     <div class="container mx-auto px-4 max-w-7xl">
+      <!-- Hero -->
       <div
         v-motion="{
           initial: { opacity: 0, y: 50, scale: 0.98 },
@@ -20,85 +21,25 @@
       >
         <div class="absolute inset-0 opacity-20 pointer-events-none"></div>
         <div class="relative z-10 text-center max-w-2xl mx-auto">
-          <SparklesIcon
-            v-motion="{
-              initial: { opacity: 0, scale: 0.8 },
-              enter: {
-                opacity: 1,
-                scale: 1,
-                transition: {
-                  type: 'spring',
-                  stiffness: 250,
-                  damping: 25,
-                  delay: 200,
-                },
-              },
-            }"
-            class="w-16 h-16 mx-auto mb-4 animate-pulse"
-          />
-          <h1
-            v-motion="{
-              initial: { opacity: 0, y: 20 },
-              enter: {
-                opacity: 1,
-                y: 0,
-                transition: {
-                  type: 'spring',
-                  stiffness: 200,
-                  damping: 25,
-                  delay: 300,
-                },
-              },
-            }"
-            class="text-5xl text-primary font-bold mb-4 drop-shadow"
-          >
-            A.M.A.R.A. – KI mit Haltung
+          <SparklesIcon class="w-16 h-16 mx-auto mb-4 animate-pulse" />
+          <h1 class="text-5xl text-primary font-bold mb-4 drop-shadow">
+            {{ t("ai.hero.title") }}
           </h1>
-          <p
-            v-motion="{
-              initial: { opacity: 0, y: 20 },
-              enter: {
-                opacity: 1,
-                y: 0,
-                transition: {
-                  type: 'spring',
-                  stiffness: 180,
-                  damping: 25,
-                  delay: 400,
-                },
-              },
-            }"
-            class="text-xl mb-6"
-          >
-            Entwickelt für Menschen, nicht für Märkte.<br />
-            KI, die Verantwortung trägt. Für Sie, für Europa, für die Zukunft.
+          <p class="text-xl mb-6">
+            {{ t("ai.hero.subtitle") }}
           </p>
-          <div
-            v-motion="{
-              initial: { opacity: 0, y: 20 },
-              enter: {
-                opacity: 1,
-                y: 0,
-                transition: {
-                  type: 'spring',
-                  stiffness: 150,
-                  damping: 20,
-                  delay: 500,
-                },
-              },
-            }"
-            class="flex justify-center gap-4 mb-4 flex-wrap"
-          >
-            <a href="#demo" class="btn btn-secondary btn-lg"
-              >Live-Demo ausprobieren</a
-            >
-            <a href="#beratung" class="btn btn-outline btn-lg"
-              >Jetzt beraten lassen</a
-            >
+          <div class="flex justify-center gap-4 mb-4 flex-wrap">
+            <a href="#demo" class="btn btn-secondary btn-lg">
+              {{ t("ai.hero.demo") }}
+            </a>
+            <a href="#beratung" class="btn btn-outline btn-lg">
+              {{ t("ai.hero.consult") }}
+            </a>
           </div>
         </div>
       </div>
 
+      <!-- Warum A.M.A.R.A. -->
       <div
         v-motion="{
           initial: { opacity: 0, y: 30 },
@@ -115,19 +56,14 @@
         }"
         class="prose prose-invert mx-auto mb-14 text-center"
       >
-        <h2>Warum A.M.A.R.A.?</h2>
+        <h2>{{ t("ai.why.headline") }}</h2>
         <p>
-          <b
-            >Künstliche Intelligenz darf nicht nur mächtig, sondern muss auch
-            menschlich und nachvollziehbar sein.</b
-          ><br />
-          Unsere KI begleitet, analysiert, empfiehlt – aber sie ersetzt und
-          manipuliert niemals. A.M.A.R.A. wurde geschaffen, um den Menschen zu
-          stärken und Technologie wieder ins Zentrum der europäischen Werte zu
-          rücken.
+          <strong>{{ t("ai.why.text1") }}</strong>
         </p>
+        <p>{{ t("ai.why.text2") }}</p>
       </div>
 
+      <!-- Vorteile -->
       <div class="mb-14">
         <h2
           v-motion="{
@@ -145,11 +81,11 @@
           }"
           class="text-2xl font-semibold text-primary mb-6 text-center"
         >
-          Ihre Vorteile mit A.M.A.R.A.
+          {{ t("ai.advantagesTitle") }}
         </h2>
         <ul class="grid md:grid-cols-2 gap-4">
           <li
-            v-for="(adv, idx) in advantages"
+            v-for="(adv, idx) in t('ai.advantages')"
             :key="idx"
             v-motion="{
               initial: { opacity: 0, x: -30 },
@@ -160,7 +96,7 @@
                   type: 'spring',
                   stiffness: 150,
                   damping: 20,
-                  delay: 300 + idx * 80, // Staggered from left
+                  delay: 300 + idx * 80,
                 },
               },
             }"
@@ -174,7 +110,8 @@
         </ul>
       </div>
 
-      <div class="">
+      <!-- Use Cases -->
+      <div>
         <h2
           v-motion="{
             initial: { opacity: 0, y: 20 },
@@ -191,11 +128,11 @@
           }"
           class="text-2xl font-semibold text-primary mb-6 text-center"
         >
-          Was möchten Sie erreichen?
+          {{ t("ai.goalsTitle") }}
         </h2>
         <div class="grid md:grid-cols-2 gap-6">
           <div
-            v-for="(usecase, idx) in useCases"
+            v-for="(usecase, idx) in t('ai.useCases')"
             :key="idx"
             v-motion="{
               initial: { opacity: 0, y: 30 },
@@ -206,7 +143,7 @@
                   type: 'spring',
                   stiffness: 150,
                   damping: 20,
-                  delay: 200 + idx * 100, // Staggered from bottom
+                  delay: 200 + idx * 100,
                 },
               },
             }"
@@ -214,19 +151,20 @@
             @click="activeUseCase = idx"
           >
             <div class="card-body">
-              <h3 class="card-title text-primary">{{ usecase.title }}</h3>
-              <p class="text-base-content/70">{{ usecase.desc }}</p>
+              <h3 class="card-title text-primary">{{ usecase }}</h3>
+              <p class="text-base-content/70">{{ usecase }}</p>
               <div
                 v-if="activeUseCase === idx"
                 class="mt-2 text-sm text-success"
               >
-                <b>Mehr dazu:</b> {{ usecase.details }}
+                <b>Mehr dazu:</b> {{ usecase }}
               </div>
             </div>
           </div>
         </div>
       </div>
 
+      <!-- Demo -->
       <div id="demo" class="pt-20 mb-16">
         <h2
           v-motion="{
@@ -244,7 +182,7 @@
           }"
           class="text-2xl font-semibold text-primary mb-6 text-center"
         >
-          Live-Demo: Stimmungsanalyse
+          {{ t("ai.liveDemo.title") }}
         </h2>
         <SentimentDemo
           v-motion="{
@@ -263,6 +201,7 @@
         />
       </div>
 
+      <!-- Ethik -->
       <div class="mb-14">
         <h2
           v-motion="{
@@ -280,11 +219,11 @@
           }"
           class="text-2xl font-semibold text-primary mb-6 text-center"
         >
-          Ethische Prinzipien
+          {{ t("ai.ethicsTitle") }}
         </h2>
         <div class="flex flex-wrap justify-center gap-6">
           <div
-            v-for="(eth, idx) in ethics"
+            v-for="(eth, idx) in t('ai.ethics')"
             :key="idx"
             v-motion="{
               initial: { opacity: 0, scale: 0.8 },
@@ -295,7 +234,7 @@
                   type: 'spring',
                   stiffness: 150,
                   damping: 20,
-                  delay: 200 + idx * 70, // Staggered scale/fade
+                  delay: 200 + idx * 70,
                 },
               },
             }"
@@ -307,6 +246,7 @@
         </div>
       </div>
 
+      <!-- Technische Basis -->
       <div class="mb-14">
         <h2
           v-motion="{
@@ -324,7 +264,7 @@
           }"
           class="text-2xl font-semibold text-primary mb-6 text-center"
         >
-          Technische Basis & Architektur
+          {{ t("ai.techTitle") }}
         </h2>
         <div class="grid md:grid-cols-3 gap-6">
           <div
@@ -339,7 +279,7 @@
                   type: 'spring',
                   stiffness: 150,
                   damping: 20,
-                  delay: 200 + idx * 80, // Staggered from bottom
+                  delay: 200 + idx * 80,
                 },
               },
             }"
@@ -356,6 +296,7 @@
         </div>
       </div>
 
+      <!-- Stimmen / Testimonials -->
       <div class="mb-14 text-center">
         <h2
           v-motion="{
@@ -373,7 +314,7 @@
           }"
           class="text-2xl font-semibold text-primary mb-6"
         >
-          Stimmen aus der Praxis
+          {{ t("ai.testimonialsTitle") }}
         </h2>
         <div
           v-motion="{
@@ -396,10 +337,7 @@
           >
             <ChatBubbleLeftEllipsisIcon class="w-10 h-10 text-secondary mb-4" />
             <p class="italic text-lg mb-2 leading-relaxed">
-              Noch keine Erfahrungsberichte vorhanden.<br />
-              <span class="text-base-content/60">
-                Wir freuen uns auf Ihr Feedback!
-              </span>
+              {{ t("ai.noTestimonial") }}
             </p>
             <div class="mt-4">
               <a
@@ -427,11 +365,11 @@
           }"
           class="mt-6 text-base-content/60 text-sm"
         >
-          Sie sind einer der ersten Tester. Ihre Meinung hilft uns, besser zu
-          werden!
+          {{ t("ai.firstTester") }}
         </div>
       </div>
 
+      <!-- FAQ -->
       <div class="mb-16 max-w-2xl mx-auto">
         <h2
           v-motion="{
@@ -449,7 +387,7 @@
           }"
           class="text-2xl font-semibold text-primary mb-6 text-center"
         >
-          Häufige Fragen
+          {{ t("ai.faqTitle") }}
         </h2>
         <div
           class="collapse bg-base-100 mb-2"
@@ -464,7 +402,7 @@
                 type: 'spring',
                 stiffness: 150,
                 damping: 20,
-                delay: 200 + idx * 80, // Staggered collapse items
+                delay: 200 + idx * 80,
               },
             },
           }"
@@ -479,6 +417,7 @@
         </div>
       </div>
 
+      <!-- CTA -->
       <div
         id="beratung"
         v-motion="{
@@ -497,23 +436,22 @@
         class="bg-primary text-primary-content rounded-xl p-8 text-center mt-16 shadow-lg"
       >
         <h3 class="text-2xl font-bold mb-2">
-          Bereit für verantwortungsvolle KI?
+          {{ t("ai.consultCtaTitle") }}
         </h3>
         <p class="mb-4">
-          Jetzt Demo buchen, Whitepaper anfordern oder persönlich beraten
-          lassen:
+          {{ t("ai.consultCtaText") }}
         </p>
         <div class="flex flex-wrap justify-center gap-4">
           <a
             href="mailto:kontakt@rieger-systems.eu?subject=Beratung A.M.A.R.A."
             class="btn btn-secondary btn-lg"
-            >Beratung anfragen</a
+            >{{ t("ai.consult") }}</a
           >
           <a
             href="/files/amara-whitepaper.pdf"
             class="btn btn-outline btn-lg"
             download
-            >Whitepaper downloaden</a
+            >{{ t("ai.whitepaper") }}</a
           >
         </div>
       </div>
@@ -523,6 +461,7 @@
 
 <script setup lang="ts">
 import { ref } from "vue";
+import { useI18n } from "vue-i18n";
 import {
   SparklesIcon,
   CheckCircleIcon,
@@ -534,157 +473,14 @@ import {
 } from "@heroicons/vue/24/solid";
 import SentimentDemo from "~/components/sections/products/SentimentDemo.vue";
 
-const advantages = [
-  "Keine Black-Box – Entscheidungen nachvollziehbar",
-  "DSGVO-konform, keine Datenübertragung in Drittländer",
-  "Modular & flexibel für individuelle Use Cases",
-  "Pseudonymisierung & Datenschutz garantiert",
-  "Integration via API, gRPC, REST",
-  "Betreut & entwickelt in Europa",
-];
+// i18n-Setup
+const { t } = useI18n();
 
-const useCases = [
-  {
-    title: "Textanalyse (NLP)",
-    desc: "Stimmungs-, Themen- und Sentiment-Analyse für Ihre Texte.",
-    details:
-      "Unsere KI erkennt Themen, Emotionen und Stimmungen in beliebigen Texten, egal ob Feedback, Supportanfragen oder medizinische Dokumentation.",
-  },
-  {
-    title: "Spracherkennung & Transkription",
-    desc: "Automatische Transkription von Sprache in Text.",
-    details:
-      "Ideal für Arztbriefe, Meetings, Dokumentation oder Barrierefreiheit. DSGVO-konform, keine US-Cloud.",
-  },
-  {
-    title: "Individuelle KI-Workflows",
-    desc: "Spezielle Lösungen für Unternehmen, Forschung & Medizin.",
-    details:
-      "Von Chatbots bis Workflow-Automatisierung. Auf Wunsch auch komplett On-Premise.",
-  },
-  {
-    title: "Ethikberatung für KI-Projekte",
-    desc: "Unterstützung bei der Einführung und Auditierung von KI-Systemen.",
-    details:
-      "Workshops, Gutachten und Reviews – damit Ihre KI fair, transparent und rechtssicher bleibt.",
-  },
-];
-
+// UseCases und Advantages kommen direkt aus i18n:
 const activeUseCase = ref(-1);
 
-const demoText = ref("");
-const demoResult = ref("");
-const demoLoading = ref(false);
-function normalizeText(text: string) {
-  // Entfernt Sonderzeichen/Umlaute, nur Wortstämme
-  return text
-    .toLowerCase()
-    .replace(/[ä]/g, "ae")
-    .replace(/[ö]/g, "oe")
-    .replace(/[ü]/g, "ue")
-    .replace(/[ß]/g, "ss")
-    .replace(/[^a-zA-Z0-9\s]/g, " ");
-}
-
-const positiveWords = [
-  "danke",
-  "super",
-  "gluecklich",
-  "glücklich",
-  "zufrieden",
-  "toll",
-  "gut",
-  "prima",
-  "liebe",
-  "stark",
-  "positiv",
-  "begeistert",
-  "genial",
-  "empfohlen",
-  "schoen",
-  "schön",
-  "hilfreich",
-  "freundlich",
-  "top",
-  "empfehlen",
-  "exzellent",
-];
-
-const negativeWords = [
-  "schlecht",
-  "problem",
-  "traurig",
-  "unzufrieden",
-  "stress",
-  "wut",
-  "boese",
-  "böse",
-  "haesslich",
-  "hässlich",
-  "negativ",
-  "kritik",
-  "enttäuscht",
-  "enttaeuscht",
-  "mist",
-  "enttaeuschend",
-  "fehler",
-  "genervt",
-  "schrecklich",
-  "alarm",
-  "warnung",
-];
-
-function analyzeDemo() {
-  demoLoading.value = true;
-  setTimeout(() => {
-    const text = demoText.value;
-    if (!text.trim()) {
-      demoResult.value = "Bitte Text eingeben.";
-      demoLoading.value = false;
-      return;
-    }
-    const norm = normalizeText(text);
-
-    let posScore = 0,
-      negScore = 0;
-    positiveWords.forEach((word) => {
-      if (norm.includes(word)) posScore++;
-    });
-    negativeWords.forEach((word) => {
-      if (norm.includes(word)) negScore++;
-    });
-
-    let result, emoji, score;
-    if (posScore === 0 && negScore === 0) {
-      result = "Neutral 🤔";
-      score = 0;
-    } else if (posScore > 0 && negScore === 0) {
-      emoji = posScore > 2 ? "😃" : "🙂";
-      result = `Positiv ${emoji}`;
-      score = posScore;
-    } else if (negScore > 0 && posScore === 0) {
-      emoji = negScore > 2 ? "😡" : "🙁";
-      result = `Negativ ${emoji}`;
-      score = -negScore;
-    } else {
-      result = "Unsicher/zwiespältig 😐";
-      score = posScore - negScore;
-    }
-    // Optionale Score-Anzeige
-    demoResult.value = `${result} ${score !== 0 ? `(Score: ${score})` : ""}`;
-    demoLoading.value = false;
-  }, 500);
-}
-
-const ethics = [
-  "Kein US-Hosting, keine Black-Box-Modelle",
-  "Transparente, auditierbare Prozesse",
-  "Entwickelt & betreut in Europa",
-  "Entscheidungen jederzeit nachvollziehbar",
-  "100 % DSGVO-konform",
-  "Technik, die Menschen stärkt – nicht ersetzt",
-];
-
+// Technischer Stack kann weiterhin als JS-Objekt gepflegt werden,
+// da Icons nicht im i18n stehen sollten (sondern hier gemappt)
 const techStack = [
   {
     icon: Cog6ToothIcon,
@@ -718,25 +514,7 @@ const techStack = [
   },
 ];
 
-const testimonials = [
-  {
-    text: "A.M.A.R.A. hat uns erstmals ermöglicht, KI wirklich nachvollziehbar und sicher einzusetzen – ein echtes Vorzeigeprojekt!",
-    name: "Dr. Anna Weber",
-    role: "Leitung Digitalisierung, Klinikverbund",
-  },
-  {
-    text: "Mit der Ethikberatung von Rieger Systems konnten wir unser Forschungsprojekt EU-konform und transparent gestalten.",
-    name: "Prof. Markus Eder",
-    role: "Forschung KI & Ethik, Universität",
-  },
-  {
-    text: "Die Integration war überraschend schnell – und unser Support wird endlich entlastet!",
-    name: "J. Mayer",
-    role: "IT-Leitung, Mittelständisches Unternehmen",
-  },
-];
-const activeTestimonial = ref(0);
-
+// Beispiel für FAQ-Mehrsprachigkeit
 const faqs = [
   {
     q: "Wie unterscheidet sich A.M.A.R.A. von anderen KI-Lösungen?",
@@ -758,7 +536,6 @@ const faqs = [
 </script>
 
 <style scoped>
-/* Nur @keyframes für 'pulse' behalten, da dies eine spezifische CSS-Animation ist */
 @keyframes pulse {
   0%,
   100% {
@@ -768,7 +545,6 @@ const faqs = [
     opacity: 0.8;
   }
 }
-
 .animate-pulse {
   animation: pulse 1s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }

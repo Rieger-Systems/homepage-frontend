@@ -348,8 +348,8 @@
 </template>
 
 <script setup>
-import { website } from "~/data/products/website/website.ts";
-import { websiteModules } from "~/data/products/website/website-modules.ts";
+import { getWebsiteProduct } from "~/data/products/website/website.ts";
+import { getWebsiteModules } from "~/data/products/website/website-modules.ts";
 import {
   CheckIcon,
   ChevronDownIcon,
@@ -357,8 +357,13 @@ import {
 } from "@heroicons/vue/24/outline";
 import { ref } from "vue";
 import NetPriceNote from "~/components/sections/products/NetPriceNote.vue";
+import { useI18n } from "vue-i18n";
+const { locale } = useI18n();
 
 const expandedModules = ref([]);
+
+const website = getWebsiteProduct(locale.value);
+const websiteModules = getWebsiteModules(locale.value);
 
 // Toggle für Detailansicht
 function toggleDetails(moduleId) {

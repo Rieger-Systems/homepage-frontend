@@ -1,14 +1,17 @@
-import { aisystems } from "./aisystems";
-import { mail } from "./mail";
-import { services } from "./services";
-import { software } from "./software/software";
-import { website } from "./website/website";
+// /data/products/index.ts
+import { getAISystemsProduct } from "./aisystems";
+import { getMailProduct } from "./mail";
+import { getServicesProduct } from "./services";
+import { getSoftwareProduct } from "./software/software";
+import { getWebsiteProduct } from "./website/website";
 import type { Product } from "~/data/types/product";
 
-export const products: Record<string, Product> = {
-  mail,
-  services,
-  software,
-  website,
-  aisystems,
-};
+export function getProducts(locale: string): Record<string, Product> {
+  return {
+    mail: getMailProduct(locale),
+    services: getServicesProduct(locale),
+    software: getSoftwareProduct(locale),
+    website: getWebsiteProduct(locale),
+    aisystems: getAISystemsProduct(locale),
+  };
+}
