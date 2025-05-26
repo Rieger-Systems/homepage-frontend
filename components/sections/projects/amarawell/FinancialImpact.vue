@@ -68,14 +68,14 @@ const chartOptions = computed(
         legend: {
           position: "top" as const, // <-- das behebt das Problem!
           labels: {
-            color: "hsl(var(--bc))",
+            color: "white",
             font: { size: 14, weight: "bold" },
           },
         },
         title: {
           display: true,
           text: t(`${fiKey}.title`),
-          color: "hsl(var(--bc))",
+          color: "white",
           font: {
             size: 22,
             weight: "bold",
@@ -111,11 +111,11 @@ const chartOptions = computed(
           title: {
             display: true,
             text: t(`${fiKey}.axes.y`),
-            color: "hsl(var(--bc) / 0.7)",
+            color: "white",
             font: { size: 15, weight: "bold", family: "'Inter', 'sans-serif'" },
           },
           ticks: {
-            color: "hsl(var(--bc) / 0.6)",
+            color: "white",
             font: { size: 13 },
             callback: (value: number) => value + " €",
             stepSize: 500,
@@ -126,11 +126,11 @@ const chartOptions = computed(
           title: {
             display: true,
             text: t(`${fiKey}.axes.x`),
-            color: "hsl(var(--bc) / 0.7)",
+            color: "white",
             font: { size: 14, weight: "bold", family: "'Inter', 'sans-serif'" },
           },
           ticks: {
-            color: "hsl(var(--bc) / 0.9)",
+            color: "white",
             font: { size: 14, weight: "bold" },
           },
           grid: { display: false },

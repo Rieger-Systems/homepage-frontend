@@ -448,6 +448,10 @@
       "section6Content": "Wir suchen Unternehmen aus unterschiedlichen Branchen, die AmaraCall in einer Pilotphase testen und gemeinsam mit uns weiterentwickeln möchten. Durch die enge Zusammenarbeit mit Pilotpartnern wollen wir die Anwendung praxisnah optimieren und branchenübergreifend nutzbar machen."
     },
     "amarawell": {
+      "statistics": {
+        "headline": "Mental Health: Zahlen, die bewegen",
+        "intro": "Wie viele Menschen sind betroffen? Welche Kosten entstehen? Zwei Grafiken, die verdeutlichen, wie groß die gesellschaftliche Bedeutung von psychischer Gesundheit ist."
+      },
       "id": "amarawell",
       "slug": "amarawell",
       "image": "/images/projects/amarawell.png",
@@ -493,7 +497,7 @@
         "explanation": "Die Grafik zeigt, wie viele Menschen jährlich (12-Monats-Prävalenz) in Deutschland, Österreich, der Schweiz, der gesamten EU und weltweit mindestens einmal an einer psychischen Erkrankung leiden – sowohl in Millionen als auch prozentual zur Bevölkerung.",
         "noteLabel": "Hinweis:",
         "note": "Alle Zahlen sind Näherungswerte und basieren auf offiziellen Prävalenzschätzungen und aktuellen Bevölkerungszahlen. Unterschiede in Diagnosemethoden und Erhebungsjahr können leichte Abweichungen verursachen.",
-        "sourcesLabel": "Quellen:",
+        "sourcesLabel": "Quellen",
         "sources": {
           "dgppn": "DGPPN, 2022 (Deutschland)",
           "oecd": "OECD/European Observatory, 2021 (Österreich)",
@@ -532,7 +536,7 @@
           "x": "Region / Land"
         },
         "noteLabel": "Hinweis: Die Kosten sind Durchschnittswerte pro Kopf aller Einwohner inklusive gesunder Personen. Die individuellen Kosten Betroffener sind deutlich höher.",
-        "sourcesLabel": "Quellen:"
+        "sourcesLabel": "Quellen: "
       }
     },
     "index": {
