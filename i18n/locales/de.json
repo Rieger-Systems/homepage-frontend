@@ -484,6 +484,33 @@
 
       "section8Title": "Partnerschaften",
       "section8Content": "Wir suchen Therapeuten, Kliniken und Forschungseinrichtungen, die AmaraWell in einer Pilotphase testen und gemeinsam mit uns weiterentwickeln möchten. Durch die Zusammenarbeit mit Fachpersonal wollen wir sicherstellen, dass AmaraWell praxisnah und an den realen Bedürfnissen orientiert gestaltet ist.",
+      "prevalence": {
+        "title": "Jährlich Betroffene (12-Monats-Prävalenz) – DACH, EU & weltweit",
+        "labels": ["Deutschland", "Österreich", "Schweiz", "EU", "Weltweit"],
+        "unit": "Mio.",
+        "unitPercent": "%",
+        "explanationLabel": "Erklärung:",
+        "explanation": "Die Grafik zeigt, wie viele Menschen jährlich (12-Monats-Prävalenz) in Deutschland, Österreich, der Schweiz, der gesamten EU und weltweit mindestens einmal an einer psychischen Erkrankung leiden – sowohl in Millionen als auch prozentual zur Bevölkerung.",
+        "noteLabel": "Hinweis:",
+        "note": "Alle Zahlen sind Näherungswerte und basieren auf offiziellen Prävalenzschätzungen und aktuellen Bevölkerungszahlen. Unterschiede in Diagnosemethoden und Erhebungsjahr können leichte Abweichungen verursachen.",
+        "sourcesLabel": "Quellen:",
+        "sources": {
+          "dgppn": "DGPPN, 2022 (Deutschland)",
+          "oecd": "OECD/European Observatory, 2021 (Österreich)",
+          "obsan": "Obsan Bulletin 2/2017 (Schweiz)",
+          "who": "WHO, 2022 (EU & Welt)",
+          "eurostat": "Eurostat, 2022 (Bevölkerung EU)",
+          "worldbank": "World Bank, 2022 (Weltbevölkerung)"
+        },
+        "legend": {
+          "percent": "12-Monats-Prävalenz (%)"
+        },
+        "axes": {
+          "y": "Betroffene pro Jahr (% der Bevölkerung)",
+          "x": "Region / Land"
+        },
+        "worldAvgLabel": "Weltweiter Durchschnitt"
+      },
       "financialImpact": {
         "title": "Jährliche Kosten psychischer Erkrankungen pro Person",
         "labels": ["Deutschland", "Österreich", "Schweiz", "EU", "Weltweit"],

@@ -484,6 +484,33 @@
 
       "section8Title": "Partnerships",
       "section8Content": "We are looking for therapists, clinics, and research institutions to test AmaraWell in a pilot phase and develop it further together. Working with professionals ensures that AmaraWell is designed in a way that is practical and aligned with real needs.",
+      "prevalence": {
+        "title": "Affected per year (12-month prevalence) – DACH, EU & worldwide",
+        "labels": ["Germany", "Austria", "Switzerland", "EU", "Worldwide"],
+        "unit": "Mio.",
+        "unitPercent": "%",
+        "explanationLabel": "Explanation:",
+        "explanation": "This chart shows how many people per year (12-month prevalence) in Germany, Austria, Switzerland, the entire EU, and worldwide experience at least one mental health disorder – both in millions and as a percentage of the population.",
+        "noteLabel": "Note:",
+        "note": "All numbers are estimates based on official prevalence data and current population figures. Differences in diagnostic methods and survey years may cause slight deviations.",
+        "sourcesLabel": "Sources:",
+        "sources": {
+          "dgppn": "DGPPN, 2022 (Germany)",
+          "oecd": "OECD/European Observatory, 2021 (Austria)",
+          "obsan": "Obsan Bulletin 2/2017 (Switzerland)",
+          "who": "WHO, 2022 (EU & World)",
+          "eurostat": "Eurostat, 2022 (EU population)",
+          "worldbank": "World Bank, 2022 (World population)"
+        },
+        "legend": {
+          "percent": "12-month prevalence (%)"
+        },
+        "axes": {
+          "y": "Affected per year (% of population)",
+          "x": "Region / Country"
+        },
+        "worldAvgLabel": "Global average"
+      },
       "financialImpact": {
         "title": "Annual cost of mental illness per person",
         "labels": ["Germany", "Austria", "Switzerland", "EU", "Worldwide"],
