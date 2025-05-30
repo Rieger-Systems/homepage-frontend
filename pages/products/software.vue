@@ -21,7 +21,7 @@
               },
             },
           }"
-          class="text-4xl lg:text-5xl font-extrabold text-primary mb-3"
+          class="text-3xl lg:text-4xl font-extrabold text-primary mb-3"
         >
           {{ software.title }}
         </h1>
@@ -114,7 +114,7 @@
             },
           }"
         >
-          Was wir für Sie tun können
+          {{ t("services.whatWeDo") }}
         </h2>
         <div class="space-y-1">
           <div
@@ -273,7 +273,7 @@
               class="w-7 h-7 text-primary mb-2"
               aria-hidden="true"
             />
-            Warum Sie sich für Rieger Software entscheiden sollten
+            {{ t("services.whyus") }}
           </h2>
           <ul class="space-y-2 mt-3">
             <li
@@ -324,7 +324,7 @@ import { getSoftwareProduct } from "~/data/products/software/software";
 import { useI18n } from "vue-i18n";
 import CallToAction from "~/components/sections/products/CallToAction.vue";
 
-const { locale } = useI18n();
+const { t, locale } = useI18n();
 
 const software = getSoftwareProduct(locale.value);
 </script>

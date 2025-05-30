@@ -151,19 +151,19 @@
                 <td :colspan="1 + website.packages.length" class="p-6">
                   <div class="mb-2">
                     <h6 class="font-semibold text-sm opacity-80">
-                      Detaillierte Beschreibung:
+                      {{ t("services.detailedDescription") }}:
                     </h6>
                     <p class="text-sm opacity-80">
                       {{ mod.detailedDescription }}
                     </p>
                     <span class="ml-2 text-success font-semibold text-sm">
-                      (Einzelpreis: {{ mod.price }})
+                      ({{ t("services.singlePrice") }}: {{ mod.price }})
                     </span>
                   </div>
 
                   <div>
                     <h6 class="font-semibold text-sm opacity-80">
-                      Zielgruppen:
+                      {{ t("services.targetGroups") }}:
                     </h6>
                     <div class="flex flex-wrap gap-1 mt-1">
                       <span
@@ -287,7 +287,7 @@
         class="mt-8 bg-base-100 rounded-lg p-4 shadow-md"
       >
         <h2 class="text-xl font-bold text-primary mb-2">
-          Finanzierungsmöglichkeiten
+          {{ t("services.financing") }}
         </h2>
         <p class="opacity-70">{{ website.financing.description }}</p>
         <ul class="list-disc list-inside mt-2 text-sm opacity-70">
@@ -331,7 +331,7 @@ import NetPriceNote from "~/components/sections/products/NetPriceNote.vue";
 import { useI18n } from "vue-i18n";
 import CallToAction from "~/components/sections/products/CallToAction.vue";
 
-const { locale } = useI18n();
+const { t, locale } = useI18n();
 
 const expandedModules = ref([]);
 
