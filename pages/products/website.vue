@@ -312,36 +312,7 @@
           </li>
         </ul>
       </div>
-
-      <div
-        v-motion="{
-          initial: { opacity: 0, y: 20 },
-          visibleOnce: {
-            opacity: 1,
-            y: 0,
-            transition: {
-              type: 'spring',
-              stiffness: 100,
-              damping: 15,
-              delay: 100,
-            },
-          },
-        }"
-        class="mt-12 py-6 text-center opacity-70"
-      >
-        Möchten Sie mehr erfahren?
-        <a
-          href="/contact"
-          class="font-semibold text-primary hover:underline ml-1"
-          >Kontaktieren Sie uns</a
-        >
-        oder senden Sie eine E-Mail an
-        <a
-          href="mailto:kontakt@rieger-systems.eu"
-          class="font-semibold text-primary hover:underline ml-1"
-          >kontakt@rieger-systems.eu</a
-        >.
-      </div>
+      <CallToAction />
     </div>
     <NetPriceNote />
   </section>
@@ -358,6 +329,8 @@ import {
 import { ref } from "vue";
 import NetPriceNote from "~/components/sections/products/NetPriceNote.vue";
 import { useI18n } from "vue-i18n";
+import CallToAction from "~/components/sections/products/CallToAction.vue";
+
 const { locale } = useI18n();
 
 const expandedModules = ref([]);

@@ -70,7 +70,7 @@ const mail_de = {
     ],
   },
   addons: {
-    title: "🛠️ RiegerMail Zusatzleistungen & Erweiterungen",
+    title: "RiegerMail Zusatzleistungen & Erweiterungen",
     oneTimeServices: [
       {
         name: "DNS-Setup für Ihre Domain",
@@ -216,7 +216,7 @@ const mail_en = {
     ],
   },
   addons: {
-    title: "🛠️ RiegerMail Add-Ons & Extensions",
+    title: "RiegerMail Add-Ons & Extensions",
     oneTimeServices: [
       {
         name: "DNS setup for your domain",

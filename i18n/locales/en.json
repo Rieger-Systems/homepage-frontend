@@ -601,11 +601,10 @@
     "premiumSLA": "Premium SLA",
     "additionalSupport": "Additional Support Packages",
     "serverModels": "Server Models",
-    "ctaTitle": "Ready for worry-free hosting?",
+    "ctaTitle": "Relief starts here.",
     "ctaText": "Request now & secure your individual solution:",
     "contactButton": "Contact us",
-    "learnMore": "Or learn more:",
-    "contactPage": "Contact page",
+    "notice": "We'll respond within 24 hours.",
     "emergencyNote": "24/7 emergency support for business-critical applications (details on request)",
     "table": {
       "package": "Package",

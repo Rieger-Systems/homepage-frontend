@@ -418,43 +418,7 @@
       </div>
 
       <!-- CTA -->
-      <div
-        id="beratung"
-        v-motion="{
-          initial: { opacity: 0, y: 40 },
-          visibleOnce: {
-            opacity: 1,
-            y: 0,
-            transition: {
-              type: 'spring',
-              stiffness: 120,
-              damping: 18,
-              delay: 100,
-            },
-          },
-        }"
-        class="bg-primary text-primary-content rounded-xl p-8 text-center mt-16 shadow-lg"
-      >
-        <h3 class="text-2xl font-bold mb-2">
-          {{ t("ai.consultCtaTitle") }}
-        </h3>
-        <p class="mb-4">
-          {{ t("ai.consultCtaText") }}
-        </p>
-        <div class="flex flex-wrap justify-center gap-4">
-          <a
-            href="mailto:kontakt@rieger-systems.eu?subject=Beratung A.M.A.R.A."
-            class="btn btn-secondary btn-lg"
-            >{{ t("ai.consult") }}</a
-          >
-          <a
-            href="/files/amara-whitepaper.pdf"
-            class="btn btn-outline btn-lg"
-            download
-            >{{ t("ai.whitepaper") }}</a
-          >
-        </div>
-      </div>
+      <CallToAction />
     </div>
   </section>
 </template>
@@ -472,6 +436,7 @@ import {
   ChatBubbleLeftEllipsisIcon,
 } from "@heroicons/vue/24/solid";
 import SentimentDemo from "~/components/sections/products/SentimentDemo.vue";
+import CallToAction from "~/components/sections/products/CallToAction.vue";
 
 // i18n-Setup
 const { t } = useI18n();

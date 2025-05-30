@@ -304,67 +304,7 @@
         </div>
       </div>
 
-      <div
-        class="text-center py-10 border-t border-base-300"
-        id="kontakt"
-        v-motion="{
-          initial: { opacity: 0, y: 20 },
-          visibleOnce: {
-            opacity: 1,
-            y: 0,
-            transition: {
-              type: 'spring',
-              stiffness: 100,
-              damping: 15,
-              delay: 100,
-            },
-          },
-        }"
-      >
-        <h2 class="text-2xl font-bold text-primary mb-2">
-          {{ software.contact.title }}
-        </h2>
-        <p class="text-base-content/70 mb-5 max-w-lg mx-auto">
-          {{ software.contact.description }}
-        </p>
-        <NuxtLink
-          href="/contact"
-          class="btn btn-primary btn-wide mb-3"
-          v-motion="{
-            initial: { opacity: 0, scale: 0.9 },
-            visibleOnce: {
-              opacity: 1,
-              scale: 1,
-              transition: {
-                type: 'spring',
-                stiffness: 120,
-                damping: 18,
-                delay: 200,
-              },
-            },
-          }"
-        >
-          Zum Kontaktformular
-        </NuxtLink>
-        <p
-          class="text-xl font-semibold text-success"
-          v-motion="{
-            initial: { opacity: 0, y: 10 },
-            visibleOnce: {
-              opacity: 1,
-              y: 0,
-              transition: {
-                type: 'spring',
-                stiffness: 100,
-                damping: 15,
-                delay: 300,
-              },
-            },
-          }"
-        >
-          {{ software.contact.callToAction }}
-        </p>
-      </div>
+      <CallToAction />
     </div>
     <NetPriceNote />
   </section>
@@ -382,6 +322,8 @@ import {
 import NetPriceNote from "~/components/sections/products/NetPriceNote.vue";
 import { getSoftwareProduct } from "~/data/products/software/software";
 import { useI18n } from "vue-i18n";
+import CallToAction from "~/components/sections/products/CallToAction.vue";
+
 const { locale } = useI18n();
 
 const software = getSoftwareProduct(locale.value);

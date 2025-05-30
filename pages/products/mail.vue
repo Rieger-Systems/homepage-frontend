@@ -129,23 +129,7 @@
       </section>
 
       <!-- Contact/CTA -->
-      <aside class="text-center mt-8 p-4 bg-base-100 shadow-lg rounded-lg">
-        <h3 class="text-xl font-semibold">{{ mail.contact.title }}</h3>
-        <p>{{ mail.contact.content }}</p>
-        <a
-          :href="`mailto:${mail.contact.email}`"
-          class="link link-primary block mt-2"
-        >
-          {{ mail.contact.email }}
-        </a>
-        <a
-          :href="mail.contact.website"
-          target="_blank"
-          class="btn btn-primary btn-sm mt-2"
-        >
-          {{ mail.sections.learnMore }}
-        </a>
-      </aside>
+      <CallToAction />
     </div>
     <NetPriceNote />
   </section>
@@ -156,6 +140,7 @@ import { computed } from "vue";
 import { useI18n } from "vue-i18n";
 import { getMailProduct } from "@/data/products/mail";
 import NetPriceNote from "~/components/sections/products/NetPriceNote.vue";
+import CallToAction from "~/components/sections/products/CallToAction.vue";
 
 const { locale } = useI18n();
 const mail = computed(() => getMailProduct(locale.value));
