@@ -32,7 +32,7 @@
             <a href="#demo" class="btn btn-secondary btn-lg">
               {{ t("ai.hero.demo") }}
             </a>
-            <a href="#beratung" class="btn btn-outline btn-lg">
+            <a :href="localePath('/contact')" class="btn btn-outline btn-lg">
               {{ t("ai.hero.consult") }}
             </a>
           </div>
@@ -85,7 +85,7 @@
         </h2>
         <ul class="grid md:grid-cols-2 gap-4">
           <li
-            v-for="(adv, idx) in t('ai.advantages')"
+            v-for="(adv, idx) in advantages"
             :key="idx"
             v-motion="{
               initial: { opacity: 0, x: -30 },
@@ -130,37 +130,47 @@
         >
           {{ t("ai.goalsTitle") }}
         </h2>
-        <div class="grid md:grid-cols-2 gap-6">
-          <div
-            v-for="(usecase, idx) in t('ai.useCases')"
-            :key="idx"
-            v-motion="{
-              initial: { opacity: 0, y: 30 },
-              visibleOnce: {
-                opacity: 1,
-                y: 0,
-                transition: {
-                  type: 'spring',
-                  stiffness: 150,
-                  damping: 20,
-                  delay: 200 + idx * 100,
-                },
-              },
-            }"
-            class="card bg-base-100 shadow border border-base-300 cursor-pointer transition-transform hover:scale-105"
-            @click="activeUseCase = idx"
+        <div class="">
+          <table
+            class="table w-full bg-base-100 rounded-2xl shadow-lg border-separate border-spacing-y-2"
           >
-            <div class="card-body">
-              <h3 class="card-title text-primary">{{ usecase }}</h3>
-              <p class="text-base-content/70">{{ usecase }}</p>
-              <div
-                v-if="activeUseCase === idx"
-                class="mt-2 text-sm text-success"
+            <thead>
+              <tr>
+                <th class="text-primary text-lg bg-base-200">Use Case</th>
+                <th class="text-lg bg-base-200"></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr
+                v-for="(uc, idx) in useCases"
+                :key="idx"
+                v-motion="{
+                  initial: { opacity: 0, x: 40 },
+                  visibleOnce: {
+                    opacity: 1,
+                    x: 0,
+                    transition: {
+                      type: 'spring',
+                      stiffness: 150,
+                      damping: 22,
+                      delay: 150 + idx * 60,
+                    },
+                  },
+                }"
+                class="group hover:bg-primary/10 transition duration-200"
               >
-                <b>Mehr dazu:</b> {{ usecase }}
-              </div>
-            </div>
-          </div>
+                <!-- Farbakzent am linken Rand -->
+                <td class="font-semibold relative rounded-l-xl pl-4 md:pl-6">
+                  <div
+                    class="absolute left-0 top-0 h-full w-1 bg-primary rounded-l-xl"
+                  ></div>
+                  {{ uc.title }}
+                </td>
+
+                <td class="text-base-content/80 rounded-r-xl">{{ uc.desc }}</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
 
@@ -199,51 +209,6 @@
             },
           }"
         />
-      </div>
-
-      <!-- Ethik -->
-      <div class="mb-14">
-        <h2
-          v-motion="{
-            initial: { opacity: 0, y: 20 },
-            visibleOnce: {
-              opacity: 1,
-              y: 0,
-              transition: {
-                type: 'spring',
-                stiffness: 200,
-                damping: 25,
-                delay: 100,
-              },
-            },
-          }"
-          class="text-2xl font-semibold text-primary mb-6 text-center"
-        >
-          {{ t("ai.ethicsTitle") }}
-        </h2>
-        <div class="flex flex-wrap justify-center gap-6">
-          <div
-            v-for="(eth, idx) in t('ai.ethics')"
-            :key="idx"
-            v-motion="{
-              initial: { opacity: 0, scale: 0.8 },
-              visibleOnce: {
-                opacity: 1,
-                scale: 1,
-                transition: {
-                  type: 'spring',
-                  stiffness: 150,
-                  damping: 20,
-                  delay: 200 + idx * 70,
-                },
-              },
-            }"
-            class="bg-base-100 p-4 rounded-lg shadow flex items-center gap-2"
-          >
-            <ShieldCheckIcon class="w-6 h-6 text-primary" />
-            <span>{{ eth }}</span>
-          </div>
-        </div>
       </div>
 
       <!-- Technische Basis -->
@@ -344,7 +309,7 @@
                 href="mailto:kontakt@rieger-systems.eu?subject=Feedback%20zu%20A.M.A.R.A."
                 class="btn btn-secondary btn-sm"
               >
-                Feedback geben
+                Feedback
               </a>
             </div>
           </div>
@@ -424,7 +389,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from "vue";
+import { ref, computed } from "vue";
 import { useI18n } from "vue-i18n";
 import {
   SparklesIcon,
@@ -437,67 +402,280 @@ import {
 } from "@heroicons/vue/24/solid";
 import SentimentDemo from "~/components/sections/products/SentimentDemo.vue";
 import CallToAction from "~/components/sections/products/CallToAction.vue";
+import { useLocalePath } from "#i18n";
 
-// i18n-Setup
-const { t } = useI18n();
+const { t, locale } = useI18n();
+const localePath = useLocalePath();
 
-// UseCases und Advantages kommen direkt aus i18n:
 const activeUseCase = ref(-1);
 
-// Technischer Stack kann weiterhin als JS-Objekt gepflegt werden,
-// da Icons nicht im i18n stehen sollten (sondern hier gemappt)
-const techStack = [
-  {
-    icon: Cog6ToothIcon,
-    title: "Microservices-Architektur",
-    desc: "Java & Python",
-  },
-  {
-    icon: ServerStackIcon,
-    title: "Qdrant & Neo4j",
-    desc: "Vektor- & Graphdatenbanken",
-  },
-  {
-    icon: GlobeEuropeAfricaIcon,
-    title: "100 % EU-Hosting",
-    desc: "Keine US-Clouds, DSGVO",
-  },
-  {
-    icon: SparklesIcon,
-    title: "Open Source LLMs",
-    desc: "Mistral, GBERT, BLOOM",
-  },
-  {
-    icon: ShieldCheckIcon,
-    title: "Auditierbare KI",
-    desc: "Transparente Prozesse",
-  },
-  {
-    icon: CheckCircleIcon,
-    title: "API, REST & gRPC",
-    desc: "Schnelle Integration",
-  },
-];
+const techStack = computed(() => {
+  if (locale.value === "en") {
+    return [
+      {
+        icon: Cog6ToothIcon,
+        title: "Microservices architecture",
+        desc: "Java & Python",
+      },
+      {
+        icon: ServerStackIcon,
+        title: "Qdrant & Neo4j",
+        desc: "Vector & graph databases",
+      },
+      {
+        icon: GlobeEuropeAfricaIcon,
+        title: "100% EU hosting",
+        desc: "No US clouds, GDPR-compliant",
+      },
+      {
+        icon: SparklesIcon,
+        title: "Open-source LLMs",
+        desc: "Fine-tuned european models",
+      },
+      {
+        icon: ShieldCheckIcon,
+        title: "Auditable AI",
+        desc: "Transparent processes",
+      },
+      {
+        icon: CheckCircleIcon,
+        title: "API, REST & gRPC",
+        desc: "Fast integration",
+      },
+    ];
+  }
+  // Default: Deutsch
+  return [
+    {
+      icon: Cog6ToothIcon,
+      title: "Microservices-Architektur",
+      desc: "Java & Python",
+    },
+    {
+      icon: ServerStackIcon,
+      title: "Qdrant & Neo4j",
+      desc: "Vektor- & Graphdatenbanken",
+    },
+    {
+      icon: GlobeEuropeAfricaIcon,
+      title: "100 % EU-Hosting",
+      desc: "Keine US-Clouds, DSGVO",
+    },
+    {
+      icon: SparklesIcon,
+      title: "Open-Source LLMs",
+      desc: "Feingetunte europäische Modelle",
+    },
+    {
+      icon: ShieldCheckIcon,
+      title: "Auditierbare KI",
+      desc: "Transparente Prozesse",
+    },
+    {
+      icon: CheckCircleIcon,
+      title: "API, REST & gRPC",
+      desc: "Schnelle Integration",
+    },
+  ];
+});
 
-// Beispiel für FAQ-Mehrsprachigkeit
-const faqs = [
-  {
-    q: "Wie unterscheidet sich A.M.A.R.A. von anderen KI-Lösungen?",
-    a: "A.M.A.R.A. setzt auf vollständige Transparenz, nachvollziehbare Entscheidungen und europäischen Datenschutz – kein Vendor Lock-in, keine Black-Box.",
-  },
-  {
-    q: "Wie werden meine Daten geschützt?",
-    a: "Daten bleiben in Europa, werden pseudonymisiert und nie an Dritte weitergegeben. Sie entscheiden, wie und wo Daten verarbeitet werden.",
-  },
-  {
-    q: "Kann ich A.M.A.R.A. in meine bestehende IT integrieren?",
-    a: "Ja, via API, gRPC oder REST – flexibel und modular.",
-  },
-  {
-    q: "Was kostet eine KI-Integration?",
-    a: "Die Kosten richten sich nach Umfang und Modul – wir beraten ehrlich und erstellen transparente Angebote ohne Überraschungen.",
-  },
-];
+const advantages = computed(() =>
+  locale.value === "en"
+    ? [
+        "100% GDPR-compliant & EU hosting",
+        "No black box: Auditable & transparent",
+        "Open source & vendor lock-in free",
+        "True integration via REST & gRPC",
+        "Scalable for any business size",
+        "Personal consulting & support",
+        "Fast implementation and flexible adaptation",
+        "Modular and grows with your requirements",
+        "Ethics and sustainability in focus",
+        "Interdisciplinary teams & experience",
+      ]
+    : [
+        "100 % DSGVO-konform & EU-Hosting",
+        "Keine Black-Box: Auditierbar & transparent",
+        "Open Source & Vendor Lock-in-frei",
+        "Echte Integration via REST & gRPC",
+        "Skalierbar für jede Unternehmensgröße",
+        "Persönliche Beratung & Support",
+        "Schnelle Implementierung und flexible Anpassung",
+        "Modular erweiterbar – wächst mit Ihren Anforderungen",
+        "Ethik und Nachhaltigkeit im Fokus",
+        "Interdisziplinäre Teams & Erfahrung",
+      ]
+);
+
+const useCases = computed(() =>
+  locale.value === "en"
+    ? [
+        {
+          title: "Automated patient assistance",
+          desc: "24/7 support for patients via chat, voice, or digital diary.",
+        },
+        {
+          title: "AI-powered data analysis",
+          desc: "Turn raw data into actionable insights for healthcare, admin, or business.",
+        },
+        {
+          title: "Data privacy-compliant communication",
+          desc: "Secure, GDPR-compliant messaging and documentation between all parties.",
+        },
+        {
+          title: "Custom AI for your company",
+          desc: "Bespoke AI solutions for unique challenges – no black box.",
+        },
+        {
+          title: "Intelligent document processing and classification",
+          desc: "Automate paperwork: recognize, sort, and understand complex documents.",
+        },
+        {
+          title: "Personalized health recommendations",
+          desc: "Deliver safe, data-driven guidance tailored to each individual.",
+        },
+        {
+          title: "Ethics-compliant chatbots and virtual assistants",
+          desc: "Helpful, human-like digital companions that respect your values.",
+        },
+        {
+          title: "Integration with existing IT via REST or gRPC",
+          desc: "Easy, secure connectivity with your current digital infrastructure.",
+        },
+        {
+          title: "Predictive analytics for therapy planning",
+          desc: "AI helps professionals identify trends and improve care quality.",
+        },
+        {
+          title: "Emotion and sentiment analysis in conversations",
+          desc: "Detect moods, stress, and needs early – always transparent.",
+        },
+        {
+          title: "Early warning systems for mental health",
+          desc: "Recognize warning signs and provide timely support suggestions.",
+        },
+        {
+          title: "GDPR-compliant automation of routine tasks",
+          desc: "Save time on repetitive processes – with full legal security.",
+        },
+        {
+          title: "Real-time support for therapists and doctors",
+          desc: "AI as a silent assistant: summarizing, structuring, or prepping cases.",
+        },
+        {
+          title: "Secure, explainable AI for sensitive sectors",
+          desc: "Audit-proof, transparent, and safe for health, finance, and more.",
+        },
+        {
+          title: "Audit trails for every AI decision",
+          desc: "Every AI suggestion is documented, traceable, and explainable.",
+        },
+      ]
+    : [
+        {
+          title: "Automatisierte Patientenassistenz",
+          desc: "24/7-Unterstützung für Patienten per Chat, Sprache oder digitales Tagebuch.",
+        },
+        {
+          title: "KI-gestützte Datenanalyse",
+          desc: "Rohdaten werden zu konkreten Erkenntnissen – im Gesundheitswesen, Verwaltung oder Business.",
+        },
+        {
+          title: "Datenschutzkonforme Kommunikation",
+          desc: "Sichere, DSGVO-konforme Nachrichten und Dokumentation für alle Beteiligten.",
+        },
+        {
+          title: "Individuelle KI-Lösungen für Ihr Unternehmen",
+          desc: "Maßgeschneiderte KI für Ihre besonderen Herausforderungen – ohne Black-Box.",
+        },
+        {
+          title: "Intelligente Dokumentenverarbeitung und Klassifikation",
+          desc: "Papierkram automatisieren: erkennen, sortieren und verstehen – auch komplexe Fälle.",
+        },
+        {
+          title: "Personalisierte Gesundheitsempfehlungen",
+          desc: "Sichere, datengestützte Empfehlungen – auf jede Person zugeschnitten.",
+        },
+        {
+          title: "Ethikkonforme Chatbots und virtuelle Assistenten",
+          desc: "Hilfreiche, menschlich wirkende Begleiter – immer im Einklang mit Ihren Werten.",
+        },
+        {
+          title: "Integration in bestehende IT via REST oder gRPC",
+          desc: "Einfache, sichere Anbindung an Ihre bestehende Systemlandschaft.",
+        },
+        {
+          title: "Prädiktive Analysen für Therapieplanung",
+          desc: "Trends und Muster erkennen, Versorgung gezielt verbessern.",
+        },
+        {
+          title: "Emotions- und Sentimentanalyse in Gesprächen",
+          desc: "Stimmungen, Stress und Bedürfnisse frühzeitig erkennen – immer transparent.",
+        },
+        {
+          title: "Frühwarnsysteme für psychische Gesundheit",
+          desc: "Warnsignale erkennen und zeitnah Unterstützung vorschlagen.",
+        },
+        {
+          title: "DSGVO-konforme Automatisierung von Routinetätigkeiten",
+          desc: "Zeitersparnis bei Standardprozessen – mit voller Rechtssicherheit.",
+        },
+        {
+          title: "Echtzeit-Unterstützung für Therapeuten und Ärzte",
+          desc: "KI als stiller Assistent: Zusammenfassen, strukturieren, vorbereiten.",
+        },
+        {
+          title: "Sichere, erklärbare KI für sensible Bereiche",
+          desc: "Prüfbar, transparent und sicher – für Gesundheit, Finanzen und mehr.",
+        },
+        {
+          title: "Lückenlose Audit-Trails für jede KI-Entscheidung",
+          desc: "Jeder Vorschlag ist dokumentiert, nachvollziehbar und erklärbar.",
+        },
+      ]
+);
+
+const faqs = computed(() => {
+  if (locale.value === "en") {
+    return [
+      {
+        q: "How is A.M.A.R.A. different from other AI solutions?",
+        a: "A.M.A.R.A. is fully transparent, explainable, and compliant with European data protection standards – no vendor lock-in, no black box.",
+      },
+      {
+        q: "How is my data protected?",
+        a: "Data stays in Europe, is pseudonymized, and is never shared with third parties. You decide how and where your data is processed.",
+      },
+      {
+        q: "Can I integrate A.M.A.R.A. into my existing IT?",
+        a: "Yes, via API, gRPC, or REST – flexible and modular.",
+      },
+      {
+        q: "What does an AI integration cost?",
+        a: "The cost depends on scope and modules – we advise honestly and provide transparent offers without surprises.",
+      },
+    ];
+  }
+  // Standard: Deutsch
+  return [
+    {
+      q: "Wie unterscheidet sich A.M.A.R.A. von anderen KI-Lösungen?",
+      a: "A.M.A.R.A. setzt auf vollständige Transparenz, nachvollziehbare Entscheidungen und europäischen Datenschutz – kein Vendor Lock-in, keine Black-Box.",
+    },
+    {
+      q: "Wie werden meine Daten geschützt?",
+      a: "Daten bleiben in Europa, werden pseudonymisiert und nie an Dritte weitergegeben. Sie entscheiden, wie und wo Daten verarbeitet werden.",
+    },
+    {
+      q: "Kann ich A.M.A.R.A. in meine bestehende IT integrieren?",
+      a: "Ja, via API, gRPC oder REST - flexibel und modular.",
+    },
+    {
+      q: "Was kostet eine KI-Integration?",
+      a: "Die Kosten richten sich nach Umfang und Modul - wir beraten ehrlich und erstellen transparente Angebote ohne Überraschungen.",
+    },
+  ];
+});
 </script>
 
 <style scoped>

@@ -631,5 +631,42 @@
       "high": "Major function",
       "reporting": "Reporting"
     }
+  },
+  "ai": {
+    "hero": {
+      "title": "A.M.A.R.A. – The trusted European AI solution",
+      "subtitle": "Technology that brings clarity – AI designed around your standards.",
+      "demo": "Try the live demo",
+      "consult": "Free consultation"
+    },
+    "why": {
+      "headline": "Why A.M.A.R.A.?",
+      "text1": "A.M.A.R.A. stands for human-centered, auditable AI – developed for maximum transparency and EU compliance.",
+      "text2": "Our systems protect your data, remain explainable, and integrate seamlessly into your processes."
+    },
+    "advantagesTitle": "Your advantages with A.M.A.R.A.",
+    "goalsTitle": "Possible use-cases",
+    "useCases": [
+      "Automated patient assistance",
+      "AI-powered data analysis",
+      "Data privacy-compliant communication",
+      "Custom AI for your company"
+    ],
+    "liveDemo": {
+      "title": "Try the live demo"
+    },
+    "ethicsTitle": "Our ethical principles",
+    "ethics": [
+      "Data privacy as a fundamental right",
+      "Full transparency of AI processes",
+      "No manipulation, no tracking",
+      "Explainable AI decisions",
+      "Sustainable development & open source"
+    ],
+    "techTitle": "Technical foundation",
+    "testimonialsTitle": "What our users say",
+    "noTestimonial": "Be the first to leave feedback – your opinion matters for our further development.",
+    "firstTester": "Become one of the first testers.",
+    "faqTitle": "Frequently asked questions"
   }
 }

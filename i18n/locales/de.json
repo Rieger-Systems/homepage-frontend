@@ -696,6 +696,43 @@
       "critical": "Kritische Störung",
       "high": "Wichtige Funktion",
       "reporting": "Reporting"
+    },
+    "ai": {
+      "hero": {
+        "title": "A.M.A.R.A. – Die vertrauenswürdige KI-Lösung aus Europa",
+        "subtitle": "Technologie, die Klarheit schafft – KI, die sich an Ihren Maßstäben orientiert.",
+        "demo": "Live-Demo starten",
+        "consult": "Kostenlose Beratung"
+      },
+      "why": {
+        "headline": "Warum A.M.A.R.A.?",
+        "text1": "A.M.A.R.A. steht für menschenzentrierte, auditierbare KI, entwickelt für maximale Transparenz und EU-Konformität.",
+        "text2": "Unsere Systeme schützen Ihre Daten, bleiben nachvollziehbar und sind vollständig in Ihre Prozesse integrierbar."
+      },
+      "advantagesTitle": "Ihre Vorteile mit A.M.A.R.A.",
+      "goalsTitle": "Mögliche Anwendungsfälle",
+      "useCases": [
+        "Automatisierte Patientenassistenz",
+        "KI-gestützte Datenanalyse",
+        "Datenschutzkonforme Kommunikation",
+        "Custom-KI für Ihr Unternehmen"
+      ],
+      "liveDemo": {
+        "title": "Probieren Sie die Live-Demo"
+      },
+      "ethicsTitle": "Unsere ethischen Grundsätze",
+      "ethics": [
+        "Datenschutz als Grundrecht",
+        "Volle Transparenz der KI-Prozesse",
+        "Keine Manipulation, kein Tracking",
+        "Erklärbare KI-Entscheidungen",
+        "Nachhaltige Entwicklung & Open Source"
+      ],
+      "techTitle": "Technische Basis",
+      "testimonialsTitle": "Das sagen unsere Nutzer",
+      "noTestimonial": "Seien Sie der Erste, der Feedback gibt – Ihre Meinung zählt für unsere Weiterentwicklung.",
+      "firstTester": "Werden Sie jetzt einer der ersten Tester.",
+      "faqTitle": "Häufige Fragen"
     }
   }
 }
