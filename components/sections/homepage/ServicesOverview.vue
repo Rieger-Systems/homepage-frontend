@@ -10,7 +10,7 @@ import {
 } from "@heroicons/vue/24/outline";
 
 // 1. Reihenfolge festlegen
-const serviceKeys = ["mail", "hosting", "software", "websites", "aiSystems"];
+const serviceKeys = ["mail", "services", "software", "website", "aiSystems"];
 
 const icons = [
   EnvelopeIcon,
@@ -28,7 +28,7 @@ const services = computed(() =>
     title: t(`homepage.services.${key}`),
     desc: t(`homepage.services.${key}Description`),
     icon: icons[idx],
-    link: `/products/${key === "aiSystems" ? "aisystems" : key}`, // Passe ggf. Slug an
+    link: `/products/${key}`,
   }))
 );
 
@@ -214,8 +214,3 @@ onUnmounted(stopAutoSlide);
     </div>
   </section>
 </template>
-
-<style scoped>
-/* All styles are now handled by Tailwind CSS utility classes in the template. */
-/* No custom CSS needed here. */
-</style>
