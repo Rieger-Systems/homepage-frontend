@@ -1,4 +1,35 @@
+<template>
+  <nav class="flex flex-col gap-2 md:flex-row md:items-center md:gap-8 w-full">
+    <div class="flex flex-col gap-2 md:flex-row md:gap-8">
+      <NavLink
+        v-for="item in firstNavItems"
+        :key="item.to"
+        :to="item.to"
+        @click="$emit('select')"
+      >
+        {{ item.label }}
+      </NavLink>
+    </div>
+    <ProductsDropdown
+      :label="t('header.products')"
+      :items="productItems"
+      @select="$emit('select')"
+    />
+    <div class="flex flex-col gap-2 md:flex-row md:gap-8">
+      <NavLink
+        v-for="item in otherNavItems"
+        :key="item.to"
+        :to="item.to"
+        @click="$emit('select')"
+      >
+        {{ item.label }}
+      </NavLink>
+    </div>
+  </nav>
+</template>
+
 <script setup lang="ts">
+// wie gehabt, keine Änderungen nötig im Script!
 import { computed } from "vue";
 import NavLink from "~/components/navigation/NavLink.vue";
 import ProductsDropdown from "./ProductsDropdown.vue";
@@ -12,7 +43,6 @@ const localePath = useLocalePath();
 
 defineEmits(["select"]);
 
-// Produkte werden immer für die aktuelle Locale geladen!
 const products = computed(() => getProducts(locale.value));
 
 const firstNavItems = computed(() => [
@@ -36,33 +66,3 @@ const otherNavItems = computed(() => [
   { key: "contact", label: t("header.contact"), to: localePath("/contact") },
 ]);
 </script>
-
-<template>
-  <div class="flex items-center gap-8">
-    <div class="flex gap-4 md:gap-8">
-      <NavLink
-        v-for="item in firstNavItems"
-        :key="item.to"
-        :to="item.to"
-        @click="$emit('select')"
-      >
-        {{ item.label }}
-      </NavLink>
-    </div>
-    <ProductsDropdown
-      :label="t('header.products')"
-      :items="productItems"
-      @select="$emit('select')"
-    />
-    <div class="flex gap-4 md:gap-8">
-      <NavLink
-        v-for="item in otherNavItems"
-        :key="item.to"
-        :to="item.to"
-        @click="$emit('select')"
-      >
-        {{ item.label }}
-      </NavLink>
-    </div>
-  </div>
-</template>

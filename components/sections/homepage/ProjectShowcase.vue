@@ -105,7 +105,7 @@
     <div class="relative z-30 text-center mt-20 w-1/2 m-auto">
       <NuxtLink
         to="/projects"
-        class="btn btn-outline btn-primary rounded-full px-8 py-3 text-lg flex items-center justify-center mx-auto gap-3 transform transition-all duration-300 hover:scale-110 hover:bg-primary hover:text-primary-content focus:outline-none focus-visible:ring-4 focus-visible:ring-primary focus-visible:ring-offset-4 focus-visible:ring-offset-base-300"
+        class="btn btn-outline btn-primary rounded-full px-8 py-3 md:text-lg flex items-center justify-center mx-auto gap-3 transform transition-all duration-300 hover:scale-110 hover:bg-primary hover:text-primary-content focus:outline-none focus-visible:ring-4 focus-visible:ring-primary focus-visible:ring-offset-4 focus-visible:ring-offset-base-300"
         v-motion="{
           initial: { opacity: 0, scale: 0.9 },
           visibleOnce: {
