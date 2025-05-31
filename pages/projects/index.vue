@@ -1,10 +1,8 @@
 <script setup lang="ts">
 import { useI18n } from "vue-i18n";
 import ProjectDisplay from "~/components/sections/projects/ProjectDisplay.vue";
-import { useLocalePath } from "#i18n";
 
 const { t } = useI18n();
-const localePath = useLocalePath();
 
 // Nur noch die drei gewünschten Projekte:
 const projectSlugs = ["amara", "amarawell", "amaracall"];

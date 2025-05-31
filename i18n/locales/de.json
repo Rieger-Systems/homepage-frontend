@@ -419,7 +419,7 @@
       "image": "/images/projects/amaracall.png",
       "title": "AmaraCall - KI-gestützter Anrufbeantworter",
       "description": "Flexible Anruflösung für Unternehmen",
-      "status": "Konzeptphase",
+      "status": "In Entwicklung",
 
       "section1Title": "Beschreibung",
       "section1Content": "AmaraCall ist ein flexibles, KI-gestütztes Anrufsystem für Unternehmen aus verschiedenen Branchen. Die Lösung bietet eine intelligente Telefonassistenz, die Anrufe entgegennimmt, Gespräche führt und relevante Informationen strukturiert aufbereitet. Der Fokus liegt auf einer zentralen Verarbeitung, um die Verwaltung und Aktualisierung der KI-Modelle effizient und zuverlässig zu gestalten. AmaraCall wird als zentral gehosteter Dienst angeboten, um eine schnelle und unkomplizierte Integration in bestehende Systeme zu ermöglichen.",

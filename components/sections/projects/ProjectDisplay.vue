@@ -3,7 +3,7 @@ import { useI18n } from "vue-i18n";
 import type { Project } from "~/types/project";
 import { useLocalePath } from "#i18n";
 
-const props = defineProps<{ project: Project }>();
+defineProps<{ project: Project }>();
 const { t } = useI18n();
 const localePath = useLocalePath(); // localePath initialisieren
 </script>
@@ -15,7 +15,7 @@ const localePath = useLocalePath(); // localePath initialisieren
     :aria-label="t('projects.aria.moreInfo', { title: project.title })"
   >
     <span class="absolute top-2 right-2 badge badge-sm badge-primary z-10">
-      {{ t(`projects.status.${project.status}`) }}
+      {{ project.status }}
     </span>
 
     <figure class="relative overflow-hidden">
