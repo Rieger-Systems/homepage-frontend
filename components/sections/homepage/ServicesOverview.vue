@@ -9,76 +9,67 @@ import {
   CpuChipIcon,
 } from "@heroicons/vue/24/outline";
 
-// 1. Reihenfolge festlegen
-const serviceKeys = ["mail", "services", "software", "website", "aiSystems"];
-
-const icons = [
-  EnvelopeIcon,
-  ServerStackIcon,
-  WrenchScrewdriverIcon,
-  GlobeAltIcon,
-  CpuChipIcon,
+const serviceConfig = [
+  { key: "mail", icon: EnvelopeIcon },
+  { key: "services", icon: ServerStackIcon },
+  { key: "software", icon: WrenchScrewdriverIcon },
+  { key: "website", icon: GlobeAltIcon },
+  { key: "aisystems", icon: CpuChipIcon },
 ];
 
 const { t } = useI18n();
 
-// 2. Services-Array aus i18n-Keys bauen
 const services = computed(() =>
-  serviceKeys.map((key, idx) => ({
-    title: t(`homepage.services.${key}`),
-    desc: t(`homepage.services.${key}Description`),
-    icon: icons[idx],
-    link: `/products/${key}`,
+  serviceConfig.map((config, idx) => ({
+    title: t(`homepage.services.${config.key}`),
+    desc: t(`homepage.services.${config.key}Description`),
+    icon: config.icon,
+    link: `/products/${config.key}`,
+    id: `service-item-${idx + 1}`,
   }))
 );
 
 const currentSlide = ref(0);
-const slideIntervalDuration = 3000;
+const slideIntervalDuration = 4000;
 let autoSlideIntervalId: ReturnType<typeof setInterval> | null = null;
 
-const hasServices = computed(() => services.value.length > 0);
 const canSlide = computed(() => services.value.length > 1);
 
 function nextSlideLogic() {
   if (!canSlide.value) return;
   currentSlide.value = (currentSlide.value + 1) % services.value.length;
 }
-
 function prevSlideLogic() {
   if (!canSlide.value) return;
   currentSlide.value =
     (currentSlide.value - 1 + services.value.length) % services.value.length;
 }
-
 function startAutoSlide() {
   if (!canSlide.value) return;
-  if (autoSlideIntervalId) clearInterval(autoSlideIntervalId);
-  autoSlideIntervalId = setInterval(() => {
-    nextSlideLogic();
-  }, slideIntervalDuration);
+  stopAutoSlide();
+  autoSlideIntervalId = setInterval(nextSlideLogic, slideIntervalDuration);
 }
-
 function stopAutoSlide() {
   if (autoSlideIntervalId) {
     clearInterval(autoSlideIntervalId);
     autoSlideIntervalId = null;
   }
 }
-
 function nextSlide() {
+  stopAutoSlide();
   nextSlideLogic();
-  if (canSlide.value) startAutoSlide();
+  startAutoSlide();
 }
-
 function prevSlide() {
+  stopAutoSlide();
   prevSlideLogic();
-  if (canSlide.value) startAutoSlide();
+  startAutoSlide();
 }
-
 function goToSlide(index: number) {
-  if (!canSlide.value) return;
+  if (!canSlide.value || index === currentSlide.value) return;
+  stopAutoSlide();
   currentSlide.value = index;
-  if (canSlide.value) startAutoSlide();
+  startAutoSlide();
 }
 
 onMounted(() => {
@@ -94,38 +85,11 @@ onUnmounted(stopAutoSlide);
   >
     <div class="text-center mb-20">
       <h2
-        v-motion="{
-          initial: { opacity: 0, y: 30, scale: 0.98 },
-          visibleOnce: {
-            opacity: 1,
-            y: 0,
-            scale: 1,
-            transition: {
-              type: 'spring',
-              stiffness: 250,
-              damping: 30,
-              delay: 150,
-            },
-          },
-        }"
         class="text-4xl lg:text-5xl font-extrabold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-primary to-base-content"
       >
         {{ t("homepage.services.sectionTitle") }}
       </h2>
       <p
-        v-motion="{
-          initial: { opacity: 0, y: 20 },
-          visibleOnce: {
-            opacity: 1,
-            y: 0,
-            transition: {
-              type: 'spring',
-              stiffness: 180,
-              damping: 22,
-              delay: 250,
-            },
-          },
-        }"
         class="text-lg md:text-xl text-base-content/80 max-w-3xl mx-auto leading-relaxed"
       >
         {{ t("homepage.services.sectionDescription") }}
@@ -133,80 +97,91 @@ onUnmounted(stopAutoSlide);
     </div>
 
     <div
-      v-if="hasServices"
-      class="w-full md:w-3/4 max-w-3xl mx-auto relative overflow-hidden pb-12"
+      v-if="services.length"
+      class="w-full md:w-3/4 max-w-3xl mx-auto relative pb-8"
       @mouseenter="stopAutoSlide"
       @mouseleave="startAutoSlide"
+      role="region"
+      aria-label="Unsere Dienstleistungen im Überblick"
     >
-      <div
-        class="flex transition-transform duration-300 will-change-transform"
-        :style="{ transform: `translateX(-${currentSlide * 100}%)` }"
-      >
+      <transition name="fade" mode="out-in">
         <NuxtLink
-          v-for="(item, index) in services"
-          :key="index"
-          :to="item.link"
-          class="flex-none w-full block group relative px-2"
-          :aria-label="`Mehr Informationen zu ${item.title}`"
+          v-if="services[currentSlide]"
+          :key="services[currentSlide].id"
+          :id="services[currentSlide].id"
+          :to="services[currentSlide].link"
+          class="block"
+          :aria-label="`Mehr Informationen zu ${services[currentSlide].title}`"
+          tabindex="0"
         >
           <div
-            class="card bg-base-100 shadow-xl rounded-2xl p-8 flex flex-col items-center text-center transition-all duration-300 group-hover:scale-[1.02] group-hover:shadow-2xl group-hover:bg-base-100/90 h-full overflow-hidden"
+            class="card bg-base-100 rounded-2xl p-8 flex flex-col items-center text-center shadow-xl hover:scale-[1.02] transition-all duration-300 h-full overflow-hidden"
           >
             <div
-              class="w-24 h-24 rounded-full bg-primary text-primary-content flex items-center justify-center mb-8 transform transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6 shadow-md"
+              class="w-24 h-24 rounded-full bg-primary text-primary-content flex items-center justify-center mb-8 shadow-md"
             >
-              <component :is="item.icon" class="w-12 h-12" />
+              <component
+                :is="services[currentSlide].icon"
+                class="w-12 h-12"
+                aria-hidden="true"
+              />
             </div>
             <h3 class="font-bold text-2xl md:text-3xl mb-3 text-base-content">
-              {{ item.title }}
+              {{ services[currentSlide].title }}
             </h3>
             <p class="text-base-content/70 leading-relaxed text-balance">
-              {{ item.desc }}
+              {{ services[currentSlide].desc }}
             </p>
-            <span
-              class="absolute inset-0 block rounded-2xl border-2 border-transparent group-hover:border-primary transition-colors duration-200 pointer-events-none"
-              aria-hidden="true"
-            ></span>
           </div>
         </NuxtLink>
-      </div>
+      </transition>
 
       <template v-if="canSlide">
-        <div
-          class="absolute inset-y-0 flex justify-between items-center w-full px-4"
-        >
-          <button
-            @click="prevSlide"
-            class="btn btn-circle bg-primary/70 hover:bg-primary text-primary-content shadow-lg transition-all duration-300 transform hover:scale-115 active:scale-95 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-base-200"
-            aria-label="Vorherige Folie"
-          >
-            ❮
-          </button>
-          <button
-            @click="nextSlide"
-            class="btn btn-circle bg-primary/70 hover:bg-primary text-primary-content shadow-lg transition-all duration-300 transform hover:scale-115 active:scale-95 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-base-200"
-            aria-label="Nächste Folie"
-          >
-            ❯
-          </button>
-        </div>
-        <div class="flex justify-center gap-2 mt-12">
+        <!-- Dots/Buttons unter dem Carousel -->
+        <div class="flex justify-center items-center gap-3 mt-8" role="tablist">
           <button
             v-for="(item, index) in services"
             :key="`dot-${index}`"
             @click="goToSlide(index)"
             :class="[
-              'h-3 rounded-full cursor-pointer transition-all duration-300 ease-in-out',
+              'rounded-full cursor-pointer transition-all duration-300 ease-in-out focus:outline-none',
               currentSlide === index
-                ? 'w-6 bg-primary shadow-lg'
-                : 'w-3 bg-base-300 hover:bg-primary/50',
-              'focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-base-200',
+                ? 'w-7 h-3 bg-primary shadow'
+                : 'w-3 h-3 bg-base-300 hover:bg-primary/50',
+              'focus-visible:ring-2 focus-visible:ring-primary',
             ]"
             :aria-label="`Gehe zu Folie ${index + 1}: ${item.title}`"
+            :aria-controls="item.id"
+            :aria-selected="currentSlide === index ? 'true' : 'false'"
+            role="tab"
+            tabindex="0"
           ></button>
+        </div>
+
+        <!-- Prev/Next Buttons seitlich, aber responsive -->
+        <div
+          class="absolute flex justify-between items-center w-full top-1/2 -translate-y-1/2 px-2 pointer-events-none"
+        >
+          <button
+            @click="prevSlide"
+            class="btn btn-circle btn-ghost pointer-events-auto"
+            aria-label="Vorherige Dienstleistung"
+            tabindex="0"
+          >
+            ❮
+          </button>
+          <button
+            @click="nextSlide"
+            class="btn btn-circle btn-ghost pointer-events-auto"
+            aria-label="Nächste Dienstleistung"
+            tabindex="0"
+          >
+            ❯
+          </button>
         </div>
       </template>
     </div>
+
     <div v-else class="text-center py-10">
       <p class="text-lg text-base-content/70">
         {{ t("homepage.services.empty") }}
@@ -214,3 +189,14 @@ onUnmounted(stopAutoSlide);
     </div>
   </section>
 </template>
+
+<style scoped>
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+</style>
