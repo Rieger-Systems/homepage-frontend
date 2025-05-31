@@ -210,10 +210,12 @@
           <h3 class="font-semibold text-lg text-primary">{{ mod.name }}</h3>
           <p class="text-sm opacity-70">{{ mod.description }}</p>
           <p class="text-sm font-semibold text-success">
-            Einzelpreis: {{ mod.price }}
+            {{ t("services.singlePrice") }}: {{ mod.price }}
           </p>
           <div class="mt-2">
-            <h6 class="font-semibold text-sm">Enthalten in:</h6>
+            <h6 class="font-semibold text-sm">
+              {{ t("services.isIncluded") }}:
+            </h6>
             <div class="flex flex-wrap gap-1">
               <span
                 v-for="pkg in findPackagesForModule(mod.id) || []"
@@ -244,12 +246,14 @@
             @click="toggleDetails(mod.id)"
             class="btn btn-outline btn-sm mt-2 w-full"
           >
-            Details anzeigen
+            {{ t("services.showDetails") }}
           </button>
           <div v-if="isExpanded(mod.id)" class="mt-2 text-sm opacity-80">
             <p>{{ mod.detailedDescription }}</p>
             <div class="mt-2">
-              <h6 class="font-semibold text-sm">Zielgruppen:</h6>
+              <h6 class="font-semibold text-sm">
+                {{ t("services.targetGroups") }}
+              </h6>
               <p class="text-xs opacity-70">
                 <span
                   v-for="pkg in findPackagesForModule(mod.id) || []"

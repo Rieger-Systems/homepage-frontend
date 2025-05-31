@@ -315,9 +315,6 @@ import {
   CheckIcon,
   InformationCircleIcon,
   LockClosedIcon,
-  UserGroupIcon,
-  DocumentDuplicateIcon,
-  WrenchScrewdriverIcon, // Although imported, WrenchScrewdriverIcon is not used in the template. Consider removing if not needed.
 } from "@heroicons/vue/24/outline";
 import NetPriceNote from "~/components/sections/products/NetPriceNote.vue";
 import { getSoftwareProduct } from "~/data/products/software/software";
