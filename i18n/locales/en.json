@@ -580,7 +580,16 @@
     "section7Content": "The processing of personal data takes place exclusively within the framework of the applicable data protection laws. More information can be found in our {privacyPolicyLink}.",
     "privacyPolicyLinkText": "Privacy Policy",
     "section8Title": "8. Confidentiality",
-    "section8Content": "Both parties undertake to treat all information obtained in the course of cooperation as confidential and not to disclose it to third parties, unless required for contract fulfillment or by law."
+    "section8Content": "Both parties undertake to treat all information obtained in the course of cooperation as confidential and not to disclose it to third parties, unless required for contract fulfillment or by law.",
+    "section9Title": "9. Final Provisions",
+    "section9Content1": "Should any provision of these Terms and Conditions be or become invalid in whole or in part, the validity of the remaining provisions shall remain unaffected.",
+    "section9Content2": "Amendments and additions to these Terms and Conditions must be made in writing.",
+    "section9Content3": "Austrian law shall apply exclusively. Place of jurisdiction is Innsbruck, unless mandatory statutory provisions require otherwise.",
+    "section10Title": "10. Provider Information",
+    "section10Company": "Rieger Systems GmbH",
+    "section10AddressLine1": "Teststraße 123",
+    "section10AddressLine2": "6020 Innsbruck, Austria",
+    "section10EmailLabel": "E-mail:"
   },
   "services": {
     "title": "Hosting, Support & Maintenance – Your Worry-Free Complete Solution",
