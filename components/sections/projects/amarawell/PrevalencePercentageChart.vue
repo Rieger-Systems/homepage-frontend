@@ -12,8 +12,8 @@ import {
   LinearScale,
 } from "chart.js";
 import annotationPlugin from "chartjs-plugin-annotation";
+import { ref, onMounted, onUnmounted, computed } from "vue";
 
-// Register Chart.js components globally for efficiency
 ChartJS.register(
   Title,
   Tooltip,
@@ -25,15 +25,12 @@ ChartJS.register(
 );
 
 const { t, locale } = useI18n();
-const i18nKey = "projects.amarawell.prevalence"; // Renamed for clarity
+const i18nKey = "projects.amarawell.prevalence";
 
-// --- Chart Configuration Variables ---
 const barColors = ["#406AFF", "#4BC9B6", "#FFBB6C", "#A68BFA", "#8E9BAE"];
 
-// Use computed properties for i18n labels to ensure reactivity if locale changes
 const chartLabels = computed(() => {
   const labels = t(`${i18nKey}.labels`, undefined, { returnObjects: true });
-  // Provide robust fallback labels
   const fallbackLabels = {
     de: ["Deutschland", "Österreich", "Schweiz", "EU", "Weltweit"],
     en: ["Germany", "Austria", "Switzerland", "EU", "Worldwide"],
@@ -51,7 +48,6 @@ const worldAvgLabel = computed(() => t(`${i18nKey}.worldAvgLabel`));
 const unitLabel = computed(() => t(`${i18nKey}.unit`));
 const unitPercentLabel = computed(() => t(`${i18nKey}.unitPercent`));
 
-// Source entries for dynamic rendering
 const sourceEntries = computed(() =>
   stats.sources.map((src) => ({
     name: t(`${i18nKey}.sources.${src.key}`),
@@ -72,9 +68,24 @@ const chartData = computed(() => ({
   ],
 }));
 
+const isMobile = ref(false);
+
+const checkMobile = () => {
+  isMobile.value = window.innerWidth <= 600;
+};
+
+onMounted(() => {
+  checkMobile();
+  window.addEventListener("resize", checkMobile);
+});
+
+onUnmounted(() => {
+  window.removeEventListener("resize", checkMobile);
+});
+
 const chartOptions = computed(() => ({
   responsive: true,
-  aspectRatio: 1.45,
+  maintainAspectRatio: false,
   plugins: {
     legend: { display: false },
     title: {
@@ -82,11 +93,14 @@ const chartOptions = computed(() => ({
       text: chartTitle.value,
       color: "white",
       font: {
-        size: 22,
+        size: isMobile.value ? 18 : 22,
         weight: "bold",
         family: "'Inter', 'Segoe UI', sans-serif",
       },
-      padding: { top: 18, bottom: 16 },
+      // HIER WIRD DAS PADDING FÜR DEN TITEL ANGEPASST
+      padding: isMobile.value
+        ? { top: 30, bottom: 16 }
+        : { top: 18, bottom: 16 }, // Höherer Top-Padding auf Handy
     },
     tooltip: {
       backgroundColor: "hsl(var(--b3))",
@@ -122,7 +136,7 @@ const chartOptions = computed(() => ({
       annotations: {
         worldAvg: {
           type: "line",
-          yMin: stats.percent[4], // Index for "Weltweit"
+          yMin: stats.percent[4],
           yMax: stats.percent[4],
           borderColor: "white",
           borderWidth: 2,
@@ -136,7 +150,7 @@ const chartOptions = computed(() => ({
             font: { size: 13, weight: "bold" },
             padding: 7,
             yAdjust: -13,
-            xAdjust: 12,
+            xAdjust: isMobile.value ? 5 : 12,
           },
         },
       },
@@ -150,13 +164,19 @@ const chartOptions = computed(() => ({
         display: true,
         text: yAxisLabel.value,
         color: "white",
-        font: { size: 15, weight: "bold", family: "'Inter', sans-serif" },
+        font: {
+          size: isMobile.value ? 10 : 15,
+          weight: "bold",
+          family: "'Inter', sans-serif",
+        },
+        padding: { top: 0, bottom: 0, left: 0, right: 0 },
       },
       ticks: {
         color: "white",
-        font: { size: 13 },
+        font: { size: isMobile.value ? 10 : 13 },
         callback: (value) => value + " %",
         stepSize: 5,
+        padding: isMobile.value ? 25 : 10,
       },
       grid: { color: "hsl(var(--b2))" },
     },
@@ -165,23 +185,33 @@ const chartOptions = computed(() => ({
         display: true,
         text: xAxisLabel.value,
         color: "white",
-        font: { size: 14, weight: "bold", family: "'Inter', sans-serif" },
+        font: {
+          size: isMobile.value ? 11 : 14,
+          weight: "bold",
+          family: "'Inter', sans-serif",
+        },
       },
       ticks: {
         color: "white",
-        font: { size: 14, weight: "bold" },
+        font: { size: isMobile.value ? 10 : 14, weight: "bold" },
+        maxRotation: isMobile.value ? 45 : 0,
+        minRotation: isMobile.value ? 45 : 0,
       },
       grid: { display: false },
     },
   },
 }));
 </script>
+
 <template>
   <div
     class="chart-container bg-base-100 rounded-lg overflow-hidden"
     style="box-shadow: 0 8px 36px 0 rgba(40, 52, 61, 0.07)"
   >
-    <div class="p-7">
+    <div
+      class="chart-responsive-wrapper"
+      :class="{ 'mobile-padding': isMobile }"
+    >
       <client-only>
         <Bar :data="chartData" :options="chartOptions" />
       </client-only>
@@ -194,7 +224,6 @@ const chartOptions = computed(() => ({
         }}</span>
         {{ t(`${i18nKey}.explanation`) }}
       </p>
-
       <div
         v-if="t(`${i18nKey}.note`)"
         class="bg-warning/10 border-l-4 border-warning text-warning px-5 py-3 rounded-md text-sm text-center italic"
@@ -202,7 +231,6 @@ const chartOptions = computed(() => ({
         <span class="font-semibold">{{ t(`${i18nKey}.noteLabel`) }}</span>
         {{ t(`${i18nKey}.note`) }}
       </div>
-
       <div class="text-center text-base-content/70 text-sm pt-2">
         <span class="font-semibold">{{ t(`${i18nKey}.sourcesLabel`) }}: </span>
         <span v-for="(src, idx) in sourceEntries" :key="idx">
@@ -221,9 +249,24 @@ const chartOptions = computed(() => ({
 </template>
 
 <style scoped>
-/* You can add component-specific styles here if needed */
 .chart-container {
-  max-width: 900px; /* Limit max width for better readability on large screens */
-  margin: 2rem auto; /* Center the container with some margin */
+  max-width: 900px;
+  margin: 2rem auto;
+  width: 100%;
+}
+.chart-responsive-wrapper {
+  width: 100%;
+  height: 340px; /* Desktop default */
+  padding: 1.75rem; /* Equivalent to p-7 in Tailwind */
+}
+@media (max-width: 600px) {
+  .chart-container {
+    padding-top: 1.6rem !important; /* z. B. 24-28px Abstand nach oben */
+    padding-bottom: 0 !important;
+  }
+  .chart-responsive-wrapper {
+    height: 250px;
+    padding: 0 !important;
+  }
 }
 </style>

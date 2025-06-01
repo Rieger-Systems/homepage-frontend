@@ -490,7 +490,7 @@
       "section8Title": "Partnerschaften",
       "section8Content": "Wir suchen Therapeuten, Kliniken und Forschungseinrichtungen, die AmaraWell in einer Pilotphase testen und gemeinsam mit uns weiterentwickeln möchten. Durch die Zusammenarbeit mit Fachpersonal wollen wir sicherstellen, dass AmaraWell praxisnah und an den realen Bedürfnissen orientiert gestaltet ist.",
       "prevalence": {
-        "title": "Jährlich Betroffene (12-Monats-Prävalenz) – DACH, EU & weltweit",
+        "title": "Jährlich Betroffene (12-Monats-Prävalenz)",
         "labels": ["Deutschland", "Österreich", "Schweiz", "EU", "Weltweit"],
         "unit": "Mio.",
         "unitPercent": "%",

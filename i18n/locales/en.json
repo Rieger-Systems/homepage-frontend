@@ -490,7 +490,7 @@
       "section8Title": "Partnerships",
       "section8Content": "We are looking for therapists, clinics, and research institutions to test AmaraWell in a pilot phase and develop it further together. Working with professionals ensures that AmaraWell is designed in a way that is practical and aligned with real needs.",
       "prevalence": {
-        "title": "Affected per year (12-month prevalence) – DACH, EU & worldwide",
+        "title": "Affected per year (12-month prevalence)",
         "labels": ["Germany", "Austria", "Switzerland", "EU", "Worldwide"],
         "unit": "Mio.",
         "unitPercent": "%",
