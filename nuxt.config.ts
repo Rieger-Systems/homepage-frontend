@@ -1,10 +1,25 @@
 import tailwindcss from "@tailwindcss/vite";
 
+const isProd = process.env.NODE_ENV === "production";
+
 export default defineNuxtConfig({
   compatibilityDate: "2024-11-01",
   devtools: { enabled: true },
   modules: ["@vueuse/motion/nuxt", "@nuxtjs/i18n"],
-
+  app: {
+    head: {
+      script: isProd
+        ? [
+            {
+              src: "https://analytics.rieger-systems.eu/script.js",
+              async: true,
+              defer: true,
+              "data-website-id": "0041269e-a45c-4b77-9060-8b8c86651619",
+            },
+          ]
+        : [],
+    },
+  },
   i18n: {
     langDir: "locales",
     locales: [
