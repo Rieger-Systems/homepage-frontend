@@ -10,7 +10,9 @@ RUN npm run build
 FROM node:20-alpine AS runner
 WORKDIR /app
 
-# Nur Produktions-Dependencies
+# Installiere wget (Minimalpaket reicht für Alpine!)
+RUN apk add --no-cache wget
+
 COPY package*.json ./
 RUN npm ci --omit=dev
 
